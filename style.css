@@ -431,6 +431,221 @@ h1 {
     color: var(--text-muted);
 }
 
+/* Boutique Badges Section */
+.boutique-section {
+    padding: 5rem 10%;
+    background: linear-gradient(180deg, transparent, rgba(6, 182, 212, 0.03));
+}
+
+.boutique-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.pack-category {
+    margin-bottom: 3rem;
+}
+
+.category-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.price-tag {
+    background: linear-gradient(90deg, var(--accent), var(--primary));
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.save-tag {
+    background: #10b981;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.category-desc {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.packs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.packs-grid.thematic {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.pack-card {
+    padding: 1.5rem;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.pack-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.pack-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.pack-number {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.pack-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.pack-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.badge-item {
+    background: rgba(109, 40, 217, 0.2);
+    border: 1px solid rgba(109, 40, 217, 0.4);
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.badge-item small {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 0.75rem;
+    margin-left: 0.3rem;
+}
+
+.pack-emojis {
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.pack-desc {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.pack-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.badge-count {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.pack-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+/* Bundles */
+.bundles-section {
+    margin-top: 2rem;
+}
+
+.bundles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 700px;
+    margin: 1rem auto;
+}
+
+.bundle-card {
+    padding: 2rem;
+    text-align: center;
+}
+
+.bundle-card.featured {
+    border-color: var(--accent);
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(109, 40, 217, 0.1));
+}
+
+.bundle-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.bundle-content {
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.bundle-badges {
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.bundle-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.bundle-price small {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    text-decoration: line-through;
+}
+
+/* Boutique CTA */
+.boutique-cta {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--glass-bg);
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+}
+
+.boutique-cta p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .nav-links a:not(.btn-discord) {
@@ -447,5 +662,14 @@ h1 {
 
     .hud-modes {
         grid-template-columns: 1fr;
+    }
+
+    .packs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pack-emojis {
+        font-size: 1.5rem;
+        letter-spacing: 0.3rem;
     }
 }
