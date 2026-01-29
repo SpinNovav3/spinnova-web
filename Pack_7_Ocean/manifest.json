@@ -1,0 +1,152 @@
+[
+    {
+        "filename": "icon_128031_NONE.png",
+        "code": "🐟",
+        "designation": "Fish"
+    },
+    {
+        "filename": "icon_128031_WHITE.png",
+        "code": "🐟",
+        "designation": "Fish (Blanc)"
+    },
+    {
+        "filename": "icon_128031_GOLD.png",
+        "code": "🐟",
+        "designation": "Fish (Or)"
+    },
+    {
+        "filename": "icon_129416_NONE.png",
+        "code": "🦈",
+        "designation": "Shark"
+    },
+    {
+        "filename": "icon_129416_WHITE.png",
+        "code": "🦈",
+        "designation": "Shark (Blanc)"
+    },
+    {
+        "filename": "icon_129416_GOLD.png",
+        "code": "🦈",
+        "designation": "Shark (Or)"
+    },
+    {
+        "filename": "icon_128025_NONE.png",
+        "code": "🐙",
+        "designation": "Pieuvre"
+    },
+    {
+        "filename": "icon_128025_WHITE.png",
+        "code": "🐙",
+        "designation": "Pieuvre (Blanc)"
+    },
+    {
+        "filename": "icon_128025_GOLD.png",
+        "code": "🐙",
+        "designation": "Pieuvre (Or)"
+    },
+    {
+        "filename": "icon_129424_NONE.png",
+        "code": "🦐",
+        "designation": "Crevette"
+    },
+    {
+        "filename": "icon_129424_WHITE.png",
+        "code": "🦐",
+        "designation": "Crevette (Blanc)"
+    },
+    {
+        "filename": "icon_129424_GOLD.png",
+        "code": "🦐",
+        "designation": "Crevette (Or)"
+    },
+    {
+        "filename": "icon_128051_NONE.png",
+        "code": "🐳",
+        "designation": "Baleine"
+    },
+    {
+        "filename": "icon_128051_WHITE.png",
+        "code": "🐳",
+        "designation": "Baleine (Blanc)"
+    },
+    {
+        "filename": "icon_128051_GOLD.png",
+        "code": "🐳",
+        "designation": "Baleine (Or)"
+    },
+    {
+        "filename": "icon_129425_NONE.png",
+        "code": "🦑",
+        "designation": "Calamar"
+    },
+    {
+        "filename": "icon_129425_WHITE.png",
+        "code": "🦑",
+        "designation": "Calamar (Blanc)"
+    },
+    {
+        "filename": "icon_129425_GOLD.png",
+        "code": "🦑",
+        "designation": "Calamar (Or)"
+    },
+    {
+        "filename": "icon_128033_NONE.png",
+        "code": "🐡",
+        "designation": "Poisson-globe"
+    },
+    {
+        "filename": "icon_128033_WHITE.png",
+        "code": "🐡",
+        "designation": "Poisson-globe (Blanc)"
+    },
+    {
+        "filename": "icon_128033_GOLD.png",
+        "code": "🐡",
+        "designation": "Poisson-globe (Or)"
+    },
+    {
+        "filename": "icon_129438_NONE.png",
+        "code": "🦞",
+        "designation": "Homard"
+    },
+    {
+        "filename": "icon_129438_WHITE.png",
+        "code": "🦞",
+        "designation": "Homard (Blanc)"
+    },
+    {
+        "filename": "icon_129438_GOLD.png",
+        "code": "🦞",
+        "designation": "Homard (Or)"
+    },
+    {
+        "filename": "icon_128026_NONE.png",
+        "code": "🐚",
+        "designation": "Coquillage"
+    },
+    {
+        "filename": "icon_128026_WHITE.png",
+        "code": "🐚",
+        "designation": "Coquillage (Blanc)"
+    },
+    {
+        "filename": "icon_128026_GOLD.png",
+        "code": "🐚",
+        "designation": "Coquillage (Or)"
+    },
+    {
+        "filename": "icon_127754_NONE.png",
+        "code": "🌊",
+        "designation": "Vague"
+    },
+    {
+        "filename": "icon_127754_WHITE.png",
+        "code": "🌊",
+        "designation": "Vague (Blanc)"
+    },
+    {
+        "filename": "icon_127754_GOLD.png",
+        "code": "🌊",
+        "designation": "Vague (Or)"
+    }
+]
