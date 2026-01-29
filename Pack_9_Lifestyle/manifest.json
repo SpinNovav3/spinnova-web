@@ -1,0 +1,152 @@
+[
+    {
+        "filename": "icon_127863_NONE.png",
+        "code": "🍷",
+        "designation": "Alcool"
+    },
+    {
+        "filename": "icon_127863_WHITE.png",
+        "code": "🍷",
+        "designation": "Alcool (Blanc)"
+    },
+    {
+        "filename": "icon_127863_GOLD.png",
+        "code": "🍷",
+        "designation": "Alcool (Or)"
+    },
+    {
+        "filename": "icon_128110_NONE.png",
+        "code": "👮‍♂️",
+        "designation": "Police"
+    },
+    {
+        "filename": "icon_128110_WHITE.png",
+        "code": "👮‍♂️",
+        "designation": "Police (Blanc)"
+    },
+    {
+        "filename": "icon_128110_GOLD.png",
+        "code": "👮‍♂️",
+        "designation": "Police (Or)"
+    },
+    {
+        "filename": "icon_128138_NONE.png",
+        "code": "💊",
+        "designation": "Addict"
+    },
+    {
+        "filename": "icon_128138_WHITE.png",
+        "code": "💊",
+        "designation": "Addict (Blanc)"
+    },
+    {
+        "filename": "icon_128138_GOLD.png",
+        "code": "💊",
+        "designation": "Addict (Or)"
+    },
+    {
+        "filename": "icon_127920_NONE.png",
+        "code": "🎰",
+        "designation": "Gambler"
+    },
+    {
+        "filename": "icon_127920_WHITE.png",
+        "code": "🎰",
+        "designation": "Gambler (Blanc)"
+    },
+    {
+        "filename": "icon_127920_GOLD.png",
+        "code": "🎰",
+        "designation": "Gambler (Or)"
+    },
+    {
+        "filename": "icon_128164_NONE.png",
+        "code": "💤",
+        "designation": "Fatigué"
+    },
+    {
+        "filename": "icon_128164_WHITE.png",
+        "code": "💤",
+        "designation": "Fatigué (Blanc)"
+    },
+    {
+        "filename": "icon_128164_GOLD.png",
+        "code": "💤",
+        "designation": "Fatigué (Or)"
+    },
+    {
+        "filename": "icon_9749_NONE.png",
+        "code": "☕",
+        "designation": "Café"
+    },
+    {
+        "filename": "icon_9749_WHITE.png",
+        "code": "☕",
+        "designation": "Café (Blanc)"
+    },
+    {
+        "filename": "icon_9749_GOLD.png",
+        "code": "☕",
+        "designation": "Café (Or)"
+    },
+    {
+        "filename": "icon_127918_NONE.png",
+        "code": "🎮",
+        "designation": "Gamer"
+    },
+    {
+        "filename": "icon_127918_WHITE.png",
+        "code": "🎮",
+        "designation": "Gamer (Blanc)"
+    },
+    {
+        "filename": "icon_127918_GOLD.png",
+        "code": "🎮",
+        "designation": "Gamer (Or)"
+    },
+    {
+        "filename": "icon_128241_NONE.png",
+        "code": "📱",
+        "designation": "Phone"
+    },
+    {
+        "filename": "icon_128241_WHITE.png",
+        "code": "📱",
+        "designation": "Phone (Blanc)"
+    },
+    {
+        "filename": "icon_128241_GOLD.png",
+        "code": "📱",
+        "designation": "Phone (Or)"
+    },
+    {
+        "filename": "icon_128184_NONE.png",
+        "code": "💸",
+        "designation": "Money"
+    },
+    {
+        "filename": "icon_128184_WHITE.png",
+        "code": "💸",
+        "designation": "Money (Blanc)"
+    },
+    {
+        "filename": "icon_128184_GOLD.png",
+        "code": "💸",
+        "designation": "Money (Or)"
+    },
+    {
+        "filename": "icon_127942_NONE.png",
+        "code": "🏆",
+        "designation": "Trophy"
+    },
+    {
+        "filename": "icon_127942_WHITE.png",
+        "code": "🏆",
+        "designation": "Trophy (Blanc)"
+    },
+    {
+        "filename": "icon_127942_GOLD.png",
+        "code": "🏆",
+        "designation": "Trophy (Or)"
+    }
+]

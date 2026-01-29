@@ -1,0 +1,152 @@
+[
+    {
+        "filename": "icon_127755_NONE.png",
+        "code": "🌋",
+        "designation": "Volcan"
+    },
+    {
+        "filename": "icon_127755_WHITE.png",
+        "code": "🌋",
+        "designation": "Volcan (Blanc)"
+    },
+    {
+        "filename": "icon_127755_GOLD.png",
+        "code": "🌋",
+        "designation": "Volcan (Or)"
+    },
+    {
+        "filename": "icon_127956_NONE.png",
+        "code": "🏔️",
+        "designation": "Montagne"
+    },
+    {
+        "filename": "icon_127956_WHITE.png",
+        "code": "🏔️",
+        "designation": "Montagne (Blanc)"
+    },
+    {
+        "filename": "icon_127956_GOLD.png",
+        "code": "🏔️",
+        "designation": "Montagne (Or)"
+    },
+    {
+        "filename": "icon_9968_NONE.png",
+        "code": "⛰️",
+        "designation": "Colline"
+    },
+    {
+        "filename": "icon_9968_WHITE.png",
+        "code": "⛰️",
+        "designation": "Colline (Blanc)"
+    },
+    {
+        "filename": "icon_9968_GOLD.png",
+        "code": "⛰️",
+        "designation": "Colline (Or)"
+    },
+    {
+        "filename": "icon_128507_NONE.png",
+        "code": "🗻",
+        "designation": "Mont Fuji"
+    },
+    {
+        "filename": "icon_128507_WHITE.png",
+        "code": "🗻",
+        "designation": "Mont Fuji (Blanc)"
+    },
+    {
+        "filename": "icon_128507_GOLD.png",
+        "code": "🗻",
+        "designation": "Mont Fuji (Or)"
+    },
+    {
+        "filename": "icon_128293_NONE.png",
+        "code": "🔥",
+        "designation": "Feu"
+    },
+    {
+        "filename": "icon_128293_WHITE.png",
+        "code": "🔥",
+        "designation": "Feu (Blanc)"
+    },
+    {
+        "filename": "icon_128293_GOLD.png",
+        "code": "🔥",
+        "designation": "Feu (Or)"
+    },
+    {
+        "filename": "icon_128168_NONE.png",
+        "code": "💨",
+        "designation": "Vent"
+    },
+    {
+        "filename": "icon_128168_WHITE.png",
+        "code": "💨",
+        "designation": "Vent (Blanc)"
+    },
+    {
+        "filename": "icon_128168_GOLD.png",
+        "code": "💨",
+        "designation": "Vent (Or)"
+    },
+    {
+        "filename": "icon_10052_NONE.png",
+        "code": "❄️",
+        "designation": "Neige"
+    },
+    {
+        "filename": "icon_10052_WHITE.png",
+        "code": "❄️",
+        "designation": "Neige (Blanc)"
+    },
+    {
+        "filename": "icon_10052_GOLD.png",
+        "code": "❄️",
+        "designation": "Neige (Or)"
+    },
+    {
+        "filename": "icon_9889_NONE.png",
+        "code": "⚡",
+        "designation": "Éclair"
+    },
+    {
+        "filename": "icon_9889_WHITE.png",
+        "code": "⚡",
+        "designation": "Éclair (Blanc)"
+    },
+    {
+        "filename": "icon_9889_GOLD.png",
+        "code": "⚡",
+        "designation": "Éclair (Or)"
+    },
+    {
+        "filename": "icon_127786_NONE.png",
+        "code": "🌪️",
+        "designation": "Tornade"
+    },
+    {
+        "filename": "icon_127786_WHITE.png",
+        "code": "🌪️",
+        "designation": "Tornade (Blanc)"
+    },
+    {
+        "filename": "icon_127786_GOLD.png",
+        "code": "🌪️",
+        "designation": "Tornade (Or)"
+    },
+    {
+        "filename": "icon_127752_NONE.png",
+        "code": "🌈",
+        "designation": "Arc-en-ciel"
+    },
+    {
+        "filename": "icon_127752_WHITE.png",
+        "code": "🌈",
+        "designation": "Arc-en-ciel (Blanc)"
+    },
+    {
+        "filename": "icon_127752_GOLD.png",
+        "code": "🌈",
+        "designation": "Arc-en-ciel (Or)"
+    }
+]
