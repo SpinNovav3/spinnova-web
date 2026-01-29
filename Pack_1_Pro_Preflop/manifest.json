@@ -1,0 +1,152 @@
+[
+    {
+        "filename": "LC_LOW.png",
+        "code": "LC",
+        "designation": "Limp-Call (Peu)"
+    },
+    {
+        "filename": "LC_MED.png",
+        "code": "LC",
+        "designation": "Limp-Call (Moyen)"
+    },
+    {
+        "filename": "LC_HIGH.png",
+        "code": "LC",
+        "designation": "Limp-Call (Beaucoup)"
+    },
+    {
+        "filename": "LR_LOW.png",
+        "code": "LR",
+        "designation": "Limp-Raise (Peu)"
+    },
+    {
+        "filename": "LR_MED.png",
+        "code": "LR",
+        "designation": "Limp-Raise (Moyen)"
+    },
+    {
+        "filename": "LR_HIGH.png",
+        "code": "LR",
+        "designation": "Limp-Raise (Beaucoup)"
+    },
+    {
+        "filename": "LF_LOW.png",
+        "code": "LF",
+        "designation": "Limp-Fold (Peu)"
+    },
+    {
+        "filename": "LF_MED.png",
+        "code": "LF",
+        "designation": "Limp-Fold (Moyen)"
+    },
+    {
+        "filename": "LF_HIGH.png",
+        "code": "LF",
+        "designation": "Limp-Fold (Beaucoup)"
+    },
+    {
+        "filename": "OP_LOW.png",
+        "code": "OP",
+        "designation": "Open (Peu)"
+    },
+    {
+        "filename": "OP_MED.png",
+        "code": "OP",
+        "designation": "Open (Moyen)"
+    },
+    {
+        "filename": "OP_HIGH.png",
+        "code": "OP",
+        "designation": "Open (Beaucoup)"
+    },
+    {
+        "filename": "OS_LOW.png",
+        "code": "OS",
+        "designation": "Open-Shove (Peu)"
+    },
+    {
+        "filename": "OS_MED.png",
+        "code": "OS",
+        "designation": "Open-Shove (Moyen)"
+    },
+    {
+        "filename": "OS_HIGH.png",
+        "code": "OS",
+        "designation": "Open-Shove (Beaucoup)"
+    },
+    {
+        "filename": "IS_LOW.png",
+        "code": "IS",
+        "designation": "Iso Size (Peu)"
+    },
+    {
+        "filename": "IS_MED.png",
+        "code": "IS",
+        "designation": "Iso Size (Moyen)"
+    },
+    {
+        "filename": "IS_HIGH.png",
+        "code": "IS",
+        "designation": "Iso Size (Beaucoup)"
+    },
+    {
+        "filename": "IAI_LOW.png",
+        "code": "IAI",
+        "designation": "Iso All-In (Peu)"
+    },
+    {
+        "filename": "IAI_MED.png",
+        "code": "IAI",
+        "designation": "Iso All-In (Moyen)"
+    },
+    {
+        "filename": "IAI_HIGH.png",
+        "code": "IAI",
+        "designation": "Iso All-In (Beaucoup)"
+    },
+    {
+        "filename": "3B_LOW.png",
+        "code": "3B",
+        "designation": "3-Bet (Peu)"
+    },
+    {
+        "filename": "3B_MED.png",
+        "code": "3B",
+        "designation": "3-Bet (Moyen)"
+    },
+    {
+        "filename": "3B_HIGH.png",
+        "code": "3B",
+        "designation": "3-Bet (Beaucoup)"
+    },
+    {
+        "filename": "F_OP_LOW.png",
+        "code": "F/OP",
+        "designation": "Fold vs Open (Peu)"
+    },
+    {
+        "filename": "F_OP_MED.png",
+        "code": "F/OP",
+        "designation": "Fold vs Open (Moyen)"
+    },
+    {
+        "filename": "F_OP_HIGH.png",
+        "code": "F/OP",
+        "designation": "Fold vs Open (Beaucoup)"
+    },
+    {
+        "filename": "COS_LOW.png",
+        "code": "COS",
+        "designation": "Call Open-Shove (Peu)"
+    },
+    {
+        "filename": "COS_MED.png",
+        "code": "COS",
+        "designation": "Call Open-Shove (Moyen)"
+    },
+    {
+        "filename": "COS_HIGH.png",
+        "code": "COS",
+        "designation": "Call Open-Shove (Beaucoup)"
+    }
+]

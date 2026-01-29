@@ -1,0 +1,152 @@
+[
+    {
+        "filename": "CB_LOW.png",
+        "code": "CB",
+        "designation": "C-Bet (Peu)"
+    },
+    {
+        "filename": "CB_MED.png",
+        "code": "CB",
+        "designation": "C-Bet (Moyen)"
+    },
+    {
+        "filename": "CB_HIGH.png",
+        "code": "CB",
+        "designation": "C-Bet (Beaucoup)"
+    },
+    {
+        "filename": "PR_LOW.png",
+        "code": "PR",
+        "designation": "Probe (Peu)"
+    },
+    {
+        "filename": "PR_MED.png",
+        "code": "PR",
+        "designation": "Probe (Moyen)"
+    },
+    {
+        "filename": "PR_HIGH.png",
+        "code": "PR",
+        "designation": "Probe (Beaucoup)"
+    },
+    {
+        "filename": "DK_LOW.png",
+        "code": "DK",
+        "designation": "Donk (Peu)"
+    },
+    {
+        "filename": "DK_MED.png",
+        "code": "DK",
+        "designation": "Donk (Moyen)"
+    },
+    {
+        "filename": "DK_HIGH.png",
+        "code": "DK",
+        "designation": "Donk (Beaucoup)"
+    },
+    {
+        "filename": "DEL_LOW.png",
+        "code": "DEL",
+        "designation": "Delayed C-Bet (Peu)"
+    },
+    {
+        "filename": "DEL_MED.png",
+        "code": "DEL",
+        "designation": "Delayed C-Bet (Moyen)"
+    },
+    {
+        "filename": "DEL_HIGH.png",
+        "code": "DEL",
+        "designation": "Delayed C-Bet (Beaucoup)"
+    },
+    {
+        "filename": "CS_LOW.png",
+        "code": "CS",
+        "designation": "Calling Station (Peu)"
+    },
+    {
+        "filename": "CS_MED.png",
+        "code": "CS",
+        "designation": "Calling Station (Moyen)"
+    },
+    {
+        "filename": "CS_HIGH.png",
+        "code": "CS",
+        "designation": "Calling Station (Beaucoup)"
+    },
+    {
+        "filename": "XR_LOW.png",
+        "code": "XR",
+        "designation": "Check-Raise (Peu)"
+    },
+    {
+        "filename": "XR_MED.png",
+        "code": "XR",
+        "designation": "Check-Raise (Moyen)"
+    },
+    {
+        "filename": "XR_HIGH.png",
+        "code": "XR",
+        "designation": "Check-Raise (Beaucoup)"
+    },
+    {
+        "filename": "XC_LOW.png",
+        "code": "XC",
+        "designation": "Check-Call (Peu)"
+    },
+    {
+        "filename": "XC_MED.png",
+        "code": "XC",
+        "designation": "Check-Call (Moyen)"
+    },
+    {
+        "filename": "XC_HIGH.png",
+        "code": "XC",
+        "designation": "Check-Call (Beaucoup)"
+    },
+    {
+        "filename": "F_CB_LOW.png",
+        "code": "F/CB",
+        "designation": "Fold to C-Bet (Peu)"
+    },
+    {
+        "filename": "F_CB_MED.png",
+        "code": "F/CB",
+        "designation": "Fold to C-Bet (Moyen)"
+    },
+    {
+        "filename": "F_CB_HIGH.png",
+        "code": "F/CB",
+        "designation": "Fold to C-Bet (Beaucoup)"
+    },
+    {
+        "filename": "2BL_LOW.png",
+        "code": "2BL",
+        "designation": "Double Barrel (Peu)"
+    },
+    {
+        "filename": "2BL_MED.png",
+        "code": "2BL",
+        "designation": "Double Barrel (Moyen)"
+    },
+    {
+        "filename": "2BL_HIGH.png",
+        "code": "2BL",
+        "designation": "Double Barrel (Beaucoup)"
+    },
+    {
+        "filename": "3BL_LOW.png",
+        "code": "3BL",
+        "designation": "Triple Barrel (Peu)"
+    },
+    {
+        "filename": "3BL_MED.png",
+        "code": "3BL",
+        "designation": "Triple Barrel (Moyen)"
+    },
+    {
+        "filename": "3BL_HIGH.png",
+        "code": "3BL",
+        "designation": "Triple Barrel (Beaucoup)"
+    }
+]
