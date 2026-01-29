@@ -1,0 +1,152 @@
+[
+    {
+        "filename": "icon_128548_NONE.png",
+        "code": "😤",
+        "designation": "Tilt"
+    },
+    {
+        "filename": "icon_128548_WHITE.png",
+        "code": "😤",
+        "designation": "Tilt (Blanc)"
+    },
+    {
+        "filename": "icon_128548_GOLD.png",
+        "code": "😤",
+        "designation": "Tilt (Or)"
+    },
+    {
+        "filename": "icon_127917_NONE.png",
+        "code": "🎭",
+        "designation": "Bluffeur"
+    },
+    {
+        "filename": "icon_127917_WHITE.png",
+        "code": "🎭",
+        "designation": "Bluffeur (Blanc)"
+    },
+    {
+        "filename": "icon_127917_GOLD.png",
+        "code": "🎭",
+        "designation": "Bluffeur (Or)"
+    },
+    {
+        "filename": "icon_128176_NONE.png",
+        "code": "💰",
+        "designation": "Value only"
+    },
+    {
+        "filename": "icon_128176_WHITE.png",
+        "code": "💰",
+        "designation": "Value only (Blanc)"
+    },
+    {
+        "filename": "icon_128176_GOLD.png",
+        "code": "💰",
+        "designation": "Value only (Or)"
+    },
+    {
+        "filename": "icon_129700_NONE.png",
+        "code": "🪤",
+        "designation": "Trappeur"
+    },
+    {
+        "filename": "icon_129700_WHITE.png",
+        "code": "🪤",
+        "designation": "Trappeur (Blanc)"
+    },
+    {
+        "filename": "icon_129700_GOLD.png",
+        "code": "🪤",
+        "designation": "Trappeur (Or)"
+    },
+    {
+        "filename": "icon_127808_NONE.png",
+        "code": "🍀",
+        "designation": "Lucky"
+    },
+    {
+        "filename": "icon_127808_WHITE.png",
+        "code": "🍀",
+        "designation": "Lucky (Blanc)"
+    },
+    {
+        "filename": "icon_127808_GOLD.png",
+        "code": "🍀",
+        "designation": "Lucky (Or)"
+    },
+    {
+        "filename": "icon_128560_NONE.png",
+        "code": "😰",
+        "designation": "Scared money"
+    },
+    {
+        "filename": "icon_128560_WHITE.png",
+        "code": "😰",
+        "designation": "Scared money (Blanc)"
+    },
+    {
+        "filename": "icon_128560_GOLD.png",
+        "code": "😰",
+        "designation": "Scared money (Or)"
+    },
+    {
+        "filename": "icon_9889_NONE.png",
+        "code": "⚡",
+        "designation": "Fast"
+    },
+    {
+        "filename": "icon_9889_WHITE.png",
+        "code": "⚡",
+        "designation": "Fast (Blanc)"
+    },
+    {
+        "filename": "icon_9889_GOLD.png",
+        "code": "⚡",
+        "designation": "Fast (Or)"
+    },
+    {
+        "filename": "icon_128012_NONE.png",
+        "code": "🐌",
+        "designation": "Slow"
+    },
+    {
+        "filename": "icon_128012_WHITE.png",
+        "code": "🐌",
+        "designation": "Slow (Blanc)"
+    },
+    {
+        "filename": "icon_128012_GOLD.png",
+        "code": "🐌",
+        "designation": "Slow (Or)"
+    },
+    {
+        "filename": "icon_128172_NONE.png",
+        "code": "💬",
+        "designation": "Chatteur"
+    },
+    {
+        "filename": "icon_128172_WHITE.png",
+        "code": "💬",
+        "designation": "Chatteur (Blanc)"
+    },
+    {
+        "filename": "icon_128172_GOLD.png",
+        "code": "💬",
+        "designation": "Chatteur (Or)"
+    },
+    {
+        "filename": "icon_10067_NONE.png",
+        "code": "❓",
+        "designation": "Unknown"
+    },
+    {
+        "filename": "icon_10067_WHITE.png",
+        "code": "❓",
+        "designation": "Unknown (Blanc)"
+    },
+    {
+        "filename": "icon_10067_GOLD.png",
+        "code": "❓",
+        "designation": "Unknown (Or)"
+    }
+]

@@ -1,0 +1,152 @@
+[
+    {
+        "filename": "icon_128678_NONE.png",
+        "code": "🚦",
+        "designation": "Feu rouge/vert"
+    },
+    {
+        "filename": "icon_128678_WHITE.png",
+        "code": "🚦",
+        "designation": "Feu rouge/vert (Blanc)"
+    },
+    {
+        "filename": "icon_128678_GOLD.png",
+        "code": "🚦",
+        "designation": "Feu rouge/vert (Or)"
+    },
+    {
+        "filename": "icon_9940_NONE.png",
+        "code": "⛔️",
+        "designation": "Sens interdit"
+    },
+    {
+        "filename": "icon_9940_WHITE.png",
+        "code": "⛔️",
+        "designation": "Sens interdit (Blanc)"
+    },
+    {
+        "filename": "icon_9940_GOLD.png",
+        "code": "⛔️",
+        "designation": "Sens interdit (Or)"
+    },
+    {
+        "filename": "icon_128721_NONE.png",
+        "code": "🛑",
+        "designation": "Stop (fold)"
+    },
+    {
+        "filename": "icon_128721_WHITE.png",
+        "code": "🛑",
+        "designation": "Stop (fold) (Blanc)"
+    },
+    {
+        "filename": "icon_128721_GOLD.png",
+        "code": "🛑",
+        "designation": "Stop (fold) (Or)"
+    },
+    {
+        "filename": "icon_9888_NONE.png",
+        "code": "⚠️",
+        "designation": "Attention danger"
+    },
+    {
+        "filename": "icon_9888_WHITE.png",
+        "code": "⚠️",
+        "designation": "Attention danger (Blanc)"
+    },
+    {
+        "filename": "icon_9888_GOLD.png",
+        "code": "⚠️",
+        "designation": "Attention danger (Or)"
+    },
+    {
+        "filename": "icon_128679_NONE.png",
+        "code": "🚧",
+        "designation": "En construction"
+    },
+    {
+        "filename": "icon_128679_WHITE.png",
+        "code": "🚧",
+        "designation": "En construction (Blanc)"
+    },
+    {
+        "filename": "icon_128679_GOLD.png",
+        "code": "🚧",
+        "designation": "En construction (Or)"
+    },
+    {
+        "filename": "icon_10145_NONE.png",
+        "code": "➡️",
+        "designation": "Direction"
+    },
+    {
+        "filename": "icon_10145_WHITE.png",
+        "code": "➡️",
+        "designation": "Direction (Blanc)"
+    },
+    {
+        "filename": "icon_10145_GOLD.png",
+        "code": "➡️",
+        "designation": "Direction (Or)"
+    },
+    {
+        "filename": "icon_128260_NONE.png",
+        "code": "🔄",
+        "designation": "Rond-point"
+    },
+    {
+        "filename": "icon_128260_WHITE.png",
+        "code": "🔄",
+        "designation": "Rond-point (Blanc)"
+    },
+    {
+        "filename": "icon_128260_GOLD.png",
+        "code": "🔄",
+        "designation": "Rond-point (Or)"
+    },
+    {
+        "filename": "icon_127359_NONE.png",
+        "code": "🅿️",
+        "designation": "Parking"
+    },
+    {
+        "filename": "icon_127359_WHITE.png",
+        "code": "🅿️",
+        "designation": "Parking (Blanc)"
+    },
+    {
+        "filename": "icon_127359_GOLD.png",
+        "code": "🅿️",
+        "designation": "Parking (Or)"
+    },
+    {
+        "filename": "icon_128663_NONE.png",
+        "code": "🚗",
+        "designation": "Voiture"
+    },
+    {
+        "filename": "icon_128663_WHITE.png",
+        "code": "🚗",
+        "designation": "Voiture (Blanc)"
+    },
+    {
+        "filename": "icon_128663_GOLD.png",
+        "code": "🚗",
+        "designation": "Voiture (Or)"
+    },
+    {
+        "filename": "icon_127950_NONE.png",
+        "code": "🏎️",
+        "designation": "Formule 1"
+    },
+    {
+        "filename": "icon_127950_WHITE.png",
+        "code": "🏎️",
+        "designation": "Formule 1 (Blanc)"
+    },
+    {
+        "filename": "icon_127950_GOLD.png",
+        "code": "🏎️",
+        "designation": "Formule 1 (Or)"
+    }
+]
