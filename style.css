@@ -90,6 +90,11 @@ body {
     color: var(--text-main);
 }
 
+.nav-links a.nav-active {
+    color: var(--accent);
+    font-weight: 600;
+}
+
 .btn-discord {
     display: flex;
     align-items: center;
