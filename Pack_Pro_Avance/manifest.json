@@ -1,0 +1,542 @@
+[
+    {
+        "filename": "badge_I2X_RED.png",
+        "code": "I2X",
+        "designation": "Iso 2x",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_I2X_GREEN.png",
+        "code": "I2X",
+        "designation": "Iso 2x",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_I2X_BLUE.png",
+        "code": "I2X",
+        "designation": "Iso 2x",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_I2.5X_RED.png",
+        "code": "I2.5X",
+        "designation": "Iso 2.5x",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_I2.5X_GREEN.png",
+        "code": "I2.5X",
+        "designation": "Iso 2.5x",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_I2.5X_BLUE.png",
+        "code": "I2.5X",
+        "designation": "Iso 2.5x",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_I3X_RED.png",
+        "code": "I3X",
+        "designation": "Iso 3x",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_I3X_GREEN.png",
+        "code": "I3X",
+        "designation": "Iso 3x",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_I3X_BLUE.png",
+        "code": "I3X",
+        "designation": "Iso 3x",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_I1_2_RED.png",
+        "code": "I1/2",
+        "designation": "Iso 1/2 pot",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_I1_2_GREEN.png",
+        "code": "I1/2",
+        "designation": "Iso 1/2 pot",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_I1_2_BLUE.png",
+        "code": "I1/2",
+        "designation": "Iso 1/2 pot",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_I1_3_RED.png",
+        "code": "I1/3",
+        "designation": "Iso 1/3 pot",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_I1_3_GREEN.png",
+        "code": "I1/3",
+        "designation": "Iso 1/3 pot",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_I1_3_BLUE.png",
+        "code": "I1/3",
+        "designation": "Iso 1/3 pot",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_OP2X_RED.png",
+        "code": "OP2X",
+        "designation": "Open 2x",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_OP2X_GREEN.png",
+        "code": "OP2X",
+        "designation": "Open 2x",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_OP2X_BLUE.png",
+        "code": "OP2X",
+        "designation": "Open 2x",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_OP3X_RED.png",
+        "code": "OP3X",
+        "designation": "Open 3x",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_OP3X_GREEN.png",
+        "code": "OP3X",
+        "designation": "Open 3x",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_OP3X_BLUE.png",
+        "code": "OP3X",
+        "designation": "Open 3x",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_OP1_2_RED.png",
+        "code": "OP1/2",
+        "designation": "Open 1/2 pot",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_OP1_2_GREEN.png",
+        "code": "OP1/2",
+        "designation": "Open 1/2 pot",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_OP1_2_BLUE.png",
+        "code": "OP1/2",
+        "designation": "Open 1/2 pot",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_minus5_RED.png",
+        "code": "-5",
+        "designation": "Moins de 5 BB",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_minus5_GREEN.png",
+        "code": "-5",
+        "designation": "Moins de 5 BB",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_minus5_BLUE.png",
+        "code": "-5",
+        "designation": "Moins de 5 BB",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_5minus10_RED.png",
+        "code": "5-10",
+        "designation": "5-10 BB",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_5minus10_GREEN.png",
+        "code": "5-10",
+        "designation": "5-10 BB",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_5minus10_BLUE.png",
+        "code": "5-10",
+        "designation": "5-10 BB",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_10minus15_RED.png",
+        "code": "10-15",
+        "designation": "10-15 BB",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_10minus15_GREEN.png",
+        "code": "10-15",
+        "designation": "10-15 BB",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_10minus15_BLUE.png",
+        "code": "10-15",
+        "designation": "10-15 BB",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_15plus_RED.png",
+        "code": "15+",
+        "designation": "15+ BB",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_15plus_GREEN.png",
+        "code": "15+",
+        "designation": "15+ BB",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_15plus_BLUE.png",
+        "code": "15+",
+        "designation": "15+ BB",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_Xcapé_RED.png",
+        "code": "Xcapé",
+        "designation": "Check & Give up",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_Xcapé_GREEN.png",
+        "code": "Xcapé",
+        "designation": "Check & Give up",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_Xcapé_BLUE.png",
+        "code": "Xcapé",
+        "designation": "Check & Give up",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_Xtrap_RED.png",
+        "code": "Xtrap",
+        "designation": "Check-Trap",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_Xtrap_GREEN.png",
+        "code": "Xtrap",
+        "designation": "Check-Trap",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_Xtrap_BLUE.png",
+        "code": "Xtrap",
+        "designation": "Check-Trap",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_BXB_RED.png",
+        "code": "BXB",
+        "designation": "Bet-Check-Bet",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_BXB_GREEN.png",
+        "code": "BXB",
+        "designation": "Bet-Check-Bet",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_BXB_BLUE.png",
+        "code": "BXB",
+        "designation": "Bet-Check-Bet",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_BBX_RED.png",
+        "code": "BBX",
+        "designation": "Bet-Bet-Check",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_BBX_GREEN.png",
+        "code": "BBX",
+        "designation": "Bet-Bet-Check",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_BBX_BLUE.png",
+        "code": "BBX",
+        "designation": "Bet-Bet-Check",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_DelplusB_RED.png",
+        "code": "Del+B",
+        "designation": "Delayed + Bet",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_DelplusB_GREEN.png",
+        "code": "Del+B",
+        "designation": "Delayed + Bet",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_DelplusB_BLUE.png",
+        "code": "Del+B",
+        "designation": "Delayed + Bet",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_PrplusB_RED.png",
+        "code": "Pr+B",
+        "designation": "Probe + Bet",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_PrplusB_GREEN.png",
+        "code": "Pr+B",
+        "designation": "Probe + Bet",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_PrplusB_BLUE.png",
+        "code": "Pr+B",
+        "designation": "Probe + Bet",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_XrF_RED.png",
+        "code": "XrF",
+        "designation": "Check-Raise Flop",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_XrF_GREEN.png",
+        "code": "XrF",
+        "designation": "Check-Raise Flop",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_XrF_BLUE.png",
+        "code": "XrF",
+        "designation": "Check-Raise Flop",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_XrT_RED.png",
+        "code": "XrT",
+        "designation": "Check-Raise Turn",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_XrT_GREEN.png",
+        "code": "XrT",
+        "designation": "Check-Raise Turn",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_XrT_BLUE.png",
+        "code": "XrT",
+        "designation": "Check-Raise Turn",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_XrR_RED.png",
+        "code": "XrR",
+        "designation": "Check-Raise River",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_XrR_GREEN.png",
+        "code": "XrR",
+        "designation": "Check-Raise River",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_XrR_BLUE.png",
+        "code": "XrR",
+        "designation": "Check-Raise River",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_GTO_RED.png",
+        "code": "GTO",
+        "designation": "Game Theory Optimal",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_GTO_GREEN.png",
+        "code": "GTO",
+        "designation": "Game Theory Optimal",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_GTO_BLUE.png",
+        "code": "GTO",
+        "designation": "Game Theory Optimal",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_EXP_RED.png",
+        "code": "EXP",
+        "designation": "Exploit",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_EXP_GREEN.png",
+        "code": "EXP",
+        "designation": "Exploit",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_EXP_BLUE.png",
+        "code": "EXP",
+        "designation": "Exploit",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_plusEV_RED.png",
+        "code": "+EV",
+        "designation": "Plus EV",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_plusEV_GREEN.png",
+        "code": "+EV",
+        "designation": "Plus EV",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_plusEV_BLUE.png",
+        "code": "+EV",
+        "designation": "Plus EV",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_minusEV_RED.png",
+        "code": "-EV",
+        "designation": "Minus EV",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_minusEV_GREEN.png",
+        "code": "-EV",
+        "designation": "Minus EV",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_minusEV_BLUE.png",
+        "code": "-EV",
+        "designation": "Minus EV",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_VIP_RED.png",
+        "code": "VIP",
+        "designation": "Very Important Player",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_VIP_GREEN.png",
+        "code": "VIP",
+        "designation": "Very Important Player",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_VIP_BLUE.png",
+        "code": "VIP",
+        "designation": "Very Important Player",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_REC_RED.png",
+        "code": "REC",
+        "designation": "Récréatif",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_REC_GREEN.png",
+        "code": "REC",
+        "designation": "Récréatif",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_REC_BLUE.png",
+        "code": "REC",
+        "designation": "Récréatif",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_PRO_RED.png",
+        "code": "PRO",
+        "designation": "Professionnel",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_PRO_GREEN.png",
+        "code": "PRO",
+        "designation": "Professionnel",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_PRO_BLUE.png",
+        "code": "PRO",
+        "designation": "Professionnel",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_WKE_RED.png",
+        "code": "WKE",
+        "designation": "Weekend",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_WKE_GREEN.png",
+        "code": "WKE",
+        "designation": "Weekend",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_WKE_BLUE.png",
+        "code": "WKE",
+        "designation": "Weekend",
+        "color": "BLUE"
+    },
+    {
+        "filename": "badge_NTE_RED.png",
+        "code": "NTE",
+        "designation": "Night",
+        "color": "RED"
+    },
+    {
+        "filename": "badge_NTE_GREEN.png",
+        "code": "NTE",
+        "designation": "Night",
+        "color": "GREEN"
+    },
+    {
+        "filename": "badge_NTE_BLUE.png",
+        "code": "NTE",
+        "designation": "Night",
+        "color": "BLUE"
+    }
+]
