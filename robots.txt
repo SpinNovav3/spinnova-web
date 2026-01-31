@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://spinnovav3.github.io/spinnova-web/sitemap.xml
