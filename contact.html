@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | SpinNova - Support et Questions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .contact-container {
+            padding: 120px 10% 60px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: white;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            background: #0891b2;
+        }
+
+        .info-card {
+            text-align: center;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-card h2 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .email-display {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            margin: 1rem 0;
+            display: block;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Spin<span
+                class="highlight">Nova</span></a>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="badges.html">Badges</a>
+            <a href="boutique.html">Boutique</a>
+            <a href="essai-gratuit.html">Essai Gratuit</a>
+            <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
+        </div>
+    </nav>
+
+    <main class="contact-container">
+        <div class="info-card glass-panel">
+            <h2>Contacte l'équipe SpinNova</h2>
+            <p>Une question ? Un problème technique ? Nous sommes là pour t'aider.</p>
+            <a href="mailto:spinnova.pro@outlook.com" class="email-display">spinnova.pro@outlook.com</a>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Réponse sous 24/48h.</p>
+        </div>
+
+        <section class="glass-panel">
+            <form action="https://formspree.io/f/mqakppov" method="POST">
+                <div class="form-group">
+                    <label for="name">Ton Nom / Pseudo</label>
+                    <input type="text" id="name" name="name" placeholder="Ex: Jean Dupont" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Ton Email</label>
+                    <input type="email" id="email" name="email" placeholder="Ex: jean.dupont@gmail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Sujet</label>
+                    <input type="text" id="subject" name="subject" placeholder="Ex: Problème d'activation" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Décris ton besoin ici..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Envoyer le message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">SpinNova</div>
+            <div style="margin: 1rem 0; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="mentions-legales.html"
+                    style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Mentions Légales</a>
+                <a href="cgu-cgv.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">CGU /
+                    CGV</a>
+                <a href="faq.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">FAQ</a>
+                <a href="contact.html"
+                    style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Contact</a>
+            </div>
+            <p class="copyright">© 2026 SpinNova. HUD exclusif réseau iPoker.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

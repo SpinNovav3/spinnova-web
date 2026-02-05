@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | SpinNova - Foire aux Questions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .faq-container {
+            padding: 120px 10% 60px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-question {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 1.5rem;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            transition: border-color 0.3s;
+        }
+
+        .faq-question:hover {
+            border-color: var(--accent);
+        }
+
+        .faq-answer {
+            padding: 1.5rem;
+            color: var(--text-muted);
+            display: none;
+            border-left: 2px solid var(--accent);
+            margin: 0.5rem 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            border-color: var(--accent);
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Spin<span
+                class="highlight">Nova</span></a>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="telechargement.html">Installation</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
+        </div>
+    </nav>
+
+    <main class="faq-container">
+        <h1 style="text-align: center; margin-bottom: 3rem;">Foire Aux <span class="highlight">Questions</span></h1>
+
+        <!-- FAQ 1 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Est-ce que SpinNova est autorisé par les rooms de poker ? 🛡️
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                Oui, SpinNova respecte les règles de profilage habituelles. Il ne donne pas de conseils en temps réel
+                (RTA) et ne clique pas à votre place. C'est un outil d'aide à la prise de note visuelle, comme le permet
+                le réseau iPoker.
+            </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Comment obtenir mon HWID ? 🔑
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                Télécharge le logiciel sur la page <a href="telechargement.html"
+                    style="color: var(--accent);">Installation</a>, lance-le, et une fenêtre apparaîtra avec ton code
+                HWID. Clique sur "COPIER" et colle-le dans le formulaire d'essai ou dans ton message de support.
+            </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Mon antivirus bloque le logiciel, que faire ? ⚠️
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                C'est un faux positif classique avec les logiciels de profilage qui lisent l'écran (OCR). Ajoute une
+                exception pour le dossier SpinNova dans Windows Defender ou ton antivirus. Nos fichiers sont 100% sains.
+            </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Le HUD ne s'affiche pas sur ma table, pourquoi ? ❌
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                Vérifie que :<br>
+                1. Ton lobby iPoker est bien en Français, Anglais, Italien ou Espagnol.<br>
+                2. Tu as bien lancé <strong>START_HUD.bat</strong> en tant qu'administrateur.<br>
+                3. Ton HWID a bien été activé par notre équipe.
+            </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Quels sont les avantages de Revolut pour payer ? 💳
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                Revolut permet de payer instantanément avec une simple Carte Bleue, même si tu n'as pas de compte
+                Revolut. C'est sécurisé, sans frais pour toi, et nous recevons l'argent immédiatement, ce qui permet une
+                activation plus rapide de ta licence.
+            </div>
+        </div>
+
+        <section style="margin-top: 4rem; text-align: center;">
+            <p>Tu n'as pas trouvé ta réponse ?</p>
+            <a href="contact.html" class="btn-primary" style="margin-top: 1rem;">Pose ta question ici</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">SpinNova</div>
+            <div style="margin: 1rem 0; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="mentions-legales.html"
+                    style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Mentions Légales</a>
+                <a href="cgu-cgv.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">CGU /
+                    CGV</a>
+                <a href="faq.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">FAQ</a>
+                <a href="contact.html"
+                    style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Contact</a>
+            </div>
+            <p class="copyright">© 2026 SpinNova. HUD exclusif réseau iPoker.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
