@@ -82,6 +82,21 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 40px rgba(109, 40, 217, 0.4);
         }
+
+        .activation-option {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        .activation-option h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .activation-option p {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 
@@ -96,7 +111,7 @@
             <a href="badges.html">Badges</a>
             <a href="boutique.html">Boutique</a>
             <a href="essai-gratuit.html">Essai Gratuit</a>
-            <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
+            <a href="https://discord.gg/P8CNn56v" class="btn-discord" target="_blank">Discord</a>
         </div>
     </nav>
 
@@ -106,7 +121,7 @@
         <!-- DOWNLOAD BUTTON -->
         <a href="https://github.com/spinnovav3/spinnova-web/releases/latest/download/Spinnova_Release.zip"
             class="btn-download-big">
-            📥 Télécharger la Dernière Version (V1.0.0)
+            📥 Télécharger la Dernière Version (V3.0.0)
         </a>
 
         <!-- STEP 1 -->
@@ -142,12 +157,25 @@
         <div class="step-card glass-panel">
             <div class="step-content" style="text-align: center;">
                 <span class="step-number">3</span>
-                <h2>Activer ta Licence</h2>
-                <p>Maintenant que tu as ton HWID, choisis ton option :</p>
-                <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
-                    <a href="essai-gratuit.html" class="btn-primary">Je veux l'Essai 3 Jours</a>
-                    <a href="boutique.html" class="btn-primary"
-                        style="background: var(--accent); border-color: var(--accent);">Aller à la Boutique</a>
+                <h2>Active ta Licence</h2>
+                <p style="margin-bottom: 2rem;">Maintenant que tu as ton HWID, choisis comment activer :</p>
+
+                <!-- Option A: Discord (Recommandée) -->
+                <div class="activation-option"
+                    style="background: rgba(6, 182, 212, 0.1); border: 1px solid var(--accent);">
+                    <h3 style="color: var(--accent);">⚡ Option A : Discord (Instantané)</h3>
+                    <p style="color: var(--text-muted);">Notre bot IA génère ta licence automatiquement en quelques
+                        secondes.</p>
+                    <a href="https://discord.gg/P8CNn56v" class="btn-primary" target="_blank"
+                        style="background: var(--accent); border-color: var(--accent);">🎮 Rejoindre le Discord</a>
+                </div>
+
+                <!-- Option B: Web Form -->
+                <div class="activation-option"
+                    style="background: rgba(109, 40, 217, 0.1); border: 1px solid var(--primary);">
+                    <h3 style="color: var(--primary);">✉️ Option B : Formulaire Web</h3>
+                    <p style="color: var(--text-muted);">Pas de Discord ? Reçois ta licence par email sous 24-48h.</p>
+                    <a href="activation.html" class="btn-primary">📝 Remplir le Formulaire</a>
                 </div>
             </div>
         </div>
