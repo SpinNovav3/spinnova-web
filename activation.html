@@ -142,14 +142,30 @@
     <nav class="navbar">
         <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Spin<span
                 class="highlight">Nova</span></a>
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <div class="nav-links">
             <a href="index.html">Accueil</a>
             <a href="badges.html">Badges</a>
             <a href="boutique.html">Boutique</a>
             <a href="essai-gratuit.html">Essai Gratuit</a>
-            <a href="https://discord.gg/P8CNn56v" class="btn-discord" target="_blank">Discord</a>
+            <a href="telechargement.html">Télécharger</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
         </div>
     </nav>
+    <div class="nav-overlay" onclick="toggleMenu()"></div>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.hamburger').classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+            document.querySelector('.nav-overlay').classList.toggle('active');
+        }
+    </script>
 
     <main class="activation-container">
         <h1 style="text-align: center; margin-bottom: 1rem;">Demande de <span class="highlight">Licence</span></h1>

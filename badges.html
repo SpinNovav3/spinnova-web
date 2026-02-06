@@ -77,6 +77,11 @@
     <nav class="navbar">
         <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Spin<span
                 class="highlight">Nova</span></a>
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <div class="nav-links">
             <a href="index.html">Accueil</a>
             <a href="badges.html" class="nav-active">Badges</a>
@@ -88,6 +93,14 @@
             <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
         </div>
     </nav>
+    <div class="nav-overlay" onclick="toggleMenu()"></div>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.hamburger').classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+            document.querySelector('.nav-overlay').classList.toggle('active');
+        }
+    </script>
 
     <!-- Hero -->
     <header class="hero" style="padding: 6rem 2rem 4rem;">
