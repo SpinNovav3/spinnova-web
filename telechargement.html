@@ -164,42 +164,46 @@
         <div class="step-card glass-panel">
             <div class="step-content">
                 <span class="step-number">2</span>
-                <h2>Chopper le HWID</h2>
-                <p>Au premier lancement, une fenêtre d'activation va s'ouvrir.<br><br>
-                    Le <strong>HWID</strong> est ton identifiant unique. Clique sur le bouton <strong>"COPIER"</strong>
-                    pour le mettre dans ton presse-papier.</p>
-                <div class="hwid-box">
-                    <h3>💡 Pourquoi le HWID ?</h3>
-                    <p>On en a besoin pour générer ta licence (Essai ou Premium). Sans lui, le logiciel ne peut pas
-                        s'activer sur ton PC.</p>
+                <h2>Fenêtre d'Activation</h2>
+                <p>Au premier lancement (ou si ta licence expire), la fenêtre d'activation s'ouvre
+                    automatiquement.<br><br>
+                    <strong>1.</strong> Clique sur <strong>"COPIER"</strong> pour copier ton HWID unique.<br>
+                    <strong>2.</strong> Choisis ton mode d'activation :
+                </p>
+
+                <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
+                    <div
+                        style="flex: 1; min-width: 200px; padding: 1rem; background: rgba(6, 182, 212, 0.15); border-radius: 8px; border-left: 3px solid #06b6d4;">
+                        <strong style="color: #06b6d4;">🎮 DISCORD (Instantané)</strong>
+                        <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-muted);">Notre bot IA génère
+                            ta licence en quelques secondes. Colle ton HWID dans le salon.</p>
+                    </div>
+                    <div
+                        style="flex: 1; min-width: 200px; padding: 1rem; background: rgba(109, 40, 217, 0.15); border-radius: 8px; border-left: 3px solid #6d28d9;">
+                        <strong style="color: #6d28d9;">✉️ EMAIL (24-48h)</strong>
+                        <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-muted);">Pas de Discord ? Le
+                            formulaire pré-remplit ton HWID. Tu reçois le code par mail.</p>
+                    </div>
                 </div>
             </div>
-            <img src="../image.png" alt="HWID SpinNova" class="step-image">
+            <img src="screen_activation.png" alt="Fenêtre d'Activation SpinNova" class="step-image">
         </div>
 
         <!-- STEP 3 -->
         <div class="step-card glass-panel">
             <div class="step-content" style="text-align: center;">
                 <span class="step-number">3</span>
-                <h2>Active ta Licence</h2>
-                <p style="margin-bottom: 2rem;">Maintenant que tu as ton HWID, choisis comment activer :</p>
+                <h2>Colle ton Code & C'est Parti !</h2>
+                <p style="margin-bottom: 1.5rem;">Une fois le code d'activation reçu (Discord ou Email),
+                    <strong>colle-le directement</strong> dans la zone prévue.<br><br>
+                    <em style="color: var(--accent);">💡 Astuce : Le logiciel détecte automatiquement le code et
+                        s'active tout seul !</em>
+                </p>
 
-                <!-- Option A: Discord (Recommandée) -->
-                <div class="activation-option"
-                    style="background: rgba(6, 182, 212, 0.1); border: 1px solid var(--accent);">
-                    <h3 style="color: var(--accent);">⚡ Option A : Discord (Instantané)</h3>
-                    <p style="color: var(--text-muted);">Notre bot IA génère ta licence automatiquement en quelques
-                        secondes.</p>
-                    <a href="https://discord.gg/P8CNn56v" class="btn-primary" target="_blank"
-                        style="background: var(--accent); border-color: var(--accent);">🎮 Rejoindre le Discord</a>
-                </div>
-
-                <!-- Option B: Web Form -->
-                <div class="activation-option"
-                    style="background: rgba(109, 40, 217, 0.1); border: 1px solid var(--primary);">
-                    <h3 style="color: var(--primary);">✉️ Option B : Formulaire Web</h3>
-                    <p style="color: var(--text-muted);">Pas de Discord ? Reçois ta licence par email sous 24-48h.</p>
-                    <a href="activation.html" class="btn-primary">📝 Remplir le Formulaire</a>
+                <div class="hwid-box" style="text-align: left;">
+                    <h3>🎉 C'est tout !</h3>
+                    <p>Après activation, SpinNova démarre et tu peux commencer à profiler tes adversaires. Le HUD
+                        s'affiche automatiquement sur tes tables iPoker.</p>
                 </div>
             </div>
         </div>
