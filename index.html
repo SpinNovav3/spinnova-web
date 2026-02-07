@@ -247,9 +247,9 @@
                 <img src="screen_accueil.png"
                     alt="Tableau de bord analytique SpinNova - Suivi de progression et résultats" class="screen-img">
                 <h3>🏠 Dashboard Analytique</h3>
-                <p>Visualisez votre activité par jour, explorez la heatmap (grille 7 jours sur 24 heures), et retrouvez
-                    vos
-                    top adversaires en un coup d'œil. Import d'historiques iPoker inclus.</p>
+                <p>Visualisez votre activité par jour, explorez les <strong>2 heatmaps</strong> (Rencontres + Qualité du
+                    Field),
+                    filtrez par buy-in, et retrouvez vos top adversaires en un coup d'œil.</p>
             </div>
 
             <!-- Joueurs -->
@@ -296,6 +296,34 @@
                 <p>Couleurs, bordures, styles : personnalisez l'interface entière. Prévisualisez vos changements en
                     temps réel.</p>
             </div>
+    </section>
+
+    <!-- DUAL HEATMAP Section -->
+    <section id="heatmaps" class="heatmap-dual-section">
+        <h2>📊 Deux <span class="highlight">Heatmaps</span> Puissantes</h2>
+        <p class="section-subtitle">Basculez entre la vue Rencontres et la vue Qualité du Field d'un simple clic.
+            Filtrez par buy-in pour cibler vos créneaux.</p>
+
+        <div class="heatmap-cards">
+            <div class="heatmap-card glass-panel">
+                <img src="screen_accueil.png" alt="Heatmap Rencontres SpinNova" class="lightbox-trigger">
+                <h3>🔥 Heatmap Rencontres</h3>
+                <p>Visualisez <strong>quand vous jouez le plus</strong> : grille 7 jours × 24 heures. Identifiez vos
+                    créneaux habituels et optimisez votre planning de sessions.</p>
+            </div>
+            <div class="heatmap-card glass-panel">
+                <img src="screen_heatmap_field.png" alt="Heatmap Qualité du Field SpinNova" class="lightbox-trigger">
+                <h3>🐟 Qualité du Field</h3>
+                <p>Découvrez <strong>quand le field est le plus soft</strong>. Le ratio Fish / Reg par créneau horaire
+                    vous montre exactement quand jouer pour maximiser votre edge.</p>
+            </div>
+        </div>
+
+        <div class="magic-switch glass-panel" style="margin-top: 2rem;">
+            <h3>💰 Filtre par Buy-in</h3>
+            <p>Sélectionnez un buy-in spécifique (1€, 2€, 5€...) pour affiner les heatmaps. Les créneaux rentables ne
+                sont pas les mêmes selon la limite !</p>
+        </div>
     </section>
 
     <!-- Teaser Packs de Badges -->
@@ -354,6 +382,57 @@
             <p class="copyright">© 2026 SpinNova. HUD exclusif réseau iPoker.</p>
         </div>
     </footer>
+
+    <!-- LIGHTBOX Overlay -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <img src="" alt="Zoom" id="lightboxImg">
+        <span class="lightbox-hint">Cliquez n'importe où pour fermer</span>
+    </div>
+
+    <script>
+        // Lightbox - Click to enlarge any image
+        (function () {
+            const overlay = document.getElementById('lightboxOverlay');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const closeBtn = document.getElementById('lightboxClose');
+
+            // Target all enlargeable images
+            const selectors = '.screen-img, .hud-screenshot, .lightbox-trigger, .heatmap-card img';
+
+            document.querySelectorAll(selectors).forEach(function (img) {
+                img.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    lightboxImg.src = this.src;
+                    lightboxImg.alt = this.alt;
+                    overlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Close on overlay click
+            overlay.addEventListener('click', function (e) {
+                if (e.target !== lightboxImg) {
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Close on button click
+            closeBtn.addEventListener('click', function () {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && overlay.classList.contains('active')) {
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        })();
+    </script>
 </body>
 
 </html>

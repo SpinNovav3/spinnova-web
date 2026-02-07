@@ -763,3 +763,140 @@ h1 {
         letter-spacing: 0.3rem;
     }
 }
+
+/* ===== LIGHTBOX - Click to Enlarge Images ===== */
+.screen-img,
+.hud-screenshot,
+.lightbox-trigger {
+    cursor: zoom-in;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.screen-img:hover,
+.hud-screenshot:hover,
+.lightbox-trigger:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px rgba(6, 182, 212, 0.25);
+}
+
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+    animation: lightboxFadeIn 0.25s ease;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+}
+
+.lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 88vh;
+    border-radius: 12px;
+    border: 2px solid var(--glass-border);
+    box-shadow: 0 20px 80px rgba(6, 182, 212, 0.2);
+    animation: lightboxZoomIn 0.3s ease;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    z-index: 10000;
+    transition: color 0.2s, transform 0.2s;
+    background: none;
+    border: none;
+    font-family: inherit;
+    line-height: 1;
+}
+
+.lightbox-close:hover {
+    color: var(--accent);
+    transform: scale(1.2);
+}
+
+.lightbox-hint {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+@keyframes lightboxFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes lightboxZoomIn {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ===== Heatmap Dual Section ===== */
+.heatmap-dual-section {
+    padding: 4rem 10%;
+    background: linear-gradient(180deg, transparent, rgba(109, 40, 217, 0.03));
+}
+
+.heatmap-dual-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.heatmap-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.heatmap-card {
+    padding: 2rem;
+    text-align: center;
+}
+
+.heatmap-card img {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    margin-bottom: 1.5rem;
+}
+
+.heatmap-card h3 {
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.heatmap-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
