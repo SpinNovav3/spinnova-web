@@ -117,6 +117,50 @@
         return 'Unknown';
     }
 
+    function getOS() {
+        const ua = navigator.userAgent;
+        if (ua.includes('Windows NT 10')) return 'Windows 10/11';
+        if (ua.includes('Windows NT')) return 'Windows';
+        if (ua.includes('Mac OS X')) return 'macOS';
+        if (ua.includes('CrOS')) return 'ChromeOS';
+        if (ua.includes('Android')) return 'Android';
+        if (ua.includes('iPhone') || ua.includes('iPad')) return 'iOS';
+        if (ua.includes('Linux')) return 'Linux';
+        return 'Unknown';
+    }
+
+    function getScreenResolution() {
+        return window.screen.width + 'x' + window.screen.height;
+    }
+
+    function getSessionPageCount() {
+        let count = parseInt(sessionStorage.getItem('spinnova_page_count') || '0', 10);
+        count++;
+        sessionStorage.setItem('spinnova_page_count', count.toString());
+        return count;
+    }
+
+    function getUTMParams() {
+        const params = new URLSearchParams(window.location.search);
+        const utm = {};
+        ['utm_source', 'utm_medium', 'utm_campaign'].forEach(key => {
+            const val = params.get(key);
+            if (val) utm[key] = val;
+        });
+        return Object.keys(utm).length > 0 ? utm : null;
+    }
+
+    // Scroll depth tracking
+    let maxScrollDepth = 0;
+    window.addEventListener('scroll', function () {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight > 0) {
+            const percent = Math.round((scrollTop / docHeight) * 100);
+            if (percent > maxScrollDepth) maxScrollDepth = percent;
+        }
+    });
+
     function getLanguageInfo() {
         const lang = navigator.language || navigator.userLanguage || 'unknown';
         // Map common language codes to country flags
@@ -177,6 +221,10 @@
             referrer: getReferrerInfo(),
             device: getDeviceType(),
             browser: getBrowser(),
+            os: getOS(),
+            screen_resolution: getScreenResolution(),
+            session_page_count: getSessionPageCount(),
+            utm: getUTMParams(),
             language: langInfo.code,
             flag: langInfo.flag,
             is_french: langInfo.isFrench,
@@ -321,6 +369,56 @@
     // =========================================================================
     // INITIALIZATION
     // =========================================================================
+
+    // Send scroll depth + time on page when user leaves
+    function sendEngagementData() {
+        const timeOnPage = Math.round((Date.now() - pageLoadTime) / 1000);
+        if (timeOnPage < 2) return; // Skip bounces under 2 seconds
+
+        const engagementData = {
+            id: 'eng_' + Date.now().toString(36),
+            visitor_id: getVisitorId(),
+            timestamp: new Date().toISOString(),
+            page: window.location.pathname,
+            type: 'engagement',
+            scroll_depth: maxScrollDepth,
+            time_on_page: timeOnPage
+        };
+        log('Engagement data:', engagementData);
+
+        // Use fetch with keepalive for reliability on page unload
+        try {
+            fetch(CONFIG.JSONBIN_URL + '/latest', {
+                method: 'GET',
+                headers: { 'X-Master-Key': CONFIG.API_KEY },
+                keepalive: true
+            })
+                .then(r => r.json())
+                .then(data => {
+                    let visits = data.record?.visits || [];
+                    visits.push(engagementData);
+                    if (visits.length > CONFIG.MAX_VISITS_STORED) {
+                        visits = visits.slice(-CONFIG.MAX_VISITS_STORED);
+                    }
+                    return fetch(CONFIG.JSONBIN_URL, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-Master-Key': CONFIG.API_KEY
+                        },
+                        body: JSON.stringify({ visits: visits }),
+                        keepalive: true
+                    });
+                })
+                .then(() => log('✅ Engagement sent'))
+                .catch(err => log('❌ Engagement error:', err.message));
+        } catch (e) {
+            log('❌ Engagement send failed:', e.message);
+        }
+    }
+
+    const pageLoadTime = Date.now();
+    window.addEventListener('beforeunload', sendEngagementData);
 
     // Run on page load
     if (document.readyState === 'loading') {
