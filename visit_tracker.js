@@ -417,6 +417,65 @@
         }
     }
 
+    // =========================================================================
+    // DOWNLOAD CLICK TRACKING
+    // =========================================================================
+    function setupDownloadTracking() {
+        // Intercepter TOUS les clics sur des liens de téléchargement
+        document.addEventListener('click', function (e) {
+            var link = e.target.closest('a');
+            if (!link) return;
+
+            var href = link.getAttribute('href') || '';
+            var isDirectDownload = href.indexOf('Spinova_Release') !== -1 || href.indexOf('.zip') !== -1;
+            var isDownloadPage = href.indexOf('telechargement.html') !== -1 && window.location.pathname.indexOf('telechargement') === -1;
+
+            if (!isDirectDownload && !isDownloadPage) return;
+
+            var downloadType = isDirectDownload ? 'direct_download' : 'download_page_click';
+            var visitorId = localStorage.getItem('sn_visitor_id') || 'unknown';
+            var buttonText = (link.textContent || '').trim().substring(0, 100);
+
+            var downloadRecord = {
+                id: 'dl_' + Date.now() + '_' + Math.random().toString(36).substring(2, 8),
+                type: 'download',
+                download_type: downloadType,
+                visitor_id: visitorId,
+                page: window.location.pathname,
+                button_text: buttonText,
+                target_url: href.substring(0, 200),
+                timestamp: new Date().toISOString()
+            };
+
+            log('📥 Download click tracked:', downloadType, 'from', window.location.pathname);
+
+            // Envoyer à JSONBin (ne pas bloquer le téléchargement)
+            try {
+                fetch(JSONBIN_URL, {
+                    method: 'GET',
+                    headers: { 'X-Access-Key': API_KEY }
+                })
+                    .then(function (r) { return r.json(); })
+                    .then(function (data) {
+                        var visits = data.record || [];
+                        visits.push(downloadRecord);
+                        return fetch(JSONBIN_URL, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-Access-Key': API_KEY
+                            },
+                            body: JSON.stringify(visits)
+                        });
+                    })
+                    .then(function () { log('✅ Download event sent to JSONBin'); })
+                    .catch(function (err) { log('❌ Download tracking error:', err.message); });
+            } catch (e) {
+                log('❌ Download tracking failed:', e.message);
+            }
+        });
+    }
+
     const pageLoadTime = Date.now();
     window.addEventListener('beforeunload', sendEngagementData);
 
