@@ -367,13 +367,26 @@
     }
 
     // =========================================================================
-    // INITIALIZATION
+    // ENGAGEMENT TRACKING (RELIABLE)
     // =========================================================================
+    // Strategy: Send engagement updates periodically while user is on page
+    // This avoids the unreliable beforeunload GET→PUT chain that browsers kill
 
-    // Send scroll depth + time on page when user leaves
-    function sendEngagementData() {
+    let _lastSentScrollDepth = 0;
+    let _lastSentTimeOnPage = 0;
+    let _engagementSendInProgress = false;
+
+    async function sendEngagementData(isFinal) {
+        if (_engagementSendInProgress) return;
+
         const timeOnPage = Math.round((Date.now() - pageLoadTime) / 1000);
-        if (timeOnPage < 2) return; // Skip bounces under 2 seconds
+        if (timeOnPage < 3) return; // Skip very short visits
+
+        // Only send if there's meaningful new data since last send
+        if (!isFinal && maxScrollDepth === _lastSentScrollDepth &&
+            Math.abs(timeOnPage - _lastSentTimeOnPage) < 10) {
+            return; // No significant change, skip
+        }
 
         const engagementData = {
             id: 'eng_' + Date.now().toString(36),
@@ -386,34 +399,45 @@
         };
         log('Engagement data:', engagementData);
 
-        // Use fetch with keepalive for reliability on page unload
+        _engagementSendInProgress = true;
+
         try {
-            fetch(CONFIG.JSONBIN_URL + '/latest', {
+            // GET current data
+            const getResponse = await fetch(CONFIG.JSONBIN_URL + '/latest', {
                 method: 'GET',
                 headers: { 'X-Master-Key': CONFIG.API_KEY },
                 keepalive: true
-            })
-                .then(r => r.json())
-                .then(data => {
-                    let visits = data.record?.visits || [];
-                    visits.push(engagementData);
-                    if (visits.length > CONFIG.MAX_VISITS_STORED) {
-                        visits = visits.slice(-CONFIG.MAX_VISITS_STORED);
-                    }
-                    return fetch(CONFIG.JSONBIN_URL, {
-                        method: 'PUT',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'X-Master-Key': CONFIG.API_KEY
-                        },
-                        body: JSON.stringify({ visits: visits }),
-                        keepalive: true
-                    });
-                })
-                .then(() => log('✅ Engagement sent'))
-                .catch(err => log('❌ Engagement error:', err.message));
+            });
+
+            if (!getResponse.ok) throw new Error('GET failed');
+
+            const data = await getResponse.json();
+            let visits = data.record?.visits || [];
+            visits.push(engagementData);
+            if (visits.length > CONFIG.MAX_VISITS_STORED) {
+                visits = visits.slice(-CONFIG.MAX_VISITS_STORED);
+            }
+
+            // PUT updated data
+            const putResponse = await fetch(CONFIG.JSONBIN_URL, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Master-Key': CONFIG.API_KEY
+                },
+                body: JSON.stringify({ visits: visits }),
+                keepalive: true
+            });
+
+            if (putResponse.ok) {
+                _lastSentScrollDepth = maxScrollDepth;
+                _lastSentTimeOnPage = timeOnPage;
+                log('✅ Engagement sent (scroll=' + maxScrollDepth + '%, time=' + timeOnPage + 's)');
+            }
         } catch (e) {
-            log('❌ Engagement send failed:', e.message);
+            log('❌ Engagement error:', e.message);
+        } finally {
+            _engagementSendInProgress = false;
         }
     }
 
@@ -476,8 +500,31 @@
         });
     }
 
+    // =========================================================================
+    // INITIALIZATION
+    // =========================================================================
+
     const pageLoadTime = Date.now();
-    window.addEventListener('beforeunload', sendEngagementData);
+
+    // PERIODIC HEARTBEAT: Send engagement data every 15 seconds while on page
+    // This is the KEY fix — we send data while the page is still alive
+    const _engagementInterval = setInterval(function () {
+        sendEngagementData(false);
+    }, 15000);  // Every 15 seconds
+
+    // VISIBILITY CHANGE: More reliable than beforeunload for final data
+    document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') {
+            clearInterval(_engagementInterval);
+            sendEngagementData(true);
+        }
+    });
+
+    // BEFOREUNLOAD: Last resort fallback (unreliable but doesn't hurt)
+    window.addEventListener('beforeunload', function () {
+        clearInterval(_engagementInterval);
+        sendEngagementData(true);
+    });
 
     // Run on page load
     if (document.readyState === 'loading') {
