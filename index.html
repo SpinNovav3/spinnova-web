@@ -32,6 +32,11 @@
 <body>
     <div class="background-glow"></div>
 
+    <!-- TRIAL BANNER -->
+    <div class="trial-banner">
+        🆓 ESSAI GRATUIT 3 JOURS — Sans carte bancaire, sans engagement
+    </div>
+
     <nav class="navbar">
         <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Spin<span
                 class="highlight">Nova</span></a>
@@ -60,298 +65,287 @@
         }
     </script>
 
-    <!-- HERO -->
-    <header class="hero">
-        <div class="hero-content">
+    <!-- ============================== -->
+    <!-- ÉCRAN 1 — HERO (L'ACCROCHE)    -->
+    <!-- ============================== -->
+    <header class="hero hero-split">
+        <div class="hero-text">
             <span class="badge-new">Réseau iPoker</span>
-            <h1><span style="font-size: 0.5em; display: block; opacity: 0.8; margin-bottom: 0.5rem;">Logiciel de
-                    Profilage Poker</span>Marre de perdre du temps à prendre des notes pendant que votre <span
-                    class="gradient-text">Timebank</span> fond ?</h1>
-            <p>J'ai développé <strong>SpinNova</strong>, un logiciel de profilage conçu par un grinder, pour les
-                grinders de Spin & Go sur iPoker.<br><em>L'objectif : Profiler vos vilains en 2 clics, sans casser votre
-                    rythme.</em></p>
+            <h1>Profilez vos adversaires en <span class="gradient-text">2 clics</span></h1>
+            <p class="hero-tagline">Arrêtez de deviner. Commencez à profiler.</p>
+            <p class="hero-desc"><strong>SpinNova</strong> est un logiciel de profilage conçu par un grinder, pour les
+                grinders de Spin & Go sur iPoker.</p>
             <div class="cta-group">
-                <a href="telechargement.html" class="btn-primary">
+                <a href="telechargement.html" class="btn-primary large">
                     📥 Télécharger & Essai Gratuit
                 </a>
             </div>
-            <p class="sub-cta">Compatible Windows 10/11 - Réseau iPoker uniquement</p>
+            <p class="sub-cta">Compatible Windows 10/11 · Réseau iPoker (PMU, FDJ, Bwin…)</p>
+        </div>
+        <div class="hero-visual">
+            <img src="screen_accueil.png" alt="Dashboard SpinNova - Analyse de sessions Spin & Go"
+                class="hero-img lightbox-trigger">
         </div>
     </header>
 
-    <!-- WHY SPINOVA -->
-    <section id="features" class="features-section">
-        <h2>Pourquoi <span class="highlight">SpinNova</span> ?</h2>
-        <div class="features-grid">
-            <div class="feature-card glass-panel">
-                <div class="icon">⚡</div>
-                <h3>Rapidité Absolue</h3>
-                <p>Saisie de notes et badges via raccourcis optimisés.</p>
+    <!-- ============================== -->
+    <!-- ÉCRAN 2 — CARROUSEL PRODUIT     -->
+    <!-- ============================== -->
+    <section id="showcase" class="carousel-section">
+        <h2>Découvrez <span class="highlight">SpinNova</span> en images</h2>
+        <p class="section-subtitle">Cliquez sur les images pour zoomer · Naviguez avec les flèches</p>
+
+        <div class="carousel-container">
+            <button class="carousel-arrow carousel-prev" id="carouselPrev" aria-label="Slide précédente">‹</button>
+
+            <div class="carousel-track" id="carouselTrack">
+
+                <!-- Slide 1: HUD Large 3-Way vs HU -->
+                <div class="carousel-slide">
+                    <div class="slide-header">
+                        <span class="mode-tag large">🔹 Mode Large</span>
+                        <span class="slide-title">3 Lignes — Le Standard</span>
+                    </div>
+                    <div class="slide-images dual">
+                        <div class="slide-img-wrapper">
+                            <span class="img-label">3-Way</span>
+                            <img src="hud_large.png" alt="HUD Large en 3-Way" class="lightbox-trigger">
+                        </div>
+                        <div class="slide-img-wrapper">
+                            <span class="img-label">Heads-Up</span>
+                            <img src="hud_large_hu.png" alt="HUD Large en Heads-Up" class="lightbox-trigger">
+                        </div>
+                    </div>
+                    <p class="slide-desc">En 3-Way, les badges du joueur de gauche (BvB SB) sont différents de ceux à
+                        droite (BTN) car les dynamiques changent selon la position.</p>
+                </div>
+
+                <!-- Slide 2: HUD Large Full -->
+                <div class="carousel-slide">
+                    <div class="slide-header">
+                        <span class="mode-tag large">🔹 Mode Large</span>
+                        <span class="slide-title">Vue Complète</span>
+                    </div>
+                    <div class="slide-images single">
+                        <img src="hud_large_full.png" alt="HUD Large vue complète avec badges" class="lightbox-trigger">
+                    </div>
+                    <p class="slide-desc">Tous les badges déployés : Limp Pot (Pre & Post) et Open Pot (Pre & Post).
+                        Le maximum d'informations pour les spots importants.</p>
+                </div>
+
+                <!-- Slide 3: HUD Compact 3-Way vs HU -->
+                <div class="carousel-slide">
+                    <div class="slide-header">
+                        <span class="mode-tag compact">🔹 Mode Compact</span>
+                        <span class="slide-title">2 Lignes — Le Focus</span>
+                    </div>
+                    <div class="slide-images dual">
+                        <div class="slide-img-wrapper">
+                            <span class="img-label">3-Way</span>
+                            <img src="hud_compact.png" alt="HUD Compact en 3-Way" class="lightbox-trigger">
+                        </div>
+                        <div class="slide-img-wrapper">
+                            <span class="img-label">Heads-Up</span>
+                            <img src="hud_compact_hu.png" alt="HUD Compact en Heads-Up" class="lightbox-trigger">
+                        </div>
+                    </div>
+                    <p class="slide-desc">Tous les badges mélangés sur une ligne, triés par importance. Idéal pour le
+                        Heads-Up intensif ou les tables encombrées.</p>
+                </div>
+
+                <!-- Slide 4: HUD Mini 3-Way vs HU -->
+                <div class="carousel-slide">
+                    <div class="slide-header">
+                        <span class="mode-tag mini">🔹 Mode Mini</span>
+                        <span class="slide-title">1 Ligne — Le Minimaliste</span>
+                    </div>
+                    <div class="slide-images dual">
+                        <div class="slide-img-wrapper">
+                            <span class="img-label">3-Way</span>
+                            <img src="hud_mini.png" alt="HUD Mini en 3-Way" class="lightbox-trigger">
+                        </div>
+                        <div class="slide-img-wrapper">
+                            <span class="img-label">Heads-Up</span>
+                            <img src="hud_mini_hu.png" alt="HUD Mini en Heads-Up" class="lightbox-trigger">
+                        </div>
+                    </div>
+                    <p class="slide-desc">Le strict minimum pour le mass-grind (12+ tables). Halo coloré = profil du
+                        joueur (Fish 🐟 / Reg 🤖). Chaque pixel compte.</p>
+                </div>
+
+                <!-- Slide 5: Dashboard -->
+                <div class="carousel-slide">
+                    <div class="slide-header">
+                        <span class="mode-tag" style="color: var(--accent);">📊 Dashboard</span>
+                        <span class="slide-title">Votre Activité en Un Coup d'Œil</span>
+                    </div>
+                    <div class="slide-images single">
+                        <img src="screen_accueil.png" alt="Dashboard analytique SpinNova" class="lightbox-trigger">
+                    </div>
+                    <p class="slide-desc">Graphiques, KPIs, heatmaps et top adversaires. Filtrez par buy-in pour
+                        analyser chaque limite séparément.</p>
+                </div>
+
+                <!-- Slide 6: Heatmap Field -->
+                <div class="carousel-slide">
+                    <div class="slide-header">
+                        <span class="mode-tag" style="color: #10b981;">🐟 Heatmap Qualité du Field</span>
+                        <span class="slide-title">Découvrez QUAND le Field est le Plus Soft</span>
+                    </div>
+                    <div class="slide-images single">
+                        <img src="screen_heatmap_field.png" alt="Heatmap qualité du field SpinNova"
+                            class="lightbox-trigger">
+                    </div>
+                    <p class="slide-desc">Le ratio Fish / Reg par créneau horaire, 7 jours × 24 heures. Jouez quand le
+                        field est le plus faible pour maximiser votre edge.</p>
+                </div>
+
+                <!-- Slide 7: Heatmap Rencontres -->
+                <div class="carousel-slide">
+                    <div class="slide-header">
+                        <span class="mode-tag" style="color: #f59e0b;">🔥 Heatmap Rencontres</span>
+                        <span class="slide-title">Visualisez Vos Sessions</span>
+                    </div>
+                    <div class="slide-images single">
+                        <img src="screen_heatmap_rencontres.png" alt="Heatmap rencontres SpinNova"
+                            class="lightbox-trigger">
+                    </div>
+                    <p class="slide-desc">Identifiez vos créneaux habituels. Optimisez votre planning de sessions en
+                        un coup d'œil.</p>
+                </div>
+
+                <!-- Slide 8: Joueurs -->
+                <div class="carousel-slide">
+                    <div class="slide-header">
+                        <span class="mode-tag" style="color: var(--accent);">👥 Onglet Joueurs</span>
+                        <span class="slide-title">Analysez Chaque Adversaire</span>
+                    </div>
+                    <div class="slide-images triple">
+                        <img src="screen_joueurs.png" alt="Onglet Joueurs - Liste" class="lightbox-trigger">
+                        <img src="screen_joueurs_2.png" alt="Onglet Joueurs - Profil" class="lightbox-trigger">
+                        <img src="screen_joueurs_3.png" alt="Onglet Joueurs - Détails" class="lightbox-trigger">
+                    </div>
+                    <p class="slide-desc">Heatmap individuelle, badges par position, historique complet. Tout est là
+                        pour préparer vos sessions.</p>
+                </div>
+
+                <!-- Slide 9: Quick Notes -->
+                <div class="carousel-slide">
+                    <div class="slide-header">
+                        <span class="mode-tag" style="color: #e67e22;">⚡ Notes Rapides</span>
+                        <span class="slide-title">1 Clic = 1 Note</span>
+                    </div>
+                    <div class="slide-images single">
+                        <img src="screen_quick_notes.png" alt="Quick Notes SpinNova" class="lightbox-trigger">
+                    </div>
+                    <p class="slide-desc">Créez vos templates tactiques personnalisés (Preflop, Postflop, Général).
+                        Couleurs custom, application instantanée pendant le jeu.</p>
+                </div>
+
+                <!-- Slide 10: HUD Editor -->
+                <div class="carousel-slide">
+                    <div class="slide-header">
+                        <span class="mode-tag" style="color: #ec4899;">🎨 Éditeur HUD</span>
+                        <span class="slide-title">Personnalisez Tout</span>
+                    </div>
+                    <div class="slide-images dual">
+                        <div class="slide-img-wrapper">
+                            <img src="screen_hud_editor.png" alt="HUD Editor SpinNova" class="lightbox-trigger">
+                        </div>
+                        <div class="slide-img-wrapper">
+                            <img src="screen_hud_editor_2.png" alt="HUD Editor SpinNova 2" class="lightbox-trigger">
+                        </div>
+                    </div>
+                    <p class="slide-desc">Couleurs de fond, bordures, textes — personnalisez chaque élément. Preview
+                        en temps réel sur table de poker.</p>
+                </div>
+
+                <!-- Slide 11: Réglages HUD -->
+                <div class="carousel-slide">
+                    <div class="slide-header">
+                        <span class="mode-tag" style="color: var(--text-muted);">📐 Réglages HUD</span>
+                        <span class="slide-title">Échelle & Opacité</span>
+                    </div>
+                    <div class="slide-images single">
+                        <img src="hud_scale_opacity.png" alt="Réglages échelle et opacité HUD" class="lightbox-trigger">
+                    </div>
+                    <p class="slide-desc">Ajustez la taille du HUD (0.5x → 2.0x) et l'opacité au repos. S'adapte à
+                        tous les écrans et configurations multi-HUD.</p>
+                </div>
+
+                <!-- Slide 12: Import/Export -->
+                <div class="carousel-slide">
+                    <div class="slide-header">
+                        <span class="mode-tag" style="color: var(--accent);">📦 Import / Export</span>
+                        <span class="slide-title">Migrez & Partagez</span>
+                    </div>
+                    <div class="slide-images dual">
+                        <div class="slide-img-wrapper">
+                            <img src="screen_import_export.png" alt="Import Export SpinNova" class="lightbox-trigger">
+                        </div>
+                        <div class="slide-img-wrapper">
+                            <img src="screen_import_export_2.png" alt="Import Export SpinNova 2"
+                                class="lightbox-trigger">
+                        </div>
+                    </div>
+                    <p class="slide-desc">Migrez depuis SiQnotes en 1 clic. Partagez vos données et importez des packs
+                        de badges premium.</p>
+                </div>
+
+                <!-- Slide 13: Personnalisation -->
+                <div class="carousel-slide">
+                    <div class="slide-header">
+                        <span class="mode-tag" style="color: #8b5cf6;">🎨 Personnalisation</span>
+                        <span class="slide-title">Votre Interface, Votre Style</span>
+                    </div>
+                    <div class="slide-images single">
+                        <img src="screen_personnalisation.png" alt="Personnalisation interface SpinNova"
+                            class="lightbox-trigger">
+                    </div>
+                    <p class="slide-desc">Interface entièrement personnalisable. Couleurs, thèmes, disposition —
+                        faites-en votre outil.</p>
+                </div>
+
+                <!-- Slide 14: Paramètres -->
+                <div class="carousel-slide">
+                    <div class="slide-header">
+                        <span class="mode-tag" style="color: var(--text-muted);">⚙️ Paramètres</span>
+                        <span class="slide-title">Configurez SpinNova</span>
+                    </div>
+                    <div class="slide-images single">
+                        <img src="screen_parametres.png" alt="Paramètres SpinNova" class="lightbox-trigger">
+                    </div>
+                    <p class="slide-desc">Gérez vos rooms, répertoires, et préférences. SpinNova s'adapte à votre
+                        setup.</p>
+                </div>
+
             </div>
-            <div class="feature-card glass-panel">
-                <div class="icon">👁️</div>
-                <h3>Lecture Instantanée</h3>
-                <p>HUD visuel épuré, plus besoin de plisser les yeux.</p>
-            </div>
-            <div class="feature-card glass-panel">
-                <div class="icon">🎯</div>
-                <h3>Zéro Configuration</h3>
-                <p>"Game-aware", il sait où vous êtes et ce que vous faites.</p>
-            </div>
-            <div class="feature-card glass-panel">
-                <div class="icon">🌍</div>
-                <h3>Universel</h3>
-                <p>Compatible FR / EN / ES / IT.</p>
-            </div>
+
+            <button class="carousel-arrow carousel-next" id="carouselNext" aria-label="Slide suivante">›</button>
         </div>
+
+        <!-- Dots Navigation -->
+        <div class="carousel-dots" id="carouselDots"></div>
     </section>
 
-    <!-- HUD Section -->
-    <section id="hud" class="hud-section">
-        <h2>Le HUD <span class="highlight">Intelligent</span></h2>
-        <p class="section-subtitle">Une fois la partie lancée, SpinNova déploie sa puissance directement sur vos tables
-            iPoker.</p>
-
-        <div class="hud-modes">
-            <!-- Large -->
-            <div class="hud-mode glass-panel">
-                <div class="hud-mode-header">
-                    <span class="mode-tag large">🔹 Mode Large</span>
-                    <span class="mode-subtitle">L'Standard - 3 Lignes</span>
-                </div>
-                <img src="hud_large.png"
-                    alt="Interface HUD Large SpinNova pour le profilage des joueurs de poker en 3-way sur iPoker"
-                    class="hud-screenshot">
-                <ul>
-                    <li><strong>Ligne 1 (Header)</strong> : Pseudo + Position + Indicateurs</li>
-                    <li><strong>Ligne 2 (Limp Pot)</strong> : Badges pots limpés (Pre & Post)</li>
-                    <li><strong>Ligne 3 (Open Pot)</strong> : Badges pots relancés (Pre & Post)</li>
-                </ul>
-                <p class="scenario">Scénario idéal : Spin & Go (3-Way) quand on veut un maximum d'info.</p>
-            </div>
-
-            <!-- Compact -->
-            <div class="hud-mode glass-panel">
-                <div class="hud-mode-header">
-                    <span class="mode-tag compact">🔹 Mode Compact</span>
-                    <span class="mode-subtitle">Le Focus - 2 Lignes</span>
-                </div>
-                <img src="hud_compact.png" alt="Interface HUD Compact SpinNova pour le Heads-Up Spin & Go"
-                    class="hud-screenshot">
-                <ul>
-                    <li><strong>Ligne 1</strong> : Pseudo + Position + Indicateurs</li>
-                    <li><strong>Ligne 2</strong> : Tous les badges mélangés, triés par importance</li>
-                </ul>
-                <p class="scenario">Scénario idéal : Heads-Up intensif ou tables encombrées.</p>
-            </div>
-
-            <!-- Mini -->
-            <div class="hud-mode glass-panel">
-                <div class="hud-mode-header">
-                    <span class="mode-tag mini">🔹 Mode Mini</span>
-                    <span class="mode-subtitle">Le Minimaliste - 1 Ligne</span>
-                </div>
-                <img src="hud_mini.png" alt="Interface HUD Mini SpinNova pour le multitabling intensif"
-                    class="hud-screenshot">
-                <ul>
-                    <li><strong>Unique Ligne</strong> : Pseudo (5 lettres) + Mode (HU/3W) + Badges</li>
-                    <li><strong>Halo Visuel</strong> : Bordure lumineuse indiquant le profil</li>
-                </ul>
-                <p class="scenario">Scénario idéal : Mass Grinding (12+ tables) où chaque pixel compte.</p>
-            </div>
-        </div>
-
-        <!-- Magic Switch -->
-        <div class="magic-switch glass-panel">
-            <h3>🪄 Le "Magic Switch" : L'Adaptabilité Totale</h3>
-            <p>Un Clic, Une Métamorphose. Un petit bouton discret sur le HUD vous permet de cycler instantanément entre
-                les modes Large, Compact et Mini.</p>
-            <p class="highlight-text">Scénario de rêve : Commencez en Mode Mini sur 12 tables. Vous touchez un x100 ?
-                Clic. Passez en Mode Large pour ce tournoi spécifique. C'est ça, la puissance SpinNova.</p>
-        </div>
-
-        <!-- Réglages Avancés -->
-        <div class="magic-switch glass-panel" style="margin-top: 2rem;">
-            <h3>⚙️ Réglages Avancés du HUD</h3>
-            <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1rem;">
-                <div style="flex: 1; min-width: 250px;">
-                    <img src="hud_scale_opacity.png" alt="Réglages HUD"
-                        style="width: 100%; border-radius: 12px; border: 1px solid var(--color-border);">
-                </div>
-                <div style="flex: 1; min-width: 250px;">
-                    <p><strong>📐 Échelle Globale</strong><br>
-                        Ajustez la taille du HUD de <em>0.5x</em> (moitié) à <em>2.0x</em> (double). Parfait pour les
-                        écrans haute résolution.</p>
-                    <p style="margin-top: 1rem;"><strong>👁️ Opacité au Repos</strong><br>
-                        Le HUD devient semi-transparent quand votre souris n'est pas dessus. Idéal si vous utilisez
-                        plusieurs HUDs (SpinNova + Hand2Note...).</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- QUICK NOTES Section -->
-    <section id="quick-notes" class="features-section" style="padding: 4rem 2rem;">
-        <h2>⚡ Notes <span class="highlight">Rapides</span></h2>
-        <p class="section-subtitle">Profilez vos adversaires en 1 clic pendant le jeu, sans perdre de temps.</p>
-
-        <div class="magic-switch glass-panel" style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: center;">
-            <div style="flex: 1; min-width: 320px;">
-                <img src="screen_quick_notes.png" alt="Éditeur de Notes Rapides SpinNova"
-                    style="width: 100%; border-radius: 12px; border: 1px solid var(--color-border); box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
-            </div>
-            <div style="flex: 1; min-width: 280px;">
-                <h3 style="color: var(--color-primary); margin-bottom: 1rem;">🎯 Créez vos Templates</h3>
-                <p>Définissez vos propres notes tactiques avec couleurs personnalisées. Organisez-les par catégorie :
-                    <strong>Preflop</strong>, <strong>Postflop</strong>, <strong>Général</strong>.
-                </p>
-
-                <h3 style="color: var(--color-primary); margin-top: 1.5rem; margin-bottom: 1rem;">⚡ Application
-                    Instantanée</h3>
-                <p>Cliquez sur l'icône ⚡ dans le HUD, sélectionnez votre note, <em>boom</em> – c'est fait ! Plus rapide
-                    que n'importe quel autre système.</p>
-
-                <h3 style="color: var(--color-primary); margin-top: 1.5rem; margin-bottom: 1rem;">💾 Persistance Totale
-                </h3>
-                <p>Vos notes sont sauvegardées en base de données et rechargées automatiquement. Visible dans le HUD et
-                    le Player Manager.</p>
-            </div>
-        </div>
-
-        <div class="features-grid" style="margin-top: 2rem;">
-            <div class="feature-card glass-panel">
-                <div class="icon" style="background: #e67e22;">⚡</div>
-                <h3>1 Clic = 1 Note</h3>
-                <p>Plus besoin de taper. Sélectionnez, appliquez, jouez.</p>
-            </div>
-            <div class="feature-card glass-panel">
-                <div class="icon" style="background: #2ecc71;">🎨</div>
-                <h3>Couleurs Custom</h3>
-                <p>Fond et texte personnalisables pour chaque template.</p>
-            </div>
-            <div class="feature-card glass-panel">
-                <div class="icon" style="background: #9b59b6;">📊</div>
-                <h3>Preview au Survol</h3>
-                <p>Passez la souris sur l'icône ⚡ pour voir toutes les notes d'un joueur.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SCREENSHOTS Section -->
-    <section id="screens" class="screens-section">
-        <h2>L'Interface <span class="highlight">Complète</span></h2>
-
-        <div class="screen-grid">
-            <!-- Accueil -->
-            <div class="screen-card glass-panel">
-                <img src="screen_accueil.png"
-                    alt="Tableau de bord analytique SpinNova - Suivi de progression et résultats" class="screen-img">
-                <h3>🏠 Dashboard Analytique</h3>
-                <p>Visualisez votre activité par jour, explorez les <strong>2 heatmaps</strong> (Rencontres + Qualité du
-                    Field),
-                    filtrez par buy-in, et retrouvez vos top adversaires en un coup d'œil.</p>
-            </div>
-
-            <!-- Joueurs -->
-            <div class="screen-card glass-panel">
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <img src="screen_joueurs.png" alt="Joueurs - Analytics" class="screen-img"
-                        style="flex: 1; min-width: 200px;">
-                    <img src="screen_joueurs_2.png" alt="Joueurs - HUD Complet" class="screen-img"
-                        style="flex: 1; min-width: 200px;">
-                </div>
-                <h3>👥 Onglet Joueurs</h3>
-                <p>Analysez chaque adversaire : heatmap des rencontres, activité par jour, et configurez le HUD Complet
-                    off-table avec vos badges personnalisés par position.</p>
-            </div>
-
-            <!-- HUD Editor -->
-            <div class="screen-card glass-panel">
-                <img src="screen_hud_editor.png" alt="Éditeur HUD SpinNova" class="screen-img">
-                <h3>🎨 Personnalisation HUD</h3>
-                <p>Votre Atelier. Changez couleurs de fond, bordures, textes. Configurez différemment le HUD Compact et
-                    Mini.</p>
-            </div>
-
-            <!-- Badges -->
-            <div class="screen-card glass-panel">
-                <img src="screen_badges.png" alt="Gestionnaire Badges SpinNova" class="screen-img">
-                <h3>🎴 Gestionnaire de Badges</h3>
-                <p>L'Armurerie. Sélection multiple, import d'images, éditeur visuel. Onglets Preflop, Postflop,
-                    Imported.</p>
-            </div>
-
-            <!-- Import/Export -->
-            <div class="screen-card glass-panel">
-                <img src="screen_import_export.png" alt="Import/Export SpinNova" class="screen-img">
-                <h3>📦 Import / Export</h3>
-                <p>Partagez vos données avec d'autres utilisateurs. Migrez depuis SiQnotes en 1 clic. Importez vos packs
-                    de badges premium.</p>
-            </div>
-
-            <!-- Personnalisation -->
-            <div class="screen-card glass-panel">
-                <img src="screen_personnalisation.png" alt="Personnalisation SpinNova" class="screen-img">
-                <h3>🎨 Personnalisation</h3>
-                <p>Couleurs, bordures, styles : personnalisez l'interface entière. Prévisualisez vos changements en
-                    temps réel.</p>
-            </div>
-    </section>
-
-    <!-- DUAL HEATMAP Section -->
-    <section id="heatmaps" class="heatmap-dual-section">
-        <h2>📊 Deux <span class="highlight">Heatmaps</span> Puissantes</h2>
-        <p class="section-subtitle">Basculez entre la vue Rencontres et la vue Qualité du Field d'un simple clic.
-            Filtrez par buy-in pour cibler vos créneaux.</p>
-
-        <div class="heatmap-cards">
-            <div class="heatmap-card glass-panel">
-                <img src="screen_accueil.png" alt="Heatmap Rencontres SpinNova" class="lightbox-trigger">
-                <h3>🔥 Heatmap Rencontres</h3>
-                <p>Visualisez <strong>quand vous jouez le plus</strong> : grille 7 jours × 24 heures. Identifiez vos
-                    créneaux habituels et optimisez votre planning de sessions.</p>
-            </div>
-            <div class="heatmap-card glass-panel">
-                <img src="screen_heatmap_field.png" alt="Heatmap Qualité du Field SpinNova" class="lightbox-trigger">
-                <h3>🐟 Qualité du Field</h3>
-                <p>Découvrez <strong>quand le field est le plus soft</strong>. Le ratio Fish / Reg par créneau horaire
-                    vous montre exactement quand jouer pour maximiser votre edge.</p>
-            </div>
-        </div>
-
-        <div class="magic-switch glass-panel" style="margin-top: 2rem;">
-            <h3>💰 Filtre par Buy-in</h3>
-            <p>Sélectionnez un buy-in spécifique (1€, 2€, 5€...) pour affiner les heatmaps. Les créneaux rentables ne
-                sont pas les mêmes selon la limite !</p>
-        </div>
-    </section>
-
-    <!-- Teaser Packs de Badges -->
-    <section class="cta-section" style="padding: 4rem 2rem;">
+    <!-- ============================== -->
+    <!-- ÉCRAN 3 — CTA FINAL            -->
+    <!-- ============================== -->
+    <section class="cta-section cta-final">
         <div class="cta-box glass-panel">
-            <h2>🎁 Packs de Badges <span class="highlight">Premium</span></h2>
-            <p>Personnalisez votre HUD avec nos packs de badges exclusifs.<br>
-                <strong>9 packs disponibles</strong> : PRO Preflop, PRO Postflop, Profils, Émotions, et plus encore !
-            </p>
-            <a href="boutique.html" class="btn-primary large">
-                Découvrir la Boutique
-            </a>
-        </div>
-    </section>
-
-    <!-- CTA Final -->
-    <section class="cta-section">
-        <div class="cta-box glass-panel">
-            <h2>Prêt à passer au niveau supérieur ?</h2>
-            <p>Télécharge SpinNova et profite de <strong>3 jours d'essai gratuit</strong> pour transformer tes sessions.
-            </p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <h2>Essayez SpinNova <span class="gradient-text">Gratuitement</span></h2>
+            <p>3 jours complets, toutes fonctionnalités, sans engagement.</p>
+            <ul class="reassurance-list">
+                <li>✅ Pas de carte bancaire</li>
+                <li>✅ Pas d'engagement</li>
+                <li>✅ Support Discord inclus</li>
+            </ul>
+            <div class="cta-buttons">
                 <a href="telechargement.html" class="btn-primary large">
-                    🚀 Télécharger SpinNova
+                    📥 Télécharger SpinNova
                 </a>
-                <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord"
-                    style="padding: 1rem 2rem; border-radius: 12px;" target="_blank">
-                    Rejoindre Discord
+                <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord cta-discord" target="_blank">
+                    💬 Rejoindre Discord
                 </a>
             </div>
         </div>
@@ -391,18 +385,16 @@
     </div>
 
     <script>
-        // Lightbox - Click to enlarge any image
+        // ===== LIGHTBOX =====
         (function () {
             const overlay = document.getElementById('lightboxOverlay');
             const lightboxImg = document.getElementById('lightboxImg');
             const closeBtn = document.getElementById('lightboxClose');
 
-            // Target all enlargeable images
-            const selectors = '.screen-img, .hud-screenshot, .lightbox-trigger, .heatmap-card img';
-
-            document.querySelectorAll(selectors).forEach(function (img) {
+            document.querySelectorAll('.lightbox-trigger').forEach(function (img) {
                 img.addEventListener('click', function (e) {
                     e.preventDefault();
+                    e.stopPropagation();
                     lightboxImg.src = this.src;
                     lightboxImg.alt = this.alt;
                     overlay.classList.add('active');
@@ -410,7 +402,6 @@
                 });
             });
 
-            // Close on overlay click
             overlay.addEventListener('click', function (e) {
                 if (e.target !== lightboxImg) {
                     overlay.classList.remove('active');
@@ -418,19 +409,76 @@
                 }
             });
 
-            // Close on button click
             closeBtn.addEventListener('click', function () {
                 overlay.classList.remove('active');
                 document.body.style.overflow = '';
             });
 
-            // Close on Escape key
             document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape' && overlay.classList.contains('active')) {
                     overlay.classList.remove('active');
                     document.body.style.overflow = '';
                 }
             });
+        })();
+
+        // ===== CAROUSEL =====
+        (function () {
+            const track = document.getElementById('carouselTrack');
+            const slides = track.querySelectorAll('.carousel-slide');
+            const prevBtn = document.getElementById('carouselPrev');
+            const nextBtn = document.getElementById('carouselNext');
+            const dotsContainer = document.getElementById('carouselDots');
+            let currentIndex = 0;
+
+            // Create dots
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.classList.add('carousel-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            });
+
+            function goToSlide(index) {
+                if (index < 0) index = slides.length - 1;
+                if (index >= slides.length) index = 0;
+                currentIndex = index;
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+                // Update dots
+                dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentIndex);
+                });
+            }
+
+            prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+            nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (document.getElementById('lightboxOverlay').classList.contains('active')) return;
+                if (e.key === 'ArrowLeft') goToSlide(currentIndex - 1);
+                if (e.key === 'ArrowRight') goToSlide(currentIndex + 1);
+            });
+
+            // Touch/swipe support
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            track.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            track.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) goToSlide(currentIndex + 1);
+                    else goToSlide(currentIndex - 1);
+                }
+            }, { passive: true });
         })();
     </script>
 </body>
