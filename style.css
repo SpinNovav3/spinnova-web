@@ -1035,12 +1035,28 @@ h1 {
     background: linear-gradient(90deg, #059669, #10b981);
     color: white;
     text-align: center;
-    padding: 0.75rem 1rem;
+    padding: 0.6rem 1rem;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.9rem;
     letter-spacing: 0.5px;
-    position: relative;
-    z-index: 1001;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1002;
+}
+
+/* Push navbar below the trial banner */
+body:has(.trial-banner) .navbar {
+    top: 36px;
+}
+
+body:has(.trial-banner) .hero {
+    padding-top: 160px;
+}
+
+body:has(.trial-banner) .hero.hero-split {
+    padding-top: 180px;
 }
 
 /* ===== HERO SPLIT LAYOUT ===== */
@@ -1313,8 +1329,16 @@ h1 {
 /* ===== RESPONSIVE — New Components ===== */
 @media (max-width: 768px) {
     .trial-banner {
-        font-size: 0.85rem;
-        padding: 0.6rem 0.8rem;
+        font-size: 0.75rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    body:has(.trial-banner) .navbar {
+        top: 32px;
+    }
+
+    body:has(.trial-banner) .hero.hero-split {
+        padding: 160px 5% 3rem;
     }
 
     .hero.hero-split {
