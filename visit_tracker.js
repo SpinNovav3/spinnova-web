@@ -178,24 +178,51 @@
     }
 
     function getReferrerInfo() {
+        // On first page load, save the original referrer for the session
+        // so internal navigation doesn't overwrite the real source
+        const sessionRef = sessionStorage.getItem('spinnova_original_referrer');
         const ref = document.referrer;
-        if (!ref) return 'Direct';
-        try {
-            const url = new URL(ref);
-            const host = url.hostname.replace('www.', '');
-            // Simplify common referrers
-            if (host.includes('google')) return 'Google';
-            if (host.includes('discord')) return 'Discord';
-            if (host.includes('facebook')) return 'Facebook';
-            if (host.includes('twitter') || host.includes('x.com')) return 'Twitter/X';
-            if (host.includes('reddit')) return 'Reddit';
-            if (host.includes('clubpoker')) return 'ClubPoker';
-            if (host.includes('killtilt')) return 'KillTilt';
-            if (host.includes('github')) return 'GitHub';
-            return host;
-        } catch {
-            return 'Unknown';
+
+        // Determine the raw source for THIS page load
+        let source = 'Direct';
+        if (ref) {
+            try {
+                const url = new URL(ref);
+                const host = url.hostname.replace('www.', '');
+                // Ignore internal navigation (same site on GitHub Pages)
+                if (host === window.location.hostname) {
+                    // Internal nav — use the saved original referrer if available
+                    return sessionRef || 'Direct';
+                }
+                // Simplify common referrers
+                if (host.includes('google')) source = 'Google';
+                else if (host.includes('discord')) source = 'Discord';
+                else if (host.includes('facebook')) source = 'Facebook';
+                else if (host.includes('twitter') || host.includes('x.com')) source = 'Twitter/X';
+                else if (host.includes('reddit')) source = 'Reddit';
+                else if (host.includes('clubpoker')) source = 'ClubPoker';
+                else if (host.includes('killtilt')) source = 'KillTilt';
+                else if (host.includes('github.io')) source = 'Direct'; // Own GitHub Pages = internal
+                else if (host.includes('github')) source = 'GitHub';
+                else source = host;
+            } catch {
+                source = 'Unknown';
+            }
         }
+
+        // Check UTM source as fallback (e.g. links shared with ?utm_source=discord)
+        const params = new URLSearchParams(window.location.search);
+        const utmSource = params.get('utm_source');
+        if (utmSource && source === 'Direct') {
+            source = utmSource.charAt(0).toUpperCase() + utmSource.slice(1);
+        }
+
+        // Save the original referrer for this session (first page only)
+        if (!sessionRef) {
+            sessionStorage.setItem('spinnova_original_referrer', source);
+        }
+
+        return source;
     }
 
     function isImportantPage(page) {
