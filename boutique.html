@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boutique Badges - SpinNova</title>
+    <title>Boutique SpinNova - Licences HUD & Packs Badges</title>
     <meta name="description"
-        content="Découvrez nos packs de badges premium pour personnaliser votre HUD SpinNova. 270 badges uniques pour profiler vos adversaires.">
-    <!-- Cookie Consent + Clarity (RGPD) -->
+        content="Achetez votre licence SpinNova HUD pour Spin & Go iPoker. Dès 13,50€/mois. Découvrez aussi nos packs de badges premium pour personnaliser votre profilage.">
+    <!-- Cookie Consent + Clarity (RGPD) -->
+
     <script src="cookie-banner.js"></script>
 
     <!-- SpinNova Visit Tracker -->
@@ -52,609 +53,689 @@
 
     <!-- HERO BOUTIQUE -->
     <header class="boutique-hero">
-        <h1>🎁 Boutique <span class="gradient-text">Badges Premium</span></h1>
-        <p>Personnalisez votre HUD avec nos packs de badges exclusifs.<br>
-            Packs Thématiques à <strong>2.99€</strong> | Pack Pro Avancé à <strong>5.99€</strong> (90 badges !)</p>
+        <h1>🛒 Boutique <span class="gradient-text">SpinNova</span></h1>
+        <p>Licence HUD pour profiler vos adversaires · Packs de badges pour personnaliser votre profilage.<br>
+            <strong>Essai gratuit 3 jours</strong> · Dès <strong>13,50€/mois</strong> · Sans engagement
+        </p>
     </header>
 
-    <!-- PRICING INFO -->
-    <section class="pricing-info">
-        <div class="pricing-card glass-panel">
-            <div class="pricing-icon">🎨</div>
-            <h3>Pack Thématique</h3>
-            <div class="price">2.99€</div>
-            <p>30 badges (10 × 3 variations)</p>
-        </div>
-        <div class="pricing-card glass-panel featured">
-            <div class="pricing-icon">🚀</div>
-            <h3>Pack PRO Avancé</h3>
-            <div class="price">5.99€</div>
-            <p>90 badges (30 × 3 couleurs) - <span class="save">Best Value!</span></p>
-        </div>
-        <div class="pricing-card glass-panel">
-            <div class="pricing-icon">🎁</div>
-            <h3>Offre Spéciale</h3>
-            <div class="price">2 + 1</div>
-            <p>2 thématiques achetés = <span class="save">1 OFFERT !</span></p>
-        </div>
-    </section>
+    <!-- HUD LICENSES SECTION (PRODUIT PRINCIPAL) -->
+    <section class="hud-licenses">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 0.5rem;">🔥 Licences <span
+                class="highlight">SpinNova HUD</span></h2>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem;">Le logiciel complet de profilage
+            pour Spin & Go iPoker. Choisis ta formule.</p>
 
-    <!-- PACK 1 PRO PREFLOP -->
-    <section class="pack-section" id="pack1">
-        <div class="pack-header-full">
-            <div class="pack-title">
-                <span class="pack-num">PACK 1</span>
-                <h2>🎯 PRO Preflop</h2>
+        <div class="license-grid">
+            <!-- ESSAI -->
+            <div class="license-card glass-panel">
+                <h3>Essai 3 Jours</h3>
+                <span class="license-duration">Découverte</span>
+                <div class="license-price">0.00€</div>
+                <ul class="license-features">
+                    <li>Toutes les fonctionnalités</li>
+                    <li>Activation instantanée</li>
+                    <li>Idéal pour tester l'OCR</li>
+                </ul>
+                <a href="essai-gratuit.html" class="btn-primary"
+                    style="width: 100%; border-color: var(--accent); background: transparent;">🆓 Tester
+                    Gratuitement</a>
             </div>
-            <div class="pack-meta">
-                <span class="badge-total">30 badges</span>
-                <span class="pack-price-tag">2.99€</span>
-                <button class="btn-buy" onclick="openModal('Pack 1 - PRO Preflop', '2.99')">Acheter</button>
-            </div>
-        </div>
 
-        <div class="pack-description">
-            <p>📖 <strong>À quoi ça sert ?</strong> Notez les tendances preflop de vos adversaires. Chaque action existe
-                en 3 couleurs :</p>
-            <ul class="color-legend">
-                <li><span class="color-dot green"></span> <strong>Vert</strong> = Action rare (peu fréquente)</li>
-                <li><span class="color-dot blue"></span> <strong>Bleu</strong> = Action modérée (fréquence moyenne)</li>
-                <li><span class="color-dot red"></span> <strong>Rouge</strong> = Action fréquente (attention danger !)
-                </li>
-            </ul>
-        </div>
+            <!-- 1 MOIS -->
+            <div class="license-card glass-panel">
+                <h3>1 Mois</h3>
+                <span class="license-duration">Accès complet</span>
+                <div class="license-price">15€</div>
+                <ul class="license-features">
+                    <li>HUD Dynamique (Large/Compact/Mini)</li>
+                    <li>Notes Rapides Illimitées</li>
+                    <li>Player Manager Complet</li>
+                    <li>Support Discord Priority</li>
+                </ul>
+                <button class="btn-primary" style="width: 100%;"
+                    onclick="event.stopPropagation(); openModal('Licence HUD - 1 Mois', '15')">Prendre 1 Mois</button>
+            </div>
 
-        <div class="badges-grid">
-            <!-- LC -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_1_Pro_Preflop/LC_LOW.png" alt="LC Low">
-                    <img src="Pack_1_Pro_Preflop/LC_MED.png" alt="LC Med">
-                    <img src="Pack_1_Pro_Preflop/LC_HIGH.png" alt="LC High">
-                </div>
-                <div class="badge-info">
-                    <strong>LC</strong> - Limp-Call
-                    <small>Limp puis call une relance. Profil passif.</small>
-                </div>
-            </div>
-            <!-- LR -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_1_Pro_Preflop/LR_LOW.png" alt="LR Low">
-                    <img src="Pack_1_Pro_Preflop/LR_MED.png" alt="LR Med">
-                    <img src="Pack_1_Pro_Preflop/LR_HIGH.png" alt="LR High">
-                </div>
-                <div class="badge-info">
-                    <strong>LR</strong> - Limp-Raise
-                    <small>Limp puis relance (trap). Attention aux monsters !</small>
-                </div>
-            </div>
-            <!-- LF -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_1_Pro_Preflop/LF_LOW.png" alt="LF Low">
-                    <img src="Pack_1_Pro_Preflop/LF_MED.png" alt="LF Med">
-                    <img src="Pack_1_Pro_Preflop/LF_HIGH.png" alt="LF High">
-                </div>
-                <div class="badge-info">
-                    <strong>LF</strong> - Limp-Fold
-                    <small>Limp puis fold vs raise. Exploitable !</small>
-                </div>
-            </div>
-            <!-- OP -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_1_Pro_Preflop/OP_LOW.png" alt="OP Low">
-                    <img src="Pack_1_Pro_Preflop/OP_MED.png" alt="OP Med">
-                    <img src="Pack_1_Pro_Preflop/OP_HIGH.png" alt="OP High">
-                </div>
-                <div class="badge-info">
-                    <strong>OP</strong> - Open
-                    <small>Fréquence d'open raise. Rouge = wide range.</small>
-                </div>
-            </div>
-            <!-- OS -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_1_Pro_Preflop/OS_LOW.png" alt="OS Low">
-                    <img src="Pack_1_Pro_Preflop/OS_MED.png" alt="OS Med">
-                    <img src="Pack_1_Pro_Preflop/OS_HIGH.png" alt="OS High">
-                </div>
-                <div class="badge-info">
-                    <strong>OS</strong> - Open-Shove
-                    <small>Open all-in. Rouge = shove light !</small>
-                </div>
-            </div>
-            <!-- IS -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_1_Pro_Preflop/IS_LOW.png" alt="IS Low">
-                    <img src="Pack_1_Pro_Preflop/IS_MED.png" alt="IS Med">
-                    <img src="Pack_1_Pro_Preflop/IS_HIGH.png" alt="IS High">
-                </div>
-                <div class="badge-info">
-                    <strong>IS</strong> - Iso Size
-                    <small>Sizing d'isolation vs limpers.</small>
-                </div>
-            </div>
-            <!-- IAI -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_1_Pro_Preflop/IAI_LOW.png" alt="IAI Low">
-                    <img src="Pack_1_Pro_Preflop/IAI_MED.png" alt="IAI Med">
-                    <img src="Pack_1_Pro_Preflop/IAI_HIGH.png" alt="IAI High">
-                </div>
-                <div class="badge-info">
-                    <strong>IAI</strong> - Iso All-In
-                    <small>Iso shove vs limpers. Profil aggro.</small>
-                </div>
-            </div>
-            <!-- 3B -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_1_Pro_Preflop/3B_LOW.png" alt="3B Low">
-                    <img src="Pack_1_Pro_Preflop/3B_MED.png" alt="3B Med">
-                    <img src="Pack_1_Pro_Preflop/3B_HIGH.png" alt="3B High">
-                </div>
-                <div class="badge-info">
-                    <strong>3B</strong> - 3-Bet
-                    <small>Fréquence de 3-bet. Rouge = 3-bet light.</small>
-                </div>
-            </div>
-            <!-- F/OP -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_1_Pro_Preflop/F_OP_LOW.png" alt="F/OP Low">
-                    <img src="Pack_1_Pro_Preflop/F_OP_MED.png" alt="F/OP Med">
-                    <img src="Pack_1_Pro_Preflop/F_OP_HIGH.png" alt="F/OP High">
-                </div>
-                <div class="badge-info">
-                    <strong>F/OP</strong> - Fold vs Open
-                    <small>Fold face à un open. Tight player.</small>
-                </div>
-            </div>
-            <!-- COS -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_1_Pro_Preflop/COS_LOW.png" alt="COS Low">
-                    <img src="Pack_1_Pro_Preflop/COS_MED.png" alt="COS Med">
-                    <img src="Pack_1_Pro_Preflop/COS_HIGH.png" alt="COS High">
-                </div>
-                <div class="badge-info">
-                    <strong>COS</strong> - Call Open-Shove
-                    <small>Call les open-shoves. Rouge = calling station.</small>
-                </div>
+            <!-- 6 MOIS -->
+            <div class="license-card glass-panel featured">
+                <h3>6 Mois</h3>
+                <span class="license-duration">Le choix des grinders</span>
+                <div class="license-price">81€</div>
+                <ul class="license-features">
+                    <li>Tous les avantages 1 Mois</li>
+                    <li><strong>9€ offerts</strong> (Economie 10%)</li>
+                    <li>Mises à jour prioritaires</li>
+                    <li>Badge "VIP Supporter" sur Discord</li>
+                </ul>
+                <button class="btn-primary" style="width: 100%;"
+                    onclick="event.stopPropagation(); openModal('Licence HUD - 6 Mois', '81')">Prendre 6 Mois</button>
             </div>
         </div>
     </section>
 
-    <!-- PACK 2 PRO POSTFLOP -->
-    <section class="pack-section" id="pack2">
-        <div class="pack-header-full">
-            <div class="pack-title">
-                <span class="pack-num">PACK 2</span>
-                <h2>🎯 PRO Postflop</h2>
+    <!-- SÉPARATEUR BADGES -->
+    <section class="thematic-intro" style="padding-bottom: 1rem;">
+        <h2>🎨 Packs de Badges</h2>
+        <p>Personnalisez votre HUD avec des badges exclusifs. Cliquez sur un pack pour voir son contenu.</p>
+        <div class="pricing-info" style="margin-top: 1.5rem;">
+            <div class="pricing-card glass-panel">
+                <div class="pricing-icon">🎨</div>
+                <h3>Pack Thématique</h3>
+                <div class="price">2.99€</div>
+                <p>30 badges (10 × 3 variations)</p>
             </div>
-            <div class="pack-meta">
-                <span class="badge-total">30 badges</span>
-                <span class="pack-price-tag">2.99€</span>
-                <button class="btn-buy" onclick="openModal('Pack 2 - PRO Postflop', '2.99')">Acheter</button>
+            <div class="pricing-card glass-panel featured">
+                <div class="pricing-icon">🚀</div>
+                <h3>Pack PRO Avancé</h3>
+                <div class="price">5.99€</div>
+                <p>90 badges (30 × 3 couleurs) - <span class="save">Best Value!</span></p>
             </div>
-        </div>
-
-        <div class="pack-description">
-            <p>📖 <strong>À quoi ça sert ?</strong> Analysez le jeu postflop de vos adversaires. Même système de
-                couleurs.</p>
-        </div>
-
-        <div class="badges-grid">
-            <!-- CB -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_2_Pro_Postflop/CB_LOW.png" alt="CB Low">
-                    <img src="Pack_2_Pro_Postflop/CB_MED.png" alt="CB Med">
-                    <img src="Pack_2_Pro_Postflop/CB_HIGH.png" alt="CB High">
-                </div>
-                <div class="badge-info">
-                    <strong>CB</strong> - C-Bet
-                    <small>Continuation Bet. Rouge = bet tout le temps.</small>
-                </div>
-            </div>
-            <!-- PR -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_2_Pro_Postflop/PR_LOW.png" alt="PR Low">
-                    <img src="Pack_2_Pro_Postflop/PR_MED.png" alt="PR Med">
-                    <img src="Pack_2_Pro_Postflop/PR_HIGH.png" alt="PR High">
-                </div>
-                <div class="badge-info">
-                    <strong>PR</strong> - Probe
-                    <small>Bet quand le preflop raiser check.</small>
-                </div>
-            </div>
-            <!-- DK -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_2_Pro_Postflop/DK_LOW.png" alt="DK Low">
-                    <img src="Pack_2_Pro_Postflop/DK_MED.png" alt="DK Med">
-                    <img src="Pack_2_Pro_Postflop/DK_HIGH.png" alt="DK High">
-                </div>
-                <div class="badge-info">
-                    <strong>DK</strong> - Donk
-                    <small>Bet hors de position vs preflop raiser.</small>
-                </div>
-            </div>
-            <!-- DEL -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_2_Pro_Postflop/DEL_LOW.png" alt="DEL Low">
-                    <img src="Pack_2_Pro_Postflop/DEL_MED.png" alt="DEL Med">
-                    <img src="Pack_2_Pro_Postflop/DEL_HIGH.png" alt="DEL High">
-                </div>
-                <div class="badge-info">
-                    <strong>DEL</strong> - Delayed C-Bet
-                    <small>Check flop puis bet turn.</small>
-                </div>
-            </div>
-            <!-- CS -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_2_Pro_Postflop/CS_LOW.png" alt="CS Low">
-                    <img src="Pack_2_Pro_Postflop/CS_MED.png" alt="CS Med">
-                    <img src="Pack_2_Pro_Postflop/CS_HIGH.png" alt="CS High">
-                </div>
-                <div class="badge-info">
-                    <strong>CS</strong> - Calling Station
-                    <small>Call tout, ne fold jamais. Value bet max !</small>
-                </div>
-            </div>
-            <!-- XR -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_2_Pro_Postflop/XR_LOW.png" alt="XR Low">
-                    <img src="Pack_2_Pro_Postflop/XR_MED.png" alt="XR Med">
-                    <img src="Pack_2_Pro_Postflop/XR_HIGH.png" alt="XR High">
-                </div>
-                <div class="badge-info">
-                    <strong>XR</strong> - Check-Raise
-                    <small>Check puis raise. Peut être bluff ou monster.</small>
-                </div>
-            </div>
-            <!-- XC -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_2_Pro_Postflop/XC_LOW.png" alt="XC Low">
-                    <img src="Pack_2_Pro_Postflop/XC_MED.png" alt="XC Med">
-                    <img src="Pack_2_Pro_Postflop/XC_HIGH.png" alt="XC High">
-                </div>
-                <div class="badge-info">
-                    <strong>XC</strong> - Check-Call
-                    <small>Check puis call. Profil passif.</small>
-                </div>
-            </div>
-            <!-- F/CB -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_2_Pro_Postflop/F_CB_LOW.png" alt="F/CB Low">
-                    <img src="Pack_2_Pro_Postflop/F_CB_MED.png" alt="F/CB Med">
-                    <img src="Pack_2_Pro_Postflop/F_CB_HIGH.png" alt="F/CB High">
-                </div>
-                <div class="badge-info">
-                    <strong>F/CB</strong> - Fold to C-Bet
-                    <small>Fold face au c-bet. Bluffez-le !</small>
-                </div>
-            </div>
-            <!-- 2BL -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_2_Pro_Postflop/2BL_LOW.png" alt="2BL Low">
-                    <img src="Pack_2_Pro_Postflop/2BL_MED.png" alt="2BL Med">
-                    <img src="Pack_2_Pro_Postflop/2BL_HIGH.png" alt="2BL High">
-                </div>
-                <div class="badge-info">
-                    <strong>2BL</strong> - Double Barrel
-                    <small>Bet flop + turn. Aggro multistreet.</small>
-                </div>
-            </div>
-            <!-- 3BL -->
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_2_Pro_Postflop/3BL_LOW.png" alt="3BL Low">
-                    <img src="Pack_2_Pro_Postflop/3BL_MED.png" alt="3BL Med">
-                    <img src="Pack_2_Pro_Postflop/3BL_HIGH.png" alt="3BL High">
-                </div>
-                <div class="badge-info">
-                    <strong>3BL</strong> - Triple Barrel
-                    <small>Bet les 3 streets. Very aggro !</small>
-                </div>
+            <div class="pricing-card glass-panel">
+                <div class="pricing-icon">🎁</div>
+                <h3>Offre Spéciale</h3>
+                <div class="price">2 + 1</div>
+                <p>2 thématiques achetés = <span class="save">1 OFFERT !</span></p>
             </div>
         </div>
     </section>
 
-    <!-- PACK PRO AVANCÉ -->
-    <section class="pack-section pro-advanced" id="pack-pro-avance">
-        <div class="pack-header-full">
-            <div class="pack-title">
-                <span class="pack-num">🚀 NOUVEAU</span>
-                <h2>Pack PRO Avancé</h2>
-            </div>
-            <div class="pack-meta">
-                <span class="badge-total">90 badges</span>
-                <span class="pack-price-tag featured">5.99€</span>
-                <button class="btn-buy" onclick="openModal('Pack PRO Avancé', '5.99')">Acheter</button>
-            </div>
-        </div>
+    <div class="badges-packs-grid">
+        <!-- PACK 1 PRO PREFLOP -->
+        <details class="pack-accordion" id="pack1">
+            <summary class="pack-header-full">
+                <div class="pack-title">
+                    <span class="pack-num">PACK 1</span>
+                    <h2>🎯 PRO Preflop</h2>
+                </div>
+                <div class="pack-meta">
+                    <span class="badge-total">30 badges</span>
+                    <span class="pack-price-tag">2.99€</span>
+                    <button class="btn-buy"
+                        onclick="event.stopPropagation(); openModal('Pack 1 - PRO Preflop', '2.99')">Acheter</button>
+                </div>
+            </summary>
+            <div class="pack-section-content">
 
-        <div class="pack-description">
-            <p>📖 <strong>Le pack ultime !</strong> 30 badges uniques × 3 couleurs (Rouge/Vert/Bleu) pour analyser vos
-                adversaires en profondeur.</p>
-            <ul class="color-legend">
-                <li><span class="color-dot green"></span> <strong>Vert</strong> = Tendance rare</li>
-                <li><span class="color-dot blue"></span> <strong>Bleu</strong> = Tendance modérée</li>
-                <li><span class="color-dot red"></span> <strong>Rouge</strong> = Tendance fréquente</li>
-            </ul>
-        </div>
+                <div class="pack-description">
+                    <p>📖 <strong>À quoi ça sert ?</strong> Notez les tendances preflop de vos adversaires. Chaque
+                        action
+                        existe
+                        en 3 couleurs :</p>
+                    <ul class="color-legend">
+                        <li><span class="color-dot green"></span> <strong>Vert</strong> = Action rare (peu fréquente)
+                        </li>
+                        <li><span class="color-dot blue"></span> <strong>Bleu</strong> = Action modérée (fréquence
+                            moyenne)
+                        </li>
+                        <li><span class="color-dot red"></span> <strong>Rouge</strong> = Action fréquente (attention
+                            danger
+                            !)
+                        </li>
+                    </ul>
+                </div>
 
-        <!-- PREFLOP SIZINGS -->
-        <h3 class="subcategory-title">🎯 Preflop Sizings (12 badges)</h3>
-        <div class="badges-grid">
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_I2X_GREEN.png" alt="I2X Green">
-                    <img src="Pack_Pro_Avance/badge_I2X_BLUE.png" alt="I2X Blue">
-                    <img src="Pack_Pro_Avance/badge_I2X_RED.png" alt="I2X Red">
+                <div class="badges-grid">
+                    <!-- LC -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_1_Pro_Preflop/LC_LOW.png" alt="LC Low">
+                            <img src="Pack_1_Pro_Preflop/LC_MED.png" alt="LC Med">
+                            <img src="Pack_1_Pro_Preflop/LC_HIGH.png" alt="LC High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>LC</strong> - Limp-Call
+                            <small>Limp puis call une relance. Profil passif.</small>
+                        </div>
+                    </div>
+                    <!-- LR -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_1_Pro_Preflop/LR_LOW.png" alt="LR Low">
+                            <img src="Pack_1_Pro_Preflop/LR_MED.png" alt="LR Med">
+                            <img src="Pack_1_Pro_Preflop/LR_HIGH.png" alt="LR High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>LR</strong> - Limp-Raise
+                            <small>Limp puis relance (trap). Attention aux monsters !</small>
+                        </div>
+                    </div>
+                    <!-- LF -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_1_Pro_Preflop/LF_LOW.png" alt="LF Low">
+                            <img src="Pack_1_Pro_Preflop/LF_MED.png" alt="LF Med">
+                            <img src="Pack_1_Pro_Preflop/LF_HIGH.png" alt="LF High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>LF</strong> - Limp-Fold
+                            <small>Limp puis fold vs raise. Exploitable !</small>
+                        </div>
+                    </div>
+                    <!-- OP -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_1_Pro_Preflop/OP_LOW.png" alt="OP Low">
+                            <img src="Pack_1_Pro_Preflop/OP_MED.png" alt="OP Med">
+                            <img src="Pack_1_Pro_Preflop/OP_HIGH.png" alt="OP High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>OP</strong> - Open
+                            <small>Fréquence d'open raise. Rouge = wide range.</small>
+                        </div>
+                    </div>
+                    <!-- OS -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_1_Pro_Preflop/OS_LOW.png" alt="OS Low">
+                            <img src="Pack_1_Pro_Preflop/OS_MED.png" alt="OS Med">
+                            <img src="Pack_1_Pro_Preflop/OS_HIGH.png" alt="OS High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>OS</strong> - Open-Shove
+                            <small>Open all-in. Rouge = shove light !</small>
+                        </div>
+                    </div>
+                    <!-- IS -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_1_Pro_Preflop/IS_LOW.png" alt="IS Low">
+                            <img src="Pack_1_Pro_Preflop/IS_MED.png" alt="IS Med">
+                            <img src="Pack_1_Pro_Preflop/IS_HIGH.png" alt="IS High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>IS</strong> - Iso Size
+                            <small>Sizing d'isolation vs limpers.</small>
+                        </div>
+                    </div>
+                    <!-- IAI -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_1_Pro_Preflop/IAI_LOW.png" alt="IAI Low">
+                            <img src="Pack_1_Pro_Preflop/IAI_MED.png" alt="IAI Med">
+                            <img src="Pack_1_Pro_Preflop/IAI_HIGH.png" alt="IAI High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>IAI</strong> - Iso All-In
+                            <small>Iso shove vs limpers. Profil aggro.</small>
+                        </div>
+                    </div>
+                    <!-- 3B -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_1_Pro_Preflop/3B_LOW.png" alt="3B Low">
+                            <img src="Pack_1_Pro_Preflop/3B_MED.png" alt="3B Med">
+                            <img src="Pack_1_Pro_Preflop/3B_HIGH.png" alt="3B High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>3B</strong> - 3-Bet
+                            <small>Fréquence de 3-bet. Rouge = 3-bet light.</small>
+                        </div>
+                    </div>
+                    <!-- F/OP -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_1_Pro_Preflop/F_OP_LOW.png" alt="F/OP Low">
+                            <img src="Pack_1_Pro_Preflop/F_OP_MED.png" alt="F/OP Med">
+                            <img src="Pack_1_Pro_Preflop/F_OP_HIGH.png" alt="F/OP High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>F/OP</strong> - Fold vs Open
+                            <small>Fold face à un open. Tight player.</small>
+                        </div>
+                    </div>
+                    <!-- COS -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_1_Pro_Preflop/COS_LOW.png" alt="COS Low">
+                            <img src="Pack_1_Pro_Preflop/COS_MED.png" alt="COS Med">
+                            <img src="Pack_1_Pro_Preflop/COS_HIGH.png" alt="COS High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>COS</strong> - Call Open-Shove
+                            <small>Call les open-shoves. Rouge = calling station.</small>
+                        </div>
+                    </div>
                 </div>
-                <div class="badge-info"><strong>I2X</strong><small>Iso 2x</small></div>
             </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_I2.5X_GREEN.png" alt="I2.5X Green">
-                    <img src="Pack_Pro_Avance/badge_I2.5X_BLUE.png" alt="I2.5X Blue">
-                    <img src="Pack_Pro_Avance/badge_I2.5X_RED.png" alt="I2.5X Red">
-                </div>
-                <div class="badge-info"><strong>I2.5X</strong><small>Iso 2.5x</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_I3X_GREEN.png" alt="I3X Green">
-                    <img src="Pack_Pro_Avance/badge_I3X_BLUE.png" alt="I3X Blue">
-                    <img src="Pack_Pro_Avance/badge_I3X_RED.png" alt="I3X Red">
-                </div>
-                <div class="badge-info"><strong>I3X</strong><small>Iso 3x</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_I1_2_GREEN.png" alt="I1/2 Green">
-                    <img src="Pack_Pro_Avance/badge_I1_2_BLUE.png" alt="I1/2 Blue">
-                    <img src="Pack_Pro_Avance/badge_I1_2_RED.png" alt="I1/2 Red">
-                </div>
-                <div class="badge-info"><strong>I1/2</strong><small>Iso 1/2 pot</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_I1_3_GREEN.png" alt="I1/3 Green">
-                    <img src="Pack_Pro_Avance/badge_I1_3_BLUE.png" alt="I1/3 Blue">
-                    <img src="Pack_Pro_Avance/badge_I1_3_RED.png" alt="I1/3 Red">
-                </div>
-                <div class="badge-info"><strong>I1/3</strong><small>Iso 1/3 pot</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_OP2X_GREEN.png" alt="OP2X Green">
-                    <img src="Pack_Pro_Avance/badge_OP2X_BLUE.png" alt="OP2X Blue">
-                    <img src="Pack_Pro_Avance/badge_OP2X_RED.png" alt="OP2X Red">
-                </div>
-                <div class="badge-info"><strong>OP2X</strong><small>Open 2x</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_OP3X_GREEN.png" alt="OP3X Green">
-                    <img src="Pack_Pro_Avance/badge_OP3X_BLUE.png" alt="OP3X Blue">
-                    <img src="Pack_Pro_Avance/badge_OP3X_RED.png" alt="OP3X Red">
-                </div>
-                <div class="badge-info"><strong>OP3X</strong><small>Open 3x</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_OP1_2_GREEN.png" alt="OP1/2 Green">
-                    <img src="Pack_Pro_Avance/badge_OP1_2_BLUE.png" alt="OP1/2 Blue">
-                    <img src="Pack_Pro_Avance/badge_OP1_2_RED.png" alt="OP1/2 Red">
-                </div>
-                <div class="badge-info"><strong>OP1/2</strong><small>Open 1/2 pot</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_minus5_GREEN.png" alt="-5 Green">
-                    <img src="Pack_Pro_Avance/badge_minus5_BLUE.png" alt="-5 Blue">
-                    <img src="Pack_Pro_Avance/badge_minus5_RED.png" alt="-5 Red">
-                </div>
-                <div class="badge-info"><strong>-5</strong><small>Moins de 5 BB</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_5minus10_GREEN.png" alt="5-10 Green">
-                    <img src="Pack_Pro_Avance/badge_5minus10_BLUE.png" alt="5-10 Blue">
-                    <img src="Pack_Pro_Avance/badge_5minus10_RED.png" alt="5-10 Red">
-                </div>
-                <div class="badge-info"><strong>5-10</strong><small>5-10 BB</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_10minus15_GREEN.png" alt="10-15 Green">
-                    <img src="Pack_Pro_Avance/badge_10minus15_BLUE.png" alt="10-15 Blue">
-                    <img src="Pack_Pro_Avance/badge_10minus15_RED.png" alt="10-15 Red">
-                </div>
-                <div class="badge-info"><strong>10-15</strong><small>10-15 BB</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_15plus_GREEN.png" alt="15+ Green">
-                    <img src="Pack_Pro_Avance/badge_15plus_BLUE.png" alt="15+ Blue">
-                    <img src="Pack_Pro_Avance/badge_15plus_RED.png" alt="15+ Red">
-                </div>
-                <div class="badge-info"><strong>15+</strong><small>15+ BB</small></div>
-            </div>
-        </div>
+        </details>
 
-        <!-- POSTFLOP LINES -->
-        <h3 class="subcategory-title">🃏 Postflop Lines (9 badges)</h3>
-        <div class="badges-grid">
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_Xcapé_GREEN.png" alt="Xcapé Green">
-                    <img src="Pack_Pro_Avance/badge_Xcapé_BLUE.png" alt="Xcapé Blue">
-                    <img src="Pack_Pro_Avance/badge_Xcapé_RED.png" alt="Xcapé Red">
+        <!-- PACK 2 PRO POSTFLOP -->
+        <details class="pack-accordion" id="pack2">
+            <summary class="pack-header-full">
+                <div class="pack-title">
+                    <span class="pack-num">PACK 2</span>
+                    <h2>🎯 PRO Postflop</h2>
                 </div>
-                <div class="badge-info"><strong>Xcapé</strong><small>Check & Give up</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_Xtrap_GREEN.png" alt="Xtrap Green">
-                    <img src="Pack_Pro_Avance/badge_Xtrap_BLUE.png" alt="Xtrap Blue">
-                    <img src="Pack_Pro_Avance/badge_Xtrap_RED.png" alt="Xtrap Red">
+                <div class="pack-meta">
+                    <span class="badge-total">30 badges</span>
+                    <span class="pack-price-tag">2.99€</span>
+                    <button class="btn-buy"
+                        onclick="event.stopPropagation(); openModal('Pack 2 - PRO Postflop', '2.99')">Acheter</button>
                 </div>
-                <div class="badge-info"><strong>Xtrap</strong><small>Check-Trap</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_BXB_GREEN.png" alt="BXB Green">
-                    <img src="Pack_Pro_Avance/badge_BXB_BLUE.png" alt="BXB Blue">
-                    <img src="Pack_Pro_Avance/badge_BXB_RED.png" alt="BXB Red">
-                </div>
-                <div class="badge-info"><strong>BXB</strong><small>Bet-Check-Bet</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_BBX_GREEN.png" alt="BBX Green">
-                    <img src="Pack_Pro_Avance/badge_BBX_BLUE.png" alt="BBX Blue">
-                    <img src="Pack_Pro_Avance/badge_BBX_RED.png" alt="BBX Red">
-                </div>
-                <div class="badge-info"><strong>BBX</strong><small>Bet-Bet-Check</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_DelplusB_GREEN.png" alt="Del+B Green">
-                    <img src="Pack_Pro_Avance/badge_DelplusB_BLUE.png" alt="Del+B Blue">
-                    <img src="Pack_Pro_Avance/badge_DelplusB_RED.png" alt="Del+B Red">
-                </div>
-                <div class="badge-info"><strong>Del+B</strong><small>Delayed + Bet</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_PrplusB_GREEN.png" alt="Pr+B Green">
-                    <img src="Pack_Pro_Avance/badge_PrplusB_BLUE.png" alt="Pr+B Blue">
-                    <img src="Pack_Pro_Avance/badge_PrplusB_RED.png" alt="Pr+B Red">
-                </div>
-                <div class="badge-info"><strong>Pr+B</strong><small>Probe + Bet</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_XrF_GREEN.png" alt="XrF Green">
-                    <img src="Pack_Pro_Avance/badge_XrF_BLUE.png" alt="XrF Blue">
-                    <img src="Pack_Pro_Avance/badge_XrF_RED.png" alt="XrF Red">
-                </div>
-                <div class="badge-info"><strong>XrF</strong><small>Check-Raise Flop</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_XrT_GREEN.png" alt="XrT Green">
-                    <img src="Pack_Pro_Avance/badge_XrT_BLUE.png" alt="XrT Blue">
-                    <img src="Pack_Pro_Avance/badge_XrT_RED.png" alt="XrT Red">
-                </div>
-                <div class="badge-info"><strong>XrT</strong><small>Check-Raise Turn</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_XrR_GREEN.png" alt="XrR Green">
-                    <img src="Pack_Pro_Avance/badge_XrR_BLUE.png" alt="XrR Blue">
-                    <img src="Pack_Pro_Avance/badge_XrR_RED.png" alt="XrR Red">
-                </div>
-                <div class="badge-info"><strong>XrR</strong><small>Check-Raise River</small></div>
-            </div>
-        </div>
+            </summary>
+            <div class="pack-section-content">
 
-        <!-- GENERAL -->
-        <h3 class="subcategory-title">🎯 Général (9 badges)</h3>
-        <div class="badges-grid">
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_GTO_GREEN.png" alt="GTO Green">
-                    <img src="Pack_Pro_Avance/badge_GTO_BLUE.png" alt="GTO Blue">
-                    <img src="Pack_Pro_Avance/badge_GTO_RED.png" alt="GTO Red">
+                <div class="pack-description">
+                    <p>📖 <strong>À quoi ça sert ?</strong> Analysez le jeu postflop de vos adversaires. Même système de
+                        couleurs.</p>
                 </div>
-                <div class="badge-info"><strong>GTO</strong><small>Game Theory Optimal</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_EXP_GREEN.png" alt="EXP Green">
-                    <img src="Pack_Pro_Avance/badge_EXP_BLUE.png" alt="EXP Blue">
-                    <img src="Pack_Pro_Avance/badge_EXP_RED.png" alt="EXP Red">
+
+                <div class="badges-grid">
+                    <!-- CB -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_2_Pro_Postflop/CB_LOW.png" alt="CB Low">
+                            <img src="Pack_2_Pro_Postflop/CB_MED.png" alt="CB Med">
+                            <img src="Pack_2_Pro_Postflop/CB_HIGH.png" alt="CB High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>CB</strong> - C-Bet
+                            <small>Continuation Bet. Rouge = bet tout le temps.</small>
+                        </div>
+                    </div>
+                    <!-- PR -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_2_Pro_Postflop/PR_LOW.png" alt="PR Low">
+                            <img src="Pack_2_Pro_Postflop/PR_MED.png" alt="PR Med">
+                            <img src="Pack_2_Pro_Postflop/PR_HIGH.png" alt="PR High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>PR</strong> - Probe
+                            <small>Bet quand le preflop raiser check.</small>
+                        </div>
+                    </div>
+                    <!-- DK -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_2_Pro_Postflop/DK_LOW.png" alt="DK Low">
+                            <img src="Pack_2_Pro_Postflop/DK_MED.png" alt="DK Med">
+                            <img src="Pack_2_Pro_Postflop/DK_HIGH.png" alt="DK High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>DK</strong> - Donk
+                            <small>Bet hors de position vs preflop raiser.</small>
+                        </div>
+                    </div>
+                    <!-- DEL -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_2_Pro_Postflop/DEL_LOW.png" alt="DEL Low">
+                            <img src="Pack_2_Pro_Postflop/DEL_MED.png" alt="DEL Med">
+                            <img src="Pack_2_Pro_Postflop/DEL_HIGH.png" alt="DEL High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>DEL</strong> - Delayed C-Bet
+                            <small>Check flop puis bet turn.</small>
+                        </div>
+                    </div>
+                    <!-- CS -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_2_Pro_Postflop/CS_LOW.png" alt="CS Low">
+                            <img src="Pack_2_Pro_Postflop/CS_MED.png" alt="CS Med">
+                            <img src="Pack_2_Pro_Postflop/CS_HIGH.png" alt="CS High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>CS</strong> - Calling Station
+                            <small>Call tout, ne fold jamais. Value bet max !</small>
+                        </div>
+                    </div>
+                    <!-- XR -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_2_Pro_Postflop/XR_LOW.png" alt="XR Low">
+                            <img src="Pack_2_Pro_Postflop/XR_MED.png" alt="XR Med">
+                            <img src="Pack_2_Pro_Postflop/XR_HIGH.png" alt="XR High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>XR</strong> - Check-Raise
+                            <small>Check puis raise. Peut être bluff ou monster.</small>
+                        </div>
+                    </div>
+                    <!-- XC -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_2_Pro_Postflop/XC_LOW.png" alt="XC Low">
+                            <img src="Pack_2_Pro_Postflop/XC_MED.png" alt="XC Med">
+                            <img src="Pack_2_Pro_Postflop/XC_HIGH.png" alt="XC High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>XC</strong> - Check-Call
+                            <small>Check puis call. Profil passif.</small>
+                        </div>
+                    </div>
+                    <!-- F/CB -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_2_Pro_Postflop/F_CB_LOW.png" alt="F/CB Low">
+                            <img src="Pack_2_Pro_Postflop/F_CB_MED.png" alt="F/CB Med">
+                            <img src="Pack_2_Pro_Postflop/F_CB_HIGH.png" alt="F/CB High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>F/CB</strong> - Fold to C-Bet
+                            <small>Fold face au c-bet. Bluffez-le !</small>
+                        </div>
+                    </div>
+                    <!-- 2BL -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_2_Pro_Postflop/2BL_LOW.png" alt="2BL Low">
+                            <img src="Pack_2_Pro_Postflop/2BL_MED.png" alt="2BL Med">
+                            <img src="Pack_2_Pro_Postflop/2BL_HIGH.png" alt="2BL High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>2BL</strong> - Double Barrel
+                            <small>Bet flop + turn. Aggro multistreet.</small>
+                        </div>
+                    </div>
+                    <!-- 3BL -->
+                    <div class="badge-showcase">
+                        <div class="badge-images">
+                            <img src="Pack_2_Pro_Postflop/3BL_LOW.png" alt="3BL Low">
+                            <img src="Pack_2_Pro_Postflop/3BL_MED.png" alt="3BL Med">
+                            <img src="Pack_2_Pro_Postflop/3BL_HIGH.png" alt="3BL High">
+                        </div>
+                        <div class="badge-info">
+                            <strong>3BL</strong> - Triple Barrel
+                            <small>Bet les 3 streets. Very aggro !</small>
+                        </div>
+                    </div>
                 </div>
-                <div class="badge-info"><strong>EXP</strong><small>Exploit</small></div>
             </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_plusEV_GREEN.png" alt="+EV Green">
-                    <img src="Pack_Pro_Avance/badge_plusEV_BLUE.png" alt="+EV Blue">
-                    <img src="Pack_Pro_Avance/badge_plusEV_RED.png" alt="+EV Red">
+        </details>
+
+        <!-- PACK PRO AVANCÉ -->
+        <details class="pack-accordion" id="pack-pro-avance">
+            <summary class="pack-header-full">
+                <div class="pack-title">
+                    <span class="pack-num">🚀 NOUVEAU</span>
+                    <h2>Pack PRO Avancé</h2>
                 </div>
-                <div class="badge-info"><strong>+EV</strong><small>Plus EV</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_minusEV_GREEN.png" alt="-EV Green">
-                    <img src="Pack_Pro_Avance/badge_minusEV_BLUE.png" alt="-EV Blue">
-                    <img src="Pack_Pro_Avance/badge_minusEV_RED.png" alt="-EV Red">
+                <div class="pack-meta">
+                    <span class="badge-total">90 badges</span>
+                    <span class="pack-price-tag featured">5.99€</span>
+                    <button class="btn-buy"
+                        onclick="event.stopPropagation(); openModal('Pack PRO Avancé', '5.99')">Acheter</button>
                 </div>
-                <div class="badge-info"><strong>-EV</strong><small>Minus EV</small></div>
+            </summary>
+            <div class="pack-section-content">
             </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_VIP_GREEN.png" alt="VIP Green">
-                    <img src="Pack_Pro_Avance/badge_VIP_BLUE.png" alt="VIP Blue">
-                    <img src="Pack_Pro_Avance/badge_VIP_RED.png" alt="VIP Red">
+            <div class="pack-description">
+                <p>📖 <strong>Le pack ultime !</strong> 30 badges uniques × 3 couleurs (Rouge/Vert/Bleu) pour
+                    analyser vos
+                    adversaires en profondeur.</p>
+                <ul class="color-legend">
+                    <li><span class="color-dot green"></span> <strong>Vert</strong> = Tendance rare</li>
+                    <li><span class="color-dot blue"></span> <strong>Bleu</strong> = Tendance modérée</li>
+                    <li><span class="color-dot red"></span> <strong>Rouge</strong> = Tendance fréquente</li>
+                </ul>
+            </div>
+
+            <!-- PREFLOP SIZINGS -->
+            <h3 class="subcategory-title">🎯 Preflop Sizings (12 badges)</h3>
+            <div class="badges-grid">
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_I2X_GREEN.png" alt="I2X Green">
+                        <img src="Pack_Pro_Avance/badge_I2X_BLUE.png" alt="I2X Blue">
+                        <img src="Pack_Pro_Avance/badge_I2X_RED.png" alt="I2X Red">
+                    </div>
+                    <div class="badge-info"><strong>I2X</strong><small>Iso 2x</small></div>
                 </div>
-                <div class="badge-info"><strong>VIP</strong><small>Very Important Player</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_REC_GREEN.png" alt="REC Green">
-                    <img src="Pack_Pro_Avance/badge_REC_BLUE.png" alt="REC Blue">
-                    <img src="Pack_Pro_Avance/badge_REC_RED.png" alt="REC Red">
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_I2.5X_GREEN.png" alt="I2.5X Green">
+                        <img src="Pack_Pro_Avance/badge_I2.5X_BLUE.png" alt="I2.5X Blue">
+                        <img src="Pack_Pro_Avance/badge_I2.5X_RED.png" alt="I2.5X Red">
+                    </div>
+                    <div class="badge-info"><strong>I2.5X</strong><small>Iso 2.5x</small></div>
                 </div>
-                <div class="badge-info"><strong>REC</strong><small>Récréatif</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_PRO_GREEN.png" alt="PRO Green">
-                    <img src="Pack_Pro_Avance/badge_PRO_BLUE.png" alt="PRO Blue">
-                    <img src="Pack_Pro_Avance/badge_PRO_RED.png" alt="PRO Red">
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_I3X_GREEN.png" alt="I3X Green">
+                        <img src="Pack_Pro_Avance/badge_I3X_BLUE.png" alt="I3X Blue">
+                        <img src="Pack_Pro_Avance/badge_I3X_RED.png" alt="I3X Red">
+                    </div>
+                    <div class="badge-info"><strong>I3X</strong><small>Iso 3x</small></div>
                 </div>
-                <div class="badge-info"><strong>PRO</strong><small>Professionnel</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_WKE_GREEN.png" alt="WKE Green">
-                    <img src="Pack_Pro_Avance/badge_WKE_BLUE.png" alt="WKE Blue">
-                    <img src="Pack_Pro_Avance/badge_WKE_RED.png" alt="WKE Red">
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_I1_2_GREEN.png" alt="I1/2 Green">
+                        <img src="Pack_Pro_Avance/badge_I1_2_BLUE.png" alt="I1/2 Blue">
+                        <img src="Pack_Pro_Avance/badge_I1_2_RED.png" alt="I1/2 Red">
+                    </div>
+                    <div class="badge-info"><strong>I1/2</strong><small>Iso 1/2 pot</small></div>
                 </div>
-                <div class="badge-info"><strong>WKE</strong><small>Weekend</small></div>
-            </div>
-            <div class="badge-showcase">
-                <div class="badge-images">
-                    <img src="Pack_Pro_Avance/badge_NTE_GREEN.png" alt="NTE Green">
-                    <img src="Pack_Pro_Avance/badge_NTE_BLUE.png" alt="NTE Blue">
-                    <img src="Pack_Pro_Avance/badge_NTE_RED.png" alt="NTE Red">
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_I1_3_GREEN.png" alt="I1/3 Green">
+                        <img src="Pack_Pro_Avance/badge_I1_3_BLUE.png" alt="I1/3 Blue">
+                        <img src="Pack_Pro_Avance/badge_I1_3_RED.png" alt="I1/3 Red">
+                    </div>
+                    <div class="badge-info"><strong>I1/3</strong><small>Iso 1/3 pot</small></div>
                 </div>
-                <div class="badge-info"><strong>NTE</strong><small>Night</small></div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_OP2X_GREEN.png" alt="OP2X Green">
+                        <img src="Pack_Pro_Avance/badge_OP2X_BLUE.png" alt="OP2X Blue">
+                        <img src="Pack_Pro_Avance/badge_OP2X_RED.png" alt="OP2X Red">
+                    </div>
+                    <div class="badge-info"><strong>OP2X</strong><small>Open 2x</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_OP3X_GREEN.png" alt="OP3X Green">
+                        <img src="Pack_Pro_Avance/badge_OP3X_BLUE.png" alt="OP3X Blue">
+                        <img src="Pack_Pro_Avance/badge_OP3X_RED.png" alt="OP3X Red">
+                    </div>
+                    <div class="badge-info"><strong>OP3X</strong><small>Open 3x</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_OP1_2_GREEN.png" alt="OP1/2 Green">
+                        <img src="Pack_Pro_Avance/badge_OP1_2_BLUE.png" alt="OP1/2 Blue">
+                        <img src="Pack_Pro_Avance/badge_OP1_2_RED.png" alt="OP1/2 Red">
+                    </div>
+                    <div class="badge-info"><strong>OP1/2</strong><small>Open 1/2 pot</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_minus5_GREEN.png" alt="-5 Green">
+                        <img src="Pack_Pro_Avance/badge_minus5_BLUE.png" alt="-5 Blue">
+                        <img src="Pack_Pro_Avance/badge_minus5_RED.png" alt="-5 Red">
+                    </div>
+                    <div class="badge-info"><strong>-5</strong><small>Moins de 5 BB</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_5minus10_GREEN.png" alt="5-10 Green">
+                        <img src="Pack_Pro_Avance/badge_5minus10_BLUE.png" alt="5-10 Blue">
+                        <img src="Pack_Pro_Avance/badge_5minus10_RED.png" alt="5-10 Red">
+                    </div>
+                    <div class="badge-info"><strong>5-10</strong><small>5-10 BB</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_10minus15_GREEN.png" alt="10-15 Green">
+                        <img src="Pack_Pro_Avance/badge_10minus15_BLUE.png" alt="10-15 Blue">
+                        <img src="Pack_Pro_Avance/badge_10minus15_RED.png" alt="10-15 Red">
+                    </div>
+                    <div class="badge-info"><strong>10-15</strong><small>10-15 BB</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_15plus_GREEN.png" alt="15+ Green">
+                        <img src="Pack_Pro_Avance/badge_15plus_BLUE.png" alt="15+ Blue">
+                        <img src="Pack_Pro_Avance/badge_15plus_RED.png" alt="15+ Red">
+                    </div>
+                    <div class="badge-info"><strong>15+</strong><small>15+ BB</small></div>
+                </div>
             </div>
-        </div>
-    </section>
+
+            <!-- POSTFLOP LINES -->
+            <h3 class="subcategory-title">🃏 Postflop Lines (9 badges)</h3>
+            <div class="badges-grid">
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_Xcapé_GREEN.png" alt="Xcapé Green">
+                        <img src="Pack_Pro_Avance/badge_Xcapé_BLUE.png" alt="Xcapé Blue">
+                        <img src="Pack_Pro_Avance/badge_Xcapé_RED.png" alt="Xcapé Red">
+                    </div>
+                    <div class="badge-info"><strong>Xcapé</strong><small>Check & Give up</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_Xtrap_GREEN.png" alt="Xtrap Green">
+                        <img src="Pack_Pro_Avance/badge_Xtrap_BLUE.png" alt="Xtrap Blue">
+                        <img src="Pack_Pro_Avance/badge_Xtrap_RED.png" alt="Xtrap Red">
+                    </div>
+                    <div class="badge-info"><strong>Xtrap</strong><small>Check-Trap</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_BXB_GREEN.png" alt="BXB Green">
+                        <img src="Pack_Pro_Avance/badge_BXB_BLUE.png" alt="BXB Blue">
+                        <img src="Pack_Pro_Avance/badge_BXB_RED.png" alt="BXB Red">
+                    </div>
+                    <div class="badge-info"><strong>BXB</strong><small>Bet-Check-Bet</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_BBX_GREEN.png" alt="BBX Green">
+                        <img src="Pack_Pro_Avance/badge_BBX_BLUE.png" alt="BBX Blue">
+                        <img src="Pack_Pro_Avance/badge_BBX_RED.png" alt="BBX Red">
+                    </div>
+                    <div class="badge-info"><strong>BBX</strong><small>Bet-Bet-Check</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_DelplusB_GREEN.png" alt="Del+B Green">
+                        <img src="Pack_Pro_Avance/badge_DelplusB_BLUE.png" alt="Del+B Blue">
+                        <img src="Pack_Pro_Avance/badge_DelplusB_RED.png" alt="Del+B Red">
+                    </div>
+                    <div class="badge-info"><strong>Del+B</strong><small>Delayed + Bet</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_PrplusB_GREEN.png" alt="Pr+B Green">
+                        <img src="Pack_Pro_Avance/badge_PrplusB_BLUE.png" alt="Pr+B Blue">
+                        <img src="Pack_Pro_Avance/badge_PrplusB_RED.png" alt="Pr+B Red">
+                    </div>
+                    <div class="badge-info"><strong>Pr+B</strong><small>Probe + Bet</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_XrF_GREEN.png" alt="XrF Green">
+                        <img src="Pack_Pro_Avance/badge_XrF_BLUE.png" alt="XrF Blue">
+                        <img src="Pack_Pro_Avance/badge_XrF_RED.png" alt="XrF Red">
+                    </div>
+                    <div class="badge-info"><strong>XrF</strong><small>Check-Raise Flop</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_XrT_GREEN.png" alt="XrT Green">
+                        <img src="Pack_Pro_Avance/badge_XrT_BLUE.png" alt="XrT Blue">
+                        <img src="Pack_Pro_Avance/badge_XrT_RED.png" alt="XrT Red">
+                    </div>
+                    <div class="badge-info"><strong>XrT</strong><small>Check-Raise Turn</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_XrR_GREEN.png" alt="XrR Green">
+                        <img src="Pack_Pro_Avance/badge_XrR_BLUE.png" alt="XrR Blue">
+                        <img src="Pack_Pro_Avance/badge_XrR_RED.png" alt="XrR Red">
+                    </div>
+                    <div class="badge-info"><strong>XrR</strong><small>Check-Raise River</small></div>
+                </div>
+            </div>
+
+            <!-- GENERAL -->
+            <h3 class="subcategory-title">🎯 Général (9 badges)</h3>
+            <div class="badges-grid">
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_GTO_GREEN.png" alt="GTO Green">
+                        <img src="Pack_Pro_Avance/badge_GTO_BLUE.png" alt="GTO Blue">
+                        <img src="Pack_Pro_Avance/badge_GTO_RED.png" alt="GTO Red">
+                    </div>
+                    <div class="badge-info"><strong>GTO</strong><small>Game Theory Optimal</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_EXP_GREEN.png" alt="EXP Green">
+                        <img src="Pack_Pro_Avance/badge_EXP_BLUE.png" alt="EXP Blue">
+                        <img src="Pack_Pro_Avance/badge_EXP_RED.png" alt="EXP Red">
+                    </div>
+                    <div class="badge-info"><strong>EXP</strong><small>Exploit</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_plusEV_GREEN.png" alt="+EV Green">
+                        <img src="Pack_Pro_Avance/badge_plusEV_BLUE.png" alt="+EV Blue">
+                        <img src="Pack_Pro_Avance/badge_plusEV_RED.png" alt="+EV Red">
+                    </div>
+                    <div class="badge-info"><strong>+EV</strong><small>Plus EV</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_minusEV_GREEN.png" alt="-EV Green">
+                        <img src="Pack_Pro_Avance/badge_minusEV_BLUE.png" alt="-EV Blue">
+                        <img src="Pack_Pro_Avance/badge_minusEV_RED.png" alt="-EV Red">
+                    </div>
+                    <div class="badge-info"><strong>-EV</strong><small>Minus EV</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_VIP_GREEN.png" alt="VIP Green">
+                        <img src="Pack_Pro_Avance/badge_VIP_BLUE.png" alt="VIP Blue">
+                        <img src="Pack_Pro_Avance/badge_VIP_RED.png" alt="VIP Red">
+                    </div>
+                    <div class="badge-info"><strong>VIP</strong><small>Very Important Player</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_REC_GREEN.png" alt="REC Green">
+                        <img src="Pack_Pro_Avance/badge_REC_BLUE.png" alt="REC Blue">
+                        <img src="Pack_Pro_Avance/badge_REC_RED.png" alt="REC Red">
+                    </div>
+                    <div class="badge-info"><strong>REC</strong><small>Récréatif</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_PRO_GREEN.png" alt="PRO Green">
+                        <img src="Pack_Pro_Avance/badge_PRO_BLUE.png" alt="PRO Blue">
+                        <img src="Pack_Pro_Avance/badge_PRO_RED.png" alt="PRO Red">
+                    </div>
+                    <div class="badge-info"><strong>PRO</strong><small>Professionnel</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_WKE_GREEN.png" alt="WKE Green">
+                        <img src="Pack_Pro_Avance/badge_WKE_BLUE.png" alt="WKE Blue">
+                        <img src="Pack_Pro_Avance/badge_WKE_RED.png" alt="WKE Red">
+                    </div>
+                    <div class="badge-info"><strong>WKE</strong><small>Weekend</small></div>
+                </div>
+                <div class="badge-showcase">
+                    <div class="badge-images">
+                        <img src="Pack_Pro_Avance/badge_NTE_GREEN.png" alt="NTE Green">
+                        <img src="Pack_Pro_Avance/badge_NTE_BLUE.png" alt="NTE Blue">
+                        <img src="Pack_Pro_Avance/badge_NTE_RED.png" alt="NTE Red">
+                    </div>
+                    <div class="badge-info"><strong>NTE</strong><small>Night</small></div>
+                </div>
+            </div>
+    </div>
+    </details>
+    </div>
 
     <!-- THEMATIC PACKS -->
     <section class="thematic-intro">
         <h2>🌈 Packs Thématiques</h2>
-        <p>Des emojis visuels pour profiler rapidement vos adversaires. Chaque badge existe en 3 styles de bordure :</p>
+        <p>Des emojis visuels pour profiler rapidement vos adversaires. Chaque badge existe en 3 styles de
+            bordure :</p>
         <ul class="border-legend">
             <li><span class="border-sample none"></span> Sans bordure</li>
             <li><span class="border-sample white"></span> Bordure blanche</li>
@@ -662,114 +743,126 @@
         </ul>
     </section>
 
-    <!-- PACK 3 PROFILS -->
-    <section class="pack-section thematic" id="pack3">
-        <div class="pack-header-full">
-            <div class="pack-title">
-                <span class="pack-num">PACK 3</span>
-                <h2>🎭 Profils Joueurs</h2>
+    <div class="badges-packs-grid">
+        <!-- PACK 3 PROFILS -->
+        <details class="pack-accordion" id="pack3">
+            <summary class="pack-header-full">
+                <div class="pack-title">
+                    <span class="pack-num">PACK 3</span>
+                    <h2>🎭 Profils Joueurs</h2>
+                </div>
+                <div class="pack-meta">
+                    <span class="badge-total">30 badges</span>
+                    <span class="pack-price-tag">2.99€</span>
+                    <button class="btn-buy"
+                        onclick="event.stopPropagation(); openModal('Pack 3 - Profils Joueurs', '2.99')">Acheter</button>
+                </div>
+            </summary>
+            <div class="pack-section-content">
             </div>
-            <div class="pack-meta">
-                <span class="badge-total">30 badges</span>
-                <span class="pack-price-tag">2.99€</span>
-                <button class="btn-buy" onclick="openModal('Pack 3 - Profils Joueurs', '2.99')">Acheter</button>
+            <div class="pack-description">
+                <p>📖 <strong>Usage :</strong> Classifiez le profil général de chaque adversaire d'un coup d'œil.
+                </p>
             </div>
-        </div>
 
-        <div class="pack-description">
-            <p>📖 <strong>Usage :</strong> Classifiez le profil général de chaque adversaire d'un coup d'œil.</p>
-        </div>
-
-        <div class="badges-grid thematic-grid">
-            <div class="badge-showcase emoji">
-                <div class="badge-images">
-                    <img src="Pack_3_Profils/icon_128031_NONE.png" alt="Fish">
-                    <img src="Pack_3_Profils/icon_128031_WHITE.png" alt="Fish White">
-                    <img src="Pack_3_Profils/icon_128031_GOLD.png" alt="Fish Gold">
+            <div class="badges-grid thematic-grid">
+                <div class="badge-showcase emoji">
+                    <div class="badge-images">
+                        <img src="Pack_3_Profils/icon_128031_NONE.png" alt="Fish">
+                        <img src="Pack_3_Profils/icon_128031_WHITE.png" alt="Fish White">
+                        <img src="Pack_3_Profils/icon_128031_GOLD.png" alt="Fish Gold">
+                    </div>
+                    <div class="badge-info"><strong>🐟 Fish</strong><small>Joueur récréatif, erreurs
+                            fréquentes</small>
+                    </div>
                 </div>
-                <div class="badge-info"><strong>🐟 Fish</strong><small>Joueur récréatif, erreurs fréquentes</small>
+                <div class="badge-showcase emoji">
+                    <div class="badge-images">
+                        <img src="Pack_3_Profils/icon_129416_NONE.png" alt="Shark">
+                        <img src="Pack_3_Profils/icon_129416_WHITE.png" alt="Shark White">
+                        <img src="Pack_3_Profils/icon_129416_GOLD.png" alt="Shark Gold">
+                    </div>
+                    <div class="badge-info"><strong>🦈 Shark/Reg</strong><small>Joueur régulier, compétent</small>
+                    </div>
+                </div>
+                <div class="badge-showcase emoji">
+                    <div class="badge-images">
+                        <img src="Pack_3_Profils/icon_128034_NONE.png" alt="Nit">
+                        <img src="Pack_3_Profils/icon_128034_WHITE.png" alt="Nit White">
+                        <img src="Pack_3_Profils/icon_128034_GOLD.png" alt="Nit Gold">
+                    </div>
+                    <div class="badge-info"><strong>🐢 Nit</strong><small>Ultra tight, ne joue que les
+                            monstres</small>
+                    </div>
+                </div>
+                <div class="badge-showcase emoji">
+                    <div class="badge-images">
+                        <img src="Pack_3_Profils/icon_128293_NONE.png" alt="LAG">
+                        <img src="Pack_3_Profils/icon_128293_WHITE.png" alt="LAG White">
+                        <img src="Pack_3_Profils/icon_128293_GOLD.png" alt="LAG Gold">
+                    </div>
+                    <div class="badge-info"><strong>🔥 LAG</strong><small>Loose-Aggressive, danger !</small></div>
+                </div>
+                <div class="badge-showcase emoji">
+                    <div class="badge-images">
+                        <img src="Pack_3_Profils/icon_129482_NONE.png" alt="TAG">
+                        <img src="Pack_3_Profils/icon_129482_WHITE.png" alt="TAG White">
+                        <img src="Pack_3_Profils/icon_129482_GOLD.png" alt="TAG Gold">
+                    </div>
+                    <div class="badge-info"><strong>🧊 TAG</strong><small>Tight-Aggressive, solide</small></div>
+                </div>
+                <div class="badge-showcase emoji">
+                    <div class="badge-images">
+                        <img src="Pack_3_Profils/icon_129313_NONE.png" alt="Maniaque">
+                        <img src="Pack_3_Profils/icon_129313_WHITE.png" alt="Maniaque White">
+                        <img src="Pack_3_Profils/icon_129313_GOLD.png" alt="Maniaque Gold">
+                    </div>
+                    <div class="badge-info"><strong>🤡 Maniaque</strong><small>Imprévisible, joue n'importe
+                            quoi</small>
+                    </div>
+                </div>
+                <div class="badge-showcase emoji">
+                    <div class="badge-images">
+                        <img src="Pack_3_Profils/icon_128564_NONE.png" alt="Passif">
+                        <img src="Pack_3_Profils/icon_128564_WHITE.png" alt="Passif White">
+                        <img src="Pack_3_Profils/icon_128564_GOLD.png" alt="Passif Gold">
+                    </div>
+                    <div class="badge-info"><strong>😴 Passif</strong><small>Check-call, rarement agressif</small>
+                    </div>
+                </div>
+                <div class="badge-showcase emoji">
+                    <div class="badge-images">
+                        <img src="Pack_3_Profils/icon_128170_NONE.png" alt="Aggro">
+                        <img src="Pack_3_Profils/icon_128170_WHITE.png" alt="Aggro White">
+                        <img src="Pack_3_Profils/icon_128170_GOLD.png" alt="Aggro Gold">
+                    </div>
+                    <div class="badge-info"><strong>💪 Aggro</strong><small>Mise beaucoup, pressure constant</small>
+                    </div>
+                </div>
+                <div class="badge-showcase emoji">
+                    <div class="badge-images">
+                        <img src="Pack_3_Profils/icon_128274_NONE.png" alt="Tight">
+                        <img src="Pack_3_Profils/icon_128274_WHITE.png" alt="Tight White">
+                        <img src="Pack_3_Profils/icon_128274_GOLD.png" alt="Tight Gold">
+                    </div>
+                    <div class="badge-info"><strong>🔒 Tight</strong><small>Joue peu de mains, sélectif</small>
+                    </div>
+                </div>
+                <div class="badge-showcase emoji">
+                    <div class="badge-images">
+                        <img src="Pack_3_Profils/icon_127754_NONE.png" alt="Loose">
+                        <img src="Pack_3_Profils/icon_127754_WHITE.png" alt="Loose White">
+                        <img src="Pack_3_Profils/icon_127754_GOLD.png" alt="Loose Gold">
+                    </div>
+                    <div class="badge-info"><strong>🌊 Loose</strong><small>Joue beaucoup de mains</small></div>
                 </div>
             </div>
-            <div class="badge-showcase emoji">
-                <div class="badge-images">
-                    <img src="Pack_3_Profils/icon_129416_NONE.png" alt="Shark">
-                    <img src="Pack_3_Profils/icon_129416_WHITE.png" alt="Shark White">
-                    <img src="Pack_3_Profils/icon_129416_GOLD.png" alt="Shark Gold">
-                </div>
-                <div class="badge-info"><strong>🦈 Shark/Reg</strong><small>Joueur régulier, compétent</small></div>
-            </div>
-            <div class="badge-showcase emoji">
-                <div class="badge-images">
-                    <img src="Pack_3_Profils/icon_128034_NONE.png" alt="Nit">
-                    <img src="Pack_3_Profils/icon_128034_WHITE.png" alt="Nit White">
-                    <img src="Pack_3_Profils/icon_128034_GOLD.png" alt="Nit Gold">
-                </div>
-                <div class="badge-info"><strong>🐢 Nit</strong><small>Ultra tight, ne joue que les monstres</small>
-                </div>
-            </div>
-            <div class="badge-showcase emoji">
-                <div class="badge-images">
-                    <img src="Pack_3_Profils/icon_128293_NONE.png" alt="LAG">
-                    <img src="Pack_3_Profils/icon_128293_WHITE.png" alt="LAG White">
-                    <img src="Pack_3_Profils/icon_128293_GOLD.png" alt="LAG Gold">
-                </div>
-                <div class="badge-info"><strong>🔥 LAG</strong><small>Loose-Aggressive, danger !</small></div>
-            </div>
-            <div class="badge-showcase emoji">
-                <div class="badge-images">
-                    <img src="Pack_3_Profils/icon_129482_NONE.png" alt="TAG">
-                    <img src="Pack_3_Profils/icon_129482_WHITE.png" alt="TAG White">
-                    <img src="Pack_3_Profils/icon_129482_GOLD.png" alt="TAG Gold">
-                </div>
-                <div class="badge-info"><strong>🧊 TAG</strong><small>Tight-Aggressive, solide</small></div>
-            </div>
-            <div class="badge-showcase emoji">
-                <div class="badge-images">
-                    <img src="Pack_3_Profils/icon_129313_NONE.png" alt="Maniaque">
-                    <img src="Pack_3_Profils/icon_129313_WHITE.png" alt="Maniaque White">
-                    <img src="Pack_3_Profils/icon_129313_GOLD.png" alt="Maniaque Gold">
-                </div>
-                <div class="badge-info"><strong>🤡 Maniaque</strong><small>Imprévisible, joue n'importe quoi</small>
-                </div>
-            </div>
-            <div class="badge-showcase emoji">
-                <div class="badge-images">
-                    <img src="Pack_3_Profils/icon_128564_NONE.png" alt="Passif">
-                    <img src="Pack_3_Profils/icon_128564_WHITE.png" alt="Passif White">
-                    <img src="Pack_3_Profils/icon_128564_GOLD.png" alt="Passif Gold">
-                </div>
-                <div class="badge-info"><strong>😴 Passif</strong><small>Check-call, rarement agressif</small></div>
-            </div>
-            <div class="badge-showcase emoji">
-                <div class="badge-images">
-                    <img src="Pack_3_Profils/icon_128170_NONE.png" alt="Aggro">
-                    <img src="Pack_3_Profils/icon_128170_WHITE.png" alt="Aggro White">
-                    <img src="Pack_3_Profils/icon_128170_GOLD.png" alt="Aggro Gold">
-                </div>
-                <div class="badge-info"><strong>💪 Aggro</strong><small>Mise beaucoup, pressure constant</small></div>
-            </div>
-            <div class="badge-showcase emoji">
-                <div class="badge-images">
-                    <img src="Pack_3_Profils/icon_128274_NONE.png" alt="Tight">
-                    <img src="Pack_3_Profils/icon_128274_WHITE.png" alt="Tight White">
-                    <img src="Pack_3_Profils/icon_128274_GOLD.png" alt="Tight Gold">
-                </div>
-                <div class="badge-info"><strong>🔒 Tight</strong><small>Joue peu de mains, sélectif</small></div>
-            </div>
-            <div class="badge-showcase emoji">
-                <div class="badge-images">
-                    <img src="Pack_3_Profils/icon_127754_NONE.png" alt="Loose">
-                    <img src="Pack_3_Profils/icon_127754_WHITE.png" alt="Loose White">
-                    <img src="Pack_3_Profils/icon_127754_GOLD.png" alt="Loose Gold">
-                </div>
-                <div class="badge-info"><strong>🌊 Loose</strong><small>Joue beaucoup de mains</small></div>
-            </div>
-        </div>
-    </section>
+    </div>
+    </details>
 
     <!-- PACK 4 EMOTIONS -->
-    <section class="pack-section thematic" id="pack4">
-        <div class="pack-header-full">
+    <details class="pack-accordion" id="pack4">
+        <summary class="pack-header-full">
             <div class="pack-title">
                 <span class="pack-num">PACK 4</span>
                 <h2>😤 Émotions & Comportements</h2>
@@ -777,12 +870,15 @@
             <div class="pack-meta">
                 <span class="badge-total">30 badges</span>
                 <span class="pack-price-tag">2.99€</span>
-                <button class="btn-buy" onclick="openModal('Pack 4 - Émotions', '2.99')">Acheter</button>
+                <button class="btn-buy"
+                    onclick="event.stopPropagation(); openModal('Pack 4 - Émotions', '2.99')">Acheter</button>
             </div>
+        </summary>
+        <div class="pack-section-content">
         </div>
-        <div class="pack-description">
-            <p>📖 <strong>Usage :</strong> Marquez les tendances émotionnelles et comportementales de vos adversaires.
-            </p>
+        <p>📖 <strong>Usage :</strong> Marquez les tendances émotionnelles et comportementales de vos
+            adversaires.
+        </p>
         </div>
         <div class="badges-grid thematic-grid">
             <div class="badge-showcase emoji">
@@ -791,7 +887,8 @@
                     <img src="Pack_4_Emotions/icon_128548_WHITE.png" alt="Tilt">
                     <img src="Pack_4_Emotions/icon_128548_GOLD.png" alt="Tilt">
                 </div>
-                <div class="badge-info"><strong>😤 Tilt</strong><small>En colère, joue mal après un bad beat</small>
+                <div class="badge-info"><strong>😤 Tilt</strong><small>En colère, joue mal après un bad
+                        beat</small>
                 </div>
             </div>
             <div class="badge-showcase emoji">
@@ -800,7 +897,8 @@
                     <img src="Pack_4_Emotions/icon_127917_WHITE.png" alt="Bluffeur">
                     <img src="Pack_4_Emotions/icon_127917_GOLD.png" alt="Bluffeur">
                 </div>
-                <div class="badge-info"><strong>🎭 Bluffeur</strong><small>Bluff souvent, range de bluff large</small>
+                <div class="badge-info"><strong>🎭 Bluffeur</strong><small>Bluff souvent, range de bluff
+                        large</small>
                 </div>
             </div>
             <div class="badge-showcase emoji">
@@ -826,7 +924,8 @@
                     <img src="Pack_4_Emotions/icon_127808_WHITE.png" alt="Lucky">
                     <img src="Pack_4_Emotions/icon_127808_GOLD.png" alt="Lucky">
                 </div>
-                <div class="badge-info"><strong>🍀 Lucky</strong><small>Runner-runner, suckouts réguliers</small></div>
+                <div class="badge-info"><strong>🍀 Lucky</strong><small>Runner-runner, suckouts
+                        réguliers</small></div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -834,7 +933,8 @@
                     <img src="Pack_4_Emotions/icon_128560_WHITE.png" alt="Scared">
                     <img src="Pack_4_Emotions/icon_128560_GOLD.png" alt="Scared">
                 </div>
-                <div class="badge-info"><strong>😰 Scared Money</strong><small>Peur de perdre, fold trop souvent</small>
+                <div class="badge-info"><strong>😰 Scared Money</strong><small>Peur de perdre, fold trop
+                        souvent</small>
                 </div>
             </div>
             <div class="badge-showcase emoji">
@@ -843,7 +943,8 @@
                     <img src="Pack_4_Emotions/icon_9889_WHITE.png" alt="Fast">
                     <img src="Pack_4_Emotions/icon_9889_GOLD.png" alt="Fast">
                 </div>
-                <div class="badge-info"><strong>⚡ Fast</strong><small>Décisions rapides, snap call/fold</small></div>
+                <div class="badge-info"><strong>⚡ Fast</strong><small>Décisions rapides, snap call/fold</small>
+                </div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -868,14 +969,16 @@
                     <img src="Pack_4_Emotions/icon_10067_WHITE.png" alt="Unknown">
                     <img src="Pack_4_Emotions/icon_10067_GOLD.png" alt="Unknown">
                 </div>
-                <div class="badge-info"><strong>❓ Unknown</strong><small>Pas assez d'infos pour profiler</small></div>
+                <div class="badge-info"><strong>❓ Unknown</strong><small>Pas assez d'infos pour profiler</small>
+                </div>
             </div>
         </div>
-    </section>
+        </div>
+    </details>
 
     <!-- PACK 5 CODE ROUTE -->
-    <section class="pack-section thematic" id="pack5">
-        <div class="pack-header-full">
+    <details class="pack-accordion" id="pack5">
+        <summary class="pack-header-full">
             <div class="pack-title">
                 <span class="pack-num">PACK 5</span>
                 <h2>🚦 Code de la Route</h2>
@@ -883,12 +986,15 @@
             <div class="pack-meta">
                 <span class="badge-total">30 badges</span>
                 <span class="pack-price-tag">2.99€</span>
-                <button class="btn-buy" onclick="openModal('Pack 5 - Code de la Route', '2.99')">Acheter</button>
+                <button class="btn-buy"
+                    onclick="event.stopPropagation(); openModal('Pack 5 - Code de la Route', '2.99')">Acheter</button>
             </div>
+        </summary>
+        <div class="pack-section-content">
         </div>
-        <div class="pack-description">
-            <p>📖 <strong>Usage :</strong> Système visuel intuitif pour noter comment jouer contre chaque adversaire.
-            </p>
+        <p>📖 <strong>Usage :</strong> Système visuel intuitif pour noter comment jouer contre chaque
+            adversaire.
+        </p>
         </div>
         <div class="badges-grid thematic-grid">
             <div class="badge-showcase emoji">
@@ -897,7 +1003,8 @@
                     <img src="Pack_5_Code_Route/icon_128678_WHITE.png" alt="Feu">
                     <img src="Pack_5_Code_Route/icon_128678_GOLD.png" alt="Feu">
                 </div>
-                <div class="badge-info"><strong>🚦 Feu</strong><small>Vert = go, Rouge = stop selon situation</small>
+                <div class="badge-info"><strong>🚦 Feu</strong><small>Vert = go, Rouge = stop selon
+                        situation</small>
                 </div>
             </div>
             <div class="badge-showcase emoji">
@@ -906,7 +1013,8 @@
                     <img src="Pack_5_Code_Route/icon_9940_WHITE.png" alt="Stop">
                     <img src="Pack_5_Code_Route/icon_9940_GOLD.png" alt="Stop">
                 </div>
-                <div class="badge-info"><strong>⛔ Sens Interdit</strong><small>Ne pas bluffer ce joueur !</small></div>
+                <div class="badge-info"><strong>⛔ Sens Interdit</strong><small>Ne pas bluffer ce joueur
+                        !</small></div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -914,7 +1022,8 @@
                     <img src="Pack_5_Code_Route/icon_128721_WHITE.png" alt="Stop">
                     <img src="Pack_5_Code_Route/icon_128721_GOLD.png" alt="Stop">
                 </div>
-                <div class="badge-info"><strong>🛑 Stop (Fold)</strong><small>Fold vs ce joueur dans cette spot</small>
+                <div class="badge-info"><strong>🛑 Stop (Fold)</strong><small>Fold vs ce joueur dans cette
+                        spot</small>
                 </div>
             </div>
             <div class="badge-showcase emoji">
@@ -923,7 +1032,8 @@
                     <img src="Pack_5_Code_Route/icon_9888_WHITE.png" alt="Warning">
                     <img src="Pack_5_Code_Route/icon_9888_GOLD.png" alt="Warning">
                 </div>
-                <div class="badge-info"><strong>⚠️ Attention</strong><small>Joueur dangereux, prudence !</small></div>
+                <div class="badge-info"><strong>⚠️ Attention</strong><small>Joueur dangereux, prudence !</small>
+                </div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -931,7 +1041,8 @@
                     <img src="Pack_5_Code_Route/icon_128679_WHITE.png" alt="WIP">
                     <img src="Pack_5_Code_Route/icon_128679_GOLD.png" alt="WIP">
                 </div>
-                <div class="badge-info"><strong>🚧 En Construction</strong><small>Profil en cours d'analyse</small>
+                <div class="badge-info"><strong>🚧 En Construction</strong><small>Profil en cours
+                        d'analyse</small>
                 </div>
             </div>
             <div class="badge-showcase emoji">
@@ -940,7 +1051,8 @@
                     <img src="Pack_5_Code_Route/icon_10145_WHITE.png" alt="Dir">
                     <img src="Pack_5_Code_Route/icon_10145_GOLD.png" alt="Dir">
                 </div>
-                <div class="badge-info"><strong>➡️ Direction</strong><small>Tendance observée dans une direction</small>
+                <div class="badge-info"><strong>➡️ Direction</strong><small>Tendance observée dans une
+                        direction</small>
                 </div>
             </div>
             <div class="badge-showcase emoji">
@@ -958,7 +1070,8 @@
                     <img src="Pack_5_Code_Route/icon_127359_WHITE.png" alt="Park">
                     <img src="Pack_5_Code_Route/icon_127359_GOLD.png" alt="Park">
                 </div>
-                <div class="badge-info"><strong>🅿️ Parking</strong><small>Joueur passif, attend les nuts</small></div>
+                <div class="badge-info"><strong>🅿️ Parking</strong><small>Joueur passif, attend les
+                        nuts</small></div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -966,7 +1079,8 @@
                     <img src="Pack_5_Code_Route/icon_128663_WHITE.png" alt="Car">
                     <img src="Pack_5_Code_Route/icon_128663_GOLD.png" alt="Car">
                 </div>
-                <div class="badge-info"><strong>🚗 Voiture</strong><small>Joueur standard, ABC poker</small></div>
+                <div class="badge-info"><strong>🚗 Voiture</strong><small>Joueur standard, ABC poker</small>
+                </div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -974,14 +1088,16 @@
                     <img src="Pack_5_Code_Route/icon_127950_WHITE.png" alt="F1">
                     <img src="Pack_5_Code_Route/icon_127950_GOLD.png" alt="F1">
                 </div>
-                <div class="badge-info"><strong>🏎️ Formule 1</strong><small>Joueur rapide et agressif</small></div>
+                <div class="badge-info"><strong>🏎️ Formule 1</strong><small>Joueur rapide et agressif</small>
+                </div>
             </div>
         </div>
-    </section>
+        </div>
+    </details>
 
     <!-- PACK 6 JUNGLE -->
-    <section class="pack-section thematic" id="pack6">
-        <div class="pack-header-full">
+    <details class="pack-accordion" id="pack6">
+        <summary class="pack-header-full">
             <div class="pack-title">
                 <span class="pack-num">PACK 6</span>
                 <h2>🦁 Jungle</h2>
@@ -989,11 +1105,13 @@
             <div class="pack-meta">
                 <span class="badge-total">30 badges</span>
                 <span class="pack-price-tag">2.99€</span>
-                <button class="btn-buy" onclick="openModal('Pack 6 - Jungle', '2.99')">Acheter</button>
+                <button class="btn-buy"
+                    onclick="event.stopPropagation(); openModal('Pack 6 - Jungle', '2.99')">Acheter</button>
             </div>
+        </summary>
+        <div class="pack-section-content">
         </div>
-        <div class="pack-description">
-            <p>📖 <strong>Usage :</strong> Associez chaque adversaire à un animal selon son style de jeu.</p>
+        <p>📖 <strong>Usage :</strong> Associez chaque adversaire à un animal selon son style de jeu.</p>
         </div>
         <div class="badges-grid thematic-grid">
             <div class="badge-showcase emoji">
@@ -1002,7 +1120,8 @@
                     <img src="Pack_6_Jungle/icon_129409_WHITE.png" alt="Lion">
                     <img src="Pack_6_Jungle/icon_129409_GOLD.png" alt="Lion">
                 </div>
-                <div class="badge-info"><strong>🦁 Lion</strong><small>Roi de la table, très agressif</small></div>
+                <div class="badge-info"><strong>🦁 Lion</strong><small>Roi de la table, très agressif</small>
+                </div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -1010,7 +1129,8 @@
                     <img src="Pack_6_Jungle/icon_128013_WHITE.png" alt="Serpent">
                     <img src="Pack_6_Jungle/icon_128013_GOLD.png" alt="Serpent">
                 </div>
-                <div class="badge-info"><strong>🐍 Serpent</strong><small>Tricky, attaque par surprise</small></div>
+                <div class="badge-info"><strong>🐍 Serpent</strong><small>Tricky, attaque par surprise</small>
+                </div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -1034,7 +1154,8 @@
                     <img src="Pack_6_Jungle/icon_129422_WHITE.png" alt="Cameleon">
                     <img src="Pack_6_Jungle/icon_129422_GOLD.png" alt="Cameleon">
                 </div>
-                <div class="badge-info"><strong>🦎 Caméléon</strong><small>S'adapte, change de style</small></div>
+                <div class="badge-info"><strong>🦎 Caméléon</strong><small>S'adapte, change de style</small>
+                </div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -1050,7 +1171,8 @@
                     <img src="Pack_6_Jungle/icon_129413_WHITE.png" alt="Aigle">
                     <img src="Pack_6_Jungle/icon_129413_GOLD.png" alt="Aigle">
                 </div>
-                <div class="badge-info"><strong>🦅 Aigle</strong><small>Vision globale, exploite les spots</small></div>
+                <div class="badge-info"><strong>🦅 Aigle</strong><small>Vision globale, exploite les
+                        spots</small></div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -1066,7 +1188,8 @@
                     <img src="Pack_6_Jungle/icon_129445_WHITE.png" alt="Sloth">
                     <img src="Pack_6_Jungle/icon_129445_GOLD.png" alt="Sloth">
                 </div>
-                <div class="badge-info"><strong>🦥 Paresseux</strong><small>Passif, attend les monstres</small></div>
+                <div class="badge-info"><strong>🦥 Paresseux</strong><small>Passif, attend les monstres</small>
+                </div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -1074,14 +1197,16 @@
                     <img src="Pack_6_Jungle/icon_128010_WHITE.png" alt="Croc">
                     <img src="Pack_6_Jungle/icon_128010_GOLD.png" alt="Croc">
                 </div>
-                <div class="badge-info"><strong>🐊 Crocodile</strong><small>Attend puis attaque fort</small></div>
+                <div class="badge-info"><strong>🐊 Crocodile</strong><small>Attend puis attaque fort</small>
+                </div>
             </div>
         </div>
-    </section>
+        </div>
+    </details>
 
     <!-- PACK 7 OCEAN -->
-    <section class="pack-section thematic" id="pack7">
-        <div class="pack-header-full">
+    <details class="pack-accordion" id="pack7">
+        <summary class="pack-header-full">
             <div class="pack-title">
                 <span class="pack-num">PACK 7</span>
                 <h2>🦈 Océan</h2>
@@ -1089,11 +1214,14 @@
             <div class="pack-meta">
                 <span class="badge-total">30 badges</span>
                 <span class="pack-price-tag">2.99€</span>
-                <button class="btn-buy" onclick="openModal('Pack 7 - Océan', '2.99')">Acheter</button>
+                <button class="btn-buy"
+                    onclick="event.stopPropagation(); openModal('Pack 7 - Océan', '2.99')">Acheter</button>
             </div>
+        </summary>
+        <div class="pack-section-content">
         </div>
-        <div class="pack-description">
-            <p>📖 <strong>Usage :</strong> Thématique marine pour classer vos adversaires par niveau de danger.</p>
+        <p>📖 <strong>Usage :</strong> Thématique marine pour classer vos adversaires par niveau de danger.
+        </p>
         </div>
         <div class="badges-grid thematic-grid">
             <div class="badge-showcase emoji">
@@ -1102,7 +1230,8 @@
                     <img src="Pack_7_Ocean/icon_128031_WHITE.png" alt="Fish">
                     <img src="Pack_7_Ocean/icon_128031_GOLD.png" alt="Fish">
                 </div>
-                <div class="badge-info"><strong>🐟 Fish</strong><small>Joueur récréatif, facile à exploiter</small>
+                <div class="badge-info"><strong>🐟 Fish</strong><small>Joueur récréatif, facile à
+                        exploiter</small>
                 </div>
             </div>
             <div class="badge-showcase emoji">
@@ -1111,7 +1240,8 @@
                     <img src="Pack_7_Ocean/icon_129416_WHITE.png" alt="Shark">
                     <img src="Pack_7_Ocean/icon_129416_GOLD.png" alt="Shark">
                 </div>
-                <div class="badge-info"><strong>🦈 Shark</strong><small>Régulier compétent, attention !</small></div>
+                <div class="badge-info"><strong>🦈 Shark</strong><small>Régulier compétent, attention !</small>
+                </div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -1119,7 +1249,8 @@
                     <img src="Pack_7_Ocean/icon_128025_WHITE.png" alt="Octopus">
                     <img src="Pack_7_Ocean/icon_128025_GOLD.png" alt="Octopus">
                 </div>
-                <div class="badge-info"><strong>🐙 Pieuvre</strong><small>Multi-table, joue partout</small></div>
+                <div class="badge-info"><strong>🐙 Pieuvre</strong><small>Multi-table, joue partout</small>
+                </div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -1127,7 +1258,8 @@
                     <img src="Pack_7_Ocean/icon_129424_WHITE.png" alt="Shrimp">
                     <img src="Pack_7_Ocean/icon_129424_GOLD.png" alt="Shrimp">
                 </div>
-                <div class="badge-info"><strong>🦐 Crevette</strong><small>Short stack, push/fold mode</small></div>
+                <div class="badge-info"><strong>🦐 Crevette</strong><small>Short stack, push/fold mode</small>
+                </div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -1135,7 +1267,8 @@
                     <img src="Pack_7_Ocean/icon_128051_WHITE.png" alt="Whale">
                     <img src="Pack_7_Ocean/icon_128051_GOLD.png" alt="Whale">
                 </div>
-                <div class="badge-info"><strong>🐳 Baleine</strong><small>Gros bankroll, loose passif</small></div>
+                <div class="badge-info"><strong>🐳 Baleine</strong><small>Gros bankroll, loose passif</small>
+                </div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -1143,7 +1276,8 @@
                     <img src="Pack_7_Ocean/icon_129425_WHITE.png" alt="Squid">
                     <img src="Pack_7_Ocean/icon_129425_GOLD.png" alt="Squid">
                 </div>
-                <div class="badge-info"><strong>🦑 Calamar</strong><small>Encre les spots, compliqué à lire</small>
+                <div class="badge-info"><strong>🦑 Calamar</strong><small>Encre les spots, compliqué à
+                        lire</small>
                 </div>
             </div>
             <div class="badge-showcase emoji">
@@ -1152,7 +1286,8 @@
                     <img src="Pack_7_Ocean/icon_128033_WHITE.png" alt="Puffer">
                     <img src="Pack_7_Ocean/icon_128033_GOLD.png" alt="Puffer">
                 </div>
-                <div class="badge-info"><strong>🐡 Poisson-Globe</strong><small>Gonfle ses mises (sizing tells)</small>
+                <div class="badge-info"><strong>🐡 Poisson-Globe</strong><small>Gonfle ses mises (sizing
+                        tells)</small>
                 </div>
             </div>
             <div class="badge-showcase emoji">
@@ -1177,14 +1312,16 @@
                     <img src="Pack_7_Ocean/icon_127754_WHITE.png" alt="Wave">
                     <img src="Pack_7_Ocean/icon_127754_GOLD.png" alt="Wave">
                 </div>
-                <div class="badge-info"><strong>🌊 Vague</strong><small>Variance extrême, swings fous</small></div>
+                <div class="badge-info"><strong>🌊 Vague</strong><small>Variance extrême, swings fous</small>
+                </div>
             </div>
         </div>
-    </section>
+        </div>
+    </details>
 
     <!-- PACK 8 VOLCANS -->
-    <section class="pack-section thematic" id="pack8">
-        <div class="pack-header-full">
+    <details class="pack-accordion" id="pack8">
+        <summary class="pack-header-full">
             <div class="pack-title">
                 <span class="pack-num">PACK 8</span>
                 <h2>🌋 Forces de la Nature</h2>
@@ -1192,11 +1329,13 @@
             <div class="pack-meta">
                 <span class="badge-total">30 badges</span>
                 <span class="pack-price-tag">2.99€</span>
-                <button class="btn-buy" onclick="openModal('Pack 8 - Forces de la Nature', '2.99')">Acheter</button>
+                <button class="btn-buy"
+                    onclick="event.stopPropagation(); openModal('Pack 8 - Forces de la Nature', '2.99')">Acheter</button>
             </div>
+        </summary>
+        <div class="pack-section-content">
         </div>
-        <div class="pack-description">
-            <p>📖 <strong>Usage :</strong> Éléments naturels pour décrire l'intensité et le style de jeu.</p>
+        <p>📖 <strong>Usage :</strong> Éléments naturels pour décrire l'intensité et le style de jeu.</p>
         </div>
         <div class="badges-grid thematic-grid">
             <div class="badge-showcase emoji">
@@ -1205,7 +1344,8 @@
                     <img src="Pack_8_Volcans/icon_127755_WHITE.png" alt="Volcano">
                     <img src="Pack_8_Volcans/icon_127755_GOLD.png" alt="Volcano">
                 </div>
-                <div class="badge-info"><strong>🌋 Volcan</strong><small>Explosif, peut exploser à tout moment</small>
+                <div class="badge-info"><strong>🌋 Volcan</strong><small>Explosif, peut exploser à tout
+                        moment</small>
                 </div>
             </div>
             <div class="badge-showcase emoji">
@@ -1222,7 +1362,8 @@
                     <img src="Pack_8_Volcans/icon_9968_WHITE.png" alt="Hill">
                     <img src="Pack_8_Volcans/icon_9968_GOLD.png" alt="Hill">
                 </div>
-                <div class="badge-info"><strong>⛰️ Colline</strong><small>Semi-solide, quelques failles</small></div>
+                <div class="badge-info"><strong>⛰️ Colline</strong><small>Semi-solide, quelques failles</small>
+                </div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -1270,7 +1411,8 @@
                     <img src="Pack_8_Volcans/icon_127786_WHITE.png" alt="Tornado">
                     <img src="Pack_8_Volcans/icon_127786_GOLD.png" alt="Tornado">
                 </div>
-                <div class="badge-info"><strong>🌪️ Tornade</strong><small>Chaos total, impossible à lire</small></div>
+                <div class="badge-info"><strong>🌪️ Tornade</strong><small>Chaos total, impossible à
+                        lire</small></div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -1278,15 +1420,17 @@
                     <img src="Pack_8_Volcans/icon_127752_WHITE.png" alt="Rainbow">
                     <img src="Pack_8_Volcans/icon_127752_GOLD.png" alt="Rainbow">
                 </div>
-                <div class="badge-info"><strong>🌈 Arc-en-Ciel</strong><small>Mood variable, dépend du moment</small>
+                <div class="badge-info"><strong>🌈 Arc-en-Ciel</strong><small>Mood variable, dépend du
+                        moment</small>
                 </div>
             </div>
         </div>
-    </section>
+        </div>
+    </details>
 
     <!-- PACK 9 LIFESTYLE -->
-    <section class="pack-section thematic" id="pack9">
-        <div class="pack-header-full">
+    <details class="pack-accordion" id="pack9">
+        <summary class="pack-header-full">
             <div class="pack-title">
                 <span class="pack-num">PACK 9</span>
                 <h2>🎰 Lifestyle</h2>
@@ -1294,11 +1438,13 @@
             <div class="pack-meta">
                 <span class="badge-total">30 badges</span>
                 <span class="pack-price-tag">2.99€</span>
-                <button class="btn-buy" onclick="openModal('Pack 9 - Lifestyle', '2.99')">Acheter</button>
+                <button class="btn-buy"
+                    onclick="event.stopPropagation(); openModal('Pack 9 - Lifestyle', '2.99')">Acheter</button>
             </div>
+        </summary>
+        <div class="pack-section-content">
         </div>
-        <div class="pack-description">
-            <p>📖 <strong>Usage :</strong> Décrivez le mode de vie et les habitudes de vos adversaires.</p>
+        <p>📖 <strong>Usage :</strong> Décrivez le mode de vie et les habitudes de vos adversaires.</p>
         </div>
         <div class="badges-grid thematic-grid">
             <div class="badge-showcase emoji">
@@ -1307,7 +1453,8 @@
                     <img src="Pack_9_Lifestyle/icon_127863_WHITE.png" alt="Wine">
                     <img src="Pack_9_Lifestyle/icon_127863_GOLD.png" alt="Wine">
                 </div>
-                <div class="badge-info"><strong>🍷 Alcool</strong><small>Joue en buvant, leaks évidents</small></div>
+                <div class="badge-info"><strong>🍷 Alcool</strong><small>Joue en buvant, leaks évidents</small>
+                </div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -1324,7 +1471,8 @@
                     <img src="Pack_9_Lifestyle/icon_128138_WHITE.png" alt="Pill">
                     <img src="Pack_9_Lifestyle/icon_128138_GOLD.png" alt="Pill">
                 </div>
-                <div class="badge-info"><strong>💊 Addict</strong><small>Accro au poker, grind non-stop</small></div>
+                <div class="badge-info"><strong>💊 Addict</strong><small>Accro au poker, grind non-stop</small>
+                </div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -1332,7 +1480,8 @@
                     <img src="Pack_9_Lifestyle/icon_127920_WHITE.png" alt="Slots">
                     <img src="Pack_9_Lifestyle/icon_127920_GOLD.png" alt="Slots">
                 </div>
-                <div class="badge-info"><strong>🎰 Gambler</strong><small>Joue pour la variance, aime la gamble</small>
+                <div class="badge-info"><strong>🎰 Gambler</strong><small>Joue pour la variance, aime la
+                        gamble</small>
                 </div>
             </div>
             <div class="badge-showcase emoji">
@@ -1341,7 +1490,8 @@
                     <img src="Pack_9_Lifestyle/icon_128164_WHITE.png" alt="Sleep">
                     <img src="Pack_9_Lifestyle/icon_128164_GOLD.png" alt="Sleep">
                 </div>
-                <div class="badge-info"><strong>💤 Fatigué</strong><small>Joue tard, décisions moins bonnes</small>
+                <div class="badge-info"><strong>💤 Fatigué</strong><small>Joue tard, décisions moins
+                        bonnes</small>
                 </div>
             </div>
             <div class="badge-showcase emoji">
@@ -1358,7 +1508,8 @@
                     <img src="Pack_9_Lifestyle/icon_127918_WHITE.png" alt="Gamer">
                     <img src="Pack_9_Lifestyle/icon_127918_GOLD.png" alt="Gamer">
                 </div>
-                <div class="badge-info"><strong>🎮 Gamer</strong><small>Vient des jeux vidéo, style calculé</small>
+                <div class="badge-info"><strong>🎮 Gamer</strong><small>Vient des jeux vidéo, style
+                        calculé</small>
                 </div>
             </div>
             <div class="badge-showcase emoji">
@@ -1375,7 +1526,8 @@
                     <img src="Pack_9_Lifestyle/icon_128184_WHITE.png" alt="Money">
                     <img src="Pack_9_Lifestyle/icon_128184_GOLD.png" alt="Money">
                 </div>
-                <div class="badge-info"><strong>💸 Money</strong><small>Joue pour l'argent, pas le fun</small></div>
+                <div class="badge-info"><strong>💸 Money</strong><small>Joue pour l'argent, pas le fun</small>
+                </div>
             </div>
             <div class="badge-showcase emoji">
                 <div class="badge-images">
@@ -1386,65 +1538,11 @@
                 <div class="badge-info"><strong>🏆 Trophy</strong><small>Compétiteur, veut gagner</small></div>
             </div>
         </div>
-    </section>
-
-    <!-- More packs would follow same pattern... -->
-
-    <!-- HUD LICENSES SECTION -->
-    <section class="hud-licenses">
-        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 0.5rem;">🔥 Licences <span
-                class="highlight">SpinNova HUD</span></h2>
-        <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem;">Choisis ta formule et profile tes
-            adversaires dès maintenant.</p>
-
-        <div class="license-grid">
-            <!-- 1 MOIS -->
-            <div class="license-card glass-panel">
-                <h3>1 Mois</h3>
-                <span class="license-duration">Accès complet</span>
-                <div class="license-price">15€</div>
-                <ul class="license-features">
-                    <li>HUD Dynamique (Large/Compact/Mini)</li>
-                    <li>Notes Rapides Illimitées</li>
-                    <li>Player Manager Complet</li>
-                    <li>Support Discord Priority</li>
-                </ul>
-                <button class="btn-primary" style="width: 100%;"
-                    onclick="openModal('Licence HUD - 1 Mois', '15')">Prendre 1 Mois</button>
-            </div>
-
-            <!-- 6 MOIS -->
-            <div class="license-card glass-panel featured">
-                <h3>6 Mois</h3>
-                <span class="license-duration">Le choix des grinders</span>
-                <div class="license-price">81€</div>
-                <ul class="license-features">
-                    <li>Tous les avantages 1 Mois</li>
-                    <li><strong>9€ offerts</strong> (Economie 10%)</li>
-                    <li>Mises à jour prioritaires</li>
-                    <li>Badge "VIP Supporter" sur Discord</li>
-                </ul>
-                <button class="btn-primary" style="width: 100%;"
-                    onclick="openModal('Licence HUD - 6 Mois', '81')">Prendre 6 Mois</button>
-            </div>
-
-            <!-- ESSAI -->
-            <div class="license-card glass-panel">
-                <h3>Essai 3 Jours</h3>
-                <span class="license-duration">Découverte</span>
-                <div class="license-price">0.00€</div>
-                <ul class="license-features">
-                    <li>Toutes les fonctionnalités</li>
-                    <li>Activation instantanée</li>
-                    <li>Idéal pour tester l'OCR</li>
-                </ul>
-                <a href="essai-gratuit.html" class="btn-primary"
-                    style="width: 100%; border-color: var(--accent); background: transparent;">Tester Gratuitement</a>
-            </div>
         </div>
-    </section>
+    </details>
+    </div>
 
-    <!-- NEW PAYMENT MODAL -->
+    <!-- PAYMENT MODAL -->
     <div id="paymentModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -1463,7 +1561,8 @@
             </div>
 
             <div class="hwid-reminder">
-                <strong>⚠️ IMPORTANT :</strong> Lors du paiement Revolut, ajoute ton <strong>HWID</strong> dans la note
+                <strong>⚠️ IMPORTANT :</strong> Lors du paiement Revolut, ajoute ton <strong>HWID</strong> dans
+                la note
                 de paiement pour que nous puissions activer ta licence rapidement.
             </div>
         </div>
@@ -1502,48 +1601,15 @@
         </div>
     </section>
 
-    <!-- PRICING REASSURANCE BAR - LICENCES HUD -->
-    <section class="pricing-reassurance-bar" style="padding-top: 4rem;">
-        <h2 class="prb-title">🖥️ Licences <span class="gradient-text">SpinNova HUD</span></h2>
-        <p class="prb-subtitle">Pas besoin de payer pour tester. Pas d'arnaque, pas de piège.</p>
-        <div class="prb-cards">
-            <div class="prb-card free">
-                <div class="prb-icon">🆓</div>
-                <div class="prb-label">Essai</div>
-                <div class="prb-price">GRATUIT</div>
-                <div class="prb-detail">3 jours complets</div>
-            </div>
-            <div class="prb-card">
-                <div class="prb-icon">💳</div>
-                <div class="prb-label">1 Mois</div>
-                <div class="prb-price">15€</div>
-                <div class="prb-detail">Sans engagement</div>
-            </div>
-            <div class="prb-card featured">
-                <div class="prb-icon">⭐</div>
-                <div class="prb-label">6 Mois</div>
-                <div class="prb-price">81€</div>
-                <div class="prb-detail">-10% · 9€ économisés</div>
-            </div>
-        </div>
-        <div class="prb-guarantees">
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Sans engagement</span>
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Aucun débit automatique</span>
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Carte OU Virement bancaire</span>
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Essai 100% gratuit</span>
-        </div>
-        <div class="prb-cta-row">
-            <a href="essai-gratuit.html" class="btn-primary">🆓 Essai Gratuit</a>
-            <a href="telechargement.html" class="btn-primary" style="background: var(--primary);">📥 Télécharger</a>
-        </div>
-    </section>
+
 
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">SpinNova</div>
             <div style="margin: 1rem 0; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
                 <a href="mentions-legales.html"
-                    style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Mentions Légales</a>
+                    style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Mentions
+                    Légales</a>
                 <a href="cgu-cgv.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">CGU /
                     CGV</a>
                 <a href="faq.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">FAQ</a>
