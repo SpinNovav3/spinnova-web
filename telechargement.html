@@ -155,7 +155,7 @@
 
         <!-- DOWNLOAD BUTTON -->
         <a href="https://github.com/spinnovav3/spinnova-web/releases/latest/download/Spinova_Release.zip"
-            class="btn-download-big">
+            class="btn-download-big" id="downloadBtn">
             📥 Télécharger la Dernière Version (V4.5.4)
         </a>
 
@@ -163,7 +163,7 @@
         <div class="step-card glass-panel">
             <div class="step-content">
                 <span class="step-number">1</span>
-                <h2>Extraction & Installation</h2>
+                <h2>Extraction &amp; Installation</h2>
                 <p>Une fois le fichier ZIP téléchargé, extrais le contenu dans un dossier sur ton bureau (ou
                     ailleurs).<br><br>
                     Lance ensuite <strong>SpinNova.exe</strong> pour démarrer l'application.</p>
@@ -204,7 +204,7 @@
         <div class="step-card glass-panel">
             <div class="step-content" style="text-align: center;">
                 <span class="step-number">3</span>
-                <h2>Colle ton Code & C'est Parti !</h2>
+                <h2>Colle ton Code &amp; C'est Parti !</h2>
                 <p style="margin-bottom: 1.5rem;">Une fois le code d'activation reçu (Discord ou Email),
                     <strong>colle-le directement</strong> dans la zone prévue.<br><br>
                     <em style="color: var(--accent);">💡 Astuce : Le logiciel détecte automatiquement le code et
@@ -295,6 +295,57 @@
         </div>
     </footer>
 
+    <!-- LEAD CAPTURE POPUP -->
+    <div id="leadPopup"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); backdrop-filter:blur(6px); z-index:9999; justify-content:center; align-items:center;">
+        <div
+            style="background:rgba(19,19,22,0.95); border:1px solid rgba(255,255,255,0.1); border-radius:20px; padding:2.5rem; max-width:440px; width:90%; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+            <div style="text-align:center; margin-bottom:1.5rem;">
+                <div style="font-size:2.5rem; margin-bottom:0.5rem;">📥</div>
+                <h2 style="font-size:1.4rem; margin-bottom:0.5rem;">Avant de télécharger...</h2>
+                <p style="color:#9ca3af; font-size:0.9rem;">Laisse-nous un moyen de te contacter pour recevoir des
+                    astuces et des mises à jour !</p>
+            </div>
+
+            <div style="margin-bottom:1rem;">
+                <label
+                    style="display:block; font-size:0.85rem; color:#06b6d4; font-weight:600; margin-bottom:0.4rem;">🎮
+                    Pseudo Discord</label>
+                <input type="text" id="leadDiscord" placeholder="ex: MonPseudo#1234"
+                    style="width:100%; padding:0.8rem 1rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; color:white; font-family:'Outfit',sans-serif; font-size:0.95rem; outline:none; transition:border-color 0.3s;"
+                    onfocus="this.style.borderColor='#06b6d4'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+            </div>
+
+            <div style="text-align:center; color:#9ca3af; font-size:0.8rem; margin-bottom:1rem;">— ou —</div>
+
+            <div style="margin-bottom:1.5rem;">
+                <label
+                    style="display:block; font-size:0.85rem; color:#6d28d9; font-weight:600; margin-bottom:0.4rem;">✉️
+                    Adresse Email</label>
+                <input type="email" id="leadEmail" placeholder="ex: mail@gmail.com"
+                    style="width:100%; padding:0.8rem 1rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; color:white; font-family:'Outfit',sans-serif; font-size:0.95rem; outline:none; transition:border-color 0.3s;"
+                    onfocus="this.style.borderColor='#6d28d9'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+            </div>
+
+            <p id="leadError"
+                style="display:none; color:#ef4444; font-size:0.8rem; text-align:center; margin-bottom:0.8rem;">Remplis
+                au moins un champ pour continuer</p>
+
+            <button id="leadSubmitBtn" onclick="submitLead()"
+                style="width:100%; padding:1rem; background:linear-gradient(90deg,#6d28d9,#06b6d4); color:white; border:none; border-radius:12px; font-size:1.1rem; font-weight:700; cursor:pointer; font-family:'Outfit',sans-serif; transition:transform 0.2s, box-shadow 0.2s;"
+                onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 30px rgba(109,40,217,0.4)'"
+                onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+                📥 Télécharger SpinNova
+            </button>
+
+            <div style="text-align:center; margin-top:1rem;">
+                <a href="#" onclick="skipLead(); return false;"
+                    style="color:#9ca3af; font-size:0.8rem; text-decoration:underline; opacity:0.7;">Non merci,
+                    télécharger directement</a>
+            </div>
+        </div>
+    </div>
+
     <!-- LIGHTBOX Overlay -->
     <div class="lightbox-overlay" id="lightboxOverlay">
         <button class="lightbox-close" id="lightboxClose">&times;</button>
@@ -303,6 +354,77 @@
     </div>
 
     <script>
+        // =====================================================================
+        // LEAD CAPTURE POPUP LOGIC
+        // =====================================================================
+        var DOWNLOAD_URL = 'https://github.com/spinnovav3/spinnova-web/releases/latest/download/Spinova_Release.zip';
+
+        // Intercept download button click
+        document.getElementById('downloadBtn').addEventListener('click', function (e) {
+            // If already gave contact, just download directly
+            if (window.SpinNovaTracker && window.SpinNovaTracker.hasAlreadyGivenContact()) {
+                return; // Let the default link behavior happen
+            }
+            e.preventDefault();
+            document.getElementById('leadPopup').style.display = 'flex';
+        });
+
+        function submitLead() {
+            var discord = document.getElementById('leadDiscord').value.trim();
+            var email = document.getElementById('leadEmail').value.trim();
+
+            // Validate: at least one field
+            if (!discord && !email) {
+                document.getElementById('leadError').style.display = 'block';
+                return;
+            }
+            document.getElementById('leadError').style.display = 'none';
+
+            // Determine contact method
+            var method = 'skipped';
+            if (discord && email) method = 'both';
+            else if (discord) method = 'discord';
+            else if (email) method = 'email';
+
+            // Track the lead
+            if (window.SpinNovaTracker) {
+                window.SpinNovaTracker.trackLead({
+                    discord: discord,
+                    email: email,
+                    contactMethod: method
+                });
+            }
+
+            // Close popup and start download
+            document.getElementById('leadPopup').style.display = 'none';
+            window.location.href = DOWNLOAD_URL;
+        }
+
+        function skipLead() {
+            // Track as skipped
+            if (window.SpinNovaTracker) {
+                window.SpinNovaTracker.trackLead({
+                    discord: '',
+                    email: '',
+                    contactMethod: 'skipped'
+                });
+            }
+
+            // Close popup and start download
+            document.getElementById('leadPopup').style.display = 'none';
+            window.location.href = DOWNLOAD_URL;
+        }
+
+        // Close popup on Escape
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && document.getElementById('leadPopup').style.display === 'flex') {
+                skipLead();
+            }
+        });
+
+        // =====================================================================
+        // LIGHTBOX
+        // =====================================================================
         (function () {
             const overlay = document.getElementById('lightboxOverlay');
             const lightboxImg = document.getElementById('lightboxImg');

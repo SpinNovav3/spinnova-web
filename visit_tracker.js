@@ -451,6 +451,75 @@
     }
 
     // =========================================================================
+    // LEAD CAPTURE (Contact collection at download)
+    // =========================================================================
+
+    function hasAlreadyGivenContact() {
+        return localStorage.getItem('spinnova_lead_given') === 'true';
+    }
+
+    function markLeadGiven() {
+        localStorage.setItem('spinnova_lead_given', 'true');
+    }
+
+    function trackLead(leadData) {
+        var langInfo = getLanguageInfo();
+
+        var leadRecord = {
+            id: 'lead_' + Date.now() + '_' + Math.random().toString(36).substring(2, 8),
+            type: 'lead',
+            visitor_id: getVisitorId(),
+            discord_username: leadData.discord || '',
+            email: leadData.email || '',
+            contact_method: leadData.contactMethod || 'skipped',
+            download_page: window.location.pathname,
+            referrer: getReferrerInfo(),
+            device: getDeviceType(),
+            browser: getBrowser(),
+            language: langInfo.code,
+            flag: langInfo.flag,
+            is_new: isNewVisitor(),
+            timestamp: new Date().toISOString()
+        };
+
+        log('📋 Lead tracked:', leadRecord);
+        markLeadGiven();
+
+        // Envoyer à JSONBin (non-bloquant)
+        try {
+            fetch(CONFIG.JSONBIN_URL + '/latest', {
+                method: 'GET',
+                headers: { 'X-Master-Key': CONFIG.API_KEY }
+            })
+                .then(function (r) { return r.json(); })
+                .then(function (data) {
+                    var visits = data.record?.visits || [];
+                    visits.push(leadRecord);
+                    return fetch(CONFIG.JSONBIN_URL, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-Master-Key': CONFIG.API_KEY
+                        },
+                        body: JSON.stringify({ visits: visits })
+                    });
+                })
+                .then(function () { log('✅ Lead sent to JSONBin'); })
+                .catch(function (err) { log('❌ Lead tracking error:', err.message); });
+        } catch (e) {
+            log('❌ Lead tracking failed:', e.message);
+        }
+    }
+
+    // =========================================================================
+    // GLOBAL API (for popup to call)
+    // =========================================================================
+    window.SpinNovaTracker = {
+        trackLead: trackLead,
+        hasAlreadyGivenContact: hasAlreadyGivenContact
+    };
+
+    // =========================================================================
     // INITIALIZATION
     // =========================================================================
 
