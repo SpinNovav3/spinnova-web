@@ -77,7 +77,17 @@
         </button>
         <div class="nav-links">
             <a href="index.html">Accueil</a>
-            <a href="badges.html">Badges</a>
+            <div class="nav-dropdown" onclick="this.classList.toggle('open')">
+                <button class="nav-dropdown-toggle">Mode d'Emploi <span class="dropdown-arrow">▼</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="guide-demarrage.html"><span class="dropdown-icon">🚀</span> Guide de Démarrage</a>
+                    <a href="guide-huds.html"><span class="dropdown-icon">🖥️</span> Les HUDs</a>
+                    <a href="guide-editeur-hud.html"><span class="dropdown-icon">🎨</span> Éditeur HUD</a>
+                    <a href="guide-notes.html"><span class="dropdown-icon">🎤</span> Notes & Voix</a>
+                    <a href="badges.html"><span class="dropdown-icon">🏷️</span> Badges</a>
+                    <a href="guide-captures.html"><span class="dropdown-icon">📸</span> Captures & Galerie</a>
+                </div>
+            </div>
             <a href="boutique.html">Boutique</a>
             <a href="essai-gratuit.html">Essai Gratuit</a>
             <a href="telechargement.html">Télécharger</a>
@@ -174,6 +184,243 @@
                 Revolut permet de payer instantanément avec une simple Carte Bleue, même si tu n'as pas de compte
                 Revolut. C'est sécurisé, sans frais pour toi, et nous recevons l'argent immédiatement, ce qui permet une
                 activation plus rapide de ta licence.
+            </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Quels sont les 3 modes HUD disponibles ? 🖥️
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                SpinNova propose 3 modes d'affichage :<br>
+                • <strong>Mini</strong> : ultra-discret, 1 seule ligne. Idéal pour 8+ tables.<br>
+                • <strong>Compact</strong> : 3 lignes avec sections LP/OP. Bon équilibre info/espace pour 4-6
+                tables.<br>
+                • <strong>Large</strong> : affichage complet avec toutes les zones. Parfait pour 1-3 tables ou sessions
+                d'étude.<br>
+                Tu peux basculer entre eux à tout moment via le Magic Switch.
+                <a href="guide-huds.html" style="color: var(--accent);">En savoir plus →</a>
+            </div>
+        </div>
+
+        <!-- FAQ 7 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                C'est quoi le Magic Switch ? ✨
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                Le Magic Switch te permet de changer de mode HUD <strong>pendant une partie</strong>, sans quitter la
+                table.
+                Un clic-droit sur le bouton SpinNova en jeu ouvre un menu pour basculer entre Mini, Compact, Large,
+                ou tes HUDs personnalisés créés dans l'éditeur.
+            </div>
+        </div>
+
+        <!-- FAQ 8 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Comment fonctionnent les Notes Vocales ? 🎤
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                Clique sur l'icône micro dans le HUD en jeu, parle, et SpinNova transcrit automatiquement
+                ta voix en texte grâce à une IA embarquée (Whisper). Pas besoin d'internet : tout se fait
+                en local sur ton PC. Tes notes restent 100% privées.
+                <a href="guide-notes.html" style="color: var(--accent);">En savoir plus →</a>
+            </div>
+        </div>
+
+        <!-- FAQ 9 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                C'est quoi les Quick Notes ? ⚡
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                Les Quick Notes sont des <strong>templates prédéfinis</strong> que tu appliques en 1 clic
+                pendant une partie. Par exemple : "limp-fold PF", "cbet 100% flop", etc.
+                Elles sont classées en 3 catégories (Preflop, Postflop, Général) et tu peux créer
+                tes propres templates dans le logiciel.
+            </div>
+        </div>
+
+        <!-- FAQ 10 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Quelles rooms sont compatibles ? 🃏
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                SpinNova est compatible avec <strong>toutes les rooms du réseau iPoker</strong> (PMU Poker, FDJ,
+                Betclic, Unibet,
+                etc.) ainsi que <strong>Winamax</strong>. Le logiciel détecte automatiquement les rooms installées
+                sur ton PC. Tu peux configurer plusieurs rooms en même temps.
+            </div>
+        </div>
+
+        <!-- FAQ 11 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                C'est quoi la détection Fish/Reg ? 🐟🤖
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                SpinNova analyse automatiquement le pourcentage de limp de chaque joueur pour le classer
+                comme <strong style="color: #ec4899;">Fish (récréatif)</strong> ou
+                <strong style="color: #ef4444;">Reg (régulier)</strong>.
+                Un halo de couleur apparaît autour de l'étiquette HUD du joueur. Les seuils sont
+                personnalisables dans les paramètres de l'éditeur HUD.
+            </div>
+        </div>
+
+        <!-- FAQ 12 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                C'est quoi les zones LP et OP sur le HUD ? 📊
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                <strong>LP</strong> = Limped Pot (pot limpé) et <strong>OP</strong> = Opened Pot (pot ouvert).
+                Ces zones séparent les notes selon le type de pot, en preflop et postflop.
+                Ça te permet de savoir comment un joueur joue différemment selon qu'il limpe ou ouvre.
+                Tu peux activer ou désactiver ces zones dans les paramètres généraux de l'éditeur HUD.
+            </div>
+        </div>
+
+        <!-- FAQ 13 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Comment créer un badge personnalisé ? 🏷️
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                Va dans la section Badges du logiciel, clique sur "+ NOUVEAU", saisis 2 à 4 caractères,
+                choisis les couleurs du texte et du fond, et valide. Ton badge est immédiatement disponible
+                pour être assigné en jeu. Tu peux aussi importer des images comme badges.
+                <a href="badges.html" style="color: var(--accent);">En savoir plus →</a>
+            </div>
+        </div>
+
+        <!-- FAQ 14 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Puis-je personnaliser mon propre HUD ? 🎨
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                Oui ! L'éditeur HUD est un outil WYSIWYG complet. Tu peux ajouter, déplacer et personnaliser
+                chaque élément : icônes, couleurs, tailles, positions. Tes HUDs personnalisés sont ensuite
+                disponibles dans le Magic Switch pour être utilisés en jeu.
+                <a href="guide-editeur-hud.html" style="color: var(--accent);">En savoir plus →</a>
+            </div>
+        </div>
+
+        <!-- FAQ 15 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Comment régler l'opacité du HUD ? 👁️
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                Va dans <strong>Paramètres → Opacité HUD</strong> et utilise le slider pour régler
+                la transparence. Le HUD devient semi-transparent et ne gêne plus ta vision du jeu.
+                Tu peux aussi ajuster l'échelle (taille) du HUD avec un second slider.
+            </div>
+        </div>
+
+        <!-- FAQ 16 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Comment capturer une zone de l'écran en jeu ? 📸
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                Clique sur l'icône capture dans le HUD. Un rectangle de sélection apparaît en overlay transparent.
+                Sélectionne la zone à capturer, et l'image est sauvegardée automatiquement dans la galerie du joueur.
+                Idéal pour capturer des mains intéressantes ou des situations de jeu.
+                <a href="guide-captures.html" style="color: var(--accent);">En savoir plus →</a>
+            </div>
+        </div>
+
+        <!-- FAQ 17 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                C'est quoi le halo de couleur ? 🎨
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                Le halo de couleur est un marquage visuel personnalisé autour de l'étiquette HUD d'un joueur.
+                Tu choisis la couleur via une palette circulaire, et elle reste associée au joueur pour
+                toutes tes futures sessions. Utile pour catégoriser visuellement tes adversaires.
+            </div>
+        </div>
+
+        <!-- FAQ 18 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Puis-je importer mes notes depuis SiQnotes ? 🔄
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                Oui, SpinNova est compatible avec les exports SiQnotes. Utilise la fonction Import/Export
+                dans le logiciel, et tes anciens badges seront automatiquement classés dans l'onglet "Importés"
+                de la popup badges en jeu. Tu peux ensuite les réorganiser comme tu veux.
+            </div>
+        </div>
+
+        <!-- FAQ 19 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                L'essai gratuit, comment ça marche ? 🆓
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                Tu télécharges SpinNova, tu lances le logiciel, et tu nous envoies ton HWID
+                via le <a href="essai-gratuit.html" style="color: var(--accent);">formulaire d'essai</a>,
+                par Discord, ou par email. On active ta licence pour <strong>3 jours complets</strong>,
+                sans engagement et sans carte bancaire. Toutes les fonctionnalités sont accessibles.
+            </div>
+        </div>
+
+        <!-- FAQ 20 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Dois-je être connecté à internet pour utiliser SpinNova ? 🌐
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                SpinNova fonctionne <strong>100% en local</strong>. Toutes tes notes, badges, images et données
+                restent sur ton PC. Même les notes vocales sont transcrites en local par l'IA embarquée.
+                La seule étape nécessitant internet est l'activation de ta licence.
+            </div>
+        </div>
+
+        <!-- FAQ 21 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Comment changer le thème de l'application ? 🎨
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                Va dans la section <strong>Thème</strong> du logiciel (dans la sidebar, section "Outils").
+                Tu peux personnaliser les couleurs de l'interface selon tes préférences.
+                Le thème est appliqué à tout le logiciel immédiatement.
+            </div>
+        </div>
+
+        <!-- FAQ 22 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                SpinNova fonctionne-t-il sur Mac ou Linux ? 💻
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                Non, SpinNova est actuellement compatible <strong>Windows uniquement</strong>.
+                Comme les rooms iPoker et Winamax ne sont disponibles que sur Windows, c'est la plateforme
+                ciblée. Si tu utilises un Mac avec une VM Windows, SpinNova fonctionnera dans cet environnement.
             </div>
         </div>
 

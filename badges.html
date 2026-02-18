@@ -82,7 +82,18 @@
         </button>
         <div class="nav-links">
             <a href="index.html">Accueil</a>
-            <a href="badges.html" class="nav-active">Badges</a>
+            <div class="nav-dropdown" onclick="this.classList.toggle('open')">
+                <button class="nav-dropdown-toggle nav-active">Mode d'Emploi <span
+                        class="dropdown-arrow">▼</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="guide-demarrage.html"><span class="dropdown-icon">🚀</span> Guide de Démarrage</a>
+                    <a href="guide-huds.html"><span class="dropdown-icon">🖥️</span> Les HUDs</a>
+                    <a href="guide-editeur-hud.html"><span class="dropdown-icon">🎨</span> Éditeur HUD</a>
+                    <a href="guide-notes.html"><span class="dropdown-icon">🎤</span> Notes & Voix</a>
+                    <a href="badges.html"><span class="dropdown-icon">🏷️</span> Badges</a>
+                    <a href="guide-captures.html"><span class="dropdown-icon">📸</span> Captures & Galerie</a>
+                </div>
+            </div>
             <a href="boutique.html">Boutique</a>
             <a href="essai-gratuit.html">Essai Gratuit</a>
             <a href="telechargement.html">Télécharger</a>
@@ -182,6 +193,85 @@
                         <li><strong>IMP</strong> - Onglet Imported</li>
                     </ul>
                     <p>Réorganisez votre arsenal selon votre style de jeu !</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packs pré-installés -->
+    <section class="workflow-section" style="background: rgba(123, 44, 191, 0.05);">
+        <h2>🎁 Les Packs de Badges <span class="highlight">Pré-installés</span></h2>
+        <p class="section-subtitle">Des badges prêts à l'emploi dès le premier lancement.</p>
+
+        <div class="feature-highlight">
+            <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+                <img src="pack_bienvenue.png" alt="Pack Bienvenue"
+                    style="flex: 1; min-width: 300px; max-width: 500px; border-radius: 12px;">
+                <div style="flex: 1; min-width: 250px;">
+                    <h3>📦 Pack Bienvenue</h3>
+                    <p>Inclus dès l'installation, ce pack contient les badges essentiels pour commencer à profiler vos
+                        adversaires :</p>
+                    <ul>
+                        <li><strong>Preflop</strong> : limp, open, 3bet, fold, etc.</li>
+                        <li><strong>Postflop</strong> : cbet, check-raise, barrel, etc.</li>
+                    </ul>
+                    <p style="margin-top: 0.5rem;">Un second pack <strong>Pro Avancé</strong> est également disponible
+                        pour un profilage plus fin.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <img src="screen_badges.png" alt="Vue d'ensemble de l'éditeur de badges"
+                style="max-width: 800px; width: 100%; border-radius: 12px; border: 2px solid var(--color-border);">
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">Vue d'ensemble de l'éditeur de
+                badges avec les onglets Preflop / Postflop / Importés</p>
+        </div>
+    </section>
+
+    <!-- Assigner un badge en jeu -->
+    <section class="workflow-section">
+        <h2>🎯 Assigner un Badge <span class="highlight">en Jeu</span></h2>
+        <p class="section-subtitle">Un clic sur le joueur, un clic sur le badge. C'est fait.</p>
+
+        <div class="feature-highlight">
+            <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 250px;">
+                    <h3>💬 La popup de badges</h3>
+                    <p>Directement depuis le HUD en jeu, cliquez sur l'icône badge d'un joueur. La popup s'ouvre avec
+                        tous vos badges disponibles.</p>
+                    <ul>
+                        <li><span style="color: var(--accent);">→</span> Cliquez pour assigner ou retirer un badge</li>
+                        <li><span style="color: var(--accent);">→</span> Les badges assignés apparaissent immédiatement
+                            sur le HUD</li>
+                        <li><span style="color: var(--accent);">→</span> Fonctionne en 3-way comme en Heads-Up</li>
+                    </ul>
+                </div>
+                <img src="popupbadge.png" alt="Popup de badges en jeu"
+                    style="flex: 1; min-width: 300px; max-width: 450px; border-radius: 12px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Colonne Importés -->
+    <section class="workflow-section" style="background: rgba(123, 44, 191, 0.05);">
+        <h2>📥 Colonne <span class="highlight">Importés</span></h2>
+        <p class="section-subtitle">Pour les joueurs qui migrent depuis SiQnotes ou un autre outil.</p>
+
+        <div class="feature-highlight">
+            <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+                <img src="popup badge colonne importedouverte.png" alt="Colonne Importés ouverte"
+                    style="flex: 1; min-width: 300px; max-width: 450px; border-radius: 12px;">
+                <div style="flex: 1; min-width: 250px;">
+                    <h3>🔄 Migration facile</h3>
+                    <p>Si vous aviez des notes ou badges sur un autre outil, SpinNova peut les importer. La colonne
+                        <strong>Importés</strong> dans la popup badges vous permet de retrouver vos anciens badges.</p>
+                    <ul>
+                        <li><span style="color: var(--accent);">→</span> Compatible avec les exports SiQnotes</li>
+                        <li><span style="color: var(--accent);">→</span> Badges automatiquement classés dans l'onglet
+                            IMP</li>
+                        <li><span style="color: var(--accent);">→</span> Réorganisez-les ensuite comme vous voulez</li>
+                    </ul>
                 </div>
             </div>
         </div>

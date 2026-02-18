@@ -42,7 +42,17 @@
         </button>
         <div class="nav-links">
             <a href="index.html" class="nav-active">Accueil</a>
-            <a href="badges.html">Badges</a>
+            <div class="nav-dropdown" onclick="this.classList.toggle('open')">
+                <button class="nav-dropdown-toggle">Mode d'Emploi <span class="dropdown-arrow">▼</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="guide-demarrage.html"><span class="dropdown-icon">🚀</span> Guide de Démarrage</a>
+                    <a href="guide-huds.html"><span class="dropdown-icon">🖥️</span> Les HUDs</a>
+                    <a href="guide-editeur-hud.html"><span class="dropdown-icon">🎨</span> Éditeur HUD</a>
+                    <a href="guide-notes.html"><span class="dropdown-icon">🎤</span> Notes & Voix</a>
+                    <a href="badges.html"><span class="dropdown-icon">🏷️</span> Badges</a>
+                    <a href="guide-captures.html"><span class="dropdown-icon">📸</span> Captures & Galerie</a>
+                </div>
+            </div>
             <a href="boutique.html">Boutique</a>
             <a href="essai-gratuit.html">Essai Gratuit</a>
             <a href="telechargement.html">Télécharger</a>

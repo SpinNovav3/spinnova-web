@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes & Voix - SpinNova HUD Poker</title>
+    <meta name="description"
+        content="3 façons de noter vos adversaires avec SpinNova : notes vocales avec transcription IA, Quick Notes en 1 clic, et notes manuscrites.">
+    <script src="cookie-banner.js"></script>
+    <script src="visit_tracker.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">Spin<span class="highlight">Nova</span></a>
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <div class="nav-dropdown" onclick="this.classList.toggle('open')">
+                <button class="nav-dropdown-toggle nav-active">Mode d'Emploi <span
+                        class="dropdown-arrow">▼</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="guide-demarrage.html"><span class="dropdown-icon">🚀</span> Guide de Démarrage</a>
+                    <a href="guide-huds.html"><span class="dropdown-icon">🖥️</span> Les HUDs</a>
+                    <a href="guide-editeur-hud.html"><span class="dropdown-icon">🎨</span> Éditeur HUD</a>
+                    <a href="guide-notes.html"><span class="dropdown-icon">🎤</span> Notes & Voix</a>
+                    <a href="badges.html"><span class="dropdown-icon">🏷️</span> Badges</a>
+                    <a href="guide-captures.html"><span class="dropdown-icon">📸</span> Captures & Galerie</a>
+                </div>
+            </div>
+            <a href="boutique.html">Boutique</a>
+            <a href="essai-gratuit.html">Essai Gratuit</a>
+            <a href="telechargement.html">Télécharger</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
+        </div>
+    </nav>
+    <div class="nav-overlay" onclick="toggleMenu()"></div>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.hamburger').classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+            document.querySelector('.nav-overlay').classList.toggle('active');
+        }
+    </script>
+
+    <!-- HERO -->
+    <header class="hero" style="min-height: 50vh; padding-top: 140px;">
+        <div class="hero-content">
+            <span class="badge-new">📖 Mode d'Emploi</span>
+            <h1>🎤 Notes & <span class="gradient-text">Voix</span></h1>
+            <p><strong>3 façons</strong> de prendre des notes sur vos adversaires :<br>
+                vocale avec transcription IA, Quick Note en 1 clic, et manuscrite.</p>
+        </div>
+    </header>
+
+    <!-- NOTES VOCALES — EN PREMIER (feature phare) -->
+    <section class="features-section" style="padding-top: 2rem;">
+        <h2 style="text-align: left; font-size: 1.8rem;">
+            🎤 Notes <span style="color: var(--accent);">Vocales</span>
+            <span
+                style="background: linear-gradient(90deg, #ea580c, #dc2626); color: white; padding: 0.2rem 0.8rem; border-radius: 10px; font-size: 0.7rem; font-weight: 700; vertical-align: middle; margin-left: 0.5rem;">EXCLUSIF</span>
+        </h2>
+        <div class="glass-panel" style="margin-top: 1.5rem; padding: 2rem;">
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.05rem;">
+                <strong style="color: var(--text-main);">Parlez au lieu de taper.</strong>
+                SpinNova transcrit automatiquement votre voix en texte grâce à l'IA embarquée,
+                sans connexion internet. Vos notes restent 100% privées.
+            </p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                <div style="text-align: center;">
+                    <img src="micro pendantquonparle.png" alt="Micro en cours d'enregistrement" class="screen-img"
+                        style="max-width: 100%; border-radius: 12px; margin-bottom: 0.5rem;">
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">Le micro en cours d'enregistrement</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="notevocalsauvegarde.png" alt="Note vocale transcrite et sauvegardée" class="screen-img"
+                        style="max-width: 100%; border-radius: 12px; margin-bottom: 0.5rem;">
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">Transcription automatique sauvegardée</p>
+                </div>
+            </div>
+            <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                <div
+                    style="background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.2); padding: 0.8rem 1.2rem; border-radius: 12px; text-align: center;">
+                    <span style="font-size: 1.5rem;">🎙️</span>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.3rem;">Appuyez pour parler</p>
+                </div>
+                <div
+                    style="background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.2); padding: 0.8rem 1.2rem; border-radius: 12px; text-align: center;">
+                    <span style="font-size: 1.5rem;">🤖</span>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.3rem;">IA transcrit en texte
+                    </p>
+                </div>
+                <div
+                    style="background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.2); padding: 0.8rem 1.2rem; border-radius: 12px; text-align: center;">
+                    <span style="font-size: 1.5rem;">💾</span>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.3rem;">Note sauvegardée</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK NOTES -->
+    <section class="features-section" style="padding-top: 2rem;">
+        <h2 style="text-align: left; font-size: 1.8rem;">
+            ⚡ Quick Notes — <span style="color: var(--accent);">1 clic = 1 note</span>
+        </h2>
+        <div class="glass-panel" style="margin-top: 1.5rem; padding: 2rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                <div style="text-align: center;">
+                    <img src="bouton note rapide.png" alt="Bouton Quick Note en jeu" class="screen-img"
+                        style="max-width: 100%; border-radius: 12px;">
+                    <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.5rem;">Quick Notes en jeu — 1
+                        clic sur la pastille</p>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Notes instantanées pendant le jeu</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Les Quick Notes sont des <strong style="color: var(--text-main);">templates prédéfinis</strong>
+                        que vous appliquez en 1 clic.
+                        Cliquez sur la pastille Quick Note dans le HUD, choisissez votre template, et c'est noté.
+                    </p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: var(--text-muted); margin-bottom: 0.5rem;">
+                            <span style="color: var(--accent);">→</span> 3 catégories : <strong
+                                style="color: var(--text-main);">Preflop</strong>, <strong
+                                style="color: var(--text-main);">Postflop</strong>, <strong
+                                style="color: var(--text-main);">Général</strong>
+                        </li>
+                        <li style="color: var(--text-muted); margin-bottom: 0.5rem;">
+                            <span style="color: var(--accent);">→</span> Templates personnalisables dans le logiciel
+                        </li>
+                        <li style="color: var(--text-muted); margin-bottom: 0.5rem;">
+                            <span style="color: var(--accent);">→</span> Glisser-déposer pour réorganiser
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÉDITEUR QUICK NOTES -->
+    <section class="features-section" style="padding-top: 2rem;">
+        <h2 style="text-align: left; font-size: 1.8rem;">
+            🛠️ Personnaliser les <span style="color: var(--accent);">Templates</span>
+        </h2>
+        <div class="glass-panel" style="margin-top: 1.5rem; padding: 2rem; text-align: center;">
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                Créez vos propres templates de Quick Notes dans le logiciel.
+                Organisez-les par catégorie et réordonnez-les par glisser-déposer.
+            </p>
+            <img src="screen_quick_notes.png" alt="Éditeur de Quick Notes" class="screen-img"
+                style="max-width: 700px; border-radius: 12px;">
+            <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.5rem;">L'éditeur de templates Quick
+                Notes dans SpinNova</p>
+        </div>
+    </section>
+
+    <!-- NOTES MANUSCRITES -->
+    <section class="features-section" style="padding-top: 2rem; padding-bottom: 4rem;">
+        <h2 style="text-align: left; font-size: 1.8rem;">
+            ✏️ Notes <span style="color: var(--accent);">Manuscrites</span>
+        </h2>
+        <div class="glass-panel" style="margin-top: 1.5rem; padding: 2rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Écrivez ce que vous voulez</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Cliquez sur l'icône de notes dans le HUD pour ouvrir l'éditeur de notes.
+                        Écrivez librement vos observations sur le joueur.
+                    </p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: var(--text-muted); margin-bottom: 0.5rem;">
+                            <span style="color: var(--accent);">→</span> Texte libre pour écrire vos observations
+                        </li>
+                        <li style="color: var(--text-muted); margin-bottom: 0.5rem;">
+                            <span style="color: var(--accent);">→</span> Sauvegarde automatique
+                        </li>
+                        <li style="color: var(--text-muted); margin-bottom: 0.5rem;">
+                            <span style="color: var(--accent);">→</span> Visible sur tous les formats (HU, 3-way)
+                        </li>
+                    </ul>
+                </div>
+                <div style="text-align: center;">
+                    <img src="popupnotemanuscrite.png" alt="Popup note manuscrite" class="screen-img"
+                        style="max-width: 100%; border-radius: 12px;">
+                    <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.5rem;">Fenêtre de notes
+                        manuscrites en jeu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-box glass-panel">
+            <h2>Envie d'aller plus loin ? 🏷️</h2>
+            <p>Découvrez les <strong>Badges</strong> et les <strong>Captures d'écran</strong> en jeu.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="badges.html" class="btn-primary">🏷️ Badges</a>
+                <a href="guide-captures.html" class="btn-primary" style="background: var(--primary);">📸 Captures</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 SpinNova — Tous droits réservés ·
+            <a href="mentions-legales.html" style="color: var(--text-muted);">Mentions Légales</a> ·
+            <a href="cgu-cgv.html" style="color: var(--text-muted);">CGU/CGV</a>
+        </p>
+    </footer>
+</body>
+
+</html>

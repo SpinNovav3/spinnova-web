@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éditeur HUD - SpinNova HUD Poker</title>
+    <meta name="description"
+        content="L'éditeur HUD SpinNova : personnalisez chaque élément de votre HUD poker avec un éditeur WYSIWYG. Catalogue d'éléments, paramètres généraux, et Magic Switch.">
+    <script src="cookie-banner.js"></script>
+    <script src="visit_tracker.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">Spin<span class="highlight">Nova</span></a>
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <div class="nav-dropdown" onclick="this.classList.toggle('open')">
+                <button class="nav-dropdown-toggle nav-active">Mode d'Emploi <span
+                        class="dropdown-arrow">▼</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="guide-demarrage.html"><span class="dropdown-icon">🚀</span> Guide de Démarrage</a>
+                    <a href="guide-huds.html"><span class="dropdown-icon">🖥️</span> Les HUDs</a>
+                    <a href="guide-editeur-hud.html"><span class="dropdown-icon">🎨</span> Éditeur HUD</a>
+                    <a href="guide-notes.html"><span class="dropdown-icon">🎤</span> Notes & Voix</a>
+                    <a href="badges.html"><span class="dropdown-icon">🏷️</span> Badges</a>
+                    <a href="guide-captures.html"><span class="dropdown-icon">📸</span> Captures & Galerie</a>
+                </div>
+            </div>
+            <a href="boutique.html">Boutique</a>
+            <a href="essai-gratuit.html">Essai Gratuit</a>
+            <a href="telechargement.html">Télécharger</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
+        </div>
+    </nav>
+    <div class="nav-overlay" onclick="toggleMenu()"></div>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.hamburger').classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+            document.querySelector('.nav-overlay').classList.toggle('active');
+        }
+    </script>
+
+    <!-- HERO -->
+    <header class="hero" style="min-height: 50vh; padding-top: 140px;">
+        <div class="hero-content">
+            <span class="badge-new">📖 Mode d'Emploi</span>
+            <h1>🎨 L'Éditeur <span class="gradient-text">HUD</span></h1>
+            <p>Créez votre HUD sur-mesure grâce à l'éditeur <strong>WYSIWYG</strong>.<br>
+                Ajoutez, déplacez et personnalisez chaque élément comme vous le souhaitez.</p>
+        </div>
+    </header>
+
+    <!-- ÉDITEUR PRINCIPAL -->
+    <section class="features-section" style="padding-top: 2rem;">
+        <h2 style="text-align: left; font-size: 1.8rem;">
+            🖊️ L'Éditeur <span style="color: var(--accent);">WYSIWYG</span>
+        </h2>
+        <div class="glass-panel" style="margin-top: 1.5rem; padding: 2rem;">
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                L'éditeur HUD vous permet de construire votre propre HUD en glissant-déposant des éléments.
+                Vous voyez en temps réel le résultat, exactement comme il apparaîtra en jeu.
+            </p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                <div style="text-align: center;">
+                    <img src="screen_hud_editor.png" alt="Éditeur HUD SpinNova" class="screen-img"
+                        style="max-width: 100%; border-radius: 12px;">
+                    <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.5rem;">Vue d'ensemble de
+                        l'éditeur</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="screen_hud_editor_2.png" alt="Éditeur HUD - éléments" class="screen-img"
+                        style="max-width: 100%; border-radius: 12px;">
+                    <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.5rem;">Catalogue d'éléments
+                        disponibles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODIFIER UN ÉLÉMENT -->
+    <section class="features-section" style="padding-top: 2rem;">
+        <h2 style="text-align: left; font-size: 1.8rem;">
+            🎯 Modifier un <span style="color: var(--accent);">Élément</span>
+        </h2>
+        <div class="glass-panel" style="margin-top: 1.5rem; padding: 2rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Personnalisation élément par élément</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Cliquez sur n'importe quel élément du HUD pour le modifier. Vous pouvez changer :
+                    </p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: var(--text-muted); margin-bottom: 0.5rem;">
+                            <span style="color: var(--accent);">→</span> L'icône parmi un catalogue d'emojis et symboles
+                        </li>
+                        <li style="color: var(--text-muted); margin-bottom: 0.5rem;">
+                            <span style="color: var(--accent);">→</span> La taille, la couleur, l'opacité
+                        </li>
+                        <li style="color: var(--text-muted); margin-bottom: 0.5rem;">
+                            <span style="color: var(--accent);">→</span> La position par glisser-déposer
+                        </li>
+                    </ul>
+                    <p style="color: var(--text-muted); margin-top: 1rem; font-size: 0.9rem;">
+                        💡 Vous pouvez choisir d'<strong style="color: var(--text-main);">appliquer les changements à
+                            toutes les étiquettes</strong>
+                        du HUD ou uniquement à l'étiquette sélectionnée.
+                    </p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="modifier un element sur un hud choix des icones et option pour apliquer ou pas avtn a toute les etiquette du hud.png"
+                        alt="Modification d'un élément HUD" class="screen-img"
+                        style="max-width: 100%; border-radius: 12px;">
+                    <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.5rem;">Choix des icônes et
+                        option d'application</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PANNEAU DE MODIFICATION PAR HUD -->
+    <section class="features-section" style="padding-top: 2rem;">
+        <h2 style="text-align: left; font-size: 1.8rem;">
+            🧩 Panneau de <span style="color: var(--accent);">Modification par HUD</span>
+        </h2>
+        <div class="glass-panel" style="margin-top: 1.5rem; padding: 2rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                <div style="text-align: center;">
+                    <img src="panneau de modification par hud.png" alt="Panneau de modification par HUD"
+                        class="screen-img" style="max-width: 100%; border-radius: 12px;">
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Éditez chaque HUD séparément</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Le panneau de modification vous permet de travailler sur chaque mode HUD (Mini, Compact, Large)
+                        séparément. Vous pouvez aussi créer des HUDs entièrement personnalisés.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Chaque HUD peut avoir ses propres éléments, sa propre disposition,
+                        et être activé via le <a href="guide-huds.html" style="color: var(--accent);">Magic Switch</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARAMÈTRES GÉNÉRAUX — SECTION DÉTAILLÉE -->
+    <section class="features-section" style="padding-top: 2rem;">
+        <h2 style="text-align: left; font-size: 1.8rem;">
+            ⚙️ Paramètres <span style="color: var(--accent);">Généraux du HUD</span>
+        </h2>
+        <div class="glass-panel" style="margin-top: 1.5rem; padding: 2rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                <div style="text-align: center;">
+                    <img src="modifhudparametregenraux.png" alt="Paramètres généraux du HUD" class="screen-img"
+                        style="max-width: 100%; border-radius: 12px;">
+                    <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.5rem;">Panneau des paramètres
+                        généraux dans la sidebar</p>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Chaque option expliquée</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                        Ce panneau se trouve dans la sidebar gauche de l'éditeur HUD. Il contrôle le comportement global
+                        de tous les HUDs en jeu.
+                    </p>
+
+                    <!-- Case 1 -->
+                    <div
+                        style="background: rgba(6, 182, 212, 0.08); border-left: 3px solid var(--accent); padding: 1rem; border-radius: 0 8px 8px 0; margin-bottom: 1rem;">
+                        <h4 style="color: var(--accent); margin-bottom: 0.3rem;">📍 Centrer popups sur table</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                            Quand cette option est activée, les popups (notes, badges, capture…)
+                            s'ouvrent <strong style="color: var(--text-main);">centrées sur la table de poker</strong>
+                            plutôt qu'à côté du HUD du joueur. Utile sur les tables redimensionnées.
+                        </p>
+                    </div>
+
+                    <!-- Case 2 -->
+                    <div
+                        style="background: rgba(6, 182, 212, 0.08); border-left: 3px solid var(--accent); padding: 1rem; border-radius: 0 8px 8px 0; margin-bottom: 1rem;">
+                        <h4 style="color: var(--accent); margin-bottom: 0.3rem;">🔒 Verrouiller positions HUD</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                            Empêche le déplacement accidentel des HUDs en jeu. Une fois activé, les étiquettes
+                            restent fixées à leur position et ne peuvent plus être glissées.
+                        </p>
+                    </div>
+
+                    <!-- Case 3 -->
+                    <div
+                        style="background: rgba(6, 182, 212, 0.08); border-left: 3px solid var(--accent); padding: 1rem; border-radius: 0 8px 8px 0; margin-bottom: 1rem;">
+                        <h4 style="color: var(--accent); margin-bottom: 0.3rem;">📌 Popup badges persistant</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                            En mode "sticky", la popup de badges reste ouverte même quand vous cliquez ailleurs.
+                            Pratique pour assigner <strong style="color: var(--text-main);">plusieurs badges
+                                d'affilée</strong> sans devoir rouvrir la popup à chaque fois.
+                        </p>
+                    </div>
+
+                    <!-- Nombre de badges par ligne -->
+                    <div
+                        style="background: rgba(109, 40, 217, 0.08); border-left: 3px solid var(--primary); padding: 1rem; border-radius: 0 8px 8px 0; margin-bottom: 1rem;">
+                        <h4 style="color: #a78bfa; margin-bottom: 0.3rem;">🔢 Badges par ligne</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                            Définit le nombre de colonnes dans la popup de badges en jeu.
+                            Réglable de <strong style="color: var(--text-main);">3 à 10</strong> (défaut : 6).
+                            Augmentez pour voir plus de badges d'un coup, réduisez pour un affichage plus lisible.
+                        </p>
+                    </div>
+
+                    <!-- Taille des icônes -->
+                    <div
+                        style="background: rgba(109, 40, 217, 0.08); border-left: 3px solid var(--primary); padding: 1rem; border-radius: 0 8px 8px 0;">
+                        <h4 style="color: #a78bfa; margin-bottom: 0.3rem;">📏 Taille des badges</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                            Ajuste la taille des icônes de badges dans la popup en jeu.
+                            Réglable de <strong style="color: var(--text-main);">16 à 48 pixels</strong> (défaut :
+                            24px).
+                            Augmentez pour une meilleure lisibilité, réduisez pour en afficher plus.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAGIC SWITCH -->
+    <section class="features-section" style="padding-top: 2rem; padding-bottom: 4rem;">
+        <h2 style="text-align: left; font-size: 1.8rem;">
+            ✨ Le <span style="color: var(--accent);">Magic Switch</span> dans l'éditeur
+        </h2>
+        <div class="glass-panel" style="margin-top: 1.5rem; padding: 2rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Vos HUDs personnalisés, accessibles en jeu</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Les HUDs que vous créez dans l'éditeur sont automatiquement disponibles dans le
+                        <strong style="color: var(--accent);">Magic Switch</strong>. Un clic-droit sur le bouton
+                        SpinNova en jeu vous permet de basculer entre vos créations.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Vous pouvez définir des HUDs par défaut pour le 3-way et le HU dans les paramètres.
+                    </p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="configurationmagicswitch.png" alt="Configuration Magic Switch" class="screen-img"
+                        style="max-width: 100%; border-radius: 12px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-box glass-panel">
+            <h2>Et les notes alors ? 🎤</h2>
+            <p>Découvrez les <strong>Quick Notes, Notes manuscrites et Notes Vocales</strong>.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="guide-notes.html" class="btn-primary">🎤 Notes & Voix</a>
+                <a href="essai-gratuit.html" class="btn-primary" style="background: var(--primary);">🆓 Essai
+                    Gratuit</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 SpinNova — Tous droits réservés ·
+            <a href="mentions-legales.html" style="color: var(--text-muted);">Mentions Légales</a> ·
+            <a href="cgu-cgv.html" style="color: var(--text-muted);">CGU/CGV</a>
+        </p>
+    </footer>
+</body>
+
+</html>
