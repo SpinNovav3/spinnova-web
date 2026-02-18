@@ -485,30 +485,26 @@
         log('📋 Lead tracked:', leadRecord);
         markLeadGiven();
 
-        // Envoyer à JSONBin (non-bloquant)
-        try {
-            fetch(CONFIG.JSONBIN_URL + '/latest', {
-                method: 'GET',
-                headers: { 'X-Master-Key': CONFIG.API_KEY }
+        // Envoyer à JSONBin — retourne une Promise pour que l'appelant puisse attendre
+        return fetch(CONFIG.JSONBIN_URL + '/latest', {
+            method: 'GET',
+            headers: { 'X-Master-Key': CONFIG.API_KEY }
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                var visits = data.record?.visits || [];
+                visits.push(leadRecord);
+                return fetch(CONFIG.JSONBIN_URL, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Master-Key': CONFIG.API_KEY
+                    },
+                    body: JSON.stringify({ visits: visits })
+                });
             })
-                .then(function (r) { return r.json(); })
-                .then(function (data) {
-                    var visits = data.record?.visits || [];
-                    visits.push(leadRecord);
-                    return fetch(CONFIG.JSONBIN_URL, {
-                        method: 'PUT',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'X-Master-Key': CONFIG.API_KEY
-                        },
-                        body: JSON.stringify({ visits: visits })
-                    });
-                })
-                .then(function () { log('✅ Lead sent to JSONBin'); })
-                .catch(function (err) { log('❌ Lead tracking error:', err.message); });
-        } catch (e) {
-            log('❌ Lead tracking failed:', e.message);
-        }
+            .then(function () { log('✅ Lead sent to JSONBin'); })
+            .catch(function (err) { log('❌ Lead tracking error:', err.message); });
     }
 
     // =========================================================================

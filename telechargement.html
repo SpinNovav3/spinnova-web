@@ -369,6 +369,11 @@
             document.getElementById('leadPopup').style.display = 'flex';
         });
 
+        function startDownload() {
+            document.getElementById('leadPopup').style.display = 'none';
+            window.location.href = DOWNLOAD_URL;
+        }
+
         function submitLead() {
             var discord = document.getElementById('leadDiscord').value.trim();
             var email = document.getElementById('leadEmail').value.trim();
@@ -386,33 +391,44 @@
             else if (discord) method = 'discord';
             else if (email) method = 'email';
 
-            // Track the lead
+            // Feedback visuel
+            var btn = document.getElementById('leadSubmitBtn');
+            btn.textContent = '⏳ Envoi en cours...';
+            btn.disabled = true;
+
+            // Timeout failsafe: download même si JSONBin est lent
+            var downloaded = false;
+            var safetyTimer = setTimeout(function () {
+                if (!downloaded) { downloaded = true; startDownload(); }
+            }, 5000);
+
+            // Track the lead puis télécharger
             if (window.SpinNovaTracker) {
                 window.SpinNovaTracker.trackLead({
                     discord: discord,
                     email: email,
                     contactMethod: method
+                }).then(function () {
+                    clearTimeout(safetyTimer);
+                    if (!downloaded) { downloaded = true; startDownload(); }
                 });
+            } else {
+                clearTimeout(safetyTimer);
+                startDownload();
             }
-
-            // Close popup and start download
-            document.getElementById('leadPopup').style.display = 'none';
-            window.location.href = DOWNLOAD_URL;
         }
 
         function skipLead() {
-            // Track as skipped
+            // Télécharger directement sans attendre
             if (window.SpinNovaTracker) {
                 window.SpinNovaTracker.trackLead({
                     discord: '',
                     email: '',
                     contactMethod: 'skipped'
                 });
+                // Pour skip on n'attend pas — c'est pas important
             }
-
-            // Close popup and start download
-            document.getElementById('leadPopup').style.display = 'none';
-            window.location.href = DOWNLOAD_URL;
+            startDownload();
         }
 
         // Close popup on Escape
