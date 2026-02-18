@@ -314,84 +314,7 @@
         }
     }
 
-    // =========================================================================
-    // DOWNLOAD TRACKING
-    // =========================================================================
 
-    async function trackDownload(downloadUrl) {
-        const langInfo = getLanguageInfo();
-
-        const downloadData = {
-            id: Date.now().toString(36) + Math.random().toString(36).substring(2, 5),
-            visitor_id: getVisitorId(),
-            timestamp: new Date().toISOString(),
-            page: '⬇️ DOWNLOAD',  // Special marker for downloads
-            referrer: window.location.pathname,  // Where they clicked from
-            device: getDeviceType(),
-            browser: getBrowser(),
-            language: langInfo.code,
-            flag: langInfo.flag,
-            is_french: langInfo.isFrench,
-            is_new: isNewVisitor(),
-            is_bot: false,
-            bot_name: null,
-            is_important: true,  // Downloads are always important
-            download_url: downloadUrl
-        };
-
-        log('Download tracked:', downloadData);
-
-        try {
-            const getResponse = await fetch(CONFIG.JSONBIN_URL + '/latest', {
-                method: 'GET',
-                headers: { 'X-Master-Key': CONFIG.API_KEY }
-            });
-
-            if (!getResponse.ok) throw new Error('Failed to fetch');
-
-            const currentData = await getResponse.json();
-            let visits = currentData.record?.visits || [];
-            visits.push(downloadData);
-
-            if (visits.length > CONFIG.MAX_VISITS_STORED) {
-                visits = visits.slice(-CONFIG.MAX_VISITS_STORED);
-            }
-
-            await fetch(CONFIG.JSONBIN_URL, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-Master-Key': CONFIG.API_KEY
-                },
-                body: JSON.stringify({ visits: visits })
-            });
-
-            log('✅ Download tracked');
-        } catch (error) {
-            log('❌ Error tracking download:', error.message);
-        }
-    }
-
-    function setupDownloadTracking() {
-        // Listen for clicks on download buttons
-        document.addEventListener('click', function (e) {
-            const link = e.target.closest('a');
-            if (!link) return;
-
-            const href = link.getAttribute('href') || '';
-
-            // Detect download links (GitHub releases, .zip, .exe, etc.)
-            if (href.includes('github.com') && href.includes('download') ||
-                href.endsWith('.zip') ||
-                href.endsWith('.exe') ||
-                link.classList.contains('btn-download-big') ||
-                link.hasAttribute('download')) {
-
-                log('Download click detected:', href);
-                trackDownload(href);
-            }
-        });
-    }
 
     // =========================================================================
     // ENGAGEMENT TRACKING (RELIABLE)
@@ -484,7 +407,7 @@
             if (!isDirectDownload && !isDownloadPage) return;
 
             var downloadType = isDirectDownload ? 'direct_download' : 'download_page_click';
-            var visitorId = localStorage.getItem('sn_visitor_id') || 'unknown';
+            var visitorId = getVisitorId();
             var buttonText = (link.textContent || '').trim().substring(0, 100);
 
             var downloadRecord = {
@@ -502,21 +425,21 @@
 
             // Envoyer à JSONBin (ne pas bloquer le téléchargement)
             try {
-                fetch(JSONBIN_URL, {
+                fetch(CONFIG.JSONBIN_URL + '/latest', {
                     method: 'GET',
-                    headers: { 'X-Access-Key': API_KEY }
+                    headers: { 'X-Master-Key': CONFIG.API_KEY }
                 })
                     .then(function (r) { return r.json(); })
                     .then(function (data) {
-                        var visits = data.record || [];
+                        var visits = data.record?.visits || [];
                         visits.push(downloadRecord);
-                        return fetch(JSONBIN_URL, {
+                        return fetch(CONFIG.JSONBIN_URL, {
                             method: 'PUT',
                             headers: {
                                 'Content-Type': 'application/json',
-                                'X-Access-Key': API_KEY
+                                'X-Master-Key': CONFIG.API_KEY
                             },
-                            body: JSON.stringify(visits)
+                            body: JSON.stringify({ visits: visits })
                         });
                     })
                     .then(function () { log('✅ Download event sent to JSONBin'); })
