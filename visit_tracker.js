@@ -394,8 +394,41 @@
     // =========================================================================
     // DOWNLOAD CLICK TRACKING
     // =========================================================================
+
+    /**
+     * Sends a download record to JSONBin reliably, even during page navigation.
+     * Uses keepalive: true on both GET and PUT to survive the browser killing requests.
+     * Returns a Promise that resolves when tracking is done (or fails silently).
+     */
+    function sendDownloadRecord(downloadRecord) {
+        return fetch(CONFIG.JSONBIN_URL + '/latest', {
+            method: 'GET',
+            headers: { 'X-Master-Key': CONFIG.API_KEY },
+            keepalive: true
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                var visits = data.record?.visits || [];
+                visits.push(downloadRecord);
+                return fetch(CONFIG.JSONBIN_URL, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Master-Key': CONFIG.API_KEY
+                    },
+                    body: JSON.stringify({ visits: visits }),
+                    keepalive: true
+                });
+            })
+            .then(function () { log('✅ Download event sent to JSONBin'); })
+            .catch(function (err) { log('❌ Download tracking error:', err.message); });
+    }
+
     function setupDownloadTracking() {
         // Intercepter TOUS les clics sur des liens de téléchargement
+        // This is PURELY for tracking — it does NOT control download navigation.
+        // On telechargement.html, the page's own #downloadBtn handler manages the flow.
+        // On other pages, the default <a> link behavior handles navigation.
         document.addEventListener('click', function (e) {
             var link = e.target.closest('a');
             if (!link) return;
@@ -423,30 +456,8 @@
 
             log('📥 Download click tracked:', downloadType, 'from', window.location.pathname);
 
-            // Envoyer à JSONBin (ne pas bloquer le téléchargement)
-            try {
-                fetch(CONFIG.JSONBIN_URL + '/latest', {
-                    method: 'GET',
-                    headers: { 'X-Master-Key': CONFIG.API_KEY }
-                })
-                    .then(function (r) { return r.json(); })
-                    .then(function (data) {
-                        var visits = data.record?.visits || [];
-                        visits.push(downloadRecord);
-                        return fetch(CONFIG.JSONBIN_URL, {
-                            method: 'PUT',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'X-Master-Key': CONFIG.API_KEY
-                            },
-                            body: JSON.stringify({ visits: visits })
-                        });
-                    })
-                    .then(function () { log('✅ Download event sent to JSONBin'); })
-                    .catch(function (err) { log('❌ Download tracking error:', err.message); });
-            } catch (e) {
-                log('❌ Download tracking failed:', e.message);
-            }
+            // Fire-and-forget tracking with keepalive (survives page navigation)
+            sendDownloadRecord(downloadRecord);
         });
     }
 

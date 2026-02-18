@@ -371,11 +371,18 @@
 
         // Intercept download button click
         document.getElementById('downloadBtn').addEventListener('click', function (e) {
-            // If already gave contact, just download directly
-            if (window.SpinNovaTracker && window.SpinNovaTracker.hasAlreadyGivenContact()) {
-                return; // Let the default link behavior happen
-            }
+            // Always prevent default so the download tracker (in visit_tracker.js)
+            // has time to send the record via keepalive fetch before navigation
             e.preventDefault();
+
+            // If already gave contact, start download immediately
+            // The document-level download tracker will handle tracking with keepalive
+            if (window.SpinNovaTracker && window.SpinNovaTracker.hasAlreadyGivenContact()) {
+                window.location.href = DOWNLOAD_URL;
+                return;
+            }
+
+            // Otherwise show the lead capture popup
             document.getElementById('leadPopup').style.display = 'flex';
         });
 
