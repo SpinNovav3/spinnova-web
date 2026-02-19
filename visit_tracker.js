@@ -451,7 +451,15 @@
                 page: window.location.pathname,
                 button_text: buttonText,
                 target_url: href.substring(0, 200),
-                timestamp: new Date().toISOString()
+                timestamp: new Date().toISOString(),
+                device: getDeviceType(),
+                browser: getBrowserName(),
+                os: getOS(),
+                screen_resolution: window.screen.width + 'x' + window.screen.height,
+                language: navigator.language || '',
+                referrer: document.referrer || 'Direct',
+                session_page_count: parseInt(sessionStorage.getItem('sn_page_count') || '1'),
+                is_new: !localStorage.getItem('sn_returning')
             };
 
             log('📥 Download click tracked:', downloadType, 'from', window.location.pathname);
