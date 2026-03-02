@@ -4,17 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ | SpinNova - Foire aux Questions</title>
+    <title>FAQ | SpinNova - Foire aux Questions HUD Poker</title>
+    <meta name="description" content="Toutes les réponses sur SpinNova HUD : installation, compatibilité iPoker et Winamax, licences, badges, notes vocales et profilage poker.">
+    <meta property="og:title" content="FAQ SpinNova — Questions Fréquentes HUD Poker">
+    <meta property="og:description" content="Installation, compatibilité, licences, badges — toutes les réponses sur SpinNova HUD pour iPoker et Winamax.">
+    <meta property="og:image" content="https://spinnovav3.github.io/spinnova-web/screen_accueil.png">
+    <meta property="og:url" content="https://spinnovav3.github.io/spinnova-web/faq.html">
+    <meta property="og:type" content="website">
+
+    <!-- JSON-LD FAQPage pour Google Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Est-ce que SpinNova est autorisé par les rooms de poker ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, SpinNova respecte les règles de profilage habituelles. Il ne donne pas de conseils en temps réel (RTA) et ne clique pas à votre place. C'est un outil d'aide à la prise de note visuelle, comme le permettent les réseaux iPoker et Winamax."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment obtenir mon HWID ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Téléchargez le logiciel sur la page d'installation, lancez-le, et une fenêtre apparaîtra avec votre code HWID. Cliquez sur COPIER et collez-le dans le formulaire d'essai ou dans votre message de support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mon antivirus bloque le logiciel, que faire ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "C'est un faux positif classique avec les logiciels de profilage qui lisent l'écran (OCR). Ajoutez une exception pour le dossier SpinNova dans Windows Defender ou votre antivirus. Les fichiers sont 100% sains."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le HUD ne s'affiche pas sur ma table, pourquoi ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vérifiez que votre lobby iPoker/Winamax est bien en Français, Anglais, Italien ou Espagnol, que vous avez configuré le chemin du fichier hand history dans les paramètres, que votre pseudo est écrit exactement comme sur le lobby, et que votre HWID a été activé."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels sont les 3 modes HUD disponibles ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SpinNova propose 3 modes HUD : Mode Large (3 lignes, idéal pour Spin & Go 3-Way), Mode Compact (2 lignes, idéal pour Heads-Up), et Mode Mini (1 ligne, idéal pour mass grind 12+ tables). Un Magic Switch permet de cycler entre les modes en 1 clic."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "SpinNova fonctionne sur quelles salles de poker ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SpinNova est compatible avec PMU Poker, FDJ, Winamax (Expresso), Bwin, Unibet, PartyPoker et tous les skins du réseau iPoker. Compatible Spin & Go, Cash Game et MTT."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels sont les tarifs de SpinNova ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SpinNova propose un essai gratuit de 3 jours (sans carte bancaire), une licence mensuelle à 15€, et une licence 6 mois à 81€ (13,50€/mois). Paiement par carte ou virement bancaire."
+          }
+        }
+      ]
+    }
+    </script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Cookie Consent + Clarity (RGPD) -->
 
-    <script src="cookie-banner.js"></script>
+    <script src="cookie-banner.js" defer></script>
 
     <!-- SpinNova Visit Tracker -->
-    <script src="visit_tracker.js"></script>
+    <script src="visit_tracker.js" defer></script>
 
     <style>
         .faq-container {

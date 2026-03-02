@@ -11,17 +11,57 @@
     <meta property="og:description" content="Profilez vos adversaires instantanément sans perdre de Timebank.">
     <meta property="og:image" content="https://spinnovav3.github.io/spinnova-web/screen_accueil.png">
 
-    <!-- Cookie Consent + Clarity (RGPD) -->
+    <link rel="stylesheet" href="style.css">
 
-    <script src="cookie-banner.js"></script>
+    <!-- Cookie Consent + Clarity (RGPD) -->
+    <script src="cookie-banner.js" defer></script>
 
     <!-- SpinNova Visit Tracker -->
-    <script src="visit_tracker.js"></script>
-
-    <link rel="stylesheet" href="style.css">
+    <script src="visit_tracker.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SpinNova",
+      "description": "HUD de profilage poker pour iPoker et Winamax. Profilez vos adversaires en 2 clics, notes vocales, badges personnalisés. Compatible PMU, FDJ, Winamax, Bwin, Unibet.",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Windows 10, Windows 11",
+      "url": "https://spinnovav3.github.io/spinnova-web/",
+      "screenshot": "https://spinnovav3.github.io/spinnova-web/screen_accueil.png",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Essai gratuit",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "3 jours d'essai complet gratuit"
+        },
+        {
+          "@type": "Offer",
+          "name": "Mensuel",
+          "price": "15",
+          "priceCurrency": "EUR",
+          "description": "Licence mensuelle sans engagement"
+        },
+        {
+          "@type": "Offer",
+          "name": "6 mois",
+          "price": "81",
+          "priceCurrency": "EUR",
+          "description": "Licence 6 mois — 13,50€/mois"
+        }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "SpinNova"
+      }
+    }
+    </script>
 </head>
 
 <body>
@@ -216,7 +256,7 @@
                         <span class="slide-title">Vue Complète</span>
                     </div>
                     <div class="slide-images single">
-                        <img src="hud_large_full.png" alt="HUD Large vue complète avec badges" class="lightbox-trigger">
+                        <img src="hud_large_full.png" alt="HUD Large vue complète avec badges" class="lightbox-trigger" loading="lazy">
                     </div>
                     <p class="slide-desc">Tous les badges déployés : Limp Pot (Pre &amp; Post) et Open Pot (Pre &amp;
                         Post).
@@ -232,11 +272,11 @@
                     <div class="slide-images dual">
                         <div class="slide-img-wrapper">
                             <span class="img-label">3-Way</span>
-                            <img src="hud_compact.png" alt="HUD Compact en 3-Way" class="lightbox-trigger">
+                            <img src="hud_compact.png" alt="HUD Compact en 3-Way" class="lightbox-trigger" loading="lazy">
                         </div>
                         <div class="slide-img-wrapper">
                             <span class="img-label">Heads-Up</span>
-                            <img src="hud_compact_hu.png" alt="HUD Compact en Heads-Up" class="lightbox-trigger">
+                            <img src="hud_compact_hu.png" alt="HUD Compact en Heads-Up" class="lightbox-trigger" loading="lazy">
                         </div>
                     </div>
                     <p class="slide-desc">Tous les badges mélangés sur une ligne, triés par importance. Idéal pour le
@@ -252,11 +292,11 @@
                     <div class="slide-images dual">
                         <div class="slide-img-wrapper">
                             <span class="img-label">3-Way</span>
-                            <img src="hud_mini.png" alt="HUD Mini en 3-Way" class="lightbox-trigger">
+                            <img src="hud_mini.png" alt="HUD Mini en 3-Way" class="lightbox-trigger" loading="lazy">
                         </div>
                         <div class="slide-img-wrapper">
                             <span class="img-label">Heads-Up</span>
-                            <img src="hud_mini_hu.png" alt="HUD Mini en Heads-Up" class="lightbox-trigger">
+                            <img src="hud_mini_hu.png" alt="HUD Mini en Heads-Up" class="lightbox-trigger" loading="lazy">
                         </div>
                     </div>
                     <p class="slide-desc">Le strict minimum pour le mass-grind (12+ tables). Halo coloré = profil du
@@ -270,7 +310,7 @@
                         <span class="slide-title">Votre Activité en Un Coup d'Œil</span>
                     </div>
                     <div class="slide-images single">
-                        <img src="screen_accueil.png" alt="Dashboard analytique SpinNova" class="lightbox-trigger">
+                        <img src="screen_accueil.png" alt="Dashboard analytique SpinNova" class="lightbox-trigger" loading="lazy">
                     </div>
                     <p class="slide-desc">Graphiques, KPIs, heatmaps et top adversaires. Filtrez par buy-in pour
                         analyser chaque limite séparément.</p>
@@ -284,7 +324,7 @@
                     </div>
                     <div class="slide-images single">
                         <img src="screen_heatmap_field.png" alt="Heatmap qualité du field SpinNova"
-                            class="lightbox-trigger">
+                            class="lightbox-trigger" loading="lazy">
                     </div>
                     <p class="slide-desc">Le ratio Fish / Reg par créneau horaire, 7 jours × 24 heures. Jouez quand le
                         field est le plus faible pour maximiser votre edge.</p>
@@ -298,7 +338,7 @@
                     </div>
                     <div class="slide-images single">
                         <img src="screen_heatmap_rencontres.png" alt="Heatmap rencontres SpinNova"
-                            class="lightbox-trigger">
+                            class="lightbox-trigger" loading="lazy">
                     </div>
                     <p class="slide-desc">Identifiez vos créneaux habituels. Optimisez votre planning de sessions en
                         un coup d'œil.</p>
@@ -311,9 +351,9 @@
                         <span class="slide-title">Analysez Chaque Adversaire</span>
                     </div>
                     <div class="slide-images triple">
-                        <img src="screen_joueurs.png" alt="Onglet Joueurs - Liste" class="lightbox-trigger">
-                        <img src="screen_joueurs_2.png" alt="Onglet Joueurs - Profil" class="lightbox-trigger">
-                        <img src="screen_joueurs_3.png" alt="Onglet Joueurs - Détails" class="lightbox-trigger">
+                        <img src="screen_joueurs.png" alt="Onglet Joueurs - Liste" class="lightbox-trigger" loading="lazy">
+                        <img src="screen_joueurs_2.png" alt="Onglet Joueurs - Profil" class="lightbox-trigger" loading="lazy">
+                        <img src="screen_joueurs_3.png" alt="Onglet Joueurs - Détails" class="lightbox-trigger" loading="lazy">
                     </div>
                     <p class="slide-desc">Heatmap individuelle, badges par position, historique complet. Tout est là
                         pour préparer vos sessions.</p>
@@ -326,7 +366,7 @@
                         <span class="slide-title">1 Clic = 1 Note</span>
                     </div>
                     <div class="slide-images single">
-                        <img src="screen_quick_notes.png" alt="Quick Notes SpinNova" class="lightbox-trigger">
+                        <img src="screen_quick_notes.png" alt="Quick Notes SpinNova" class="lightbox-trigger" loading="lazy">
                     </div>
                     <p class="slide-desc">Créez vos templates tactiques personnalisés (Preflop, Postflop, Général).
                         Couleurs custom, application instantanée pendant le jeu.</p>
@@ -340,10 +380,10 @@
                     </div>
                     <div class="slide-images dual">
                         <div class="slide-img-wrapper">
-                            <img src="screen_hud_editor.png" alt="HUD Editor SpinNova" class="lightbox-trigger">
+                            <img src="screen_hud_editor.png" alt="HUD Editor SpinNova" class="lightbox-trigger" loading="lazy">
                         </div>
                         <div class="slide-img-wrapper">
-                            <img src="screen_hud_editor_2.png" alt="HUD Editor SpinNova 2" class="lightbox-trigger">
+                            <img src="screen_hud_editor_2.png" alt="HUD Editor SpinNova 2" class="lightbox-trigger" loading="lazy">
                         </div>
                     </div>
                     <p class="slide-desc">Couleurs de fond, bordures, textes — personnalisez chaque élément. Preview
@@ -357,7 +397,7 @@
                         <span class="slide-title">Échelle &amp; Opacité</span>
                     </div>
                     <div class="slide-images single">
-                        <img src="hud_scale_opacity.png" alt="Réglages échelle et opacité HUD" class="lightbox-trigger">
+                        <img src="hud_scale_opacity.png" alt="Réglages échelle et opacité HUD" class="lightbox-trigger" loading="lazy">
                     </div>
                     <p class="slide-desc">Ajustez la taille du HUD (0.5x → 2.0x) et l'opacité au repos. S'adapte à
                         tous les écrans et configurations multi-HUD.</p>
@@ -371,11 +411,11 @@
                     </div>
                     <div class="slide-images dual">
                         <div class="slide-img-wrapper">
-                            <img src="screen_import_export.png" alt="Import Export SpinNova" class="lightbox-trigger">
+                            <img src="screen_import_export.png" alt="Import Export SpinNova" class="lightbox-trigger" loading="lazy">
                         </div>
                         <div class="slide-img-wrapper">
                             <img src="screen_import_export_2.png" alt="Import Export SpinNova 2"
-                                class="lightbox-trigger">
+                                class="lightbox-trigger" loading="lazy">
                         </div>
                     </div>
                     <p class="slide-desc">Migrez depuis SiQnotes en 1 clic. Partagez vos données et importez des packs
@@ -390,7 +430,7 @@
                     </div>
                     <div class="slide-images single">
                         <img src="screen_personnalisation.png" alt="Personnalisation interface SpinNova"
-                            class="lightbox-trigger">
+                            class="lightbox-trigger" loading="lazy">
                     </div>
                     <p class="slide-desc">Interface entièrement personnalisable. Couleurs, thèmes, disposition —
                         faites-en votre outil.</p>
@@ -403,7 +443,7 @@
                         <span class="slide-title">Configurez SpinNova</span>
                     </div>
                     <div class="slide-images single">
-                        <img src="screen_parametres.png" alt="Paramètres SpinNova" class="lightbox-trigger">
+                        <img src="screen_parametres.png" alt="Paramètres SpinNova" class="lightbox-trigger" loading="lazy">
                     </div>
                     <p class="slide-desc">Gérez vos rooms, répertoires, et préférences. SpinNova s'adapte à votre
                         setup.</p>
@@ -509,7 +549,7 @@
     <!-- LIGHTBOX Overlay -->
     <div class="lightbox-overlay" id="lightboxOverlay">
         <button class="lightbox-close" id="lightboxClose">&times;</button>
-        <img src="" alt="Zoom" id="lightboxImg">
+        <img src="" alt="Zoom" id="lightboxImg" loading="lazy">
         <span class="lightbox-hint">Cliquez n'importe où pour fermer</span>
     </div>
 
