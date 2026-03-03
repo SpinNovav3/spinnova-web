@@ -599,13 +599,22 @@
     transform: translateY(-2px);
 }
 
-.btn-revolut {
-    background: white;
-    color: black;
+.btn-stripe {
+    background: linear-gradient(135deg, #635bff, #7a73ff);
+    color: white;
 }
 
-.btn-revolut:hover {
-    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+.btn-stripe:hover {
+    box-shadow: 0 5px 20px rgba(99, 91, 255, 0.4);
+}
+
+.btn-paypal {
+    background: #0070ba;
+    color: white;
+}
+
+.btn-paypal:hover {
+    box-shadow: 0 5px 20px rgba(0, 112, 186, 0.3);
 }
 
 .btn-crypto {

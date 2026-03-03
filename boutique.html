@@ -8,7 +8,8 @@
     <meta name="description"
         content="Achetez votre licence SpinNova HUD pour Spin &amp; Go iPoker et Winamax. Dès 13,50€/mois. Découvrez aussi nos packs de badges premium pour personnaliser votre profilage.">
     <meta property="og:title" content="Boutique SpinNova — Licences &amp; Packs Badges">
-    <meta property="og:description" content="Licence HUD dès 13,50€/mois. Packs de badges premium pour personnaliser votre profilage poker sur iPoker et Winamax.">
+    <meta property="og:description"
+        content="Licence HUD dès 13,50€/mois. Packs de badges premium pour personnaliser votre profilage poker sur iPoker et Winamax.">
     <meta property="og:image" content="https://spinnovav3.github.io/spinnova-web/screen_accueil.png">
     <meta property="og:url" content="https://spinnovav3.github.io/spinnova-web/boutique.html">
     <meta property="og:type" content="website">
@@ -1580,8 +1581,11 @@
             </div>
 
             <div class="payment-options">
-                <a href="#" id="revolutLink" class="payment-btn btn-revolut" target="_blank">
-                    💳 Payer par Carte / Revolut
+                <a href="#" id="stripeLink" class="payment-btn btn-stripe" target="_blank">
+                    💳 Payer par Carte Bancaire (Stripe)
+                </a>
+                <a href="https://paypal.me/zzmicka" class="payment-btn btn-paypal" target="_blank">
+                    🅿️ Payer par PayPal
                 </a>
                 <a href="contact.html" class="payment-btn btn-crypto">
                     ₿ Payer en Crypto (Contact)
@@ -1589,9 +1593,8 @@
             </div>
 
             <div class="hwid-reminder">
-                <strong>⚠️ IMPORTANT :</strong> Lors du paiement Revolut, ajoute ton <strong>HWID</strong> dans
-                la note
-                de paiement pour que nous puissions activer ta licence rapidement.
+                <strong>⚠️ IMPORTANT :</strong> Lors du paiement Stripe, entre ton <strong>HWID</strong> dans
+                le champ prévu pour que nous puissions activer ta licence rapidement.
             </div>
         </div>
     </div>
@@ -1600,13 +1603,24 @@
         const modal = document.getElementById("paymentModal");
         const span = document.getElementsByClassName("close-modal")[0];
 
+        // Stripe Payment Links (production)
+        const STRIPE_LINKS = {
+            "15": "https://buy.stripe.com/8x200b9pjdtmcpFbKnb7y01",
+            "81": "https://buy.stripe.com/7sY8wHgRL2OIgFVaGjb7y00"
+        };
+
         function openModal(name, price) {
             document.getElementById("modalPackName").innerText = name;
             document.getElementById("modalPackPrice").innerText = price;
 
-            // Generate Revolut Link with HWID reminder mention if possible, otherwise generic
-            // Format: revolut.me/michaer9ne/amount
-            document.getElementById("revolutLink").href = "https://revolut.me/michaer9ne/" + price;
+            const stripeLink = document.getElementById("stripeLink");
+            if (STRIPE_LINKS[price]) {
+                stripeLink.href = STRIPE_LINKS[price];
+                stripeLink.style.display = "block";
+            } else {
+                // Pour les packs badges (pas encore de lien Stripe), cacher le bouton Stripe
+                stripeLink.style.display = "none";
+            }
 
             modal.style.display = "block";
         }
