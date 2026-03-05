@@ -1359,6 +1359,222 @@ body:has(.trial-banner) .hero.hero-split {
     box-shadow: 0 25px 70px rgba(6, 182, 212, 0.25), 0 0 50px rgba(109, 40, 217, 0.15);
 }
 
+/* ===== cEV SHOWCASE SECTION ===== */
+.cev-showcase {
+    padding: 5rem 8%;
+    background: linear-gradient(180deg, rgba(16, 185, 129, 0.04), rgba(109, 40, 217, 0.04));
+    position: relative;
+    overflow: hidden;
+}
+
+.cev-showcase::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.08), transparent 70%);
+    pointer-events: none;
+}
+
+.cev-showcase-inner {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cev-image-side {
+    flex: 1.3;
+    min-width: 0;
+}
+
+.cev-image-wrapper {
+    position: relative;
+    border-radius: 16px;
+    border: 2px solid rgba(16, 185, 129, 0.35);
+    box-shadow: 0 20px 60px rgba(16, 185, 129, 0.12), 0 0 40px rgba(16, 185, 129, 0.06);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cev-image-wrapper:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 70px rgba(16, 185, 129, 0.2), 0 0 50px rgba(16, 185, 129, 0.1);
+}
+
+.cev-image-wrapper img {
+    width: 100%;
+    display: block;
+    border-radius: 14px;
+}
+
+.cev-text-side {
+    flex: 1;
+    min-width: 0;
+}
+
+.cev-badge-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.cev-new-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    animation: cevBadgePulse 3s infinite;
+}
+
+@keyframes cevBadgePulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 12px 3px rgba(16, 185, 129, 0.2);
+    }
+}
+
+.cev-section-tag {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #10b981;
+}
+
+.cev-showcase h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+}
+
+.cev-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.cev-positions-block {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cev-mode-group {
+    flex: 1;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    padding: 1rem 1.2rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.cev-mode-group:hover {
+    border-color: rgba(16, 185, 129, 0.4);
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.08);
+}
+
+.cev-mode-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.cev-pos-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 0;
+}
+
+.cev-pos-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    font-family: 'Courier New', monospace;
+}
+
+.cev-pos-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+}
+
+.cev-pos-value.positive {
+    color: #34d399;
+}
+
+.cev-pos-value.negative {
+    color: #ef4444;
+}
+
+.cev-filter-hint {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.cev-cta {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.6rem;
+}
+
+/* cEV responsive */
+@media (max-width: 900px) {
+    .cev-showcase-inner {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .cev-image-side,
+    .cev-text-side {
+        flex: none;
+        width: 100%;
+    }
+
+    .cev-showcase h2 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .cev-badge-row {
+        justify-content: center;
+    }
+
+    .cev-subtitle,
+    .cev-filter-hint {
+        text-align: center;
+    }
+
+    .cev-positions-block {
+        flex-direction: column;
+    }
+
+    .cev-cta {
+        display: block;
+        text-align: center;
+    }
+}
+
 /* ===== CAROUSEL ===== */
 .carousel-section {
     padding: 4rem 2rem 3rem;
