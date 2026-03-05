@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boutique SpinNova - Licences HUD & Packs Badges</title>
     <meta name="description"
-        content="Achetez votre licence SpinNova HUD pour Spin &amp; Go iPoker et Winamax. Dès 13,50€/mois. Découvrez aussi nos packs de badges premium pour personnaliser votre profilage.">
+        content="Achetez votre licence SpinNova HUD pour Spin &amp; Go iPoker et Winamax. Dès 18€/mois. Découvrez aussi nos packs de badges premium pour personnaliser votre profilage.">
     <meta property="og:title" content="Boutique SpinNova — Licences &amp; Packs Badges">
     <meta property="og:description"
-        content="Licence HUD dès 13,50€/mois. Packs de badges premium pour personnaliser votre profilage poker sur iPoker et Winamax.">
+        content="Licence HUD dès 18€/mois. Packs de badges premium pour personnaliser votre profilage poker sur iPoker et Winamax.">
     <meta property="og:image" content="https://spinnovav3.github.io/spinnova-web/screen_accueil.png">
     <meta property="og:url" content="https://spinnovav3.github.io/spinnova-web/boutique.html">
     <meta property="og:type" content="website">
@@ -70,7 +70,7 @@
     <header class="boutique-hero">
         <h1>🛒 Boutique <span class="gradient-text">SpinNova</span></h1>
         <p>Licence HUD pour profiler vos adversaires · Packs de badges pour personnaliser votre profilage.<br>
-            <strong>Essai gratuit 3 jours</strong> · Dès <strong>13,50€/mois</strong> · Sans engagement
+            <strong>Essai gratuit 3 jours</strong> · Dès <strong>18€/mois</strong> · Sans engagement
         </p>
         <div
             style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 1.5rem; flex-wrap: wrap;">
@@ -115,7 +115,7 @@
             <div class="license-card glass-panel">
                 <h3>1 Mois</h3>
                 <span class="license-duration">Accès complet</span>
-                <div class="license-price">15€</div>
+                <div class="license-price">20€</div>
                 <ul class="license-features">
                     <li>HUD Dynamique (Large/Compact/Mini)</li>
                     <li>Notes Rapides Illimitées</li>
@@ -123,22 +123,22 @@
                     <li>Support Discord Priority</li>
                 </ul>
                 <button class="btn-primary" style="width: 100%;"
-                    onclick="event.stopPropagation(); openModal('Licence HUD - 1 Mois', '15')">Prendre 1 Mois</button>
+                    onclick="event.stopPropagation(); openModal('Licence HUD - 1 Mois', '20')">Prendre 1 Mois</button>
             </div>
 
             <!-- 6 MOIS -->
             <div class="license-card glass-panel featured">
                 <h3>6 Mois</h3>
                 <span class="license-duration">Le choix des grinders</span>
-                <div class="license-price">81€</div>
+                <div class="license-price">108€</div>
                 <ul class="license-features">
                     <li>Tous les avantages 1 Mois</li>
-                    <li><strong>9€ offerts</strong> (Economie 10%)</li>
+                    <li><strong>12€ offerts</strong> (Economie 10%)</li>
                     <li>Mises à jour prioritaires</li>
                     <li>Badge "VIP Supporter" sur Discord</li>
                 </ul>
                 <button class="btn-primary" style="width: 100%;"
-                    onclick="event.stopPropagation(); openModal('Licence HUD - 6 Mois', '81')">Prendre 6 Mois</button>
+                    onclick="event.stopPropagation(); openModal('Licence HUD - 6 Mois', '108')">Prendre 6 Mois</button>
             </div>
         </div>
     </section>
@@ -1605,8 +1605,8 @@
 
         // Stripe Payment Links (production)
         const STRIPE_LINKS = {
-            "15": "https://buy.stripe.com/8x200b9pjdtmcpFbKnb7y01",
-            "81": "https://buy.stripe.com/7sY8wHgRL2OIgFVaGjb7y00"
+            "20": "https://buy.stripe.com/6oU00bcBvahaexN29Nb7y02",
+            "108": "https://buy.stripe.com/3cIcMX7hb3SM1L14hVb7y03"
         };
 
         function openModal(name, price) {
