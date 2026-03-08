@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Héros cEV — Courbe de Performance | SpinNova</title>
+    <meta name="description"
+        content="Suivez votre cEV (Chip Expected Value) sur SpinNova. Courbes cumulatives, filtres par buy-in, position, site et date. Mesurez votre edge réel.">
+    <meta property="og:title" content="Héros cEV — Courbe de Performance SpinNova">
+    <meta property="og:description"
+        content="Mesurez votre edge réel avec la courbe cEV. Filtrez par buy-in, position, site.">
+    <meta property="og:image" content="https://spinnovav3.github.io/spinnova-web/screen_cev_updated.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="cookie-banner.js" defer></script>
+    <script src="visit_tracker.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">Spin<span class="highlight">Nova</span></a>
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <div class="nav-dropdown" onclick="this.classList.toggle('open')">
+                <button class="nav-dropdown-toggle nav-active">Mode d'Emploi <span
+                        class="dropdown-arrow">▼</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="guide-demarrage.html"><span class="dropdown-icon">🚀</span> Guide de Démarrage</a>
+                    <a href="guide-huds.html"><span class="dropdown-icon">🖥️</span> Les HUDs</a>
+                    <a href="guide-face-b.html"><span class="dropdown-icon">📊</span> Face B Stats</a>
+                    <a href="guide-editeur-hud.html"><span class="dropdown-icon">🎨</span> Éditeur HUD</a>
+                    <a href="guide-notes.html"><span class="dropdown-icon">🎤</span> Notes & Voix</a>
+                    <a href="badges.html"><span class="dropdown-icon">🏷️</span> Badges</a>
+                    <a href="guide-captures.html"><span class="dropdown-icon">📸</span> Captures & Galerie</a>
+                    <a href="guide-cev.html"><span class="dropdown-icon">📈</span> Héros cEV</a>
+                    <a href="guide-hero-stats.html"><span class="dropdown-icon">🦸</span> Hero Stats</a>
+                    <a href="guide-field-stats.html"><span class="dropdown-icon">🌐</span> Stats Field</a>
+                </div>
+            </div>
+            <a href="boutique.html">Boutique</a>
+            <a href="essai-gratuit.html">Essai Gratuit</a>
+            <a href="telechargement.html">Télécharger</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
+        </div>
+    </nav>
+    <div class="nav-overlay" onclick="toggleMenu()"></div>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.hamburger').classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+            document.querySelector('.nav-overlay').classList.toggle('active');
+        }
+    </script>
+
+    <!-- HERO -->
+    <header class="hero" style="min-height: 50vh; padding-top: 140px;">
+        <div class="hero-content">
+            <span class="badge-new">📖 Mode d'Emploi</span>
+            <h1>📈 Héros <span class="gradient-text">cEV</span> — Mesurez Votre Edge</h1>
+            <p>La <strong>cEV (Chip Expected Value)</strong> mesure vos performances réelles,
+                indépendamment de la variance. Suivez votre progression sur le long terme.</p>
+        </div>
+    </header>
+
+    <!-- COURBE cEV -->
+    <section class="features-section" style="padding-top: 2rem;">
+        <h2 style="text-align: left; font-size: 1.8rem;">
+            📉 La Courbe <span style="color: var(--accent);">cEV</span>
+        </h2>
+        <div class="glass-panel" style="margin-top: 1.5rem; padding: 2rem;">
+            <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: start;">
+                <div style="text-align: center;">
+                    <img src="screen_cev_updated.png" alt="Courbe cEV SpinNova avec filtres et tableau" class="screen-img"
+                        style="max-width: 100%; border-radius: 12px;">
+                    <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.5rem;">Onglet Héros cEV —
+                        courbes cumulatives + résultats par buy-in</p>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 1rem;">4 courbes cumulatives</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: var(--text-muted); margin-bottom: 0.8rem;">
+                            <span style="color: #2ecc71; font-weight: 700;">━</span>
+                            <strong style="color: #2ecc71;"> Gagné</strong> — vos gains réels en jetons
+                        </li>
+                        <li style="color: var(--text-muted); margin-bottom: 0.8rem;">
+                            <span style="color: #f59e0b; font-weight: 700;">━</span>
+                            <strong style="color: #f59e0b;"> EV du Tapis</strong> — expected value des all-ins
+                        </li>
+                        <li style="color: var(--text-muted); margin-bottom: 0.8rem;">
+                            <span style="color: #8b949e; font-weight: 700;">━</span>
+                            <strong style="color: #8b949e;"> Gagné au Showdown</strong>
+                        </li>
+                        <li style="color: var(--text-muted); margin-bottom: 0.8rem;">
+                            <span style="color: #ec4899; font-weight: 700;">━</span>
+                            <strong style="color: #ec4899;"> Gagné sans Showdown</strong>
+                        </li>
+                    </ul>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+                        L'encadré en haut à gauche affiche votre <strong style="color: var(--text-main);">cEV/T par
+                            position</strong> — 3-Way (BTN, SB, BB, BvB) et Heads-Up (SB, BB) avec le détail
+                        fold/limp/open/iso.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTRES -->
+    <section class="features-section" style="padding-top: 2rem;">
+        <h2 style="text-align: left; font-size: 1.8rem;">
+            🔧 Les <span style="color: var(--accent);">Filtres</span>
+        </h2>
+        <div class="glass-panel" style="margin-top: 1.5rem; padding: 2rem;">
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                Isolez exactement ce que vous voulez analyser :
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem;">
+                <div style="text-align: center; padding: 1rem; background: rgba(6,182,212,0.06); border-radius: 10px;">
+                    <div style="font-size: 1.3rem;">💰</div>
+                    <strong style="color: var(--text-main); font-size: 0.9rem;">Buy-in</strong>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">0.25€, 1€, 2€, 5€, 10€…</p>
+                </div>
+                <div style="text-align: center; padding: 1rem; background: rgba(6,182,212,0.06); border-radius: 10px;">
+                    <div style="font-size: 1.3rem;">🏠</div>
+                    <strong style="color: var(--text-main); font-size: 0.9rem;">Site</strong>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">PMU, FDJ, Winamax…</p>
+                </div>
+                <div style="text-align: center; padding: 1rem; background: rgba(6,182,212,0.06); border-radius: 10px;">
+                    <div style="font-size: 1.3rem;">🎮</div>
+                    <strong style="color: var(--text-main); font-size: 0.9rem;">Type</strong>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">Spin, Nitro, Flash, MTT</p>
+                </div>
+                <div style="text-align: center; padding: 1rem; background: rgba(6,182,212,0.06); border-radius: 10px;">
+                    <div style="font-size: 1.3rem;">📍</div>
+                    <strong style="color: var(--text-main); font-size: 0.9rem;">Position</strong>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">BTN, SB, BB (3W & HU)</p>
+                </div>
+                <div style="text-align: center; padding: 1rem; background: rgba(6,182,212,0.06); border-radius: 10px;">
+                    <div style="font-size: 1.3rem;">🃏</div>
+                    <strong style="color: var(--text-main); font-size: 0.9rem;">Pot</strong>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">Limp, Open, ISO, Fold</p>
+                </div>
+                <div style="text-align: center; padding: 1rem; background: rgba(6,182,212,0.06); border-radius: 10px;">
+                    <div style="font-size: 1.3rem;">📅</div>
+                    <strong style="color: var(--text-main); font-size: 0.9rem;">Date</strong>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">Aujourd'hui, Semaine, Mois</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TABLEAU -->
+    <section class="features-section" style="padding-top: 2rem; padding-bottom: 4rem;">
+        <h2 style="text-align: left; font-size: 1.8rem;">
+            📊 Le <span style="color: var(--accent);">Tableau</span> de Résultats
+        </h2>
+        <div class="glass-panel" style="margin-top: 1.5rem; padding: 2rem;">
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                Sous la courbe, un tableau détaille vos résultats <strong style="color: var(--text-main);">par
+                    buy-in</strong> :
+            </p>
+            <div style="overflow-x: auto;">
+                <table
+                    style="width: 100%; border-collapse: collapse; font-size: 0.9rem; background: rgba(13,17,23,0.5); border-radius: 8px; overflow: hidden;">
+                    <thead>
+                        <tr style="background: rgba(88,166,255,0.1);">
+                            <th style="padding: 10px 16px; text-align: left; color: var(--text-muted);">Buy-in</th>
+                            <th style="padding: 10px 16px; text-align: center; color: var(--text-muted);">Tournois</th>
+                            <th style="padding: 10px 16px; text-align: center; color: var(--text-muted);">Mains</th>
+                            <th style="padding: 10px 16px; text-align: center; color: var(--text-muted);">Gagné</th>
+                            <th style="padding: 10px 16px; text-align: center; color: var(--text-muted);">cEV/T</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-top: 1px solid rgba(48,54,61,0.5);">
+                            <td style="padding: 8px 16px; color: var(--text-main); font-weight: 600;">5€ Spin</td>
+                            <td style="padding: 8px 16px; text-align: center; color: var(--text-muted);">1 170</td>
+                            <td style="padding: 8px 16px; text-align: center; color: var(--text-muted);">15.7k</td>
+                            <td style="padding: 8px 16px; text-align: center; color: #2ecc71; font-weight: 600;">+56.8k
+                            </td>
+                            <td style="padding: 8px 16px; text-align: center; color: #2ecc71; font-weight: 600;">+55.5
+                            </td>
+                        </tr>
+                        <tr style="border-top: 1px solid rgba(48,54,61,0.5); background: rgba(88,166,255,0.05);">
+                            <td style="padding: 8px 16px; color: var(--accent); font-weight: 700;">Résumé</td>
+                            <td style="padding: 8px 16px; text-align: center; color: var(--text-main); font-weight: 600;">
+                                1 554</td>
+                            <td style="padding: 8px 16px; text-align: center; color: var(--text-main); font-weight: 600;">
+                                20.9k</td>
+                            <td
+                                style="padding: 8px 16px; text-align: center; color: #2ecc71; font-weight: 700; font-size: 1rem;">
+                                +75.0k</td>
+                            <td
+                                style="padding: 8px 16px; text-align: center; color: #2ecc71; font-weight: 700; font-size: 1rem;">
+                                +46.0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem;">
+                💡 Basculez entre <strong style="color: var(--text-main);">Par Main</strong> et
+                <strong style="color: var(--text-main);">Par Tournoi</strong> pour changer l'axe X de la courbe.
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-box glass-panel">
+            <h2>Analysez votre jeu en <span class="gradient-text">détail</span> 🦸</h2>
+            <p>Découvrez vos stats par position et le diagnostic GTO.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="guide-hero-stats.html" class="btn-primary">🦸 Hero Stats</a>
+                <a href="guide-field-stats.html" class="btn-primary" style="background: var(--primary);">🌐 Stats
+                    Field</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 SpinNova — Tous droits réservés ·
+            <a href="mentions-legales.html" style="color: var(--text-muted);">Mentions Légales</a> ·
+            <a href="cgu-cgv.html" style="color: var(--text-muted);">CGU/CGV</a>
+        </p>
+    </footer>
+</body>
+
+</html>
