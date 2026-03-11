@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les 3 Modes HUD - SpinNova HUD Poker</title>
+    <title>Les HUDs SpinNova — Face A (Notes) & Face B (Stats) | SpinNova</title>
     <meta name="description"
-        content="Découvrez les 3 modes HUD de SpinNova : Mini, Compact et Large. Comparez-les et choisissez celui qui correspond à votre style de jeu poker.">
+        content="Découvrez les HUDs SpinNova : Face A avec 3 modes (Mini, Compact, Large) pour le profilage, et Face B pour les stats Deepitude in-game. Comparez-les et choisissez.">
     <link rel="stylesheet" href="style.css">
     <script src="cookie-banner.js" defer></script>
     <script src="visit_tracker.js" defer></script>
@@ -33,6 +33,7 @@
                 <div class="nav-dropdown-menu">
                     <a href="guide-demarrage.html"><span class="dropdown-icon">🚀</span> Guide de Démarrage</a>
                     <a href="guide-huds.html"><span class="dropdown-icon">🖥️</span> Les HUDs</a>
+                    <a href="guide-face-b.html"><span class="dropdown-icon">📊</span> Face B Stats</a>
                     <a href="guide-editeur-hud.html"><span class="dropdown-icon">🎨</span> Éditeur HUD</a>
                     <a href="guide-notes.html"><span class="dropdown-icon">🎤</span> Notes & Voix</a>
                     <a href="badges.html"><span class="dropdown-icon">🏷️</span> Badges</a>
@@ -63,11 +64,56 @@
     <header class="hero" style="min-height: 50vh; padding-top: 140px;">
         <div class="hero-content">
             <span class="badge-new">📖 Mode d'Emploi</span>
-            <h1>🖥️ Les 3 Modes <span class="gradient-text">HUD</span></h1>
-            <p>SpinNova propose <strong>3 modes d'affichage</strong> adaptés à votre style de jeu.<br>
-                Du plus discret au plus détaillé, choisissez celui qui vous correspond.</p>
+            <h1>🖥️ Les <span class="gradient-text">HUDs</span> SpinNova</h1>
+            <p>SpinNova propose <strong>deux faces HUD</strong> complémentaires :<br>
+                la <strong style="color: #06b6d4;">Face A</strong> (notes, badges, profilage) en 3 modes,
+                et la <strong style="color: #10b981;">Face B</strong> (stats Deepitude in-game).</p>
         </div>
     </header>
+
+    <!-- FACE A / FACE B INTRO -->
+    <section class="features-section" style="padding-top: 2rem;">
+        <div class="glass-panel" style="padding: 2rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div style="background: rgba(6, 182, 212, 0.08); border-left: 3px solid #06b6d4; padding: 1.2rem; border-radius: 0 10px 10px 0;">
+                    <h3 style="color: #06b6d4; margin-bottom: 0.5rem;">📝 Face A — Notes & Profilage</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.8rem;">
+                        3 modes d'affichage (Mini, Compact, Large) avec badges, notes manuscrites,
+                        notes vocales, quick notes et indicateur Fish/Reg.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
+                        <strong style="color: var(--text-main);">Basculez entre les modes</strong> en cliquant sur le bouton SN
+                        (point <span style="color: #06b6d4;">cyan</span>).
+                    </p>
+                    <img src="hud_large.png" alt="Face A — HUD Large avec badges et notes" class="screen-img lightbox-trigger"
+                        style="width: 100%; border-radius: 10px;">
+                    <p style="color: var(--text-muted); font-size: 0.75rem; text-align: center; margin-top: 0.4rem;">Face A — Mode Large</p>
+                </div>
+                <div style="background: rgba(16, 185, 129, 0.08); border-left: 3px solid #10b981; padding: 1.2rem; border-radius: 0 10px 10px 0;">
+                    <h3 style="color: #10b981; margin-bottom: 0.5rem;">📊 Face B — Stats Deepitude</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.8rem;">
+                        Grilles de stats par position (BTN, SB, BB, BvB), couleurs conditionnelles,
+                        tooltips détaillés, popups de sous-grilles. Zoom molette & drag indépendant.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
+                        <strong style="color: var(--text-main);">Basculez Face A ↔ Face B</strong> en cliquant sur le bouton SN
+                        (point <span style="color: #10b981;">vert</span>).
+                    </p>
+                    <img src="Face B in-game.png" alt="Face B — Stats Deepitude sur table PMU Poker" class="screen-img lightbox-trigger"
+                        style="width: 100%; border-radius: 10px;">
+                    <p style="color: var(--text-muted); font-size: 0.75rem; text-align: center; margin-top: 0.4rem;">Face B — Stats In-Game</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TITRE FACE A -->
+    <section class="features-section" style="padding-top: 3rem; padding-bottom: 0;">
+        <h2 style="text-align: center; font-size: 2rem;">
+            📝 Face A — <span class="gradient-text">3 Modes d'Affichage</span>
+        </h2>
+        <p style="text-align: center; color: var(--text-muted); margin-top: 0.5rem;">Les 3 modes de la Face A : du plus discret au plus détaillé.</p>
+    </section>
 
     <!-- MINI HUD -->
     <section class="features-section" style="padding-top: 2rem;">
@@ -254,13 +300,63 @@
         </div>
     </section>
 
+    <!-- ============================== -->
+    <!-- FACE B — STATS IN-GAME          -->
+    <!-- ============================== -->
+    <section class="features-section" style="padding-top: 3rem; padding-bottom: 0;">
+        <h2 style="text-align: center; font-size: 2rem;">
+            📊 Face B — <span class="gradient-text">Stats Deepitude In-Game</span>
+        </h2>
+        <p style="text-align: center; color: var(--text-muted); margin-top: 0.5rem;">Vos stats chiffrées directement sur la table de poker.</p>
+    </section>
+
+    <section class="features-section" style="padding-top: 1rem;">
+        <div class="glass-panel" style="padding: 2rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                <div style="text-align: center;">
+                    <img src="Face B in-game.png" alt="Face B — Stats Deepitude sur table PMU Poker" class="screen-img"
+                        style="max-width: 100%; border-radius: 12px;">
+                    <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.5rem;">Face B déployée sur
+                        une table PMU Poker — grilles stats par position</p>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Basculez en 1 clic entre notes et stats</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Cliquez sur le <strong style="color: var(--text-main);">bouton SN</strong> (point
+                        <span style="color: #10b981; font-weight: 600;">vert</span>) pour afficher vos
+                        <strong style="color: var(--text-main);">grilles Deepitude</strong> directement sur la table.
+                    </p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: var(--text-muted); margin-bottom: 0.5rem;">
+                            <span style="color: #10b981;">✓</span> Grilles par position (BTN, SB, BB, BvB…)
+                        </li>
+                        <li style="color: var(--text-muted); margin-bottom: 0.5rem;">
+                            <span style="color: #10b981;">✓</span> Stats PRE / POST / ISO séparées
+                        </li>
+                        <li style="color: var(--text-muted); margin-bottom: 0.5rem;">
+                            <span style="color: #10b981;">✓</span> Couleurs conditionnelles & tooltips détaillés
+                        </li>
+                        <li style="color: var(--text-muted); margin-bottom: 0.5rem;">
+                            <span style="color: #10b981;">✓</span> Zoom molette & drag indépendant
+                        </li>
+                        <li style="color: var(--text-muted); margin-bottom: 0.5rem;">
+                            <span style="color: #10b981;">✓</span> Popups Deepitude — sous-grilles de détail
+                        </li>
+                    </ul>
+                    <a href="guide-face-b.html" class="btn-primary" style="margin-top: 1rem; display: inline-block; background: linear-gradient(135deg, #10b981, #06b6d4);">📖 Guide complet Face B</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="cta-section">
         <div class="cta-box glass-panel">
             <h2>Envie de personnaliser votre HUD ? 🎨</h2>
-            <p>Découvrez l'<strong>Éditeur HUD</strong> pour créer votre HUD sur-mesure.</p>
+            <p>Découvrez l'<strong>Éditeur HUD</strong> pour créer votre HUD sur-mesure, ou explorez la <strong>Face B</strong> pour les stats in-game.</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                 <a href="guide-editeur-hud.html" class="btn-primary">🎨 Éditeur HUD</a>
+                <a href="guide-face-b.html" class="btn-primary" style="background: linear-gradient(135deg, #10b981, #06b6d4);">📊 Face B Stats</a>
                 <a href="essai-gratuit.html" class="btn-primary" style="background: var(--primary);">🆓 Essai
                     Gratuit</a>
             </div>
@@ -268,7 +364,7 @@
     </section>
 
     <footer class="footer">
-        <p>&copy; 2025 SpinNova — Tous droits réservés ·
+        <p>&copy; 2026 SpinNova — Tous droits réservés ·
             <a href="mentions-legales.html" style="color: var(--text-muted);">Mentions Légales</a> ·
             <a href="cgu-cgv.html" style="color: var(--text-muted);">CGU/CGV</a>
         </p>
