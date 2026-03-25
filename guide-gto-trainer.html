@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTO Trainer — Entraînement Preflop Interactif | SpinNova</title>
+    <meta name="description"
+        content="GTO Trainer SpinNova : table simulée, quiz preflop interactif, scoring par spot, range popup GTO. Testez vos décisions preflop contre les fréquences optimales.">
+    <meta property="og:title" content="GTO Trainer — Entraînement Preflop Interactif | SpinNova">
+    <meta property="og:description" content="Testez vos décisions preflop contre les fréquences GTO optimales.">
+    <meta property="og:image" content="https://spinnovav3.github.io/spinnova-web/screen_gto_trainer.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="cookie-banner.js" defer></script>
+    <script src="visit_tracker.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">Spin<span class="highlight">Nova</span></a>
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <div class="nav-dropdown" onclick="this.classList.toggle('open')">
+                <button class="nav-dropdown-toggle nav-active">Mode d'Emploi <span
+                        class="dropdown-arrow">▼</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="guide-demarrage.html"><span class="dropdown-icon">🚀</span> Guide de Démarrage</a>
+                    <a href="guide-huds.html"><span class="dropdown-icon">🖥️</span> Les HUDs</a>
+                    <a href="guide-face-b.html"><span class="dropdown-icon">📊</span> Face B Stats</a>
+                    <a href="guide-editeur-hud.html"><span class="dropdown-icon">🎨</span> Éditeur HUD</a>
+                    <a href="guide-notes.html"><span class="dropdown-icon">🎤</span> Notes & Voix</a>
+                    <a href="badges.html"><span class="dropdown-icon">🏷️</span> Badges</a>
+                    <a href="guide-captures.html"><span class="dropdown-icon">📸</span> Captures & Galerie</a>
+                    <a href="guide-cev.html"><span class="dropdown-icon">📈</span> Héros cEV</a>
+                    <a href="guide-hero-stats.html"><span class="dropdown-icon">🦸</span> Hero Stats</a>
+                    <a href="guide-field-stats.html"><span class="dropdown-icon">🌐</span> Stats Field</a>
+                    <a href="guide-range-editor.html"><span class="dropdown-icon">🎲</span> Range Editor</a>
+                    <a href="guide-range-training.html"><span class="dropdown-icon">🏋️</span> Range Training</a>
+                    <a href="guide-equity-calculator.html"><span class="dropdown-icon">⚖️</span> Equity Calculator</a>
+                    <a href="guide-gto-trainer.html"><span class="dropdown-icon">🎓</span> GTO Trainer</a>
+                    <a href="guide-replayer.html"><span class="dropdown-icon">🎬</span> Replayer</a>
+                </div>
+            </div>
+            <a href="boutique.html">Boutique</a>
+            <a href="essai-gratuit.html">Essai Gratuit</a>
+            <a href="telechargement.html">Télécharger</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
+        </div>
+    </nav>
+    <div class="nav-overlay" onclick="toggleMenu()"></div>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.hamburger').classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+            document.querySelector('.nav-overlay').classList.toggle('active');
+        }
+    </script>
+
+    <!-- HERO -->
+    <header class="hero" style="min-height: 50vh; padding-top: 140px;">
+        <div class="hero-content">
+            <span class="badge-new" style="background: linear-gradient(135deg, #10b981, #06b6d4);">NOUVEAU</span>
+            <h1>🎓 GTO <span class="gradient-text">Trainer</span> — Testez Votre Preflop</h1>
+            <p>Table simulée avec quiz interactif. Choisissez l'action correcte,
+                comparez aux <strong>fréquences GTO optimales</strong>, et progressez spot par spot.</p>
+        </div>
+    </header>
+
+    <!-- SCREENSHOTS -->
+    <section class="features-section" style="padding-top: 2rem;">
+        <div class="glass-panel" style="padding: 2rem; text-align: center;">
+            <img src="screen_gto_trainer.png" alt="GTO Trainer SpinNova — Table simulée preflop" class="screen-img lightbox-trigger"
+                style="max-width: 100%; border-radius: 12px;">
+            <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.5rem;">GTO Trainer — Quiz preflop sur table simulée avec cartes, blinds et positions</p>
+        </div>
+    </section>
+
+    <!-- SCREENSHOTS SECONDAIRES -->
+    <section class="features-section" style="padding-top: 1.5rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <div class="glass-panel" style="padding: 1.5rem; text-align: center;">
+                <img src="screen_gto_trainer1.png" alt="GTO Trainer — Feedback après réponse"
+                    class="screen-img lightbox-trigger" style="max-width: 100%; border-radius: 12px;">
+                <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.5rem;">Feedback immédiat avec les fréquences GTO</p>
+            </div>
+            <div class="glass-panel" style="padding: 1.5rem; text-align: center;">
+                <img src="screen_gto_trainer2.png" alt="GTO Trainer — Configuration et résultats"
+                    class="screen-img lightbox-trigger" style="max-width: 100%; border-radius: 12px;">
+                <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.5rem;">Configuration, scores et résultats par spot</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FONCTIONNALITÉS -->
+    <section class="features-section" style="padding-top: 2rem;">
+        <h2 style="text-align: left; font-size: 1.8rem;">
+            🎯 <span style="color: var(--accent);">Fonctionnalités</span>
+        </h2>
+        <div class="glass-panel" style="margin-top: 1.5rem; padding: 2rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                <div style="background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 12px; padding: 1.5rem;">
+                    <h3 style="color: var(--accent); margin-bottom: 0.5rem;">🃏 Table Simulée</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Surface de jeu réaliste avec <strong style="color: var(--text-main);">cartes, blinds, positions et stacks</strong>.
+                        Vous êtes en situation réelle — Hero en bas, Villain en face.
+                    </p>
+                </div>
+                <div style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 12px; padding: 1.5rem;">
+                    <h3 style="color: #f59e0b; margin-bottom: 0.5rem;">🎯 Quiz GTO Preflop</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Choisissez parmi <strong style="color: var(--text-main);">Fold, Limp, Call, Raise, All-In</strong>
+                        selon la situation. Feedback immédiat avec les fréquences GTO exactes.
+                    </p>
+                </div>
+                <div style="background: rgba(139, 92, 246, 0.08); border: 1px solid rgba(139, 92, 246, 0.2); border-radius: 12px; padding: 1.5rem;">
+                    <h3 style="color: #8b5cf6; margin-bottom: 0.5rem;">📊 Scoring & Persistance</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Score en temps réel, <strong style="color: var(--text-main);">streak, accuracy</strong> et stats
+                        persistantes par spot sauvegardées en base de données.
+                    </p>
+                </div>
+                <div style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 12px; padding: 1.5rem;">
+                    <h3 style="color: #ef4444; margin-bottom: 0.5rem;">🎲 Range Popup</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Après chaque réponse, visualisez la <strong style="color: var(--text-main);">grille 13×13 complète</strong>
+                        avec toutes les fréquences GTO pour le spot en cours.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPOTS DISPONIBLES -->
+    <section class="features-section" style="padding-top: 2rem;">
+        <h2 style="text-align: left; font-size: 1.8rem;">
+            ⚔️ <span style="color: var(--accent);">Spots</span> Disponibles
+        </h2>
+        <div class="glass-panel" style="margin-top: 1.5rem; padding: 2rem;">
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;">
+                <div style="text-align: center; background: rgba(245,158,11,0.1); border-radius: 10px; padding: 1rem;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">🟡</div>
+                    <div style="color: #f59e0b; font-weight: 700; font-size: 0.9rem;">SB Open</div>
+                    <div style="color: var(--text-muted); font-size: 0.75rem;">Hero SB, premier à parler</div>
+                </div>
+                <div style="text-align: center; background: rgba(239,68,68,0.1); border-radius: 10px; padding: 1rem;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">🔴</div>
+                    <div style="color: #ef4444; font-weight: 700; font-size: 0.9rem;">BB vs All-In</div>
+                    <div style="color: var(--text-muted); font-size: 0.75rem;">Villain push, Hero décide</div>
+                </div>
+                <div style="text-align: center; background: rgba(139,92,246,0.1); border-radius: 10px; padding: 1rem;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">🟣</div>
+                    <div style="color: #a78bfa; font-weight: 700; font-size: 0.9rem;">BB vs Limp</div>
+                    <div style="color: var(--text-muted); font-size: 0.75rem;">Villain limpe, Hero réagit</div>
+                </div>
+                <div style="text-align: center; background: rgba(59,130,246,0.1); border-radius: 10px; padding: 1rem;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">🔵</div>
+                    <div style="color: #3b82f6; font-weight: 700; font-size: 0.9rem;">BB vs MinR</div>
+                    <div style="color: var(--text-muted); font-size: 0.75rem;">Villain min-raise, Hero défend</div>
+                </div>
+                <div style="text-align: center; background: rgba(220,38,38,0.1); border-radius: 10px; padding: 1rem;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">⚡</div>
+                    <div style="color: #dc2626; font-weight: 700; font-size: 0.9rem;">SB vs Iso Shove</div>
+                    <div style="color: var(--text-muted); font-size: 0.75rem;">Hero limpe, Villain shove</div>
+                </div>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem; text-align: center;">
+                Depth configurable de <strong style="color: var(--text-main);">2bb à 12bb</strong> — cochez les profondeurs que vous voulez travailler.
+            </p>
+        </div>
+    </section>
+
+    <!-- COMMENT ÇA MARCHE -->
+    <section class="features-section" style="padding-top: 2rem; padding-bottom: 2rem;">
+        <h2 style="text-align: left; font-size: 1.8rem;">
+            📖 <span style="color: var(--accent);">Comment</span> ça marche
+        </h2>
+        <div class="glass-panel" style="margin-top: 1.5rem; padding: 2rem;">
+            <ol style="color: var(--text-muted); font-size: 0.95rem; line-height: 2; padding-left: 1.5rem;">
+                <li>Ouvrez le <strong style="color: var(--text-main);">GTO Trainer</strong> depuis la barre latérale</li>
+                <li>Cochez les <strong style="color: var(--text-main);">depths</strong> (2-12bb) et les <strong style="color: var(--text-main);">spots</strong> à travailler</li>
+                <li>Cliquez <strong style="color: var(--text-main);">Démarrer</strong> — une main aléatoire s'affiche sur la table</li>
+                <li>Choisissez votre action parmi les <strong style="color: var(--text-main);">boutons colorés</strong> (Fold, Call, Raise…)</li>
+                <li>Le feedback s'affiche immédiatement avec les <strong style="color: var(--text-main);">fréquences GTO exactes</strong></li>
+                <li>Cliquez <strong style="color: var(--text-main);">Range</strong> pour voir la grille 13×13 complète du spot</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- FAQ INTÉGRÉE -->
+    <section class="features-section" style="padding-top: 1rem; padding-bottom: 4rem;">
+        <h2 style="text-align: left; font-size: 1.8rem;">
+            ❓ <span style="color: var(--accent);">Questions</span> Fréquentes
+        </h2>
+        <div class="glass-panel" style="margin-top: 1.5rem; padding: 2rem;">
+            <div style="margin-bottom: 1.5rem;">
+                <h3 style="color: var(--accent); font-size: 1rem; margin-bottom: 0.4rem;">D'où viennent les fréquences GTO ?</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Les ranges sont calculées par des solvers professionnels pour les situations Heads-Up preflop en Spin & Go. Chaque depth (2-12bb) a ses propres ranges optimales.</p>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+                <h3 style="color: var(--accent); font-size: 1rem; margin-bottom: 0.4rem;">Mes résultats sont-ils sauvegardés ?</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Oui ! Chaque réponse est enregistrée en base de données. Vous pouvez suivre votre progression par spot dans l'onglet <strong>Résultats</strong> et identifier les situations où vous faites le plus d'erreurs.</p>
+            </div>
+            <div>
+                <h3 style="color: var(--accent); font-size: 1rem; margin-bottom: 0.4rem;">C'est quoi la différence avec le Range Training ?</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Le <strong>Range Training</strong> vous entraîne sur vos propres ranges personnalisées (que vous avez dessinées dans le Range Editor). Le <strong>GTO Trainer</strong> vous teste contre les fréquences GTO optimales calculées par solver — c'est l'étalon de référence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-box glass-panel">
+            <h2>Comparez avec <span class="gradient-text">vos ranges</span> 🎲</h2>
+            <p>Construisez vos ranges dans le Range Editor, puis testez-les dans le Range Training.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="guide-range-editor.html" class="btn-primary">🎲 Range Editor</a>
+                <a href="guide-replayer.html" class="btn-primary" style="background: linear-gradient(135deg, #8b5cf6, #06b6d4);">🎬 Replayer</a>
+                <a href="telechargement.html" class="btn-primary" style="background: var(--primary);">📥 Télécharger</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 SpinNova — Tous droits réservés ·
+            <a href="mentions-legales.html" style="color: var(--text-muted);">Mentions Légales</a> ·
+            <a href="cgu-cgv.html" style="color: var(--text-muted);">CGU/CGV</a>
+        </p>
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <img src="" alt="Zoom" id="lightboxImg" loading="lazy">
+        <span class="lightbox-hint">Cliquez n'importe où pour fermer</span>
+    </div>
+    <script>
+        (function () {
+            const overlay = document.getElementById('lightboxOverlay');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const closeBtn = document.getElementById('lightboxClose');
+            document.querySelectorAll('.lightbox-trigger').forEach(function (img) {
+                img.addEventListener('click', function (e) {
+                    e.preventDefault(); e.stopPropagation();
+                    lightboxImg.src = this.src; lightboxImg.alt = this.alt;
+                    overlay.classList.add('active'); document.body.style.overflow = 'hidden';
+                });
+            });
+            overlay.addEventListener('click', function (e) {
+                if (e.target !== lightboxImg) { overlay.classList.remove('active'); document.body.style.overflow = ''; }
+            });
+            closeBtn.addEventListener('click', function () { overlay.classList.remove('active'); document.body.style.overflow = ''; });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && overlay.classList.contains('active')) { overlay.classList.remove('active'); document.body.style.overflow = ''; }
+            });
+        })();
+    </script>
+</body>
+
+</html>

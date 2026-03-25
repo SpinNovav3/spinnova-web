@@ -91,6 +91,22 @@
             "@type": "Answer",
             "text": "Nova est un assistant IA intégré à SpinNova qui vous aide à naviguer dans le logiciel, comprendre les fonctionnalités et configurer votre setup. Nova ne fonctionne pas in-game et ne donne aucun conseil de jeu en temps réel. Il est inclus dans votre abonnement standard."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "C'est quoi le GTO Trainer ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le GTO Trainer est un outil d'entraînement preflop interactif. Une table simulée vous présente une main aléatoire dans une situation spécifique (SB Open, BB vs All-In, etc.) et vous devez choisir l'action correcte. Feedback immédiat avec les fréquences GTO exactes, scoring par spot, et range popup pour visualiser la grille complète."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "C'est quoi le Replayer ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le Replayer vous permet de revivre vos mains jouées sur une table simulée. Navigation action par action, board progressif, HUD intégré, et vérification GTO preflop en temps réel. Filtrez par mode, position, type de pot et résultat."
+          }
         }
       ]
     }
@@ -172,6 +188,7 @@
                 <div class="nav-dropdown-menu">
                     <a href="guide-demarrage.html"><span class="dropdown-icon">🚀</span> Guide de Démarrage</a>
                     <a href="guide-huds.html"><span class="dropdown-icon">🖥️</span> Les HUDs</a>
+                    <a href="guide-face-b.html"><span class="dropdown-icon">📊</span> Face B Stats</a>
                     <a href="guide-editeur-hud.html"><span class="dropdown-icon">🎨</span> Éditeur HUD</a>
                     <a href="guide-notes.html"><span class="dropdown-icon">🎤</span> Notes & Voix</a>
                     <a href="badges.html"><span class="dropdown-icon">🏷️</span> Badges</a>
@@ -179,6 +196,11 @@
                     <a href="guide-cev.html"><span class="dropdown-icon">📈</span> Héros cEV</a>
                     <a href="guide-hero-stats.html"><span class="dropdown-icon">🦸</span> Hero Stats</a>
                     <a href="guide-field-stats.html"><span class="dropdown-icon">🌐</span> Stats Field</a>
+                    <a href="guide-range-editor.html"><span class="dropdown-icon">🎲</span> Range Editor</a>
+                    <a href="guide-range-training.html"><span class="dropdown-icon">🏋️</span> Range Training</a>
+                    <a href="guide-equity-calculator.html"><span class="dropdown-icon">⚖️</span> Equity Calculator</a>
+                    <a href="guide-gto-trainer.html"><span class="dropdown-icon">🎓</span> GTO Trainer</a>
+                    <a href="guide-replayer.html"><span class="dropdown-icon">🎬</span> Replayer</a>
                 </div>
             </div>
             <a href="boutique.html">Boutique</a>
@@ -203,14 +225,20 @@
         <div
             style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 3rem; flex-wrap: wrap;">
             <span
-                style="background: rgba(6,182,212,0.15); color: #06b6d4; padding: 6px 16px; border-radius: 25px; font-weight: 700; font-size: 0.9rem; border: 1px solid rgba(6,182,212,0.3);">🏇
-                PMU</span>
+                style="background: rgba(6,182,212,0.15); color: #06b6d4; padding: 6px 16px; border-radius: 25px; font-weight: 700; font-size: 0.9rem; border: 1px solid rgba(6,182,212,0.3);">🎯
+                HUD</span>
             <span
-                style="background: rgba(16,185,129,0.15); color: #10b981; padding: 6px 16px; border-radius: 25px; font-weight: 700; font-size: 0.9rem; border: 1px solid rgba(16,185,129,0.3);">🎰
-                FDJ</span>
+                style="background: rgba(16,185,129,0.15); color: #10b981; padding: 6px 16px; border-radius: 25px; font-weight: 700; font-size: 0.9rem; border: 1px solid rgba(16,185,129,0.3);">📊
+                Stats</span>
             <span
-                style="background: rgba(245,158,11,0.15); color: #f59e0b; padding: 6px 16px; border-radius: 25px; font-weight: 700; font-size: 0.9rem; border: 1px solid rgba(245,158,11,0.3);">🃏
-                Winamax</span>
+                style="background: rgba(245,158,11,0.15); color: #f59e0b; padding: 6px 16px; border-radius: 25px; font-weight: 700; font-size: 0.9rem; border: 1px solid rgba(245,158,11,0.3);">🎲
+                Ranges</span>
+            <span
+                style="background: rgba(139,92,246,0.15); color: #8b5cf6; padding: 6px 16px; border-radius: 25px; font-weight: 700; font-size: 0.9rem; border: 1px solid rgba(139,92,246,0.3);">🎬
+                Replayer</span>
+            <span
+                style="background: rgba(239,68,68,0.15); color: #ef4444; padding: 6px 16px; border-radius: 25px; font-weight: 700; font-size: 0.9rem; border: 1px solid rgba(239,68,68,0.3);">🎓
+                GTO</span>
         </div>
 
         <!-- FAQ 1 -->
@@ -604,6 +632,59 @@
             </div>
         </div>
 
+        <!-- FAQ: GTO Trainer -->
+        <div class="faq-item">
+            <div class="faq-question">
+                C'est quoi le GTO Trainer ? 🎓
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                Le <strong>GTO Trainer</strong> est un outil d'entraînement preflop interactif.
+                Une <strong>table simulée</strong> vous présente une main aléatoire dans une situation spécifique
+                (SB Open, BB vs All-In, BB vs Limp, BB vs MinR, SB vs Iso Shove) et vous devez choisir l'action correcte
+                parmi Fold, Limp, Call, Raise ou All-In.
+                <br><br>
+                Après chaque réponse, vous voyez les <strong>fréquences GTO exactes</strong> et pouvez ouvrir
+                la <strong>range popup 13×13</strong> complète. Le scoring est persistant par spot.
+                <br><br>
+                → <a href="guide-gto-trainer.html" style="color: var(--accent);">Voir le guide GTO Trainer</a>
+            </div>
+        </div>
+
+        <!-- FAQ: Replayer -->
+        <div class="faq-item">
+            <div class="faq-question">
+                C'est quoi le Replayer ? 🎬
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                Le <strong>Replayer</strong> vous permet de <strong>revivre vos mains</strong> jouées sur une table simulée.
+                Navigation action par action avec ◀ ▶, board progressif, <strong>HUD intégré</strong>
+                (vos vrais badges et notes apparaissent), et <strong>vérification GTO preflop</strong> en temps réel.
+                <br><br>
+                Filtrez par mode (3-Way/HU), position, type de pot (LP/OP/ISO/3BET) et résultat (gagné/perdu).
+                Tout est reconstruit visuellement — pas besoin d'images.
+                <br><br>
+                → <a href="guide-replayer.html" style="color: var(--accent);">Voir le guide Replayer</a>
+            </div>
+        </div>
+
+        <!-- FAQ: Compatibilité -->
+        <div class="faq-item">
+            <div class="faq-question">
+                SpinNova est compatible avec quelles rooms ? 🎰
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                SpinNova est compatible avec <strong>toutes les rooms françaises</strong> : PMU Poker, FDJ,
+                Winamax (Expresso), Unibet (Power Spin, Power Spin Flash), Betclic, Bwin, PartyPoker
+                et tous les skins du réseau iPoker.
+                <br><br>
+                Compatible <strong>Spin & Go, Cash Game et MTT</strong>.
+                Le HUD, les stats, le replayer et le GTO Trainer fonctionnent avec toutes les rooms supportées.
+            </div>
+        </div>
+
         <section style="margin-top: 4rem; text-align: center;">
             <p>Tu n'as pas trouvé ta réponse ?</p>
             <a href="contact.html" class="btn-primary" style="margin-top: 1rem;">Pose ta question ici</a>
@@ -658,7 +739,7 @@
                 <a href="contact.html"
                     style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Contact</a>
             </div>
-            <p class="copyright">© 2026 SpinNova. Compatible iPoker &amp; Winamax.</p>
+            <p class="copyright">© 2026 SpinNova. Compatible toutes rooms françaises.</p>
         </div>
     </footer>
 
