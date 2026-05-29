@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpinNovaPokerPro v2 BETA | HUD Nouvelle Génération — iPoker, Winamax, Unibet</title>
+    <meta name="description"
+        content="SpinNovaPokerPro v2 : interface repensée, support Unibet complet (auto-relance, sizing presets, placement), 18 tables sans lag, badges fish/reg automatiques, Range Editor exclusif. Essai gratuit 3 jours.">
+    <meta property="og:title" content="SpinNovaPokerPro v2 BETA — Le HUD Nouvelle Génération">
+    <meta property="og:description"
+        content="Tout a été repensé. Interface, performances, Unibet complet, 18 tables fluide. Essai gratuit 3 jours.">
+    <meta property="og:image" content="https://spinnovav3.github.io/spinnova-web/screen_accueil.png">
+    <meta property="og:url" content="https://spinnovav3.github.io/spinnova-web/beta.html">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="beta.css">
+
+    <script src="cookie-banner.js" defer></script>
+    <script src="visit_tracker.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <!-- BETA BANNER -->
+    <div class="beta-banner">
+        BETA OUVERTE — Essai gratuit 3 jours — Rejoins le Discord pour tester
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Spin<span
+                class="highlight">Nova</span></a>
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <div class="nav-dropdown" onclick="this.classList.toggle('open')">
+                <button class="nav-dropdown-toggle">Mode d'Emploi <span class="dropdown-arrow">▼</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="guide-demarrage.html"><span class="dropdown-icon">🚀</span> Guide de Démarrage</a>
+                    <a href="guide-huds.html"><span class="dropdown-icon">🖥️</span> Les HUDs</a>
+                    <a href="guide-face-b.html"><span class="dropdown-icon">📊</span> Face B Stats</a>
+                    <a href="guide-editeur-hud.html"><span class="dropdown-icon">🎨</span> Éditeur HUD</a>
+                    <a href="guide-notes.html"><span class="dropdown-icon">🎤</span> Notes & Voix</a>
+                    <a href="badges.html"><span class="dropdown-icon">🏷️</span> Badges</a>
+                    <a href="guide-captures.html"><span class="dropdown-icon">📸</span> Captures & Galerie</a>
+                    <a href="guide-cev.html"><span class="dropdown-icon">📈</span> Héros cEV</a>
+                    <a href="guide-hero-stats.html"><span class="dropdown-icon">🦸</span> Hero Stats</a>
+                    <a href="guide-field-stats.html"><span class="dropdown-icon">🌐</span> Stats Field</a>
+                    <a href="guide-range-editor.html"><span class="dropdown-icon">🎲</span> Range Editor</a>
+                    <a href="guide-range-training.html"><span class="dropdown-icon">🏋️</span> Range Training</a>
+                    <a href="guide-equity-calculator.html"><span class="dropdown-icon">⚖️</span> Equity Calculator</a>
+                    <a href="guide-gto-trainer.html"><span class="dropdown-icon">🎓</span> GTO Trainer</a>
+                    <a href="guide-replayer.html"><span class="dropdown-icon">🎬</span> Replayer</a>
+                </div>
+            </div>
+            <a href="boutique.html">Boutique</a>
+            <a href="essai-gratuit.html">Essai Gratuit</a>
+            <a href="telechargement.html">Télécharger</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="beta.html" class="nav-beta-link nav-active">BETA v2</a>
+            <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
+        </div>
+    </nav>
+    <div class="nav-overlay" onclick="toggleMenu()"></div>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.hamburger').classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+            document.querySelector('.nav-overlay').classList.toggle('active');
+        }
+    </script>
+
+    <!-- ============================== -->
+    <!-- SECTION A — HERO               -->
+    <!-- ============================== -->
+    <header class="beta-hero">
+        <div class="beta-badge-large">BETA OUVERTE</div>
+        <h1>SpinNova<span class="highlight">PokerPro</span> v2<br>
+            <span class="gradient-text">Le HUD Nouvelle Génération</span>
+        </h1>
+        <p class="hero-subtitle">
+            Tout a été repensé. Interface, performances, automatisation Unibet.<br>
+            Le même logiciel, en 10x mieux.
+        </p>
+
+        <div class="rooms-row">
+            <span class="room-pill">🏇 iPoker</span>
+            <span class="room-pill">🃏 Winamax</span>
+            <span class="room-pill new-room">
+                🎰 Unibet
+                <span class="new-tag">NOUVEAU</span>
+            </span>
+        </div>
+
+        <div class="beta-cta-group">
+            <!-- Le lien "latest" pointe toujours vers la derniere version publiee sur GitHub Releases -->
+            <a href="https://github.com/SpinNovav3/spinnovapokerpro-releases/releases/latest/download/SpinNovaPokerPro_Setup.zip" class="btn-primary large">📥 Télécharger la Beta</a>
+            <a href="https://discord.gg/VGPWqpbvrT" class="btn-outline" target="_blank">💬 Rejoindre le Discord</a>
+        </div>
+        <p class="beta-sub-cta">Essai gratuit 3 jours · Windows 10/11 · Compatible toutes rooms françaises</p>
+    </header>
+
+    <!-- ============================== -->
+    <!-- SECTION B — COMPARAISON V1/V2  -->
+    <!-- ============================== -->
+    <section class="beta-comparison">
+        <h2>Avant vs <span class="gradient-text">Maintenant</span></h2>
+        <p class="section-subtitle">Compare les deux versions. La v2, c'est une refonte de A à Z.</p>
+
+        <!-- Desktop table -->
+        <div class="comparison-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="col-v1">Avant (v1)</th>
+                        <th class="col-v2">Maintenant (v2)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feat-name">Interface</td>
+                        <td class="v1-cell">Classique</td>
+                        <td class="v2-cell">Complètement repensée, moderne et fluide</td>
+                    </tr>
+                    <tr>
+                        <td class="feat-name">Dashboard</td>
+                        <td class="v1-cell">Page de démarrage basique</td>
+                        <td class="v2-cell">KPIs, heatmaps interactives, top adversaires</td>
+                    </tr>
+                    <tr>
+                        <td class="feat-name">Unibet</td>
+                        <td class="v1-cell">Lecture des historiques + all-in basique</td>
+                        <td class="v2-cell">Auto-relance, sizing, placement, sit-in, HUD complet</td>
+                    </tr>
+                    <tr>
+                        <td class="feat-name">Multi-table</td>
+                        <td class="v1-cell">Ralentissements sur beaucoup de tables</td>
+                        <td class="v2-cell">18 tables sans aucun lag</td>
+                    </tr>
+                    <tr>
+                        <td class="feat-name">Classification</td>
+                        <td class="v1-cell">Manuelle</td>
+                        <td class="v2-cell">Fish/Reg automatique, seuils configurables</td>
+                    </tr>
+                    <tr>
+                        <td class="feat-name">Auto-relance</td>
+                        <td class="v1-no">Non</td>
+                        <td class="v2-cell">Réinscription auto entre chaque Spin</td>
+                    </tr>
+                    <tr>
+                        <td class="feat-name">Boutons de mise</td>
+                        <td class="v1-no">Non</td>
+                        <td class="v2-cell">3 presets (2.2BB, 2.5BB, 3BB) + All-In</td>
+                    </tr>
+                    <tr>
+                        <td class="feat-name">Placement tables</td>
+                        <td class="v1-no">Non</td>
+                        <td class="v2-cell">Presets en cascade, grille… activés par hotkey</td>
+                    </tr>
+                    <tr>
+                        <td class="feat-name">Analyse du field</td>
+                        <td class="v1-no">Non</td>
+                        <td class="v2-cell">Stats field, tendances macro, compare joueurs</td>
+                    </tr>
+                    <tr>
+                        <td class="feat-name">Range Editor</td>
+                        <td class="v1-no">Non</td>
+                        <td class="v2-cell">Crée + compare tes ranges vs tes stats réelles</td>
+                    </tr>
+                    <tr>
+                        <td class="feat-name">Replayer</td>
+                        <td class="v1-cell">Basique (liste de mains)</td>
+                        <td class="v2-cell">Table simulée + GTO check intégré</td>
+                    </tr>
+                    <tr>
+                        <td class="feat-name">Stat Builder</td>
+                        <td class="v1-no">Non</td>
+                        <td class="v2-cell">Crée tes propres stats personnalisées</td>
+                    </tr>
+                    <tr>
+                        <td class="feat-name">Popup Builder</td>
+                        <td class="v1-no">Non</td>
+                        <td class="v2-cell">Construis tes popups comme tu veux</td>
+                    </tr>
+                    <tr>
+                        <td class="feat-name">Boutons flottants</td>
+                        <td class="v1-cell">Bouton all-in basique</td>
+                        <td class="v2-cell">Personnalisables : couleur, taille, position, par table</td>
+                    </tr>
+                    <tr>
+                        <td class="feat-name">Hotkeys</td>
+                        <td class="v1-cell">Clavier uniquement</td>
+                        <td class="v2-cell">Clavier + souris (middle click, boutons latéraux, molette)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Mobile cards -->
+        <div class="comparison-cards">
+            <div class="comparison-card">
+                <div class="card-feat">Interface</div>
+                <div class="card-row">
+                    <span class="card-v1">Classique</span>
+                    <span class="card-v2">Complètement repensée</span>
+                </div>
+            </div>
+            <div class="comparison-card">
+                <div class="card-feat">Dashboard</div>
+                <div class="card-row">
+                    <span class="card-v1">Page basique</span>
+                    <span class="card-v2">KPIs, heatmaps, top adversaires</span>
+                </div>
+            </div>
+            <div class="comparison-card">
+                <div class="card-feat">Unibet</div>
+                <div class="card-row">
+                    <span class="card-v1">Historiques + all-in basique</span>
+                    <span class="card-v2">Auto-relance, sizing, placement, HUD complet</span>
+                </div>
+            </div>
+            <div class="comparison-card">
+                <div class="card-feat">Multi-table</div>
+                <div class="card-row">
+                    <span class="card-v1">Lag sur beaucoup de tables</span>
+                    <span class="card-v2">18 tables sans lag</span>
+                </div>
+            </div>
+            <div class="comparison-card">
+                <div class="card-feat">Classification</div>
+                <div class="card-row">
+                    <span class="card-v1">Manuelle</span>
+                    <span class="card-v2">Automatique (configurable)</span>
+                </div>
+            </div>
+            <div class="comparison-card">
+                <div class="card-feat">Auto-relance</div>
+                <div class="card-row">
+                    <span class="card-v1" style="color: #ef4444; opacity: 0.7;">Non</span>
+                    <span class="card-v2">Réinscription auto</span>
+                </div>
+            </div>
+            <div class="comparison-card">
+                <div class="card-feat">Boutons de mise</div>
+                <div class="card-row">
+                    <span class="card-v1" style="color: #ef4444; opacity: 0.7;">Non</span>
+                    <span class="card-v2">3 presets + All-In</span>
+                </div>
+            </div>
+            <div class="comparison-card">
+                <div class="card-feat">Placement tables</div>
+                <div class="card-row">
+                    <span class="card-v1" style="color: #ef4444; opacity: 0.7;">Non</span>
+                    <span class="card-v2">Presets par hotkey</span>
+                </div>
+            </div>
+            <div class="comparison-card">
+                <div class="card-feat">Analyse du field</div>
+                <div class="card-row">
+                    <span class="card-v1" style="color: #ef4444; opacity: 0.7;">Non</span>
+                    <span class="card-v2">Stats field, tendances, compare joueurs</span>
+                </div>
+            </div>
+            <div class="comparison-card">
+                <div class="card-feat">Range Editor</div>
+                <div class="card-row">
+                    <span class="card-v1" style="color: #ef4444; opacity: 0.7;">Non</span>
+                    <span class="card-v2">Ranges vs stats réelles</span>
+                </div>
+            </div>
+            <div class="comparison-card">
+                <div class="card-feat">Replayer</div>
+                <div class="card-row">
+                    <span class="card-v1">Basique</span>
+                    <span class="card-v2">Table simulée + GTO check</span>
+                </div>
+            </div>
+            <div class="comparison-card">
+                <div class="card-feat">Stat Builder</div>
+                <div class="card-row">
+                    <span class="card-v1" style="color: #ef4444; opacity: 0.7;">Non</span>
+                    <span class="card-v2">Crée tes propres stats</span>
+                </div>
+            </div>
+            <div class="comparison-card">
+                <div class="card-feat">Popup Builder</div>
+                <div class="card-row">
+                    <span class="card-v1" style="color: #ef4444; opacity: 0.7;">Non</span>
+                    <span class="card-v2">Popups personnalisables</span>
+                </div>
+            </div>
+            <div class="comparison-card">
+                <div class="card-feat">Boutons flottants</div>
+                <div class="card-row">
+                    <span class="card-v1">All-in basique</span>
+                    <span class="card-v2">Personnalisables par table</span>
+                </div>
+            </div>
+            <div class="comparison-card">
+                <div class="card-feat">Hotkeys</div>
+                <div class="card-row">
+                    <span class="card-v1">Clavier seul</span>
+                    <span class="card-v2">Clavier + souris (middle, latéraux, molette)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- SECTION C — FOCUS UNIBET       -->
+    <!-- ============================== -->
+    <section class="beta-unibet">
+        <h2>Unibet, <span class="gradient-text">Enfin Pour de Vrai</span></h2>
+        <p class="section-subtitle">La v1 lisait les historiques. La v2 fait tourner tout le moteur dessus.</p>
+
+        <div class="unibet-grid">
+            <div class="unibet-card">
+                <div class="card-icon">🔄</div>
+                <h3>Auto-relance</h3>
+                <p>Réinscription automatique entre chaque Spin. Compteur de sessions intégré, arrêt automatique après N parties. Tu joues, le reste se fait tout seul.</p>
+            </div>
+            <div class="unibet-card">
+                <div class="card-icon">🪑</div>
+                <h3>Auto Sit-In</h3>
+                <p>Plus besoin de cliquer "Jouer" quand tu es assis dehors. Le logiciel le fait pour toi, sur chaque table, sans que tu touches à rien.</p>
+            </div>
+            <div class="unibet-card">
+                <div class="card-icon">💰</div>
+                <h3>3 Sizing Presets + All-In</h3>
+                <p>Raise 2.2BB, 2.5BB ou 3BB en un clic. Le logiciel vérifie que le bouton Raise est bien là avant de cliquer — pas de mise accidentelle si l'adversaire est déjà all-in.</p>
+            </div>
+            <div class="unibet-card">
+                <div class="card-icon">📐</div>
+                <h3>Placement de Tables</h3>
+                <p>Enregistre tes dispositions préférées (cascade, grille, empilées…). Change de layout en un raccourci clavier.</p>
+            </div>
+            <div class="unibet-card">
+                <div class="card-icon">🛑</div>
+                <h3>Panic Stop</h3>
+                <p>Un seul raccourci pour tout couper. Arrête toutes les relances et vide la file d'attente instantanément.</p>
+            </div>
+            <div class="unibet-card">
+                <div class="card-icon">🎯</div>
+                <h3>HUD Complet (Face A + B)</h3>
+                <p>La même qualité que sur iPoker et Winamax. Notes, badges, stats Deepitude, popups — tout y est, directement sur la table Unibet.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- SECTION D — 18 TABLES          -->
+    <!-- ============================== -->
+    <section class="beta-multitable">
+        <div class="cev-showcase-inner">
+            <div class="cev-image-side">
+                <div class="screenshot-placeholder" data-screenshot="multi-table-18-tables">
+                    Screenshot à venir : 18 tables en session
+                </div>
+            </div>
+            <div class="cev-text-side">
+                <div class="cev-badge-row">
+                    <span class="cev-new-badge" style="background: linear-gradient(135deg, #34d399, #06b6d4);">PERFORMANCE</span>
+                </div>
+                <h2>18 Tables, <span class="gradient-text">Zéro Lag</span></h2>
+                <p class="cev-subtitle">La v2 a été construite pour le mass grind. Le HUD s'affiche instantanément, même sur 18 tables simultanées.</p>
+
+                <ul class="perf-checklist">
+                    <li><span class="check">✓</span> HUD instantané sur chaque table</li>
+                    <li><span class="check">✓</span> Badges fish/reg automatiques, sans rien configurer</li>
+                    <li><span class="check">✓</span> Boutons flottants indépendants par table</li>
+                    <li><span class="check">✓</span> Zéro ralentissement, même en mass grind 4 heures</li>
+                </ul>
+
+                <a href="https://discord.gg/VGPWqpbvrT" class="btn-primary cev-cta" target="_blank">💬 Tester la Beta sur Discord</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- SECTION E — OUTILS NOUVEAUX    -->
+    <!-- ============================== -->
+    <section class="beta-tools">
+        <h2>Les Outils <span class="gradient-text">Qu'il Te Manquait</span></h2>
+        <p class="section-subtitle">Tout ce que la v1 n'avait pas, la v2 l'a.</p>
+
+        <div class="tools-grid">
+            <div class="tool-card">
+                <div class="tool-icon">🌐</div>
+                <h3>Field Stats</h3>
+                <p>Analyse le field entier : tendances macro, composition fish/reg par créneau horaire, évolution sur le temps. Sais exactement quand le field est le plus soft.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">🎲</div>
+                <h3>Range Editor <span class="exclusive-tag">EXCLUSIF</span></h3>
+                <p>Crée tes ranges preflop et compare combo par combo comment tu joues réellement. Aucun autre outil au monde ne fait ça. Filtrage Fish/Reg intégré.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">🏋️</div>
+                <h3>Range Training</h3>
+                <p>Entraîne-toi sur tes propres ranges. Quiz combo par combo, score en temps réel, progression visible.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">🎬</div>
+                <h3>Replayer Avancé</h3>
+                <p>Table simulée avec board progressif, stepping action par action. Le GTO Helper te donne le check preflop en temps réel pendant que tu revois tes mains.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">🔧</div>
+                <h3>Stat Builder</h3>
+                <p>Invente tes propres stats avec des filtres personnalisés. Tu veux une stat qui n'existe nulle part ? Crée-la.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">💬</div>
+                <h3>Popup Builder</h3>
+                <p>Construis tes popups de stats exactement comme tu les veux. Choisis ce qui s'affiche quand tu cliques sur une stat du HUD.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">⚔️</div>
+                <h3>Compare Joueurs</h3>
+                <p>Mets 2 joueurs côte à côte et compare toutes leurs stats. Identifie les différences en un coup d'œil.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">📊</div>
+                <h3>Dashboard Complet</h3>
+                <p>Profit, cEV, heatmaps interactives, top adversaires — tout en un coup d'œil dès que tu ouvres le logiciel.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- SECTION F — CTA FINAL          -->
+    <!-- ============================== -->
+    <section class="beta-final-cta">
+        <div class="cta-box glass-panel">
+            <h2>Prêt à passer <span class="gradient-text">à la v2</span> ?</h2>
+            <p class="cta-desc">Essai gratuit 3 jours, toutes fonctionnalités. Teste par toi-même.</p>
+            <ul class="reassurance-list">
+                <li>✅ Pas de carte bancaire pour l'essai</li>
+                <li>✅ Pas d'engagement</li>
+                <li>✅ Support Discord inclus</li>
+            </ul>
+            <div class="beta-cta-group">
+                <a href="https://github.com/SpinNovav3/spinnovapokerpro-releases/releases/latest/download/SpinNovaPokerPro_Setup.zip" class="btn-primary large">📥 Télécharger la Beta</a>
+                <a href="https://discord.gg/VGPWqpbvrT" class="btn-outline" target="_blank">💬 Rejoindre le Discord</a>
+            </div>
+            <p class="cta-note">La v2 est un logiciel séparé — ta licence v1 ne change pas.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">SpinNova</div>
+            <div style="margin: 1rem 0; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="mentions-legales.html"
+                    style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Mentions Légales</a>
+                <a href="cgu-cgv.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">CGU /
+                    CGV</a>
+                <a href="faq.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">FAQ</a>
+                <a href="contact.html"
+                    style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Contact</a>
+            </div>
+            <p class="copyright">© 2026 SpinNova. Compatible toutes rooms françaises.</p>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX Overlay -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <img src="" alt="Zoom" id="lightboxImg" loading="lazy">
+        <span class="lightbox-hint">Cliquez n'importe où pour fermer</span>
+    </div>
+
+    <script>
+        (function () {
+            const overlay = document.getElementById('lightboxOverlay');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const closeBtn = document.getElementById('lightboxClose');
+
+            document.querySelectorAll('.lightbox-trigger').forEach(function (img) {
+                img.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    lightboxImg.src = this.src;
+                    lightboxImg.alt = this.alt;
+                    overlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            overlay.addEventListener('click', function (e) {
+                if (e.target !== lightboxImg) {
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            closeBtn.addEventListener('click', function () {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && overlay.classList.contains('active')) {
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

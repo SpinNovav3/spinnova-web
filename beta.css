@@ -1,0 +1,556 @@
+/* ============================== */
+/* BETA PAGE — SpinNovaPokerPro v2 */
+/* ============================== */
+
+/* Beta Banner */
+.beta-banner {
+    background: linear-gradient(90deg, #f59e0b, #ef4444);
+    color: #fff;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1002;
+}
+
+body:has(.beta-banner) .navbar {
+    top: 36px;
+}
+
+body:has(.beta-banner) .beta-hero {
+    padding-top: 180px;
+}
+
+/* Hero */
+.beta-hero {
+    text-align: center;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 180px 5% 5rem;
+    position: relative;
+}
+
+.beta-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+}
+
+.beta-hero .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+}
+
+/* Beta Badge */
+.beta-badge-large {
+    display: inline-block;
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    color: #fff;
+    padding: 8px 28px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    animation: betaPulse 2s infinite;
+}
+
+@keyframes betaPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+    50% { box-shadow: 0 0 24px 8px rgba(239, 68, 68, 0.2); }
+}
+
+/* Rooms Pills */
+.rooms-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin: 1.8rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.room-pill {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    position: relative;
+}
+
+.room-pill.new-room {
+    border-color: rgba(245, 158, 11, 0.4);
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.room-pill .new-tag {
+    position: absolute;
+    top: -10px;
+    right: -12px;
+    background: linear-gradient(90deg, #f59e0b, #ef4444);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* CTA Group */
+.beta-cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.beta-cta-group .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.beta-cta-group .btn-outline:hover {
+    background: rgba(6, 182, 212, 0.1);
+    transform: translateY(-2px);
+}
+
+.beta-sub-cta {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+}
+
+/* ============================== */
+/* COMPARISON TABLE               */
+/* ============================== */
+.beta-comparison {
+    padding: 5rem 5%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.beta-comparison h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.beta-comparison .section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    font-size: 1.05rem;
+}
+
+.comparison-wrapper {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.comparison-table thead th {
+    padding: 1.2rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: left;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.comparison-table thead th:first-child {
+    color: var(--text-muted);
+    width: 30%;
+}
+
+.comparison-table thead .col-v1 {
+    color: var(--text-muted);
+    width: 30%;
+}
+
+.comparison-table thead .col-v2 {
+    color: var(--accent);
+    width: 40%;
+}
+
+.comparison-table tbody td {
+    padding: 0.9rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    font-size: 0.92rem;
+    vertical-align: top;
+}
+
+.comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table .feat-name {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.comparison-table .v1-cell {
+    color: var(--text-muted);
+}
+
+.comparison-table .v1-no {
+    color: #ef4444;
+    opacity: 0.7;
+}
+
+.comparison-table .v2-cell {
+    color: #34d399;
+    font-weight: 500;
+}
+
+/* Mobile comparison cards */
+.comparison-cards {
+    display: none;
+}
+
+.comparison-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.comparison-card .card-feat {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+}
+
+.comparison-card .card-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.85rem;
+}
+
+.comparison-card .card-v1 {
+    color: var(--text-muted);
+    flex: 1;
+}
+
+.comparison-card .card-v2 {
+    color: #34d399;
+    font-weight: 600;
+    flex: 1;
+    text-align: right;
+}
+
+/* ============================== */
+/* UNIBET SECTION                 */
+/* ============================== */
+.beta-unibet {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.beta-unibet h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.beta-unibet .section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    font-size: 1.05rem;
+}
+
+.unibet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.unibet-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.unibet-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(245, 158, 11, 0.1);
+}
+
+.unibet-card .card-icon {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+.unibet-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #f59e0b;
+}
+
+.unibet-card p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+/* ============================== */
+/* MULTI-TABLE SECTION            */
+/* ============================== */
+.beta-multitable {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.beta-multitable .perf-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.beta-multitable .perf-checklist li {
+    padding: 0.5rem 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.beta-multitable .perf-checklist .check {
+    color: #34d399;
+    font-weight: 700;
+}
+
+/* ============================== */
+/* FEATURES GRID                  */
+/* ============================== */
+.beta-tools {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.beta-tools h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.beta-tools .section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    font-size: 1.05rem;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.tool-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tool-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(6, 182, 212, 0.1);
+}
+
+.tool-card .tool-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.tool-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+}
+
+.tool-card p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.tool-card .exclusive-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    color: #fff;
+    font-size: 0.6rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: 6px;
+    vertical-align: middle;
+    letter-spacing: 0.5px;
+}
+
+/* ============================== */
+/* SCREENSHOT PLACEHOLDER         */
+/* ============================== */
+.screenshot-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    border: 2px dashed var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    background: var(--glass-bg);
+    font-style: italic;
+}
+
+/* ============================== */
+/* BETA CTA FINAL                 */
+/* ============================== */
+.beta-final-cta {
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.beta-final-cta .cta-box {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.beta-final-cta h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.beta-final-cta .cta-desc {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.beta-final-cta .reassurance-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.beta-final-cta .reassurance-list li {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.beta-final-cta .cta-note {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+
+/* ============================== */
+/* RESPONSIVE                     */
+/* ============================== */
+@media (max-width: 900px) {
+    .unibet-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .beta-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .beta-hero .hero-subtitle {
+        font-size: 1.05rem;
+    }
+
+    body:has(.beta-banner) .beta-hero {
+        padding-top: 140px;
+    }
+
+    .comparison-wrapper {
+        display: none;
+    }
+
+    .comparison-cards {
+        display: block;
+    }
+
+    .unibet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .beta-comparison,
+    .beta-unibet,
+    .beta-multitable,
+    .beta-tools,
+    .beta-final-cta {
+        padding: 3rem 5%;
+    }
+
+    .beta-comparison h2,
+    .beta-unibet h2,
+    .beta-tools h2,
+    .beta-final-cta h2 {
+        font-size: 1.7rem;
+    }
+
+    .beta-cta-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .beta-final-cta .reassurance-list {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

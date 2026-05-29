@@ -95,6 +95,20 @@ body {
     font-weight: 600;
 }
 
+/* Beta v2 nav link */
+.nav-beta-link {
+    background: linear-gradient(90deg, #f59e0b, #ef4444);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700 !important;
+    animation: betaLinkPulse 2s infinite;
+}
+@keyframes betaLinkPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
 /* Dropdown Mode d'Emploi */
 .nav-dropdown {
     position: relative;
