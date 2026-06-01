@@ -1,7 +1,9 @@
 // =============================================================================
 // SpinNova Visit Tracker - Real-time website visit notifications
 // =============================================================================
-// Sends visit data to JSONBin.io for admin panel consumption
+// Envoie les visites / téléchargements / leads vers Supabase (table "visits").
+// Remplace l'ancien JSONBin : 1 insertion par évènement → pas de quota,
+// pas d'écrasement entre visiteurs, pas de plafond 100.
 // =============================================================================
 
 (function () {
@@ -11,10 +13,13 @@
     // CONFIGURATION
     // =========================================================================
     const CONFIG = {
-        JSONBIN_URL: 'https://api.jsonbin.io/v3/b/69859761d0ea881f40a4def8',
-        API_KEY: '$2a$10$LUAuHyh7v5LbPr3l2anB7OFhiw7Sb7jRDX6yzGbsxns8DUHIhxDSW',
-        IMPORTANT_PAGES: ['/telechargement.html', '/boutique.html', '/essai-gratuit.html', '/activation.html'],
-        MAX_VISITS_STORED: 100,  // Keep last 100 visits
+        // Projet Supabase "spinnova-tracker" (EU - Ireland)
+        SUPABASE_URL: 'https://cedqkzmdeohioxivywmx.supabase.co',
+        // Clé PUBLIQUE (publishable) : OK d'être visible ici, elle ne peut QUE
+        // insérer une visite (jamais lire les leads ni supprimer — protégé par RLS).
+        SUPABASE_KEY: 'sb_publishable_qAaJRaOWwmMi0DB1VohUkg_rRCQzv3C',
+        SUPABASE_TABLE: 'visits',
+        IMPORTANT_PAGES: ['/telechargement.html', '/boutique.html', '/essai-gratuit.html', '/activation.html', '/beta.html'],
         DEBUG: false
     };
 
@@ -140,6 +145,11 @@
         return count;
     }
 
+    function readSessionPageCount() {
+        // Lecture SANS incrémenter (pour les records download/lead)
+        return parseInt(sessionStorage.getItem('spinnova_page_count') || '1', 10);
+    }
+
     function getUTMParams() {
         const params = new URLSearchParams(window.location.search);
         const utm = {};
@@ -230,10 +240,41 @@
     }
 
     // =========================================================================
+    // ENVOI VERS SUPABASE (1 insertion par évènement — remplace JSONBin)
+    // =========================================================================
+    // keepalive: true → l'envoi survit même si la page change (clic download).
+    function sendRecord(record) {
+        const row = {
+            id: record.id || null,
+            type: record.type || 'visit',
+            visitor_id: record.visitor_id || null,
+            page: record.page || null,
+            data: record
+        };
+        return fetch(CONFIG.SUPABASE_URL + '/rest/v1/' + CONFIG.SUPABASE_TABLE, {
+            method: 'POST',
+            headers: {
+                'apikey': CONFIG.SUPABASE_KEY,
+                'Authorization': 'Bearer ' + CONFIG.SUPABASE_KEY,
+                'Content-Type': 'application/json',
+                'Prefer': 'return=minimal'
+            },
+            body: JSON.stringify(row),
+            keepalive: true
+        })
+            .then(function (r) {
+                if (r.ok) { log('✅ Record envoyé à Supabase:', record.type || 'visit'); }
+                else { log('❌ Supabase a répondu ' + r.status); }
+                return r;
+            })
+            .catch(function (err) { log('❌ Erreur envoi Supabase:', err.message); });
+    }
+
+    // =========================================================================
     // MAIN TRACKING LOGIC
     // =========================================================================
 
-    async function trackVisit() {
+    function trackVisit() {
         const userAgent = navigator.userAgent;
         const botInfo = detectBot(userAgent);
         const langInfo = getLanguageInfo();
@@ -268,65 +309,19 @@
             markAsReturning();
         }
 
-        // Send to JSONBin
-        try {
-            // First, GET current data
-            const getResponse = await fetch(CONFIG.JSONBIN_URL + '/latest', {
-                method: 'GET',
-                headers: {
-                    'X-Master-Key': CONFIG.API_KEY
-                }
-            });
-
-            if (!getResponse.ok) {
-                throw new Error('Failed to fetch current visits');
-            }
-
-            const currentData = await getResponse.json();
-            let visits = currentData.record?.visits || [];
-
-            // Add new visit
-            visits.push(visitData);
-
-            // Keep only last N visits
-            if (visits.length > CONFIG.MAX_VISITS_STORED) {
-                visits = visits.slice(-CONFIG.MAX_VISITS_STORED);
-            }
-
-            // PUT updated data
-            const putResponse = await fetch(CONFIG.JSONBIN_URL, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-Master-Key': CONFIG.API_KEY
-                },
-                body: JSON.stringify({ visits: visits })
-            });
-
-            if (putResponse.ok) {
-                log('✅ Visit sent to JSONBin');
-            } else {
-                throw new Error('Failed to update visits');
-            }
-
-        } catch (error) {
-            log('❌ Error sending visit:', error.message);
-        }
+        // 1 insertion Supabase
+        sendRecord(visitData);
     }
 
-
-
     // =========================================================================
-    // ENGAGEMENT TRACKING (RELIABLE)
+    // ENGAGEMENT TRACKING (heartbeat tant que l'utilisateur est sur la page)
     // =========================================================================
-    // Strategy: Send engagement updates periodically while user is on page
-    // This avoids the unreliable beforeunload GET→PUT chain that browsers kill
 
     let _lastSentScrollDepth = 0;
     let _lastSentTimeOnPage = 0;
     let _engagementSendInProgress = false;
 
-    async function sendEngagementData(isFinal) {
+    function sendEngagementData(isFinal) {
         if (_engagementSendInProgress) return;
 
         const timeOnPage = Math.round((Date.now() - pageLoadTime) / 1000);
@@ -350,85 +345,22 @@
         log('Engagement data:', engagementData);
 
         _engagementSendInProgress = true;
-
-        try {
-            // GET current data
-            const getResponse = await fetch(CONFIG.JSONBIN_URL + '/latest', {
-                method: 'GET',
-                headers: { 'X-Master-Key': CONFIG.API_KEY },
-                keepalive: true
-            });
-
-            if (!getResponse.ok) throw new Error('GET failed');
-
-            const data = await getResponse.json();
-            let visits = data.record?.visits || [];
-            visits.push(engagementData);
-            if (visits.length > CONFIG.MAX_VISITS_STORED) {
-                visits = visits.slice(-CONFIG.MAX_VISITS_STORED);
-            }
-
-            // PUT updated data
-            const putResponse = await fetch(CONFIG.JSONBIN_URL, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-Master-Key': CONFIG.API_KEY
-                },
-                body: JSON.stringify({ visits: visits }),
-                keepalive: true
-            });
-
-            if (putResponse.ok) {
+        sendRecord(engagementData)
+            .then(function () {
                 _lastSentScrollDepth = maxScrollDepth;
                 _lastSentTimeOnPage = timeOnPage;
-                log('✅ Engagement sent (scroll=' + maxScrollDepth + '%, time=' + timeOnPage + 's)');
-            }
-        } catch (e) {
-            log('❌ Engagement error:', e.message);
-        } finally {
-            _engagementSendInProgress = false;
-        }
+            })
+            .finally(function () {
+                _engagementSendInProgress = false;
+            });
     }
 
     // =========================================================================
     // DOWNLOAD CLICK TRACKING
     // =========================================================================
 
-    /**
-     * Sends a download record to JSONBin reliably, even during page navigation.
-     * Uses keepalive: true on both GET and PUT to survive the browser killing requests.
-     * Returns a Promise that resolves when tracking is done (or fails silently).
-     */
-    function sendDownloadRecord(downloadRecord) {
-        return fetch(CONFIG.JSONBIN_URL + '/latest', {
-            method: 'GET',
-            headers: { 'X-Master-Key': CONFIG.API_KEY },
-            keepalive: true
-        })
-            .then(function (r) { return r.json(); })
-            .then(function (data) {
-                var visits = data.record?.visits || [];
-                visits.push(downloadRecord);
-                return fetch(CONFIG.JSONBIN_URL, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-Master-Key': CONFIG.API_KEY
-                    },
-                    body: JSON.stringify({ visits: visits }),
-                    keepalive: true
-                });
-            })
-            .then(function () { log('✅ Download event sent to JSONBin'); })
-            .catch(function (err) { log('❌ Download tracking error:', err.message); });
-    }
-
     function setupDownloadTracking() {
-        // Intercepter TOUS les clics sur des liens de téléchargement
-        // This is PURELY for tracking — it does NOT control download navigation.
-        // On telechargement.html, the page's own #downloadBtn handler manages the flow.
-        // On other pages, the default <a> link behavior handles navigation.
+        // Intercepte les clics sur les liens de téléchargement (tracking only).
         document.addEventListener('click', function (e) {
             var link = e.target.closest('a');
             if (!link) return;
@@ -453,19 +385,19 @@
                 target_url: href.substring(0, 200),
                 timestamp: new Date().toISOString(),
                 device: getDeviceType(),
-                browser: getBrowserName(),
+                browser: getBrowser(),
                 os: getOS(),
                 screen_resolution: window.screen.width + 'x' + window.screen.height,
                 language: navigator.language || '',
-                referrer: document.referrer || 'Direct',
-                session_page_count: parseInt(sessionStorage.getItem('sn_page_count') || '1'),
-                is_new: !localStorage.getItem('sn_returning')
+                referrer: getReferrerInfo(),
+                session_page_count: readSessionPageCount(),
+                is_new: isNewVisitor()
             };
 
             log('📥 Download click tracked:', downloadType, 'from', window.location.pathname);
 
-            // Fire-and-forget tracking with keepalive (survives page navigation)
-            sendDownloadRecord(downloadRecord);
+            // Fire-and-forget (keepalive survit à la navigation)
+            sendRecord(downloadRecord);
         });
     }
 
@@ -504,26 +436,8 @@
         log('📋 Lead tracked:', leadRecord);
         markLeadGiven();
 
-        // Envoyer à JSONBin — retourne une Promise pour que l'appelant puisse attendre
-        return fetch(CONFIG.JSONBIN_URL + '/latest', {
-            method: 'GET',
-            headers: { 'X-Master-Key': CONFIG.API_KEY }
-        })
-            .then(function (r) { return r.json(); })
-            .then(function (data) {
-                var visits = data.record?.visits || [];
-                visits.push(leadRecord);
-                return fetch(CONFIG.JSONBIN_URL, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-Master-Key': CONFIG.API_KEY
-                    },
-                    body: JSON.stringify({ visits: visits })
-                });
-            })
-            .then(function () { log('✅ Lead sent to JSONBin'); })
-            .catch(function (err) { log('❌ Lead tracking error:', err.message); });
+        // Retourne la Promise pour que l'appelant (popup) puisse attendre
+        return sendRecord(leadRecord);
     }
 
     // =========================================================================
@@ -540,13 +454,12 @@
 
     const pageLoadTime = Date.now();
 
-    // PERIODIC HEARTBEAT: Send engagement data every 15 seconds while on page
-    // This is the KEY fix — we send data while the page is still alive
+    // HEARTBEAT: envoie l'engagement toutes les 15s tant que la page est ouverte
     const _engagementInterval = setInterval(function () {
         sendEngagementData(false);
-    }, 15000);  // Every 15 seconds
+    }, 15000);
 
-    // VISIBILITY CHANGE: More reliable than beforeunload for final data
+    // VISIBILITY CHANGE: plus fiable que beforeunload pour la donnée finale
     document.addEventListener('visibilitychange', function () {
         if (document.visibilityState === 'hidden') {
             clearInterval(_engagementInterval);
@@ -554,7 +467,7 @@
         }
     });
 
-    // BEFOREUNLOAD: Last resort fallback (unreliable but doesn't hurt)
+    // BEFOREUNLOAD: dernier filet (peu fiable mais ne coûte rien)
     window.addEventListener('beforeunload', function () {
         clearInterval(_engagementInterval);
         sendEngagementData(true);
