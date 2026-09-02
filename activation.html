@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activation | SpinNova - Demande de Licence</title>
+    <title>Activation | SpinNovaPokerPro — Demande de Licence</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="maquette.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="neon-bridge.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -139,31 +142,32 @@
     <div class="background-glow"></div>
 
     <nav class="navbar">
-        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Spin<span
-                class="highlight">Nova</span></a>
+        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">SpinNova<span
+                class="highlight">PokerPro</span><span class="beta-badge">BÊTA</span></a>
         <button class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </button>
         <div class="nav-links">
             <a href="index.html">Accueil</a>
             <div class="nav-dropdown" onclick="this.classList.toggle('open')">
-                <button class="nav-dropdown-toggle">Mode d'Emploi <span class="dropdown-arrow">▼</span></button>
+                <button class="nav-dropdown-toggle">Le Logiciel <span class="dropdown-arrow">▼</span></button>
                 <div class="nav-dropdown-menu">
-                    <a href="guide-demarrage.html"><span class="dropdown-icon">🚀</span> Guide de Démarrage</a>
-                    <a href="guide-huds.html"><span class="dropdown-icon">🖥️</span> Les HUDs</a>
-                    <a href="guide-editeur-hud.html"><span class="dropdown-icon">🎨</span> Éditeur HUD</a>
-                    <a href="guide-notes.html"><span class="dropdown-icon">🎤</span> Notes & Voix</a>
-                    <a href="badges.html"><span class="dropdown-icon">🏷️</span> Badges</a>
-                    <a href="guide-captures.html"><span class="dropdown-icon">📸</span> Captures & Galerie</a>
-                    <a href="guide-cev.html"><span class="dropdown-icon">📈</span> Héros cEV</a>
-                    <a href="guide-hero-stats.html"><span class="dropdown-icon">🦸</span> Hero Stats</a>
-                    <a href="guide-field-stats.html"><span class="dropdown-icon">🌐</span> Stats Field</a>
+                    <a href="logiciel-in-game.html">À la Table (HUD)</a>
+                    <a href="logiciel-hud-notes.html">HUD de prise de notes</a>
+                    <a href="logiciel-hud-stats.html">HUD de stats</a>
+                    <a href="logiciel-tools.html">Tools de Grind</a>
+                    <a href="logiciel-dashboard.html">Dashboard</a>
+                    <a href="logiciel-field-stats.html">Field Stats</a>
+                    <a href="logiciel-mon-profil.html">Mon Profil</a>
+                    <a href="logiciel-ranges-gto.html">Ranges &amp; GTO</a>
+                    <a href="logiciel-hu-edge.html">HU Edge</a>
+                    <a href="logiciel-hud-editor.html">HUD Editor</a>
+                    <a href="logiciel-replayer.html">Replayer</a>
+                    <a href="logiciel-jackpot.html">Jackpot</a>
+                    <a href="logiciel-entrainement.html">Entraînement</a>
                 </div>
             </div>
             <a href="boutique.html">Boutique</a>
-            <a href="essai-gratuit.html">Essai Gratuit</a>
             <a href="telechargement.html">Télécharger</a>
             <a href="faq.html">FAQ</a>
             <a href="contact.html">Contact</a>
@@ -181,11 +185,13 @@
 
     <main class="activation-container">
         <h1 style="text-align: center; margin-bottom: 1rem;">Demande de <span class="highlight">Licence</span></h1>
-        <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem;">Remplis ce formulaire pour
-            recevoir ta licence par email</p>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 1rem;">Tu as réglé ta licence ? Envoie ton
+            HWID, tu reçois ton code par email.</p>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem; font-size: 0.95rem;">Pour l'essai
+            gratuit, pas de formulaire : il démarre dans le logiciel, en un clic, dès l'installation.</p>
 
         <div class="info-box">
-            <h3>⚡ Tu préfères l'activation instantanée ?</h3>
+            <h3>Tu préfères l'activation instantanée ?</h3>
             <p>Rejoins notre <a href="https://discord.gg/VGPWqpbvrT"
                     style="color: var(--accent); font-weight: 600;">serveur
                     Discord</a> pour une activation immédiate par notre bot IA !</p>
@@ -196,8 +202,7 @@
                 <div class="form-group">
                     <label for="hwid">Ton HWID *</label>
                     <input type="text" id="hwid" name="hwid" placeholder="Ex: ABC123-DEF456-GHI789" required>
-                    <small style="color: var(--text-muted); font-size: 0.85rem;">Copie-le depuis la fenêtre
-                        d'activation du logiciel</small>
+                    <small style="color: var(--text-muted); font-size: 0.85rem;">Copie-le depuis l'écran licence du logiciel (bouton COPIER)</small>
                 </div>
 
                 <div class="form-group">
@@ -211,12 +216,8 @@
                     <label>Type de Licence *</label>
                     <div class="radio-group">
                         <div class="radio-option">
-                            <input type="radio" id="trial" name="license_type" value="trial" checked>
-                            <label for="trial">Essai Gratuit (3 jours)</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="premium" name="license_type" value="premium">
-                            <label for="premium">Premium (après paiement)</label>
+                            <input type="radio" id="premium" name="license_type" value="premium" checked>
+                            <label for="premium">Licence payante (après paiement Stripe)</label>
                         </div>
                     </div>
                 </div>
@@ -234,37 +235,37 @@
 
     <!-- PRICING REASSURANCE BAR -->
     <section class="pricing-reassurance-bar">
-        <h2 class="prb-title">💎 Tarifs Transparents — <span class="gradient-text">Essayez Gratuitement</span></h2>
+        <h2 class="prb-title">Tarifs Transparents — <span class="gradient-text">Essayez Gratuitement</span></h2>
         <p class="prb-subtitle">Pas besoin de payer pour tester. Pas d'arnaque, pas de piège.</p>
         <div class="prb-cards">
             <div class="prb-card free">
-                <div class="prb-icon">🆓</div>
+                
                 <div class="prb-label">Essai</div>
                 <div class="prb-price">GRATUIT</div>
-                <div class="prb-detail">3 jours complets</div>
+                <div class="prb-detail">3 jours, renouvelable 1×</div>
             </div>
             <div class="prb-card">
-                <div class="prb-icon">💳</div>
+                
                 <div class="prb-label">1 Mois</div>
                 <div class="prb-price">20€</div>
                 <div class="prb-detail">Sans engagement</div>
             </div>
             <div class="prb-card featured">
-                <div class="prb-icon">⭐</div>
+                
                 <div class="prb-label">6 Mois</div>
                 <div class="prb-price">108€</div>
                 <div class="prb-detail">-10% · 12€ économisés</div>
             </div>
         </div>
         <div class="prb-guarantees">
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Sans engagement</span>
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Aucun débit automatique</span>
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Carte OU Virement bancaire</span>
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Essai 100% gratuit</span>
+            <span class="prb-guarantee">Sans engagement</span>
+            <span class="prb-guarantee">Aucun débit automatique</span>
+            <span class="prb-guarantee">Carte bancaire (Stripe)</span>
+            <span class="prb-guarantee">Essai 100% gratuit</span>
         </div>
         <div class="prb-cta-row">
-            <a href="essai-gratuit.html" class="btn-primary">🆓 Essai Gratuit</a>
-            <a href="boutique.html" class="btn-primary" style="background: var(--primary);">🛒 Voir la Boutique</a>
+            <a href="telechargement.html" class="btn-primary">Télécharger — essai inclus</a>
+            <a href="boutique.html" class="btn-primary" style="background: var(--primary);">Voir la Boutique</a>
         </div>
     </section>
 
@@ -280,7 +281,7 @@
                 <a href="contact.html"
                     style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Contact</a>
             </div>
-            <p class="copyright">© 2026 SpinNova. Compatible iPoker &amp; Winamax.</p>
+            <p class="copyright">© 2026 SpinNovaPokerPro — Bêta ouverte · Unibet, Winamax, Betclic, PMU, FDJ &amp; skins iPoker</p>
         </div>
     </footer>
 

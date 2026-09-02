@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUD de prise de notes | SpinNovaPokerPro</title>
+    <meta name="description"
+        content="Le HUD de prise de notes SpinNovaPokerPro, avec l'exemple du HUD Mini : une pastille par adversaire qui porte tes notes par type de pot, badges, notes rapides, halo et notes vocales. Ce qu'il fait, pourquoi, et comment on s'en sert en pleine session.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="fx.css">
+    <link rel="stylesheet" href="pages.css">
+    <script src="cookie-banner.js" defer></script>
+    <script src="visit_tracker.js" defer></script>
+    <style>
+        .why { border-left: 3px solid var(--violet); padding: 10px 14px; margin: 16px 0 0; color: #c3c8dd; font-size: 0.92rem; background: rgba(124, 77, 255, 0.07); border-radius: 0 8px 8px 0; }
+        .why b { color: var(--violet-soft); font-family: 'Chakra Petch', sans-serif; font-size: 0.7rem; letter-spacing: 0.16em; display: block; margin-bottom: 4px; }
+
+        /* --- les trois étiquettes --- */
+        .modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 18px; }
+        .mode { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+        .mode .visu { height: 128px; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at 50% 60%, #2b1f52, #16102d 75%); border-radius: 10px; border: 1px solid rgba(124, 77, 255, 0.25); }
+        .mode h2 { font-size: 1.15rem; }
+        .mode .for { font-family: 'Chakra Petch', sans-serif; font-size: 0.68rem; letter-spacing: 0.16em; color: var(--cyan); }
+        .mode ul { list-style: none; display: grid; gap: 6px; }
+        .mode li { color: var(--muted); font-size: 0.9rem; padding-left: 20px; position: relative; }
+        .mode li::before { content: "\2713"; position: absolute; left: 0; color: var(--cyan); font-weight: 800; }
+        .mode li strong { color: var(--ink); }
+
+        .tagbase { background: rgba(6, 5, 16, 0.95); border: 1px solid rgba(56, 214, 245, 0.55); box-shadow: 0 0 18px rgba(56, 214, 245, 0.25); font-family: 'Chakra Petch', sans-serif; }
+        .m-mini { display: flex; align-items: center; gap: 6px; padding: 5px 9px; border-radius: 20px; box-shadow: 0 0 0 2px rgba(124, 77, 255, 0.6), 0 0 18px rgba(124, 77, 255, 0.35); border-color: rgba(124, 77, 255, 0.6); }
+        .m-mini .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--violet); box-shadow: 0 0 8px var(--violet); }
+        .m-mini .n { font-size: 11px; font-weight: 700; color: var(--cyan); }
+        .m-compact { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 8px; width: 210px; }
+        .m-compact .name { height: 7px; width: 44px; border-radius: 4px; background: #363d58; }
+        .m-compact .ind { font-size: 10px; font-weight: 700; color: var(--cyan); }
+        .m-compact .bd { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+        .m-large { width: 230px; padding: 9px 10px; border-radius: 9px; display: grid; gap: 6px; }
+        .m-large .row1 { display: flex; align-items: center; gap: 8px; }
+        .m-large .name { height: 7px; width: 60px; border-radius: 4px; background: #363d58; }
+        .m-large .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+        .m-large .cell { font-size: 8px; font-weight: 700; letter-spacing: 0.06em; color: #8f98b3; background: #12152a; border: 1px solid #23263f; border-radius: 4px; padding: 3px 4px; text-align: center; }
+        .m-large .cell.on { color: var(--cyan); border-color: rgba(56, 214, 245, 0.5); }
+        .m-large .bds { display: flex; gap: 4px; }
+        .m-large .bds span { width: 12px; height: 12px; border-radius: 3px; display: block; }
+
+        /* --- briques --- */
+        .bricks { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .brick { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; }
+        .brick h3 { font-size: 1rem; margin-bottom: 6px; }
+        .brick p { color: var(--muted); font-size: 0.92rem; }
+        .brick .ico { font-size: 1.3rem; margin-right: 6px; }
+
+        /* --- gestes --- */
+        .gestes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .geste { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+        .geste b { font-family: 'Chakra Petch', sans-serif; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--cyan); display: block; margin-bottom: 4px; }
+        .geste span { color: var(--muted); font-size: 0.9rem; }
+
+        @media (max-width: 980px) { .modes, .bricks, .gestes { grid-template-columns: 1fr; } }
+    </style>
+</head>
+
+<body>
+    <div class="felt-glow"></div>
+
+    <header class="topbar">
+        <a href="index.html" class="brand"><img src="sn_logo_transparent.png" alt="">SpinNova<span class="pro">PokerPro</span><span class="beta">BÊTA</span></a>
+        <button class="burger" onclick="document.querySelector('.menu').classList.toggle('open')" aria-label="Menu">☰</button>
+        <nav class="menu">
+            <a href="index.html">Accueil</a>
+            <div class="menu-drop" onclick="this.classList.toggle('open')">
+                <button>Le Logiciel <span class="car">▼</span></button>
+                <div class="drop-list">
+                    <a href="logiciel-in-game.html">À la Table (HUD)</a>
+                    <a href="logiciel-hud-notes.html" class="nav-active" style="color: var(--accent);">HUD de prise de notes</a>
+                    <a href="logiciel-hud-stats.html">HUD de stats</a>
+                    <a href="logiciel-tools.html">Tools de Grind</a>
+                    <a href="logiciel-dashboard.html">Dashboard</a>
+                    <a href="logiciel-field-stats.html">Field Stats</a>
+                    <a href="logiciel-mon-profil.html">Mon Profil</a>
+                    <a href="logiciel-ranges-gto.html">Ranges &amp; GTO</a>
+                    <a href="logiciel-hu-edge.html">HU Edge</a>
+                    <a href="logiciel-hud-editor.html">HUD Editor</a>
+                    <a href="logiciel-replayer.html">Replayer</a>
+                    <a href="logiciel-jackpot.html">Jackpot</a>
+                    <a href="logiciel-entrainement.html">Entraînement</a>
+                </div>
+            </div>
+            <a href="boutique.html">Boutique</a>
+            <a href="telechargement.html">Télécharger</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <p class="crumb">Le Logiciel</p>
+        <h1> <span class="em">HUD de prise de notes</span> — ta mémoire sur chaque adversaire</h1>
+        <p class="page-intro">En Spin &amp; Go, tu recroises les mêmes regs tous les jours, à trois, avec un timebank
+            court. Ce que tu sais d'un joueur vaut de l'argent — à condition de le retrouver en une seconde, sans
+            quitter la table. C'est exactement le job du HUD de prise de notes : une étiquette posée sur chaque
+            adversaire, qui porte tes notes, tes badges, ta couleur, ta voix.</p>
+
+        <h2 style="font-size: 1.3rem; margin-bottom: 14px;">L'exemple : le HUD <span class="em">Mini</span></h2>
+        <div class="tool-block" style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; margin-bottom: 18px;">
+            <div style="flex: 0.9; min-width: 280px; display: flex; flex-direction: column; align-items: center; gap: 18px;">
+                <div style="width: 100%; height: 190px; border-radius: 12px; background: radial-gradient(ellipse at 50% 70%, #2b1f52, #16102d 78%); border: 1px solid rgba(124, 77, 255, 0.25); position: relative; overflow: hidden;">
+                    <!-- le siège -->
+                    <span style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); display: flex; align-items: center; gap: 8px;">
+                        <span class="avatar" style="width: 44px; height: 44px;"></span>
+                        <span style="display: flex; gap: 3px;"><span class="mini"></span><span class="mini"></span></span>
+                    </span>
+                    <!-- la pastille Mini, posée au-dessus du joueur -->
+                    <span class="tagbase m-mini" style="position: absolute; left: 50%; top: 58px; transform: translateX(-50%);"><span class="dot"></span><span class="n">📖 3</span><span class="n">🔖 2</span><span class="n">⚡ 1</span></span>
+                    <!-- l'infobulle au survol -->
+                    <span style="position: absolute; left: 50%; top: 96px; transform: translateX(-50%); width: 236px; background: rgba(6, 5, 16, 0.96); border: 1px solid rgba(56, 214, 245, 0.35); border-radius: 8px; padding: 8px 10px; font-size: 10px; line-height: 1.5; color: #c3c8dd; box-shadow: 0 10px 26px rgba(0,0,0,0.5);">
+                        <b style="color: var(--cyan); font-family: 'Chakra Petch', sans-serif; font-size: 8px; letter-spacing: 0.14em; display: block; margin-bottom: 3px;">LIMP POT · PRÉFLOP</b> limpe-fold trop souvent au BTN, ne défend pas sa BB face à une ISO<span style="display:block; margin-top: 5px; color: #8f98b3;">🔖 station · 3-bet light &nbsp; ⚡ cbet 100 %</span>
+                    </span>
+                </div>
+                <span style="font-family: 'Chakra Petch', sans-serif; font-size: 0.66rem; letter-spacing: 0.16em; color: var(--muted);">LA PASTILLE, PUIS L'INFOBULLE AU SURVOL</span>
+            </div>
+            <div style="flex: 1.1; min-width: 300px;">
+                <span style="font-family: 'Chakra Petch', sans-serif; font-size: 0.68rem; letter-spacing: 0.16em; color: var(--cyan);">UNE SEULE PASTILLE FLOTTANTE PAR ADVERSAIRE</span>
+                <h2 style="font-size: 1.2rem; margin: 6px 0 10px;">Tout ce que tu sais de lui, dans 40 pixels</h2>
+                <ul style="list-style: none; display: grid; gap: 8px;">
+                    <li style="color: var(--muted); font-size: 0.95rem; padding-left: 22px; position: relative;"><span style="position: absolute; left: 0; color: var(--cyan); font-weight: 800;">✓</span> Le <strong style="color: var(--ink);">halo de couleur</strong> autour : tu reconnais le joueur avant d'avoir lu son pseudo</li>
+                    <li style="color: var(--muted); font-size: 0.95rem; padding-left: 22px; position: relative;"><span style="position: absolute; left: 0; color: var(--cyan); font-weight: 800;">✓</span> Les <strong style="color: var(--ink);">compteurs</strong> : combien de notes, de badges, de notes rapides tu as sur lui</li>
+                    <li style="color: var(--muted); font-size: 0.95rem; padding-left: 22px; position: relative;"><span style="position: absolute; left: 0; color: var(--cyan); font-weight: 800;">✓</span><strong style="color: var(--ink);">Survole</strong> : le contenu réel de tes notes apparaît en infobulle — zéro clic pour te souvenir</li>
+                    <li style="color: var(--muted); font-size: 0.95rem; padding-left: 22px; position: relative;"><span style="position: absolute; left: 0; color: var(--cyan); font-weight: 800;">✓</span><strong style="color: var(--ink);">Clique</strong> un compteur : l'éditeur correspondant s'ouvre — notes, badges, notes rapides, halo, dictée vocale</li>
+                    <li style="color: var(--muted); font-size: 0.95rem; padding-left: 22px; position: relative;"><span style="position: absolute; left: 0; color: var(--cyan); font-weight: 800;">✓</span> Elle ne cache <strong style="color: var(--ink);">rien</strong> de la table, et te suit sur toutes tes tables</li>
+                </ul>
+                <div class="why"><b>POURQUOI UNE PASTILLE, ET PAS UN PAVÉ DE TEXTE</b> À 8, 12, 16 tables, tu n'as pas le temps de lire : tu as besoin d'un signal qui déclenche le bon réflexe. La couleur et les compteurs font ce travail en un dixième de seconde — et le détail est à un survol de distance, quand tu en as besoin.</div>
+            </div>
+        </div>
+        <p style="color: var(--muted); font-size: 0.92rem; max-width: 60rem; margin-bottom: 44px;">Le Mini est l'étiquette de départ ; d'autres formats existent, et tu peux <strong style="color: var(--ink);">composer le tien</strong> brique par brique dans le <a href="logiciel-hud-editor.html" style="color: var(--cyan);">HUD Editor</a>. Tu changes de vue en pleine partie d'un clic sur le bouton SN.</p>
+
+        <h2 style="font-size: 1.3rem; margin-bottom: 14px;">Ce que tu poses sur un joueur</h2>
+        <div class="bricks" style="margin-bottom: 44px;">
+            <div class="brick"><h3>Des notes, rangées par position et par type de pot</h3><p>Pas un bloc-notes unique : une note par situation — limp pot, open pot, face à une ISO, 3-bet pot, préflop ou postflop — et par position. Survole le compteur : tu lis le contenu réel de tes notes en infobulle, sans rien ouvrir.</p></div>
+            <div class="brick"><h3>Des notes rapides, en un clic</h3><p>Tes templates à toi (« limp-fold », « cbet 100 % », « station »…), classés préflop / postflop / général. Pendant une main, un clic les pose — parce que le timebank ne te laisse pas taper.</p></div>
+            <div class="brick"><h3>Des badges, ton vocabulaire visuel</h3><p>Texte ou image, créés par toi ou importés en pack. Pose-les en un clic, réordonne-les par glisser directement en jeu, clic droit pour en retirer un. Une icône vaut une phrase, et se lit à 12 tables.</p></div>
+            <div class="brick"><h3>Un halo de couleur autour de l'étiquette</h3><p>8 teintes rapides + palette libre, effet fixe, pulsé ou clignotant. C'est le signal le plus rapide qui existe : tu reconnais un joueur avant même d'avoir lu son pseudo.</p></div>
+            <div class="brick"><h3>Ta voix, transcrite</h3><p>Clique le micro, parle, c'est écrit — par une IA embarquée, en local, sans internet, avec un vocabulaire poker. Tes mains sont occupées, ta bouche non.</p></div>
+            <div class="brick"><h3>Le badge fish / requin</h3><p>Indépendant du HUD : une pastille au-dessus du siège, classement automatique selon tes seuils, un clic pour reclasser à la main — propagé à toutes tes tables.</p></div>
+        </div>
+
+        <h2 style="font-size: 1.3rem; margin-bottom: 14px;">Comment tu t'en sers, en pleine session</h2>
+        <div class="gestes" style="margin-bottom: 44px;">
+            <div class="geste"><b>SURVOLER = LIRE</b><span>Le contenu réel de tes notes, quick notes et badges apparaît en infobulle. Zéro clic pour te souvenir.</span></div>
+            <div class="geste"><b>CLIQUER = ÉCRIRE</b><span>Chaque compteur ouvre son éditeur : notes, badges, notes rapides, halo, vocal. Les fenêtres se rouvrent là où tu les avais laissées.</span></div>
+            <div class="geste"><b>GLISSER = PLACER</b><span>Tu poses l'étiquette où tu veux sur la table ; la position est mémorisée d'une session à l'autre.</span></div>
+            <div class="geste"><b>MOLETTE = TAILLE</b><span>Agrandis ou réduis le HUD à la molette — mémorisé séparément en heads-up et en 3-way, et propagé à toutes tes tables.</span></div>
+            <div class="geste"><b>BOUTON SN = CHANGER DE VUE</b><span>Clic gauche : Mini → Compact → Large → tes HUD perso → HUD de stats, dans l'ordre que tu as défini. Clic droit : la main en favori.</span></div>
+            <div class="geste"><b>VERROU = PLUS RIEN NE BOUGE</b><span>Une fois tout en place, verrouille : les clics restent actifs, mais plus aucun déplacement par erreur en pleine session.</span></div>
+        </div>
+
+        <div class="final" style="padding-left: 0; padding-right: 0;">
+            <div class="final-box">
+                <h2>Tes notes te suivent sur toutes tes tables</h2>
+                <p>3 jours d'essai dès l'installation — automatique, sans carte bancaire, renouvelable une fois.</p>
+                <div class="row">
+                    <a class="cta-dl" href="telechargement.html">⬇ Télécharger SpinNovaPokerPro</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="links">
+            <a href="mentions-legales.html">Mentions Légales</a>
+            <a href="cgu-cgv.html">CGU / CGV</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>© 2026 SpinNovaPokerPro — Bêta ouverte · Unibet, Winamax, Betclic, PMU, FDJ &amp; skins iPoker</p>
+    </footer>
+    <script src="fx.js" defer></script>
+</body>
+
+</html>

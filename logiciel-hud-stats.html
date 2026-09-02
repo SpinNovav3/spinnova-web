@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUD de stats | SpinNovaPokerPro</title>
+    <meta name="description"
+        content="Le HUD de stats SpinNovaPokerPro, avec l'exemple du panneau BU · préflop : les chiffres de l'adversaire posés sur la table, position par position et street par street — construction de chaque stat, occurrences réelles, range vilain en un clic, tes propres stats.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="fx.css">
+    <link rel="stylesheet" href="pages.css">
+    <script src="cookie-banner.js" defer></script>
+    <script src="visit_tracker.js" defer></script>
+    <style>
+        .why { border-left: 3px solid var(--violet); padding: 10px 14px; margin: 16px 0 0; color: #c3c8dd; font-size: 0.92rem; background: rgba(124, 77, 255, 0.07); border-radius: 0 8px 8px 0; }
+        .why b { color: var(--violet-soft); font-family: 'Chakra Petch', sans-serif; font-size: 0.7rem; letter-spacing: 0.16em; display: block; margin-bottom: 4px; }
+        .showcase { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; margin-bottom: 18px; }
+        .showcase > .s-visu { flex: 1; min-width: 300px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+        .showcase > .s-text { flex: 1; min-width: 300px; }
+        .showcase ul { list-style: none; display: grid; gap: 8px; }
+        .showcase li { color: var(--muted); font-size: 0.95rem; padding-left: 22px; position: relative; }
+        .showcase li::before { content: "\2713"; position: absolute; left: 0; color: var(--cyan); font-weight: 800; }
+        .showcase li strong { color: var(--ink); }
+        .cap { font-family: 'Chakra Petch', sans-serif; font-size: 0.66rem; letter-spacing: 0.16em; color: var(--muted); }
+
+        /* --- le panneau de stats --- */
+        .felt { width: 100%; border-radius: 12px; background: radial-gradient(ellipse at 50% 70%, #2b1f52, #16102d 78%); border: 1px solid rgba(124, 77, 255, 0.25); position: relative; padding: 22px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+        .panel { width: 250px; background: rgba(6, 5, 16, 0.96); border: 1px solid rgba(56, 214, 245, 0.5); border-radius: 8px; box-shadow: 0 0 20px rgba(56, 214, 245, 0.25); overflow: hidden; font-family: 'Chakra Petch', sans-serif; }
+        .panel .ph { display: flex; justify-content: space-between; align-items: center; padding: 6px 10px; background: rgba(56, 214, 245, 0.12); font-size: 9px; font-weight: 700; letter-spacing: 0.16em; color: var(--cyan); }
+        .panel .ph .car { font-size: 8px; color: var(--muted); }
+        .panel .pg { display: grid; grid-template-columns: repeat(3, 1fr); }
+        .panel .pc { padding: 7px 6px; border-top: 1px solid #1c2136; border-right: 1px solid #1c2136; text-align: center; }
+        .panel .pc:nth-child(3n) { border-right: none; }
+        .panel .pc small { display: block; font-size: 7px; letter-spacing: 0.14em; color: #8f98b3; margin-bottom: 2px; }
+        .panel .pc b { font-size: 14px; font-weight: 700; color: #eef0ff; font-variant-numeric: tabular-nums; }
+        .panel .pc.hi b { color: var(--cyan); }
+        .panel .pc.lo b { color: #ff7ab8; }
+        .panel .pc.sel { background: rgba(124, 77, 255, 0.18); outline: 1px solid rgba(124, 77, 255, 0.6); }
+
+        .tip { width: 250px; background: rgba(6, 5, 16, 0.97); border: 1px solid rgba(56, 214, 245, 0.35); border-radius: 8px; padding: 8px 10px; font-size: 10px; line-height: 1.5; color: #c3c8dd; box-shadow: 0 10px 26px rgba(0,0,0,0.5); }
+        .tip b { color: var(--cyan); font-family: 'Chakra Petch', sans-serif; font-size: 8px; letter-spacing: 0.14em; display: block; margin-bottom: 3px; }
+        .tip .occ { color: var(--violet-soft); font-weight: 700; }
+
+        .rng { width: 250px; background: rgba(6, 5, 16, 0.97); border: 1px solid rgba(124, 77, 255, 0.5); border-radius: 8px; padding: 8px 10px 10px; box-shadow: 0 10px 26px rgba(0,0,0,0.5); }
+        .rng .tabs { display: flex; gap: 10px; font-family: 'Chakra Petch', sans-serif; font-size: 8px; letter-spacing: 0.14em; color: #8f98b3; margin-bottom: 7px; }
+        .rng .tabs .on { color: var(--violet-soft); border-bottom: 1px solid var(--violet-soft); }
+        .rng .mx { display: grid; grid-template-columns: repeat(13, 1fr); gap: 1.5px; }
+        .rng .mx span { aspect-ratio: 1; border-radius: 1px; background: #1a1d33; display: block; }
+        .rng .mx .r { background: #7c4dff; } .rng .mx .c { background: #38d6f5; } .rng .mx .m { background: #4a3d8a; }
+
+        .bricks { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .brick { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; }
+        .brick h3 { font-size: 1rem; margin-bottom: 6px; }
+        .brick p { color: var(--muted); font-size: 0.92rem; }
+        .gestes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .geste { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+        .geste b { font-family: 'Chakra Petch', sans-serif; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--cyan); display: block; margin-bottom: 4px; }
+        .geste span { color: var(--muted); font-size: 0.9rem; }
+        @media (max-width: 980px) { .bricks, .gestes { grid-template-columns: 1fr; } }
+    </style>
+</head>
+
+<body>
+    <div class="felt-glow"></div>
+
+    <header class="topbar">
+        <a href="index.html" class="brand"><img src="sn_logo_transparent.png" alt="">SpinNova<span class="pro">PokerPro</span><span class="beta">BÊTA</span></a>
+        <button class="burger" onclick="document.querySelector('.menu').classList.toggle('open')" aria-label="Menu">☰</button>
+        <nav class="menu">
+            <a href="index.html">Accueil</a>
+            <div class="menu-drop" onclick="this.classList.toggle('open')">
+                <button>Le Logiciel <span class="car">▼</span></button>
+                <div class="drop-list">
+                    <a href="logiciel-in-game.html">À la Table (HUD)</a>
+                    <a href="logiciel-hud-notes.html">HUD de prise de notes</a>
+                    <a href="logiciel-hud-stats.html" class="nav-active" style="color: var(--accent);">HUD de stats</a>
+                    <a href="logiciel-tools.html">Tools de Grind</a>
+                    <a href="logiciel-dashboard.html">Dashboard</a>
+                    <a href="logiciel-field-stats.html">Field Stats</a>
+                    <a href="logiciel-mon-profil.html">Mon Profil</a>
+                    <a href="logiciel-ranges-gto.html">Ranges &amp; GTO</a>
+                    <a href="logiciel-hu-edge.html">HU Edge</a>
+                    <a href="logiciel-hud-editor.html">HUD Editor</a>
+                    <a href="logiciel-replayer.html">Replayer</a>
+                    <a href="logiciel-jackpot.html">Jackpot</a>
+                    <a href="logiciel-entrainement.html">Entraînement</a>
+                </div>
+            </div>
+            <a href="boutique.html">Boutique</a>
+            <a href="telechargement.html">Télécharger</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <p class="crumb">Le Logiciel</p>
+        <h1> <span class="em">HUD de stats</span> — ce qu'il fait vraiment, posé sur la table</h1>
+        <p class="page-intro">Tes notes, c'est ce que tu as vu. Les stats, c'est ce qu'il fait <em>vraiment</em>, sur
+            toutes ses mains — position par position, street par street. En Spin &amp; Go, presque tout se joue préflop
+            au bouton, en petite et en grosse blinde : le HUD de stats te donne, pour chaque siège, le panneau qui
+            compte à cet instant.</p>
+
+        <h2 style="font-size: 1.3rem; margin-bottom: 14px;">L'exemple : le panneau <span class="em">BU · préflop</span></h2>
+        <div class="showcase">
+            <div class="s-visu">
+                <div class="felt">
+                    <!-- le panneau -->
+                    <div class="panel">
+                        <div class="ph"><span>BU · PRÉFLOP</span><span class="car">▲ replier</span></div>
+                        <div class="pg">
+                            <div class="pc"><small>LIMP</small><b>34</b></div>
+                            <div class="pc hi"><small>OPEN</small><b>52</b></div>
+                            <div class="pc lo"><small>3-BET</small><b>6</b></div>
+                            <div class="pc sel"><small>FOLD v 3-BET</small><b>71</b></div>
+                            <div class="pc"><small>ISO v LIMP</small><b>28</b></div>
+                            <div class="pc"><small>MAINS</small><b>412</b></div>
+                        </div>
+                    </div>
+                    <!-- l'infobulle « construction » au survol -->
+                    <div class="tip">
+                        <b>CONSTRUCTION · FOLD v 3-BET · BU · PRÉFLOP</b> BU ouvre → un adversaire 3-bet → BU se couche.<br>
+                        <span class="occ">occ : 22 / 31</span> — 31 fois dans la situation, 22 fois couché.
+                    </div>
+                </div>
+                <span class="cap">LE PANNEAU, PUIS L'INFOBULLE « CONSTRUCTION » AU SURVOL</span>
+                <div class="felt" style="padding: 18px;">
+                    <div class="rng">
+                        <div class="tabs"><span class="on">MATRICE</span><span>CATÉGORIES</span><span>SIZING</span></div>
+                        <div class="mx">
+                            <span class="r"></span><span class="r"></span><span class="r"></span><span class="r"></span><span class="c"></span><span class="c"></span><span class="m"></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            <span class="r"></span><span class="r"></span><span class="r"></span><span class="c"></span><span class="c"></span><span class="m"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            <span class="r"></span><span class="r"></span><span class="r"></span><span class="c"></span><span class="m"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            <span class="r"></span><span class="c"></span><span class="c"></span><span class="r"></span><span class="m"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            <span class="c"></span><span class="c"></span><span class="m"></span><span class="m"></span><span class="r"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            <span class="c"></span><span class="m"></span><span></span><span></span><span></span><span class="m"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            <span class="m"></span><span></span><span></span><span></span><span></span><span></span><span class="m"></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="m"></span><span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+                <span class="cap">UN CLIC SUR UNE STAT : LA FENÊTRE « RANGE VILAIN »</span>
+            </div>
+            <div class="s-text">
+                <span style="font-family: 'Chakra Petch', sans-serif; font-size: 0.68rem; letter-spacing: 0.16em; color: var(--cyan);">UN PANNEAU PAR POSITION ET PAR STREET</span>
+                <h2 style="font-size: 1.2rem; margin: 6px 0 10px;">Les bons chiffres, au bon siège, au bon moment</h2>
+                <ul>
+                    <li>Pour chaque siège, <strong>le panneau de la situation en cours</strong> : BU, SB face au BU, BB face au BU, blinde contre blinde… — et en heads-up, SB et BB</li>
+                    <li>Chaque case est une stat du catalogue — ou <strong>une des tiennes</strong>, avec le nombre de mains derrière</li>
+                    <li><strong>Survole</strong> une stat : sa « construction » exacte (la séquence d'actions qu'elle mesure) et ses <strong>occurrences réelles</strong> chez ce joueur</li>
+                    <li><strong>Clique</strong> une stat : la fenêtre <strong>« Range vilain »</strong> — matrice 13×13, catégories de mains, sizings</li>
+                    <li>Panneaux <strong>repliés par défaut</strong> : un en-tête discret, tu déplies celui dont tu as besoin</li>
+                </ul>
+                <div class="why"><b>POURQUOI PAR POSITION ET PAR STREET, ET PAS UN BLOC VPIP/PFR</b> Un joueur n'est pas le même au bouton, en petite blinde face à une ouverture ou en grosse blinde face à une ISO. Un chiffre global lisse tout ; un panneau par situation te donne la fréquence qui décide de ta main. Et l'infobulle « construction » te dit exactement ce que mesure le chiffre, et sur combien de mains — pas de chiffre magique.</div>
+            </div>
+        </div>
+        <p style="color: var(--muted); font-size: 0.92rem; max-width: 60rem; margin-bottom: 44px;">Tu bascules du HUD de prise de notes au HUD de stats d'un clic sur le bouton SN — les deux vivent sur la même table, chacun à sa place.</p>
+
+        <h2 style="font-size: 1.3rem; margin-bottom: 14px;">Ce que tu peux en faire</h2>
+        <div class="bricks" style="margin-bottom: 44px;">
+            <div class="brick"><h3>Jusqu'à 28 panneaux, comme tu veux</h3><p>7 positions × 4 contextes (préflop, postflop, ISO, général). Tu ne remplis que ceux qui te servent : un panneau vide n'apparaît jamais en jeu. Grille libre par panneau — lignes, colonnes, style par cellule, en-tête coloré.</p></div>
+            <div class="brick"><h3>Tes propres stats, testées avant d'exister</h3><p>Le Stat Builder : tu décris la séquence d'actions (« BU ouvre, BB 3-bet, BU se couche »), tu choisis pourcentage, compteur, ratio ou montant, tes conditions de stack et de joueurs — et tu <strong style="color: var(--ink);">testes sur tes données</strong> avant de créer. La stat est utilisable immédiatement dans tes panneaux.</p></div>
+            <div class="brick"><h3>Des profils, pour chaque contexte</h3><p>Un profil pour le heads-up, un pour le 3-way ; les profils fournis sont protégés (modifier crée ta copie). Exporte un profil complet — panneaux, cellules, stats perso — et importe celui d'un pote sans rien écraser.</p></div>
+            <div class="brick"><h3>Les mêmes panneaux, hors table</h3><p>Dans <strong style="color: var(--ink);">Field Stats</strong> et <strong style="color: var(--ink);">Mon Profil</strong>, tes panneaux s'affichent à l'identique pour étudier le field, un adversaire précis… ou ton propre jeu. Même infobulle, même fiche de construction. Et une table d'entraînement pour placer tes panneaux sans être en tournoi.</p></div>
+        </div>
+
+        <h2 style="font-size: 1.3rem; margin-bottom: 14px;">Comment tu t'en sers, en pleine session</h2>
+        <div class="gestes" style="margin-bottom: 44px;">
+            <div class="geste"><b>CLIQUER L'EN-TÊTE = REPLIER / DÉPLIER</b><span>Chaque panneau se replie en une ligne. Ton choix est conservé, table après table.</span></div>
+            <div class="geste"><b>GLISSER = PLACER</b><span>Chaque panneau se déplace indépendamment ; sa position est mémorisée.</span></div>
+            <div class="geste"><b>BORD = REDIMENSIONNER</b><span>Tire le bord d'un panneau : la taille s'applique partout, sur toutes tes tables.</span></div>
+            <div class="geste"><b>MOLETTE = ZOOM</b><span>Zoome ou fais défiler un panneau dense sans quitter la table.</span></div>
+            <div class="geste"><b>SURVOL = CONSTRUCTION</b><span>La séquence exacte que mesure la stat, et les occurrences réelles du joueur.</span></div>
+            <div class="geste"><b>CLIC = RANGE VILAIN</b><span>Matrice, catégories, sizings — la range derrière le chiffre, en une fenêtre.</span></div>
+        </div>
+
+        <div class="final" style="padding-left: 0; padding-right: 0;">
+            <div class="final-box">
+                <h2>Les vrais chiffres de tes adversaires, sur ta table</h2>
+                <p>3 jours d'essai dès l'installation — automatique, sans carte bancaire, renouvelable une fois.</p>
+                <div class="row">
+                    <a class="cta-dl" href="telechargement.html">⬇ Télécharger SpinNovaPokerPro</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="links">
+            <a href="mentions-legales.html">Mentions Légales</a>
+            <a href="cgu-cgv.html">CGU / CGV</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>© 2026 SpinNovaPokerPro — Bêta ouverte · Unibet, Winamax, Betclic, PMU, FDJ &amp; skins iPoker</p>
+    </footer>
+    <script src="fx.js" defer></script>
+</body>
+
+</html>

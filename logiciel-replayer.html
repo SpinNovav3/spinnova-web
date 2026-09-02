@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replayer | SpinNovaPokerPro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="fx.css">
+    <link rel="stylesheet" href="pages.css">
+    <script src="cookie-banner.js" defer></script>
+    <script src="visit_tracker.js" defer></script>
+</head>
+
+<body>
+    <div class="felt-glow"></div>
+
+    <header class="topbar">
+        <a href="index.html" class="brand"><img src="sn_logo_transparent.png" alt="">SpinNova<span class="pro">PokerPro</span><span class="beta">BÊTA</span></a>
+        <button class="burger" onclick="document.querySelector('.menu').classList.toggle('open')" aria-label="Menu">☰</button>
+        <nav class="menu">
+            <a href="index.html">Accueil</a>
+            <div class="menu-drop" onclick="this.classList.toggle('open')">
+                <button>Le Logiciel <span class="car">▼</span></button>
+                <div class="drop-list">
+                    <a href="logiciel-in-game.html">À la Table (HUD)</a>
+                    <a href="logiciel-hud-notes.html">HUD de prise de notes</a>
+                    <a href="logiciel-hud-stats.html">HUD de stats</a>
+                    <a href="logiciel-tools.html">Tools de Grind</a>
+                    <a href="logiciel-dashboard.html">Dashboard</a>
+                    <a href="logiciel-field-stats.html">Field Stats</a>
+                    <a href="logiciel-mon-profil.html">Mon Profil</a>
+                    <a href="logiciel-ranges-gto.html">Ranges &amp; GTO</a>
+                    <a href="logiciel-hu-edge.html">HU Edge</a>
+                    <a href="logiciel-hud-editor.html">HUD Editor</a>
+                    <a href="logiciel-replayer.html" style="color: var(--accent);">Replayer</a>
+                    <a href="logiciel-jackpot.html">Jackpot</a>
+                    <a href="logiciel-entrainement.html">Entraînement</a>
+                </div>
+            </div>
+            <a href="boutique.html">Boutique</a>
+            <a href="telechargement.html">Télécharger</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <p class="crumb">Le Logiciel</p>
+        <h1> <span class="em">Replayer</span> — revis tes mains</h1>
+        <p class="page-intro">Une table animée, tes mains action par action, l'équité à chaque street, et le regard GTO sur tes décisions heads-up. C'est là que les sessions deviennent des leçons.</p>
+
+        <div class="feat-grid">
+            <div class="feat-card">
+                <span class="tag">La table</span>
+                <h2>Une vraie table, pas une liste de texte</h2>
+                <ul>
+                    <li>Sièges, stacks, jetons misés, pot animé, board carte par carte, stack effectif affiché</li>
+                    <li>Lecture / pause, action par action, contrôle de vitesse, raccourcis clavier</li>
+                    <li>Historique des actions cliquable pour sauter n'importe où dans la main</li>
+                    <li><strong>Équité all-in par street</strong> — les vraies chances de gagner à chaque étape</li>
+                    <li>Fond de table au choix, cartes 2 ou 4 couleurs, pseudos masquables</li>
+                    <li>Ton HUD superposé sur la table rejouée : stats ou notes, au choix</li>
+                </ul>
+            </div>
+            <div class="feat-card">
+                <span class="tag">Le regard GTO</span>
+                <h2>Chaque décision heads-up, vérifiée</h2>
+                <ul>
+                    <li>Action recommandée et fréquences par action, sur les spots heads-up 2-12 bb</li>
+                    <li>Les matrices 13×13 des ranges du spot, avec <strong>ton combo encadré</strong></li>
+                    <li>Hors périmètre, le panneau le dit clairement — pas de verdict inventé</li>
+                </ul>
+            </div>
+            <div class="feat-card">
+                <span class="tag">Retrouver la bonne main</span>
+                <h2>Des filtres qui pensent comme un joueur</h2>
+                <ul>
+                    <li>Filtres rapides : à revoir, showdowns, HU / 3-way, favoris, plus récentes</li>
+                    <li>Filtres avancés : adversaire, position, type de pot, résultat, room, buy-in, dates, stack</li>
+                    <li>Filtre par <strong>combo exact</strong> de ta main</li>
+                    <li>Tes favoris marqués en un clic droit depuis la table (bouton SN) se retrouvent ici</li>
+                </ul>
+            </div>
+            <div class="feat-card">
+                <span class="tag">Partage &amp; second écran</span>
+                <h2>Fait pour l'étude à plusieurs</h2>
+                <ul>
+                    <li>Un clic sur « Copier la main », colle-la dans Discord — ton pote la rejoue avec « Lire une main »</li>
+                    <li>Aperçu façon tracker classique : board par street, abattage, équités</li>
+                    <li><strong>Table détachable</strong> sur un second écran, synchronisée en direct</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="final">
+            <div class="final-box">
+                <h2>Essaie-le sur tes propres tables</h2>
+                <p>3 jours d'essai dès l'installation — automatique, sans carte bancaire, renouvelable une fois.</p>
+                <div class="row">
+                    <a class="cta-dl" href="https://github.com/SpinNovav3/spinnovapokerpro-releases/releases/latest/download/SpinNovaPokerPro_Setup.zip">⬇ Télécharger SpinNovaPokerPro</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="links">
+            <a href="mentions-legales.html">Mentions Légales</a>
+            <a href="cgu-cgv.html">CGU / CGV</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>© 2026 SpinNovaPokerPro — Bêta ouverte · Unibet, Winamax, Betclic, PMU, FDJ &amp; skins iPoker</p>
+    </footer>
+    <script src="fx.js" defer></script>
+</body>
+
+</html>

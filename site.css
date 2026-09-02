@@ -1,0 +1,531 @@
+/* ============================================================
+   SpinNovaPokerPro — site v3, direction D « Immersion table »
+   (validée par Micka le 02/09 : « parfait »)
+   Nuit violette, néon cyan/violet du logo SN, Chakra Petch + Sora.
+   Règle de scène Spin : héros en bas, adversaires gauche/droite,
+   vraies cartes sur le board, stack effectif au-dessus du board.
+   ============================================================ */
+
+:root {
+    --ground: #06040f;
+    --panel: #0c0a1a;
+    --panel-2: #141129;
+    --line: #201c38;
+    --ink: #eef0ff;
+    --muted: #9aa2c0;
+    --cyan: #38d6f5;
+    --violet: #7c4dff;
+    --violet-soft: #b48cf2;
+    --fish: #ff7ab8;
+    --reg: #ff5c5c;
+    --gold: #e8b86b;
+    --accent: var(--cyan);
+    --accent-soft: rgba(56, 214, 245, 0.12);
+    --radius: 12px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Sora", "Segoe UI", system-ui, sans-serif;
+    font-size: 16.5px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .display {
+    font-family: "Chakra Petch", "Sora", sans-serif;
+    line-height: 1.12;
+    text-wrap: balance;
+    font-weight: 700;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+
+/* ---------- ambiance : lampe au-dessus de la table ---------- */
+.felt-glow {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(640px 320px at 72% 10%, rgba(124, 77, 255, 0.2), transparent 70%),
+        radial-gradient(760px 500px at 6% 8%, rgba(56, 214, 245, 0.07), transparent 55%),
+        radial-gradient(700px 500px at 60% 115%, rgba(56, 214, 245, 0.07), transparent 65%);
+}
+
+/* ---------- nav ---------- */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 13px 4.5%;
+    background: rgba(6, 4, 15, 0.86);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(56, 214, 245, 0.14);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    font-size: 1.02rem;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+}
+.brand img {
+    width: 36px;
+    height: 29px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 9px rgba(56, 214, 245, 0.55));
+}
+.brand .pro { color: var(--cyan); }
+.brand .beta {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--violet-soft);
+    border: 1px solid rgba(180, 140, 242, 0.5);
+    border-radius: 3px;
+    padding: 3px 8px;
+    margin-left: 4px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+.menu > a, .menu-drop > button {
+    padding: 8px 13px;
+    border-radius: 9px;
+    color: var(--muted);
+    transition: color 0.15s, background 0.15s, text-shadow 0.15s;
+}
+.menu > a:hover, .menu-drop > button:hover { color: var(--ink); background: var(--panel-2); }
+.menu > a.on { color: var(--cyan); text-shadow: 0 0 12px rgba(56, 214, 245, 0.6); }
+
+.menu-drop { position: relative; }
+.menu-drop > button {
+    font: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.menu-drop > button .car { font-size: 0.6rem; transition: transform 0.15s; }
+.menu-drop.open > button .car { transform: rotate(180deg); }
+.drop-list {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 235px;
+    background: var(--panel);
+    border: 1px solid rgba(56, 214, 245, 0.2);
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(124, 77, 255, 0.12);
+}
+.menu-drop.open .drop-list { display: block; }
+.drop-list a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    color: var(--muted);
+    font-weight: 600;
+}
+.drop-list a:hover { background: var(--panel-2); color: var(--ink); }
+
+.btn-discord {
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 8px 15px;
+    font-weight: 700;
+    color: var(--ink);
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+.btn-discord:hover { border-color: var(--violet); box-shadow: 0 0 18px rgba(124, 77, 255, 0.3); }
+
+.burger { display: none; background: none; border: none; color: var(--ink); font-size: 1.5rem; cursor: pointer; }
+
+/* ---------- hero : texte à gauche, la table à droite ---------- */
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) auto;
+    gap: 36px;
+    align-items: center;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 64px 4.5% 40px;
+}
+
+.eyebrow {
+    display: inline-block;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--cyan);
+    border: 1px solid rgba(56, 214, 245, 0.4);
+    border-radius: 3px;
+    padding: 5px 10px;
+    background: rgba(6, 4, 15, 0.7);
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(1.8rem, 3.6vw, 2.9rem);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.hero h1 .em { color: var(--cyan); text-shadow: 0 0 20px rgba(56, 214, 245, 0.8); }
+
+.hero .lede {
+    color: #c3c8dd;
+    font-size: 1.04rem;
+    max-width: 30rem;
+    margin-bottom: 28px;
+}
+
+.cta-dl {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(120deg, #21c9ec, #7c4dff);
+    color: #04121c;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    padding: 17px 28px;
+    border-radius: 10px;
+    box-shadow: 0 0 34px rgba(56, 214, 245, 0.45), 0 12px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+.cta-dl:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 44px rgba(56, 214, 245, 0.6), 0 14px 34px rgba(0, 0, 0, 0.5);
+}
+
+.free-line {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+.free-line strong { color: var(--cyan); }
+
+.hero-rooms {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 26px;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: #7f88a8;
+}
+.hero-rooms .lab { color: var(--cyan); }
+
+/* ---------- la scène de Spin (3-max) ---------- */
+.spin-scene {
+    position: relative;
+    width: 720px;
+    height: 476px;
+    zoom: 0.86;
+}
+.spin-scene .table {
+    position: absolute;
+    left: 12px; top: 4px; width: 690px; height: 430px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at 50% 40%, #4a3688 0%, #2b1f52 48%, #16102d 82%, #0c0820 100%);
+    border: 14px solid #1b1424;
+    box-shadow: inset 0 0 70px rgba(0, 0, 0, 0.55), 0 0 60px rgba(124, 77, 255, 0.25), 0 30px 70px rgba(0, 0, 0, 0.55);
+}
+.spin-scene .ring {
+    position: absolute;
+    left: 48px; top: 36px; width: 618px; height: 366px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(56, 214, 245, 0.28);
+    box-shadow: 0 0 22px rgba(56, 214, 245, 0.18);
+}
+.spin-scene .eff {
+    position: absolute;
+    left: 288px; top: 104px;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--cyan);
+    background: rgba(6, 5, 16, 0.95);
+    border: 1px solid rgba(56, 214, 245, 0.5);
+    border-radius: 8px;
+    padding: 7px 14px;
+    box-shadow: 0 0 18px rgba(56, 214, 245, 0.35);
+    letter-spacing: 0.04em;
+}
+.spin-scene .board { position: absolute; left: 241px; top: 156px; display: flex; gap: 8px; }
+.spin-scene .pot { position: absolute; left: 314px; top: 228px; display: flex; gap: 12px; align-items: flex-end; }
+
+.pcard {
+    width: 40px; height: 56px;
+    border-radius: 5px;
+    background: linear-gradient(160deg, #ffffff, #e3e6f0);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 4px 5px;
+    font-family: "Chakra Petch", sans-serif;
+}
+.pcard b { font-size: 15px; line-height: 1; font-weight: 700; }
+.pcard i { font-style: normal; font-size: 20px; line-height: 1; align-self: flex-end; }
+.pcard.back { background: repeating-linear-gradient(45deg, #3d2b6b 0 5px, #2c1f4e 5px 10px); border: 2px solid #f6f7fb; }
+.pcard .blk, .blk { color: #1b1b28; }
+.pcard .red, .red { color: #d63a4a; }
+.mini {
+    width: 24px; height: 34px; border-radius: 3px;
+    background: repeating-linear-gradient(45deg, #3d2b6b 0 4px, #2c1f4e 4px 8px);
+    border: 1.5px solid #f6f7fb;
+    display: block;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+}
+.chip { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.chip span {
+    width: 30px; height: 8px; border-radius: 50%;
+    border: 1.5px dashed rgba(255, 255, 255, 0.55);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+    display: block;
+}
+.avatar {
+    width: 46px; height: 46px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #5a4aa8, #2b2450 70%);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+    display: block;
+}
+
+.seat { position: absolute; width: 178px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.seat.left { left: 0; top: 112px; }
+.seat.right { left: 536px; top: 112px; }
+
+/* le HUD Mini : une pastille flottante par adversaire (l'exemple retenu par Micka) */
+.mini-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 9px; border-radius: 20px;
+    background: rgba(6, 5, 16, 0.95);
+    border: 1px solid rgba(56, 214, 245, 0.55);
+    box-shadow: 0 0 18px rgba(56, 214, 245, 0.25);
+    font-family: "Chakra Petch", sans-serif;
+    animation: floaty 5.5s ease-in-out infinite;
+}
+.mini-tag .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); display: block; }
+.mini-tag .n { font-size: 11px; font-weight: 700; color: var(--cyan); }
+.mini-tag.halo {
+    border-color: rgba(124, 77, 255, 0.6);
+    box-shadow: 0 0 0 2px rgba(124, 77, 255, 0.6), 0 0 18px rgba(124, 77, 255, 0.35);
+    animation-delay: 1.6s;
+}
+.mini-tag.halo .dot { background: var(--violet); box-shadow: 0 0 8px var(--violet); }
+.seat .tag {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 9px; font-weight: 700; letter-spacing: 0.14em;
+    border-radius: 20px; padding: 2px 9px;
+    background: rgba(6, 4, 15, 0.85);
+}
+.seat .tag.fish { color: var(--fish); border: 1px solid rgba(255, 122, 184, 0.6); }
+.seat .tag.reg { color: var(--reg); border: 1px solid rgba(255, 92, 92, 0.6); }
+.hud {
+    width: 178px;
+    background: rgba(6, 5, 16, 0.94);
+    border-radius: 10px;
+    padding: 10px 11px;
+    border: 1px solid rgba(56, 214, 245, 0.55);
+    box-shadow: 0 0 24px rgba(56, 214, 245, 0.3);
+    animation: floaty 5.5s ease-in-out infinite;
+}
+.hud.halo {
+    border-color: rgba(124, 77, 255, 0.65);
+    box-shadow: 0 0 0 2px rgba(124, 77, 255, 0.35), 0 0 30px rgba(124, 77, 255, 0.35);
+    animation-delay: 1.6s;
+}
+.hud .head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.hud .head .pic { width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(135deg, #2b2450, #4b3d8a); display: block; }
+.hud .head .name { height: 8px; width: 74px; border-radius: 4px; background: #363d58; display: block; }
+.hud .badges { display: flex; gap: 4px; margin-bottom: 9px; }
+.hud .badges span { width: 14px; height: 14px; border-radius: 4px; display: block; }
+.hud .stat { display: flex; align-items: center; gap: 6px; font-size: 9px; font-weight: 700; letter-spacing: 0.08em; color: #8f98b3; }
+.hud .stat + .stat { margin-top: 5px; }
+.hud .stat i { display: block; height: 5px; border-radius: 3px; background: linear-gradient(90deg, #38d6f5, #7c4dff); }
+
+.player { position: absolute; display: flex; align-items: center; gap: 8px; }
+.player .cards { display: flex; gap: 3px; }
+.player.left { left: 44px; top: 176px; }
+.player.right { left: 566px; top: 176px; }
+
+.hero-cards { position: absolute; left: 313px; top: 340px; display: flex; gap: 6px; }
+.hero-cards .pcard:first-child { transform: rotate(-5deg); }
+.hero-cards .pcard:last-child { transform: rotate(5deg); }
+.hero-seat { position: absolute; left: 300px; top: 414px; display: flex; align-items: center; gap: 10px; }
+.hero-seat .avatar { width: 40px; height: 40px; border-color: rgba(56, 214, 245, 0.7); box-shadow: 0 0 18px rgba(56, 214, 245, 0.4); }
+.hero-seat .you {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+    color: var(--cyan);
+}
+/* jeton SN : SUR le feutre, à droite du pot (Micka 02/09, capture annotée) */
+.sn-dot {
+    position: absolute;
+    left: 471px; top: 271px;
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 32% 28%, #7ee6ff, #1b8fb0);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 11px; font-weight: 700; color: #04121c;
+    box-shadow: 0 0 22px rgba(56, 214, 245, 0.55);
+}
+.scene-legend {
+    display: flex; justify-content: center; gap: 22px; flex-wrap: wrap;
+    margin-top: 10px;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em;
+    color: #6f7898;
+}
+
+@keyframes floaty {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .hud { animation: none; }
+}
+
+/* ---------- bande rooms ---------- */
+.rooms-band {
+    border-top: 1px solid rgba(124, 77, 255, 0.18);
+    border-bottom: 1px solid rgba(124, 77, 255, 0.18);
+    background: var(--panel);
+    padding: 16px 4.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px 38px;
+    flex-wrap: wrap;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+.rooms-band .lab { font-size: 0.62rem; letter-spacing: 0.2em; color: var(--cyan); }
+
+/* ---------- sections ---------- */
+section.block { max-width: 1180px; margin: 0 auto; padding: 72px 4.5% 10px; }
+.block h2 { font-size: clamp(1.3rem, 2.4vw, 1.8rem); margin-bottom: 12px; }
+.block .sub { color: var(--muted); max-width: 46rem; margin-bottom: 38px; }
+.block h2 .em { color: var(--cyan); text-shadow: 0 0 16px rgba(56, 214, 245, 0.55); }
+
+/* étapes */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.step { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px; }
+.step .n {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700; font-size: 1.5rem;
+    color: var(--cyan); text-shadow: 0 0 14px rgba(56, 214, 245, 0.6);
+    display: block; margin-bottom: 10px;
+}
+.step strong { display: block; margin-bottom: 6px; font-size: 1.02rem; }
+.step p { color: var(--muted); font-size: 0.93rem; }
+
+/* piliers */
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.pillar {
+    background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 26px 24px;
+    transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+.pillar:hover { transform: translateY(-3px); border-color: rgba(56, 214, 245, 0.45); box-shadow: 0 0 24px rgba(56, 214, 245, 0.12); }
+.pillar .ico { font-size: 1.5rem; display: block; margin-bottom: 12px; }
+.pillar strong { display: block; font-size: 1.03rem; margin-bottom: 7px; }
+.pillar p { color: var(--muted); font-size: 0.92rem; }
+
+/* prix */
+.prices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: stretch; }
+.price { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 26px; text-align: center; }
+.price.star { border-color: rgba(124, 77, 255, 0.55); position: relative; box-shadow: 0 0 26px rgba(124, 77, 255, 0.14); }
+.price.star::before {
+    content: "LE PLUS CHOISI";
+    position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+    background: linear-gradient(120deg, #21c9ec, #7c4dff); color: #04121c;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em;
+    padding: 3px 12px; border-radius: 20px;
+}
+.price .name {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--muted); font-weight: 700; display: block; margin-bottom: 10px;
+}
+.price .amount { font-family: "Chakra Petch", sans-serif; font-size: 2.1rem; font-weight: 700; display: block; font-variant-numeric: tabular-nums; }
+.price .amount .u { font-size: 1rem; color: var(--muted); font-weight: 600; }
+.price .det { color: var(--muted); font-size: 0.9rem; margin-top: 8px; }
+.price.free .amount { color: var(--cyan); text-shadow: 0 0 16px rgba(56, 214, 245, 0.55); }
+.pay-note { text-align: center; color: var(--muted); font-size: 0.88rem; margin-top: 22px; }
+
+/* CTA final */
+.final { max-width: 1180px; margin: 40px auto 0; padding: 0 4.5% 90px; }
+.final-box {
+    background:
+        radial-gradient(620px 280px at 30% -30%, rgba(56, 214, 245, 0.12), transparent 70%),
+        radial-gradient(620px 280px at 74% -20%, rgba(124, 77, 255, 0.16), transparent 70%),
+        var(--panel);
+    border: 1px solid rgba(56, 214, 245, 0.2);
+    border-radius: 20px;
+    text-align: center;
+    padding: 60px 30px;
+}
+.final-box h2 { font-size: clamp(1.3rem, 2.6vw, 1.9rem); margin-bottom: 14px; }
+.final-box p { color: var(--muted); margin-bottom: 28px; }
+.final-box .row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* footer */
+footer { border-top: 1px solid var(--line); padding: 30px 4.5% 40px; text-align: center; color: #6f7898; font-size: 0.88rem; }
+footer .links { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px; }
+footer .links a:hover { color: var(--ink); }
+
+a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; border-radius: 6px; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1240px) { .spin-scene { zoom: 0.7; } }
+@media (max-width: 980px) {
+    .hero { grid-template-columns: 1fr; padding-top: 48px; justify-items: start; }
+    .spin-scene { zoom: 0.62; }
+    .steps, .pillars, .prices { grid-template-columns: 1fr; }
+    .burger { display: block; }
+    .menu {
+        display: none;
+        position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; align-items: stretch;
+        background: var(--panel); border-bottom: 1px solid var(--line); padding: 12px;
+    }
+    .menu.open { display: flex; }
+    .drop-list { position: static; box-shadow: none; border: none; background: var(--panel-2); }
+}
+@media (max-width: 560px) { .spin-scene { zoom: 0.44; } }

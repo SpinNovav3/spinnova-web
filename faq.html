@@ -4,753 +4,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ | SpinNova - Foire aux Questions HUD Poker</title>
+    <title>FAQ | SpinNovaPokerPro</title>
     <meta name="description"
-        content="Toutes les réponses sur SpinNova HUD : installation, compatibilité iPoker et Winamax, licences, badges, notes vocales et profilage poker.">
-    <meta property="og:title" content="FAQ SpinNova — Questions Fréquentes HUD Poker">
-    <meta property="og:description"
-        content="Installation, compatibilité, licences, badges — toutes les réponses sur SpinNova HUD pour iPoker et Winamax.">
-    <meta property="og:image" content="https://spinnovav3.github.io/spinnova-web/screen_accueil.png">
-    <meta property="og:url" content="https://spinnovav3.github.io/spinnova-web/faq.html">
-    <meta property="og:type" content="website">
-
-    <!-- JSON-LD FAQPage pour Google Rich Snippets -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Est-ce que SpinNova est autorisé par les rooms de poker ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oui, SpinNova respecte les règles de profilage habituelles. Il ne donne pas de conseils en temps réel (RTA) et ne clique pas à votre place. C'est un outil d'aide à la prise de note visuelle, comme le permettent les réseaux iPoker et Winamax."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Comment obtenir mon HWID ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Téléchargez le logiciel sur la page d'installation, lancez-le, et une fenêtre apparaîtra avec votre code HWID. Cliquez sur COPIER et collez-le dans le formulaire d'essai ou dans votre message de support."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Mon antivirus bloque le logiciel, que faire ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "C'est un faux positif classique avec les logiciels de profilage de poker. Ajoutez une exception pour le dossier SpinNova dans Windows Defender ou votre antivirus. Les fichiers sont 100% sains."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Le HUD ne s'affiche pas sur ma table, pourquoi ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Vérifiez que votre lobby iPoker/Winamax est bien en Français, Anglais, Italien ou Espagnol, que vous avez configuré le chemin du fichier hand history dans les paramètres, que votre pseudo est écrit exactement comme sur le lobby, et que votre HWID a été activé."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quels sont les 3 modes HUD disponibles ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "SpinNova propose 3 modes HUD : Mode Large (3 lignes, idéal pour Spin & Go 3-Way), Mode Compact (2 lignes, idéal pour Heads-Up), et Mode Mini (1 ligne, idéal pour mass grind 12+ tables). Un Magic Switch permet de cycler entre les modes en 1 clic."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "SpinNova fonctionne sur quelles salles de poker ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "SpinNova est compatible avec PMU Poker, FDJ, Winamax (Expresso), Bwin, Unibet, PartyPoker et tous les skins du réseau iPoker. Compatible Spin & Go, Cash Game et MTT."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quels sont les tarifs de SpinNova ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "SpinNova propose un essai gratuit de 3 jours (sans carte bancaire), une licence mensuelle à 20€, et une licence 6 mois à 108€ (18€/mois). Paiement par carte ou virement bancaire."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "C'est quoi la courbe cEV ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "La cEV (Chip Expected Value) mesure vos performances en chips par main contre chaque adversaire. SpinNova calcule automatiquement votre cEV à partir de vos hand histories et vous montre votre courbe d'évolution. Disponible en vue Heads-Up et Globale dans l'onglet Héros cEV."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "C'est quoi Nova, l'assistant IA ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nova est un assistant IA intégré à SpinNova qui vous aide à naviguer dans le logiciel, comprendre les fonctionnalités et configurer votre setup. Nova ne fonctionne pas in-game et ne donne aucun conseil de jeu en temps réel. Il est inclus dans votre abonnement standard."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "C'est quoi le GTO Trainer ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Le GTO Trainer est un outil d'entraînement preflop interactif. Une table simulée vous présente une main aléatoire dans une situation spécifique (SB Open, BB vs All-In, etc.) et vous devez choisir l'action correcte. Feedback immédiat avec les fréquences GTO exactes, scoring par spot, et range popup pour visualiser la grille complète."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "C'est quoi le Replayer ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Le Replayer vous permet de revivre vos mains jouées sur une table simulée. Navigation action par action, board progressif, HUD intégré, et vérification GTO preflop en temps réel. Filtrez par mode, position, type de pot et résultat."
-          }
-        }
-      ]
-    }
-    </script>
-    <link rel="stylesheet" href="style.css">
+        content="Questions fréquentes sur SpinNovaPokerPro : rooms compatibles, essai automatique, HUD de notes et de stats, notes vocales, auto-relance, paiement.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Cookie Consent + Clarity (RGPD) -->
-
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="fx.css">
+    <link rel="stylesheet" href="pages.css">
     <script src="cookie-banner.js" defer></script>
-
-    <!-- SpinNova Visit Tracker -->
     <script src="visit_tracker.js" defer></script>
-
     <style>
-        .faq-container {
-            padding: 120px 10% 60px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .faq-question {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 1.5rem;
-            border-radius: 12px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 700;
-            transition: border-color 0.3s;
-        }
-
-        .faq-question:hover {
-            border-color: var(--accent);
-        }
-
-        .faq-answer {
-            padding: 1.5rem;
-            color: var(--text-muted);
-            display: none;
-            border-left: 2px solid var(--accent);
-            margin: 0.5rem 1rem;
-        }
-
-        .faq-item.active .faq-answer {
-            display: block;
-        }
-
-        .faq-item.active .faq-question {
-            border-color: var(--accent);
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-        }
+        .faq-item { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .faq-q { padding: 18px 22px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 14px; }
+        .faq-q span { color: var(--accent); font-size: 1.3rem; flex-shrink: 0; transition: transform 0.15s; }
+        .faq-a { padding: 0 22px 18px; color: var(--muted); line-height: 1.65; display: none; }
+        .faq-a a { color: var(--accent); }
+        .faq-a strong { color: var(--ink); }
+        .faq-item.open .faq-a { display: block; }
+        .faq-item.open .faq-q span { transform: rotate(45deg); }
     </style>
 </head>
 
 <body>
-    <div class="background-glow"></div>
+    <div class="felt-glow"></div>
 
-    <nav class="navbar">
-        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Spin<span
-                class="highlight">Nova</span></a>
-        <button class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <div class="nav-links">
+    <header class="topbar">
+        <a href="index.html" class="brand"><img src="sn_logo_transparent.png" alt="">SpinNova<span class="pro">PokerPro</span><span class="beta">BÊTA</span></a>
+        <button class="burger" onclick="document.querySelector('.menu').classList.toggle('open')" aria-label="Menu">☰</button>
+        <nav class="menu">
             <a href="index.html">Accueil</a>
-            <div class="nav-dropdown" onclick="this.classList.toggle('open')">
-                <button class="nav-dropdown-toggle">Mode d'Emploi <span class="dropdown-arrow">▼</span></button>
-                <div class="nav-dropdown-menu">
-                    <a href="guide-demarrage.html"><span class="dropdown-icon">🚀</span> Guide de Démarrage</a>
-                    <a href="guide-huds.html"><span class="dropdown-icon">🖥️</span> Les HUDs</a>
-                    <a href="guide-face-b.html"><span class="dropdown-icon">📊</span> Face B Stats</a>
-                    <a href="guide-editeur-hud.html"><span class="dropdown-icon">🎨</span> Éditeur HUD</a>
-                    <a href="guide-notes.html"><span class="dropdown-icon">🎤</span> Notes & Voix</a>
-                    <a href="badges.html"><span class="dropdown-icon">🏷️</span> Badges</a>
-                    <a href="guide-captures.html"><span class="dropdown-icon">📸</span> Captures & Galerie</a>
-                    <a href="guide-cev.html"><span class="dropdown-icon">📈</span> Héros cEV</a>
-                    <a href="guide-hero-stats.html"><span class="dropdown-icon">🦸</span> Hero Stats</a>
-                    <a href="guide-field-stats.html"><span class="dropdown-icon">🌐</span> Stats Field</a>
-                    <a href="guide-range-editor.html"><span class="dropdown-icon">🎲</span> Range Editor</a>
-                    <a href="guide-range-training.html"><span class="dropdown-icon">🏋️</span> Range Training</a>
-                    <a href="guide-equity-calculator.html"><span class="dropdown-icon">⚖️</span> Equity Calculator</a>
-                    <a href="guide-gto-trainer.html"><span class="dropdown-icon">🎓</span> GTO Trainer</a>
-                    <a href="guide-replayer.html"><span class="dropdown-icon">🎬</span> Replayer</a>
+            <div class="menu-drop" onclick="this.classList.toggle('open')">
+                <button>Le Logiciel <span class="car">▼</span></button>
+                <div class="drop-list">
+                    <a href="logiciel-in-game.html">À la Table (HUD)</a>
+                    <a href="logiciel-hud-notes.html">HUD de prise de notes</a>
+                    <a href="logiciel-hud-stats.html">HUD de stats</a>
+                    <a href="logiciel-tools.html">Tools de Grind</a>
+                    <a href="logiciel-dashboard.html">Dashboard</a>
+                    <a href="logiciel-field-stats.html">Field Stats</a>
+                    <a href="logiciel-mon-profil.html">Mon Profil</a>
+                    <a href="logiciel-ranges-gto.html">Ranges &amp; GTO</a>
+                    <a href="logiciel-hu-edge.html">HU Edge</a>
+                    <a href="logiciel-hud-editor.html">HUD Editor</a>
+                    <a href="logiciel-replayer.html">Replayer</a>
+                    <a href="logiciel-jackpot.html">Jackpot</a>
+                    <a href="logiciel-entrainement.html">Entraînement</a>
                 </div>
             </div>
             <a href="boutique.html">Boutique</a>
-            <a href="essai-gratuit.html">Essai Gratuit</a>
             <a href="telechargement.html">Télécharger</a>
-            <a href="faq.html" class="nav-active">FAQ</a>
+            <a href="faq.html" class="on">FAQ</a>
             <a href="contact.html">Contact</a>
             <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
-        </div>
-    </nav>
-    <div class="nav-overlay" onclick="toggleMenu()"></div>
-    <script>
-        function toggleMenu() {
-            document.querySelector('.hamburger').classList.toggle('active');
-            document.querySelector('.nav-links').classList.toggle('active');
-            document.querySelector('.nav-overlay').classList.toggle('active');
-        }
-    </script>
+        </nav>
+    </header>
 
-    <main class="faq-container">
-        <h1 style="text-align: center; margin-bottom: 1rem;">Foire Aux <span class="highlight">Questions</span></h1>
-        <div
-            style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 3rem; flex-wrap: wrap;">
-            <span
-                style="background: rgba(6,182,212,0.15); color: #06b6d4; padding: 6px 16px; border-radius: 25px; font-weight: 700; font-size: 0.9rem; border: 1px solid rgba(6,182,212,0.3);">🎯
-                HUD</span>
-            <span
-                style="background: rgba(16,185,129,0.15); color: #10b981; padding: 6px 16px; border-radius: 25px; font-weight: 700; font-size: 0.9rem; border: 1px solid rgba(16,185,129,0.3);">📊
-                Stats</span>
-            <span
-                style="background: rgba(245,158,11,0.15); color: #f59e0b; padding: 6px 16px; border-radius: 25px; font-weight: 700; font-size: 0.9rem; border: 1px solid rgba(245,158,11,0.3);">🎲
-                Ranges</span>
-            <span
-                style="background: rgba(139,92,246,0.15); color: #8b5cf6; padding: 6px 16px; border-radius: 25px; font-weight: 700; font-size: 0.9rem; border: 1px solid rgba(139,92,246,0.3);">🎬
-                Replayer</span>
-            <span
-                style="background: rgba(239,68,68,0.15); color: #ef4444; padding: 6px 16px; border-radius: 25px; font-weight: 700; font-size: 0.9rem; border: 1px solid rgba(239,68,68,0.3);">🎓
-                GTO</span>
-        </div>
+    <main class="page-main" style="max-width: 820px;">
+        <p class="crumb">Support</p>
+        <h1>Foire aux <span class="em">questions</span></h1>
+        <p class="page-intro">Une autre question ? <a href="https://discord.gg/VGPWqpbvrT" target="_blank"
+                style="color: var(--accent);">Le Discord répond vite.</a></p>
 
-        <!-- FAQ 1 -->
         <div class="faq-item">
-            <div class="faq-question">
-                Est-ce que SpinNova est autorisé par les rooms de poker ? 🛡️
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                Oui, SpinNova respecte les règles de profilage habituelles. Il ne donne pas de conseils en temps réel
-                (RTA) et ne clique pas à votre place. C'est un outil d'aide à la prise de note visuelle, comme le permet
-                les réseaux iPoker et Winamax.
-            </div>
+            <div class="faq-q">C'est quoi, SpinNovaPokerPro ?<span>+</span></div>
+            <div class="faq-a">La nouvelle génération de SpinNova, entièrement reconstruite : nouveau moteur, nouvelle
+                interface, pensée pour le multi-tabling intensif. Elle est en bêta ouverte : tout le monde peut
+                l'essayer gratuitement, et les mises à jour arrivent directement dans le logiciel.</div>
         </div>
 
-        <!-- FAQ 2 -->
         <div class="faq-item">
-            <div class="faq-question">
-                Comment obtenir mon HWID ? 🔑
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                Télécharge le logiciel sur la page <a href="telechargement.html"
-                    style="color: var(--accent);">Installation</a>, lance-le, et une fenêtre apparaîtra avec ton code
-                HWID. Clique sur "COPIER" et colle-le dans le formulaire d'essai ou dans ton message de support.
-            </div>
+            <div class="faq-q">Est-ce que c'est autorisé par les rooms de poker ?<span>+</span></div>
+            <div class="faq-a">Oui, SpinNovaPokerPro respecte les règles de profilage habituelles. Il ne donne pas de
+                conseils en temps réel (RTA) et ne clique pas à ta place pendant une main. C'est un outil d'aide à la
+                prise de note et de suivi de tes résultats, comme le permettent les réseaux iPoker et Winamax.</div>
         </div>
 
-        <!-- FAQ 3 -->
         <div class="faq-item">
-            <div class="faq-question">
-                Mon antivirus bloque le logiciel, que faire ? ⚠️
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                C'est un faux positif classique avec les logiciels de profilage de poker. Ajoute une exception
-                pour le dossier SpinNova dans Windows Defender ou ton antivirus. Nos fichiers sont 100% sains.
-            </div>
+            <div class="faq-q">Quelles rooms sont compatibles ?<span>+</span></div>
+            <div class="faq-a"><strong>Unibet</strong>, <strong>Winamax</strong>, <strong>Betclic</strong> et les rooms
+                du réseau iPoker (<strong>PMU Poker, FDJ</strong>…). Le logiciel détecte automatiquement les rooms
+                installées sur ton PC au premier démarrage, et tu peux en configurer plusieurs en même temps.</div>
         </div>
 
-        <!-- FAQ 4 -->
         <div class="faq-item">
-            <div class="faq-question">
-                Le HUD ne s'affiche pas sur ma table, pourquoi ? ❌
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                Vérifie que :<br>
-                1. Ton lobby iPoker/Winamax est bien en Français, Anglais, Italien ou Espagnol.<br>
-                2. Tu as bien configuré le <strong>chemin du fichier hand history</strong> dans les paramètres.<br>
-                3. Ton <strong>pseudo</strong> est écrit exactement comme sur le lobby (majuscules/minuscules
-                incluses).<br>
-                4. Ton HWID a bien été activé par notre équipe.
-            </div>
+            <div class="faq-q">Comment fonctionne l'essai gratuit ?<span>+</span></div>
+            <div class="faq-a">Tu installes, tu cliques sur « Essai gratuit » dans le logiciel, et tu joues :
+                <strong>3 jours complets, toutes fonctionnalités débloquées</strong>. Pas de carte bancaire, pas de
+                formulaire. Et si les 3 jours ne suffisent pas pour te décider, tu peux <strong>renouveler l'essai une
+                    fois</strong>, au même endroit.</div>
         </div>
 
-        <!-- FAQ 5 -->
         <div class="faq-item">
-            <div class="faq-question">
-                Quels sont les avantages de Revolut pour payer ? 💳
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                Revolut permet de payer instantanément avec une simple Carte Bleue, même si tu n'as pas de compte
-                Revolut. C'est sécurisé, sans frais pour toi, et nous recevons l'argent immédiatement, ce qui permet une
-                activation plus rapide de ta licence.
-            </div>
+            <div class="faq-q">Mon antivirus bloque le logiciel, que faire ?<span>+</span></div>
+            <div class="faq-a">C'est un faux positif classique avec les logiciels de poker. Ajoute une exception pour le
+                dossier SpinNovaPokerPro dans Windows Defender ou ton antivirus. Nos fichiers sont 100% sains.</div>
         </div>
 
-        <!-- FAQ 6 -->
         <div class="faq-item">
-            <div class="faq-question">
-                Quels sont les 3 modes HUD disponibles ? 🖥️
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                SpinNova propose 3 modes d'affichage :<br>
-                • <strong>Mini</strong> : ultra-discret, 1 seule ligne. Idéal pour 8+ tables.<br>
-                • <strong>Compact</strong> : 3 lignes avec sections LP/OP. Bon équilibre info/espace pour 4-6
-                tables.<br>
-                • <strong>Large</strong> : affichage complet avec toutes les zones. Parfait pour 1-3 tables ou sessions
-                d'étude.<br>
-                Tu peux basculer entre eux à tout moment via le Magic Switch.
-                <a href="guide-huds.html" style="color: var(--accent);">En savoir plus →</a>
-            </div>
+            <div class="faq-q">Le HUD ne s'affiche pas sur ma table, pourquoi ?<span>+</span></div>
+            <div class="faq-a">Vérifie que :<br>
+                1. Tes rooms sont bien détectées (Paramètres → Rooms) ;<br>
+                2. Ta licence ou ton essai est actif ;<br>
+                3. Ton pseudo de héros est correctement renseigné.<br>Si ça coince toujours, passe sur le <a href="https://discord.gg/VGPWqpbvrT" target="_blank">Discord</a>
+                — on regarde ça avec toi.</div>
         </div>
 
-        <!-- FAQ 7 -->
         <div class="faq-item">
-            <div class="faq-question">
-                C'est quoi le Magic Switch ? ✨
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                Le Magic Switch te permet de changer de mode HUD <strong>pendant une partie</strong>, sans quitter la
-                table.
-                Un clic-droit sur le bouton SpinNova en jeu ouvre un menu pour basculer entre Mini, Compact, Large,
-                ou tes HUDs personnalisés créés dans l'éditeur.
-            </div>
+            <div class="faq-q">HUD de notes, HUD de stats — c'est quoi la différence ?<span>+</span></div>
+            <div class="faq-a">Le <strong>HUD de prise de notes</strong> affiche tes notes, badges, halos et
+                notes vocales sur chaque adversaire. Le <strong>HUD de stats</strong> affiche tes panneaux de
+                statistiques par position et par street, posés sur la table. Tu bascules de l'un à l'autre d'un clic
+                sur le bouton SN de la table.</div>
         </div>
 
-        <!-- FAQ 8 -->
         <div class="faq-item">
-            <div class="faq-question">
-                Comment fonctionnent les Notes Vocales ? 🎤
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                Clique sur l'icône micro dans le HUD en jeu, parle, et SpinNova transcrit automatiquement
-                ta voix en texte grâce à une IA embarquée (Whisper). Pas besoin d'internet : tout se fait
-                en local sur ton PC. Tes notes restent 100% privées.
-                <a href="guide-notes.html" style="color: var(--accent);">En savoir plus →</a>
-            </div>
+            <div class="faq-q">Quels modes d'affichage pour le HUD ?<span>+</span></div>
+            <div class="faq-a">Le HUD de prise de notes propose 3 étiquettes prêtes à l'emploi — <strong>Mini</strong> (une seule
+                étiquette flottante, idéale en mass multi-tabling), <strong>Compact</strong> (une ligne condensée) et
+                <strong>Large</strong> (grille étendue) — et tu peux <strong>créer tes propres HUD</strong> dans le
+                <a href="logiciel-hud-editor.html">HUD Editor</a>.</div>
         </div>
 
-        <!-- FAQ 9 -->
         <div class="faq-item">
-            <div class="faq-question">
-                C'est quoi les Quick Notes ? ⚡
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                Les Quick Notes sont des <strong>templates prédéfinis</strong> que tu appliques en 1 clic
-                pendant une partie. Par exemple : "limp-fold PF", "cbet 100% flop", etc.
-                Elles sont classées en 3 catégories (Preflop, Postflop, Général) et tu peux créer
-                tes propres templates dans le logiciel.
-            </div>
+            <div class="faq-q">C'est quoi le Magic Switch ?<span>+</span></div>
+            <div class="faq-a">Il te permet de changer de vue de HUD <strong>pendant une partie</strong> : un clic
+                gauche sur le bouton SN de la table fait défiler les vues que tu as choisies (Mini, Compact, Large, tes
+                HUD personnalisés, HUD de stats) dans l'ordre que tu as défini.</div>
         </div>
 
-        <!-- FAQ 10 -->
         <div class="faq-item">
-            <div class="faq-question">
-                Quelles rooms sont compatibles ? 🃏
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                SpinNova est compatible avec <strong>toutes les rooms du réseau iPoker</strong> (PMU Poker, FDJ,
-                Betclic, Unibet,
-                etc.) ainsi que <strong>Winamax</strong>. Le logiciel détecte automatiquement les rooms installées
-                sur ton PC. Tu peux configurer plusieurs rooms en même temps.
-            </div>
+            <div class="faq-q">Comment fonctionnent les notes vocales ?<span>+</span></div>
+            <div class="faq-a">Clique sur l'icône micro dans le HUD en jeu, parle, et ta voix est transcrite en texte
+                par une IA embarquée (Whisper). Pas besoin d'internet : tout se fait en local sur ton PC, tes notes
+                restent 100% privées. Et si tu préfères la dictée instantanée, tu peux brancher ta propre clé
+                ElevenLabs.</div>
         </div>
 
-        <!-- FAQ 11 -->
         <div class="faq-item">
-            <div class="faq-question">
-                C'est quoi la détection Fish/Reg ? 🐟🤖
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                SpinNova analyse automatiquement le pourcentage de limp de chaque joueur pour le classer
-                comme <strong style="color: #ec4899;">Fish (récréatif)</strong> ou
-                <strong style="color: #ef4444;">Reg (régulier)</strong>.
-                Un halo de couleur apparaît autour de l'étiquette HUD du joueur. Les seuils sont
-                personnalisables dans les paramètres de l'éditeur HUD.
-            </div>
+            <div class="faq-q">C'est quoi les quick notes ?<span>+</span></div>
+            <div class="faq-a">Des <strong>templates de notes prédéfinis</strong> que tu appliques en 1 clic pendant une
+                partie — « limp-fold PF », « cbet 100% flop », etc. Classées en 3 catégories (Préflop, Postflop,
+                Général), avec tes propres templates créés dans les paramètres.</div>
         </div>
 
-        <!-- FAQ 12 -->
         <div class="faq-item">
-            <div class="faq-question">
-                C'est quoi les zones LP et OP sur le HUD ? 📊
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                <strong>LP</strong> = Limped Pot (pot limpé) et <strong>OP</strong> = Opened Pot (pot ouvert).
-                Ces zones séparent les notes selon le type de pot, en preflop et postflop.
-                Ça te permet de savoir comment un joueur joue différemment selon qu'il limpe ou ouvre.
-                Tu peux activer ou désactiver ces zones dans les paramètres généraux de l'éditeur HUD.
-            </div>
+            <div class="faq-q">C'est quoi la détection Fish/Reg ?<span>+</span></div>
+            <div class="faq-a">Chaque adversaire est classé automatiquement <strong>Fish (récréatif)</strong> ou
+                <strong>Reg (régulier)</strong> selon des seuils que tu règles. Une pastille apparaît au-dessus du
+                joueur sur la table — et <strong>un clic dessus suffit pour le reclasser à la main</strong>, sur toutes
+                tes tables à la fois.</div>
         </div>
 
-        <!-- FAQ 13 -->
         <div class="faq-item">
-            <div class="faq-question">
-                Comment créer un badge personnalisé ? 🏷️
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                Va dans la section Badges du logiciel, clique sur "+ NOUVEAU", saisis 2 à 4 caractères,
-                choisis les couleurs du texte et du fond, et valide. Ton badge est immédiatement disponible
-                pour être assigné en jeu. Tu peux aussi importer des images comme badges.
-                <a href="badges.html" style="color: var(--accent);">En savoir plus →</a>
-            </div>
+            <div class="faq-q">L'auto-relance et le placement des tables marchent où ?<span>+</span></div>
+            <div class="faq-a">L'<strong>auto-relance</strong> (réinscription automatique en fin de Spin, avec limite en
+                tournois ou en minutes et arrêt d'urgence) fonctionne sur <strong>Unibet</strong>. Le
+                <strong>placement automatique des tables</strong> fonctionne sur <strong>Unibet et PMU</strong>. Les
+                boutons de mise personnalisés fonctionnent sur Unibet.</div>
         </div>
 
-        <!-- FAQ 14 -->
         <div class="faq-item">
-            <div class="faq-question">
-                Puis-je personnaliser mon propre HUD ? 🎨
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                Oui ! L'éditeur HUD est un outil WYSIWYG complet. Tu peux ajouter, déplacer et personnaliser
-                chaque élément : icônes, couleurs, tailles, positions. Tes HUDs personnalisés sont ensuite
-                disponibles dans le Magic Switch pour être utilisés en jeu.
-                <a href="guide-editeur-hud.html" style="color: var(--accent);">En savoir plus →</a>
-            </div>
+            <div class="faq-q">Je joue déjà avec H2N ou PT4, ça cohabite ?<span>+</span></div>
+            <div class="faq-a">Oui. SpinNovaPokerPro détecte les autres trackers et propose un mode de coexistence : il
+                se met en retrait sur les stats et garde tes notes et badges actifs. Tu choisis qui fait quoi.</div>
         </div>
 
-        <!-- FAQ 15 -->
         <div class="faq-item">
-            <div class="faq-question">
-                Comment régler l'opacité du HUD ? 👁️
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                Va dans <strong>Paramètres → Opacité HUD</strong> et utilise le slider pour régler
-                la transparence. Le HUD devient semi-transparent et ne gêne plus ta vision du jeu.
-                Tu peux aussi ajuster l'échelle (taille) du HUD avec un second slider.
-            </div>
+            <div class="faq-q">Je viens de SiQnotes, je récupère quoi ?<span>+</span></div>
+            <div class="faq-a">Tes <strong>badges SiQnotes</strong> (fichiers .badge) s'importent directement dans le
+                gestionnaire de badges. Pour le reste de ton historique, passe sur le
+                <a href="https://discord.gg/VGPWqpbvrT" target="_blank">Discord</a> : on t'accompagne au cas par
+                cas.</div>
         </div>
 
-        <!-- FAQ 16 -->
         <div class="faq-item">
-            <div class="faq-question">
-                Comment capturer une zone de l'écran en jeu ? 📸
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                Clique sur l'icône capture dans le HUD. Un rectangle de sélection apparaît en overlay transparent.
-                Sélectionne la zone à capturer, et l'image est sauvegardée automatiquement dans la galerie du joueur.
-                Idéal pour capturer des mains intéressantes ou des situations de jeu.
-                <a href="guide-captures.html" style="color: var(--accent);">En savoir plus →</a>
-            </div>
+            <div class="faq-q">Comment se passe le paiement ?<span>+</span></div>
+            <div class="faq-a">Par <strong>carte bancaire, via Stripe</strong> (paiement sécurisé). Ton HWID t'est demandé au moment du règlement : c'est lui qui sert à générer ta licence. Aucun débit automatique : tu paies la période que tu choisis, c'est tout.</div>
         </div>
 
-        <!-- FAQ 17 -->
         <div class="faq-item">
-            <div class="faq-question">
-                C'est quoi le halo de couleur ? 🎨
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                Le halo de couleur est un marquage visuel personnalisé autour de l'étiquette HUD d'un joueur.
-                Tu choisis la couleur via une palette circulaire, et elle reste associée au joueur pour
-                toutes tes futures sessions. Utile pour catégoriser visuellement tes adversaires.
-            </div>
+            <div class="faq-q">C'est quoi le HWID ?<span>+</span></div>
+            <div class="faq-a">C'est l'identifiant unique de ta machine, affiché sur l'écran de licence du logiciel. Tu
+                n'en as <strong>pas besoin pour l'essai</strong> (un clic suffit) — il sert uniquement à générer ta
+                licence quand tu t'abonnes : clique sur « COPIER » et colle-le dans ton message de commande.</div>
         </div>
 
-        <!-- FAQ 18 -->
-        <div class="faq-item">
-            <div class="faq-question">
-                Puis-je importer mes notes depuis SiQnotes ? 🔄
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                Oui, SpinNova est compatible avec les exports SiQnotes. Utilise la fonction Import/Export
-                dans le logiciel, et tes anciens badges seront automatiquement classés dans l'onglet "Importés"
-                de la popup badges en jeu. Tu peux ensuite les réorganiser comme tu veux.
+        <div class="final" style="padding-left: 0; padding-right: 0;">
+            <div class="final-box">
+                <h2>Convaincu ?</h2>
+                <p>3 jours d'essai dès l'installation — automatique, sans carte bancaire.</p>
+                <div class="row">
+                    <a class="cta-dl" href="telechargement.html">⬇ Télécharger SpinNovaPokerPro</a>
+                </div>
             </div>
         </div>
-
-        <!-- FAQ 19 -->
-        <div class="faq-item">
-            <div class="faq-question">
-                L'essai gratuit, comment ça marche ? 🆓
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                Tu télécharges SpinNova, tu lances le logiciel, et tu nous envoies ton HWID
-                via le <a href="essai-gratuit.html" style="color: var(--accent);">formulaire d'essai</a>,
-                par Discord, ou par email. On active ta licence pour <strong>3 jours complets</strong>,
-                sans engagement et sans carte bancaire. Toutes les fonctionnalités sont accessibles.
-            </div>
-        </div>
-
-        <!-- FAQ 20 -->
-        <div class="faq-item">
-            <div class="faq-question">
-                Dois-je être connecté à internet pour utiliser SpinNova ? 🌐
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                SpinNova fonctionne <strong>100% en local</strong>. Toutes tes notes, badges, images et données
-                restent sur ton PC. Même les notes vocales sont transcrites en local par l'IA embarquée.
-                La seule étape nécessitant internet est l'activation de ta licence.
-            </div>
-        </div>
-
-        <!-- FAQ 21 -->
-        <div class="faq-item">
-            <div class="faq-question">
-                Comment changer le thème de l'application ? 🎨
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                Va dans la section <strong>Thème</strong> du logiciel (dans la sidebar, section "Outils").
-                Tu peux personnaliser les couleurs de l'interface selon tes préférences.
-                Le thème est appliqué à tout le logiciel immédiatement.
-            </div>
-        </div>
-
-        <!-- FAQ 22 -->
-        <div class="faq-item">
-            <div class="faq-question">
-                SpinNova fonctionne-t-il sur Mac ou Linux ? 💻
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                Non, SpinNova est actuellement compatible <strong>Windows uniquement</strong>.
-                Comme les rooms iPoker et Winamax ne sont disponibles que sur Windows, c'est la plateforme
-                ciblée. Si tu utilises un Mac avec une VM Windows, SpinNova fonctionnera dans cet environnement.
-            </div>
-        </div>
-
-        <!-- FAQ: cEV -->
-        <div class="faq-item">
-            <div class="faq-question">
-                C'est quoi la courbe cEV ? 📈
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                La <strong>cEV (Chip Expected Value)</strong> mesure vos performances en chips par main
-                contre chaque adversaire. SpinNova calcule automatiquement cette valeur à partir de vos
-                hand histories importées et vous montre votre <strong>courbe d'évolution</strong>.
-                Disponible en vue <strong>Heads-Up</strong> et <strong>Globale</strong> dans l'onglet
-                dédié "Héros cEV". C'est l'outil ultime pour mesurer votre edge réel contre vos adversaires
-                les plus fréquents.
-            </div>
-        </div>
-
-        <!-- FAQ: Nova -->
-        <div class="faq-item">
-            <div class="faq-question">
-                C'est quoi Nova, l'assistant IA ? 🤖
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                <strong>Nova</strong> est un assistant IA intégré directement dans SpinNova.
-                Il vous aide à <strong>naviguer dans le logiciel</strong>, comprendre les fonctionnalités,
-                et configurer votre setup. Nova est inclus dans votre abonnement standard.
-                <br><br>
-                <strong style="color: #ef4444;">⚠️ Important :</strong> Nova <strong>ne fonctionne pas
-                    in-game</strong> et ne donne aucun conseil de jeu en temps réel. C'est un assistant
-                de navigation logiciel uniquement, en totale conformité avec les règles des rooms de poker.
-            </div>
-        </div>
-
-        <!-- FAQ: Face B -->
-        <div class="faq-item">
-            <div class="faq-question">
-                C'est quoi la Face B du HUD ? 📊
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                La <strong>Face B</strong> est le mode "stats" du HUD. En jeu, vous avez
-                <strong>deux boutons SpinNova</strong> côte à côte : le bouton gauche (point cyan) gère
-                vos notes et le Magic Switch, le bouton droit (point vert) bascule entre la
-                <strong>Face A</strong> (notes/badges) et la <strong>Face B</strong> (grilles stats Deepitude).
-                La Face B affiche les stats par position (BU, SB, BB) avec PRE/POST/ISO, couleurs
-                conditionnelles, tooltips et popups détaillés. Zoom molette et drag indépendant par grille.
-                <br><br>
-                → <a href="guide-face-b.html" style="color: var(--accent);">Voir le guide complet Face B</a>
-            </div>
-        </div>
-
-        <!-- FAQ: Hero Stats -->
-        <div class="faq-item">
-            <div class="faq-question">
-                C'est quoi Hero Stats ? 🦸
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                <strong>Hero Stats</strong> vous permet d'analyser <strong>votre propre jeu</strong> hors table.
-                L'onglet propose 4 sous-tabs : <strong>3-Way</strong>, <strong>HU</strong>,
-                <strong>Profitabilité</strong> et <strong>Diagnostic GTO</strong>.
-                Le Diagnostic GTO détecte automatiquement vos écarts (CBet trop élevé, fold excessif, etc.)
-                et vous indique exactement où vous perdez de l'argent.
-                Filtrez par room, limite et format pour cibler votre analyse.
-                <br><br>
-                → <a href="guide-hero-stats.html" style="color: var(--accent);">Voir le guide Hero Stats</a>
-            </div>
-        </div>
-
-        <!-- FAQ: Stats Field -->
-        <div class="faq-item">
-            <div class="faq-question">
-                C'est quoi Stats Field ? 🌐
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                <strong>Stats Field</strong> vous permet d'analyser <strong>vos adversaires</strong> hors table.
-                Trois modes disponibles : <strong>Field</strong> (profil moyen de tous vos adversaires),
-                <strong>Joueur</strong> (stats d'un adversaire précis) et <strong>Comparer</strong>
-                (côte à côte). Deux sous-tabs supplémentaires détectent les
-                <strong>Faiblesses GTO</strong> de vos adversaires et suggèrent des
-                <strong>Exploits</strong> concrets à appliquer en jeu.
-                <br><br>
-                → <a href="guide-field-stats.html" style="color: var(--accent);">Voir le guide Stats Field</a>
-            </div>
-        </div>
-
-        <!-- FAQ: GTO Trainer -->
-        <div class="faq-item">
-            <div class="faq-question">
-                C'est quoi le GTO Trainer ? 🎓
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                Le <strong>GTO Trainer</strong> est un outil d'entraînement preflop interactif.
-                Une <strong>table simulée</strong> vous présente une main aléatoire dans une situation spécifique
-                (SB Open, BB vs All-In, BB vs Limp, BB vs MinR, SB vs Iso Shove) et vous devez choisir l'action correcte
-                parmi Fold, Limp, Call, Raise ou All-In.
-                <br><br>
-                Après chaque réponse, vous voyez les <strong>fréquences GTO exactes</strong> et pouvez ouvrir
-                la <strong>range popup 13×13</strong> complète. Le scoring est persistant par spot.
-                <br><br>
-                → <a href="guide-gto-trainer.html" style="color: var(--accent);">Voir le guide GTO Trainer</a>
-            </div>
-        </div>
-
-        <!-- FAQ: Replayer -->
-        <div class="faq-item">
-            <div class="faq-question">
-                C'est quoi le Replayer ? 🎬
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                Le <strong>Replayer</strong> vous permet de <strong>revivre vos mains</strong> jouées sur une table simulée.
-                Navigation action par action avec ◀ ▶, board progressif, <strong>HUD intégré</strong>
-                (vos vrais badges et notes apparaissent), et <strong>vérification GTO preflop</strong> en temps réel.
-                <br><br>
-                Filtrez par mode (3-Way/HU), position, type de pot (LP/OP/ISO/3BET) et résultat (gagné/perdu).
-                Tout est reconstruit visuellement — pas besoin d'images.
-                <br><br>
-                → <a href="guide-replayer.html" style="color: var(--accent);">Voir le guide Replayer</a>
-            </div>
-        </div>
-
-        <!-- FAQ: Compatibilité -->
-        <div class="faq-item">
-            <div class="faq-question">
-                SpinNova est compatible avec quelles rooms ? 🎰
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                SpinNova est compatible avec <strong>toutes les rooms françaises</strong> : PMU Poker, FDJ,
-                Winamax (Expresso), Unibet (Power Spin, Power Spin Flash), Betclic, Bwin, PartyPoker
-                et tous les skins du réseau iPoker.
-                <br><br>
-                Compatible <strong>Spin & Go, Cash Game et MTT</strong>.
-                Le HUD, les stats, le replayer et le GTO Trainer fonctionnent avec toutes les rooms supportées.
-            </div>
-        </div>
-
-        <section style="margin-top: 4rem; text-align: center;">
-            <p>Tu n'as pas trouvé ta réponse ?</p>
-            <a href="contact.html" class="btn-primary" style="margin-top: 1rem;">Pose ta question ici</a>
-        </section>
     </main>
 
-    <!-- PRICING REASSURANCE BAR -->
-    <section class="pricing-reassurance-bar">
-        <h2 class="prb-title">💎 Tarifs Transparents — <span class="gradient-text">Essayez Gratuitement</span></h2>
-        <p class="prb-subtitle">Pas besoin de payer pour tester. Pas d'arnaque, pas de piège.</p>
-        <div class="prb-cards">
-            <div class="prb-card free">
-                <div class="prb-icon">🆓</div>
-                <div class="prb-label">Essai</div>
-                <div class="prb-price">GRATUIT</div>
-                <div class="prb-detail">3 jours complets</div>
-            </div>
-            <div class="prb-card">
-                <div class="prb-icon">💳</div>
-                <div class="prb-label">1 Mois</div>
-                <div class="prb-price">20€</div>
-                <div class="prb-detail">Sans engagement</div>
-            </div>
-            <div class="prb-card featured">
-                <div class="prb-icon">⭐</div>
-                <div class="prb-label">6 Mois</div>
-                <div class="prb-price">108€</div>
-                <div class="prb-detail">-10% · 12€ économisés</div>
-            </div>
+    <footer>
+        <div class="links">
+            <a href="mentions-legales.html">Mentions Légales</a>
+            <a href="cgu-cgv.html">CGU / CGV</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
         </div>
-        <div class="prb-guarantees">
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Sans engagement</span>
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Aucun débit automatique</span>
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Carte OU Virement bancaire</span>
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Essai 100% gratuit</span>
-        </div>
-        <div class="prb-cta-row">
-            <a href="essai-gratuit.html" class="btn-primary">🆓 Essai Gratuit</a>
-            <a href="boutique.html" class="btn-primary" style="background: var(--primary);">🛒 Voir la Boutique</a>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">SpinNova</div>
-            <div style="margin: 1rem 0; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-                <a href="mentions-legales.html"
-                    style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Mentions Légales</a>
-                <a href="cgu-cgv.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">CGU /
-                    CGV</a>
-                <a href="faq.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">FAQ</a>
-                <a href="contact.html"
-                    style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Contact</a>
-            </div>
-            <p class="copyright">© 2026 SpinNova. Compatible toutes rooms françaises.</p>
-        </div>
+        <p>© 2026 SpinNovaPokerPro — Bêta ouverte · Unibet, Winamax, Betclic, PMU, FDJ &amp; skins iPoker</p>
     </footer>
 
-    <script>
-        document.querySelectorAll('.faq-question').forEach(q => {
-            q.addEventListener('click', () => {
-                const item = q.parentElement;
-                item.classList.toggle('active');
+    <script>document.querySelectorAll('.faq-q').forEach(function (q) {
+            q.addEventListener('click', function () {
+                this.parentElement.classList.toggle('open');
             });
         });
     </script>
+    <script src="fx.js" defer></script>
 </body>
 
 </html>

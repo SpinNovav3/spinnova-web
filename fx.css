@@ -1,0 +1,200 @@
+/* ============================================================
+   fx.css — couche d'effets « pro & futuriste » (additive)
+   Ne change ni le contenu ni les fonctions. Respecte
+   prefers-reduced-motion. Le JS (fx.js) pose la classe
+   `fx` sur <html> quand il est actif.
+   ============================================================ */
+
+/* ---------- fond vivant (canvas) + grain ---------- */
+#fx-bg {
+    position: fixed; inset: 0; z-index: -2;
+    width: 100%; height: 100%;
+    pointer-events: none;
+}
+#fx-grain {
+    position: fixed; inset: -50%; z-index: 0;
+    width: 200%; height: 200%;
+    pointer-events: none;
+    opacity: 0.045;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    animation: fx-grain 1.2s steps(6) infinite;
+    mix-blend-mode: overlay;
+}
+@keyframes fx-grain {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-3%, 2%); }
+    40% { transform: translate(2%, -4%); }
+    60% { transform: translate(-4%, -1%); }
+    80% { transform: translate(3%, 3%); }
+    100% { transform: translate(0, 0); }
+}
+
+/* ---------- barre de progression de lecture ---------- */
+#fx-progress {
+    position: fixed; top: 0; left: 0; z-index: 200;
+    height: 2px; width: 0%;
+    background: linear-gradient(90deg, #38d6f5, #7c4dff);
+    box-shadow: 0 0 12px rgba(56, 214, 245, 0.8);
+    transition: width 0.08s linear;
+}
+
+/* ---------- curseur lumineux (desktop) ---------- */
+#fx-cursor {
+    position: fixed; z-index: 150;
+    width: 360px; height: 360px;
+    margin: -180px 0 0 -180px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(56, 214, 245, 0.10) 0%, rgba(124, 77, 255, 0.06) 35%, transparent 70%);
+    mix-blend-mode: screen;
+    opacity: 0;
+    transition: opacity 0.4s;
+    will-change: transform;
+}
+html.fx.fx-mouse #fx-cursor { opacity: 1; }
+
+/* ---------- topbar qui se densifie au scroll ---------- */
+html.fx .topbar { transition: background 0.3s, box-shadow 0.3s; }
+html.fx.fx-scrolled .topbar {
+    background: rgba(6, 4, 15, 0.96);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+}
+html.fx .topbar::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(56, 214, 245, 0.7) 30%, rgba(124, 77, 255, 0.7) 70%, transparent 100%);
+    background-size: 200% 100%;
+    animation: fx-hairline 6s linear infinite;
+    opacity: 0.8;
+}
+@keyframes fx-hairline { from { background-position: 0% 0; } to { background-position: 200% 0; } }
+
+/* ---------- entrée de page ---------- */
+html.fx body { animation: fx-page-in 0.6s ease-out both; }
+@keyframes fx-page-in { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---------- apparitions au scroll ---------- */
+/* fondu + montée, sans flou : léger pour les PC de grind, net dès le premier frame */
+html.fx .fx-reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s cubic-bezier(.2,.7,.2,1), transform 0.55s cubic-bezier(.2,.7,.2,1);
+    transition-delay: var(--fx-delay, 0ms);
+}
+html.fx .fx-reveal.fx-in { opacity: 1; transform: none; }
+
+/* ---------- hero orchestré ---------- */
+html.fx .hero h1 .fx-word {
+    display: inline-block;
+    opacity: 0; transform: translateY(0.6em) rotateX(40deg);
+    transform-origin: 50% 100%;
+    animation: fx-word 0.7s cubic-bezier(.2,.7,.2,1) forwards;
+    animation-delay: var(--d, 0ms);
+}
+@keyframes fx-word { to { opacity: 1; transform: none; } }
+html.fx .hero .eyebrow, html.fx .hero .lede, html.fx .hero .cta-dl, html.fx .hero .free-line, html.fx .hero .hero-rooms {
+    opacity: 0; transform: translateY(14px);
+    animation: fx-up 0.7s cubic-bezier(.2,.7,.2,1) forwards;
+}
+html.fx .hero .eyebrow { animation-delay: 0.05s; }
+html.fx .hero .lede { animation-delay: 0.65s; }
+html.fx .hero .cta-dl { animation-delay: 0.85s; }
+html.fx .hero .free-line { animation-delay: 1.0s; }
+html.fx .hero .hero-rooms { animation-delay: 1.15s; }
+@keyframes fx-up { to { opacity: 1; transform: none; } }
+
+/* la table s'allume : glow puis pastilles */
+html.fx .spin-scene { transform-style: preserve-3d; transition: transform 0.25s ease-out; }
+html.fx .spin-scene .table { animation: fx-table-on 1.4s ease-out 0.3s both; }
+@keyframes fx-table-on {
+    from { opacity: 0; transform: scale(0.94); box-shadow: inset 0 0 70px rgba(0,0,0,0.55), 0 0 0 rgba(124, 77, 255, 0), 0 30px 70px rgba(0,0,0,0.55); }
+    to { opacity: 1; transform: none; box-shadow: inset 0 0 70px rgba(0,0,0,0.55), 0 0 60px rgba(124, 77, 255, 0.25), 0 30px 70px rgba(0,0,0,0.55); }
+}
+html.fx .spin-scene .ring, html.fx .spin-scene .board, html.fx .spin-scene .pot,
+html.fx .spin-scene .player, html.fx .spin-scene .hero-cards, html.fx .spin-scene .hero-seat, html.fx .spin-scene .sn-dot {
+    opacity: 0; animation: fx-pop 0.6s cubic-bezier(.2,.9,.3,1.2) forwards;
+}
+html.fx .spin-scene .ring { animation-delay: 0.9s; }
+html.fx .spin-scene .board { animation-delay: 1.1s; }
+html.fx .spin-scene .pot { animation-delay: 1.25s; }
+html.fx .spin-scene .player { animation-delay: 1.3s; }
+html.fx .spin-scene .hero-cards { animation-delay: 1.45s; }
+html.fx .spin-scene .hero-seat { animation-delay: 1.55s; }
+html.fx .spin-scene .sn-dot { animation-delay: 1.7s; }
+@keyframes fx-pop { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: none; } }
+html.fx .spin-scene .seat, html.fx .spin-scene .eff {
+    opacity: 0; animation: fx-neon-on 0.9s steps(1, end) forwards;
+}
+html.fx .spin-scene .seat.left { animation-delay: 1.8s; }
+html.fx .spin-scene .seat.right { animation-delay: 2.0s; }
+html.fx .spin-scene .eff { animation-delay: 2.2s; }
+@keyframes fx-neon-on {
+    0% { opacity: 0; } 20% { opacity: 1; } 30% { opacity: 0.3; } 45% { opacity: 1; } 55% { opacity: 0.5; } 70% { opacity: 1; } 100% { opacity: 1; }
+}
+
+/* néon qui respire sur le mot clé */
+html.fx .hero h1 .em { animation: fx-breathe 4s ease-in-out 2.4s infinite; }
+@keyframes fx-breathe {
+    0%, 100% { text-shadow: 0 0 20px rgba(56, 214, 245, 0.8); }
+    50% { text-shadow: 0 0 34px rgba(56, 214, 245, 1), 0 0 60px rgba(124, 77, 255, 0.5); }
+}
+
+/* ---------- cartes en relief (tilt) ---------- */
+html.fx .fx-tilt {
+    transform-style: preserve-3d;
+    transition: transform 0.18s ease-out, box-shadow 0.25s, border-color 0.25s;
+    position: relative;
+    overflow: hidden;
+}
+html.fx .fx-tilt::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(300px 220px at var(--mx, 50%) var(--my, 50%), rgba(56, 214, 245, 0.16), transparent 70%);
+    opacity: 0; transition: opacity 0.25s;
+}
+html.fx .fx-tilt:hover::before { opacity: 1; }
+html.fx .fx-tilt:hover { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-4px); }
+
+/* ---------- bouton CTA : reflet qui balaie + pulsation ---------- */
+html.fx .cta-dl { position: relative; overflow: hidden; animation: fx-cta-pulse 3.2s ease-in-out infinite; }
+html.fx .cta-dl::after {
+    content: ""; position: absolute; top: -40%; bottom: -40%; width: 40px;
+    left: -60px; transform: skewX(-20deg);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    animation: fx-shine 3.6s ease-in-out infinite;
+}
+@keyframes fx-shine { 0%, 60% { left: -60px; } 100% { left: 120%; } }
+@keyframes fx-cta-pulse {
+    0%, 100% { box-shadow: 0 0 34px rgba(56, 214, 245, 0.45), 0 12px 30px rgba(0, 0, 0, 0.5); }
+    50% { box-shadow: 0 0 50px rgba(56, 214, 245, 0.7), 0 0 90px rgba(124, 77, 255, 0.35), 0 12px 30px rgba(0, 0, 0, 0.5); }
+}
+
+/* ---------- bande rooms en défilement ---------- */
+html.fx .rooms-band { overflow: hidden; justify-content: flex-start; gap: 0; }
+html.fx .rooms-band .lab { flex: 0 0 auto; margin-right: 34px; white-space: nowrap; }
+html.fx .rooms-band { mask-image: linear-gradient(90deg, #000 0, #000 88%, transparent 100%); -webkit-mask-image: linear-gradient(90deg, #000 0, #000 88%, transparent 100%); }
+html.fx .fx-marquee { display: flex; gap: 46px; white-space: nowrap; animation: fx-marquee 28s linear infinite; }
+html.fx .fx-marquee:hover { animation-play-state: paused; }
+html.fx .fx-marquee span { flex: 0 0 auto; }
+@keyframes fx-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ---------- séparateur laser entre sections ---------- */
+html.fx section.block::before {
+    content: ""; display: block; height: 1px; margin: 0 0 56px;
+    background: linear-gradient(90deg, transparent, rgba(56, 214, 245, 0.35), rgba(124, 77, 255, 0.35), transparent);
+}
+
+/* ---------- compteurs ---------- */
+html.fx .fx-count { display: inline-block; min-width: 1.2ch; }
+
+/* ---------- accessibilité / mobile ---------- */
+@media (prefers-reduced-motion: reduce) {
+    html.fx *, html.fx *::before, html.fx *::after { animation: none !important; transition: none !important; }
+    html.fx .fx-reveal { opacity: 1; transform: none; filter: none; }
+    html.fx .hero h1 .fx-word, html.fx .hero .eyebrow, html.fx .hero .lede, html.fx .hero .cta-dl, html.fx .hero .free-line, html.fx .hero .hero-rooms,
+    html.fx .spin-scene .ring, html.fx .spin-scene .board, html.fx .spin-scene .pot, html.fx .spin-scene .player, html.fx .spin-scene .hero-cards,
+    html.fx .spin-scene .hero-seat, html.fx .spin-scene .sn-dot, html.fx .spin-scene .seat, html.fx .spin-scene .eff { opacity: 1; transform: none; }
+    #fx-grain, #fx-cursor { display: none; }
+}
+@media (max-width: 980px) {
+    #fx-cursor { display: none; }
+    html.fx .fx-tilt:hover { transform: none; }
+}

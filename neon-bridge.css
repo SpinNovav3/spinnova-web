@@ -1,0 +1,29 @@
+/* ============================================================
+   neon-bridge.css — aligne les pages conservées (boutique,
+   contact, CGU, mentions, activation) sur la direction
+   « Néon Arcade » validée, SANS toucher à leur structure
+   ni à leur câblage (paiements, formulaires, webhooks).
+   Chargé APRÈS style.css : ne fait que surcharger.
+   ============================================================ */
+
+:root {
+    --bg-dark: #05060e;
+    --bg-secondary: #0b0e1c;
+    --primary: #7c4dff;
+    --accent: #38d6f5;
+    --glass-bg: rgba(56, 214, 245, 0.05);
+    --glass-border: rgba(56, 214, 245, 0.16);
+}
+
+h1, h2, h3 {
+    font-family: 'Chakra Petch', 'Outfit', sans-serif;
+}
+
+.beta-badge {
+    background: linear-gradient(120deg, #21c9ec, #7c4dff);
+}
+
+.btn-primary {
+    background: linear-gradient(120deg, #21c9ec, #7c4dff);
+    box-shadow: 0 0 24px rgba(56, 214, 245, 0.3);
+}

@@ -4,348 +4,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Téléchargement | SpinNova - Installation et Guide HWID</title>
+    <title>Télécharger | SpinNovaPokerPro</title>
     <meta name="description"
-        content="Téléchargez SpinNova HUD pour iPoker et Winamax. Installation simple en 2 minutes. Compatible Windows 10/11. Essai gratuit 3 jours inclus.">
-    <meta property="og:title" content="Télécharger SpinNova — HUD Poker iPoker &amp; Winamax">
-    <meta property="og:description"
-        content="Installez SpinNova en 2 minutes. Compatible Windows 10/11, PMU, FDJ, Winamax. Essai gratuit 3 jours.">
-    <meta property="og:image" content="https://spinnovav3.github.io/spinnova-web/screen_accueil.png">
-    <meta property="og:url" content="https://spinnovav3.github.io/spinnova-web/telechargement.html">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="style.css">
+        content="Télécharge SpinNovaPokerPro : l'essai de 3 jours démarre automatiquement à l'installation — sans carte bancaire, renouvelable une fois. Windows 10/11. Unibet, Winamax, Betclic, PMU, FDJ.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="fx.css">
+    <link rel="stylesheet" href="pages.css">
     <!-- Cookie Consent + Clarity (RGPD) -->
-
     <script src="cookie-banner.js" defer></script>
-
     <!-- SpinNova Visit Tracker -->
     <script src="visit_tracker.js" defer></script>
-
-    <style>
-        .download-container {
-            padding: 120px 10% 60px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .step-card {
-            margin-bottom: 2rem;
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .step-content {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .step-image {
-            flex: 1;
-            min-width: 300px;
-            border-radius: 12px;
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        .step-number {
-            display: inline-block;
-            width: 32px;
-            height: 32px;
-            background: var(--accent);
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 32px;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .hwid-box {
-            background: rgba(6, 182, 212, 0.1);
-            border: 1px solid var(--accent);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-top: 1rem;
-        }
-
-        .hwid-box h3 {
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-        }
-
-        .btn-download-big {
-            display: block;
-            width: 100%;
-            text-align: center;
-            padding: 1.5rem;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            color: white;
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: 700;
-            border-radius: 16px;
-            margin-bottom: 3rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .btn-download-big:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(109, 40, 217, 0.4);
-        }
-
-        .activation-option {
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-        }
-
-        .activation-option h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        .activation-option p {
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="background-glow"></div>
+    <div class="felt-glow"></div>
 
-    <nav class="navbar">
-        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Spin<span
-                class="highlight">Nova</span></a>
-        <button class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <div class="nav-links">
+    <header class="topbar">
+        <a href="index.html" class="brand"><img src="sn_logo_transparent.png" alt="">SpinNova<span class="pro">PokerPro</span><span class="beta">BÊTA</span></a>
+        <button class="burger" onclick="document.querySelector('.menu').classList.toggle('open')" aria-label="Menu">☰</button>
+        <nav class="menu">
             <a href="index.html">Accueil</a>
-            <div class="nav-dropdown" onclick="this.classList.toggle('open')">
-                <button class="nav-dropdown-toggle">Mode d'Emploi <span class="dropdown-arrow">▼</span></button>
-                <div class="nav-dropdown-menu">
-                    <a href="guide-demarrage.html"><span class="dropdown-icon">🚀</span> Guide de Démarrage</a>
-                    <a href="guide-huds.html"><span class="dropdown-icon">🖥️</span> Les HUDs</a>
-                    <a href="guide-editeur-hud.html"><span class="dropdown-icon">🎨</span> Éditeur HUD</a>
-                    <a href="guide-notes.html"><span class="dropdown-icon">🎤</span> Notes & Voix</a>
-                    <a href="badges.html"><span class="dropdown-icon">🏷️</span> Badges</a>
-                    <a href="guide-captures.html"><span class="dropdown-icon">📸</span> Captures & Galerie</a>
-                    <a href="guide-cev.html"><span class="dropdown-icon">📈</span> Héros cEV</a>
-                    <a href="guide-hero-stats.html"><span class="dropdown-icon">🦸</span> Hero Stats</a>
-                    <a href="guide-field-stats.html"><span class="dropdown-icon">🌐</span> Stats Field</a>
+            <div class="menu-drop" onclick="this.classList.toggle('open')">
+                <button>Le Logiciel <span class="car">▼</span></button>
+                <div class="drop-list">
+                    <a href="logiciel-in-game.html">À la Table (HUD)</a>
+                    <a href="logiciel-hud-notes.html">HUD de prise de notes</a>
+                    <a href="logiciel-hud-stats.html">HUD de stats</a>
+                    <a href="logiciel-tools.html">Tools de Grind</a>
+                    <a href="logiciel-dashboard.html">Dashboard</a>
+                    <a href="logiciel-field-stats.html">Field Stats</a>
+                    <a href="logiciel-mon-profil.html">Mon Profil</a>
+                    <a href="logiciel-ranges-gto.html">Ranges &amp; GTO</a>
+                    <a href="logiciel-hu-edge.html">HU Edge</a>
+                    <a href="logiciel-hud-editor.html">HUD Editor</a>
+                    <a href="logiciel-replayer.html">Replayer</a>
+                    <a href="logiciel-jackpot.html">Jackpot</a>
+                    <a href="logiciel-entrainement.html">Entraînement</a>
                 </div>
             </div>
             <a href="boutique.html">Boutique</a>
-            <a href="essai-gratuit.html">Essai Gratuit</a>
-            <a href="telechargement.html" class="nav-active">Télécharger</a>
+            <a href="telechargement.html" class="on">Télécharger</a>
             <a href="faq.html">FAQ</a>
             <a href="contact.html">Contact</a>
             <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
-        </div>
-    </nav>
-    <div class="nav-overlay" onclick="toggleMenu()"></div>
-    <script>
-        function toggleMenu() {
-            document.querySelector('.hamburger').classList.toggle('active');
-            document.querySelector('.nav-links').classList.toggle('active');
-            document.querySelector('.nav-overlay').classList.toggle('active');
-        }
-    </script>
+        </nav>
+    </header>
 
-    <main class="download-container">
-        <h1 style="text-align: center; margin-bottom: 1rem;">Installer <span class="highlight">SpinNova</span></h1>
-        <div
-            style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 3rem; flex-wrap: wrap;">
-            <span
-                style="background: rgba(6,182,212,0.15); color: #06b6d4; padding: 8px 20px; border-radius: 25px; font-weight: 700; font-size: 1rem; border: 1px solid rgba(6,182,212,0.3);">🏇
-                PMU Poker</span>
-            <span
-                style="background: rgba(16,185,129,0.15); color: #10b981; padding: 8px 20px; border-radius: 25px; font-weight: 700; font-size: 1rem; border: 1px solid rgba(16,185,129,0.3);">🎰
-                FDJ</span>
-            <span
-                style="background: rgba(245,158,11,0.15); color: #f59e0b; padding: 8px 20px; border-radius: 25px; font-weight: 700; font-size: 1rem; border: 1px solid rgba(245,158,11,0.3);">🃏
-                Winamax</span>
-        </div>
+    <main class="page-main" style="max-width: 860px; text-align: center;">
+        <h1 style="margin-top: 30px;">Télécharge. <span class="em">Tes 3 jours d'essai démarrent tout seuls.</span></h1>
+        <p class="page-intro" style="margin-left: auto; margin-right: auto;">Pas de formulaire, pas de demande de
+            licence, pas de carte bancaire. Tu installes, tu cliques sur « Essai gratuit » à l'ouverture, tu joues —
+            toutes les fonctions débloquées, renouvelable une fois.</p>
 
-        <!-- DOWNLOAD BUTTON -->
-        <a href="https://github.com/spinnovav3/spinnova-web/releases/latest/download/Spinova_Release.zip"
-            class="btn-download-big" id="downloadBtn">
-            📥 Télécharger la Dernière Version (V8.0.1)
-        </a>
+        <a class="cta-dl"
+            href="https://github.com/SpinNovav3/spinnovapokerpro-releases/releases/latest/download/SpinNovaPokerPro_Setup.zip"
+            id="downloadBtn" style="font-size: 1.1rem; padding: 20px 38px;">⬇ Télécharger SpinNovaPokerPro</a>
+        <p class="free-line" style="margin-bottom: 50px;">Toujours la dernière version · Windows 10/11 (64 bits)</p>
 
-        <!-- STEP 1 -->
-        <div class="step-card glass-panel">
-            <div class="step-content">
-                <span class="step-number">1</span>
-                <h2>Extraction &amp; Installation</h2>
-                <p>Une fois le fichier ZIP téléchargé, extrais le contenu dans un dossier sur ton bureau (ou
-                    ailleurs).<br><br>
-                    Lance ensuite <strong>SpinNova.exe</strong> pour démarrer l'application.</p>
+        <div class="steps" style="text-align: left;">
+            <div class="step">
+                <span class="n">1</span>
+                <strong>Installe</strong>
+                <p>Extrais le ZIP, lance l'installeur. Au premier démarrage, le logiciel t'accueille et te guide.</p>
             </div>
-            <img src="screen_accueil.png" alt="Installation SpinNova" class="step-image">
-        </div>
-
-        <!-- STEP 2 -->
-        <div class="step-card glass-panel">
-            <div class="step-content">
-                <span class="step-number">2</span>
-                <h2>Fenêtre d'Activation</h2>
-                <p>Au premier lancement (ou si ta licence expire), la fenêtre d'activation s'ouvre
-                    automatiquement.<br><br>
-                    <strong>1.</strong> Clique sur <strong>"COPIER"</strong> pour copier ton HWID unique.<br>
-                    <strong>2.</strong> Choisis ton mode d'activation :
-                </p>
-
-                <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
-                    <div
-                        style="flex: 1; min-width: 200px; padding: 1rem; background: rgba(6, 182, 212, 0.15); border-radius: 8px; border-left: 3px solid #06b6d4;">
-                        <strong style="color: #06b6d4;">🎮 DISCORD (Instantané)</strong>
-                        <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-muted);">Notre bot IA génère
-                            ta licence en quelques secondes. Colle ton HWID dans le salon.</p>
-                    </div>
-                    <div
-                        style="flex: 1; min-width: 200px; padding: 1rem; background: rgba(109, 40, 217, 0.15); border-radius: 8px; border-left: 3px solid #6d28d9;">
-                        <strong style="color: #6d28d9;">✉️ EMAIL (24-48h)</strong>
-                        <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-muted);">Pas de Discord ? Le
-                            formulaire pré-remplit ton HWID. Tu reçois le code par mail.</p>
-                    </div>
-                </div>
+            <div class="step">
+                <span class="n">2</span>
+                <strong>Clique « Essai gratuit »</strong>
+                <p>Sur l'écran d'accueil. C'est tout : 3 jours complets, renouvelables une fois au même endroit.<br><br>
+                    <span style="color: var(--muted); font-size: 0.85rem;">Déjà abonné ? Colle simplement ton code de
+                        licence sur ce même écran.</span></p>
             </div>
-            <img src="screen_activation.png" alt="Fenêtre d'Activation SpinNova" class="step-image">
-        </div>
-
-        <!-- STEP 3 -->
-        <div class="step-card glass-panel">
-            <div class="step-content" style="text-align: center;">
-                <span class="step-number">3</span>
-                <h2>Colle ton Code &amp; C'est Parti !</h2>
-                <p style="margin-bottom: 1.5rem;">Une fois le code d'activation reçu (Discord ou Email),
-                    <strong>colle-le directement</strong> dans la zone prévue.<br><br>
-                    <em style="color: var(--accent);">💡 Astuce : Le logiciel détecte automatiquement le code et
-                        s'active tout seul !</em>
-                </p>
-
-                <div class="hwid-box" style="text-align: left;">
-                    <h3>🎉 C'est tout !</h3>
-                    <p>Après activation, SpinNova démarre et tu peux commencer à profiler tes adversaires. Le HUD
-                        s'affiche automatiquement sur tes tables iPoker et Winamax.</p>
-                </div>
+            <div class="step">
+                <span class="n">3</span>
+                <strong>Ouvre tes tables</strong>
+                <p>Tes rooms et tes historiques sont détectés automatiquement. Le HUD s'affiche, tes mains
+                    s'importent, tes stats se construisent.</p>
             </div>
         </div>
 
-        <section style="margin-top: 4rem; text-align: center;">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">🎮 Plateformes Compatibles</h3>
-            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
-                <div
-                    style="padding: 1.5rem 2rem; background: var(--glass-bg); border: 2px solid rgba(6,182,212,0.3); border-radius: 12px; min-width: 160px;">
-                    <div style="font-size: 2rem; margin-bottom: 0.3rem;">🏇</div>
-                    <strong style="color: #06b6d4; font-size: 1.2rem;">PMU Poker</strong>
-                </div>
-                <div
-                    style="padding: 1.5rem 2rem; background: var(--glass-bg); border: 2px solid rgba(16,185,129,0.3); border-radius: 12px; min-width: 160px;">
-                    <div style="font-size: 2rem; margin-bottom: 0.3rem;">🎰</div>
-                    <strong style="color: #10b981; font-size: 1.2rem;">FDJ</strong>
-                </div>
-                <div
-                    style="padding: 1.5rem 2rem; background: var(--glass-bg); border: 2px solid rgba(245,158,11,0.3); border-radius: 12px; min-width: 160px;">
-                    <div style="font-size: 2rem; margin-bottom: 0.3rem;">🃏</div>
-                    <strong style="color: #f59e0b; font-size: 1.2rem;">Winamax</strong>
-                </div>
-            </div>
-            <p style="color: var(--text-muted);">+ Bwin, Unibet, PartyPoker et tous les skins iPoker<br>
-                Windows 10/11 (64 bits) · Logiciel de poker en FR, EN, IT ou ES</p>
-        </section>
+        <p style="color: var(--muted); font-size: 0.95rem; margin: 40px 0 10px;">Compatible <strong style="color: var(--ink);">Unibet · Winamax · Betclic · PMU, FDJ &amp; skins
+                iPoker</strong></p>
     </main>
 
-    <!-- PRICING REASSURANCE BAR -->
-    <section class="pricing-reassurance-bar">
-        <h2 class="prb-title">💎 Tarifs Transparents — <span class="gradient-text">Essayez Gratuitement</span></h2>
-        <p class="prb-subtitle">Pas besoin de payer pour tester. Pas d'arnaque, pas de piège.</p>
-        <div class="prb-cards">
-            <div class="prb-card free">
-                <div class="prb-icon">🆓</div>
-                <div class="prb-label">Essai</div>
-                <div class="prb-price">GRATUIT</div>
-                <div class="prb-detail">3 jours complets</div>
-            </div>
-            <div class="prb-card">
-                <div class="prb-icon">💳</div>
-                <div class="prb-label">1 Mois</div>
-                <div class="prb-price">20€</div>
-                <div class="prb-detail">Sans engagement</div>
-            </div>
-            <div class="prb-card featured">
-                <div class="prb-icon">⭐</div>
-                <div class="prb-label">6 Mois</div>
-                <div class="prb-price">108€</div>
-                <div class="prb-detail">-10% · 12€ économisés</div>
+    <div class="final">
+        <div class="final-box">
+            <h2>Une question avant de te lancer ?</h2>
+            <p>La <a href="faq.html" style="color: var(--accent);">FAQ</a> répond aux classiques, le Discord répond au
+                reste.</p>
+            <div class="row">
+                <a class="btn-discord" href="https://discord.gg/VGPWqpbvrT" target="_blank">Rejoindre le Discord</a>
             </div>
         </div>
-        <div class="prb-guarantees">
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Sans engagement</span>
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Aucun débit automatique</span>
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Carte OU Virement bancaire</span>
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Essai 100% gratuit</span>
-        </div>
-        <div class="prb-cta-row">
-            <a href="essai-gratuit.html" class="btn-primary">🆓 Essai Gratuit</a>
-            <a href="boutique.html" class="btn-primary" style="background: var(--primary);">🛒 Voir la Boutique</a>
-        </div>
-    </section>
+    </div>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">SpinNova</div>
-            <div style="margin: 1rem 0; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-                <a href="mentions-legales.html"
-                    style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Mentions Légales</a>
-                <a href="cgu-cgv.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">CGU /
-                    CGV</a>
-                <a href="faq.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">FAQ</a>
-                <a href="contact.html"
-                    style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Contact</a>
-            </div>
-            <p class="copyright">© 2026 SpinNova. Compatible iPoker &amp; Winamax.</p>
+    <footer>
+        <div class="links">
+            <a href="mentions-legales.html">Mentions Légales</a>
+            <a href="cgu-cgv.html">CGU / CGV</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
         </div>
+        <p>© 2026 SpinNovaPokerPro — Bêta ouverte · Unibet, Winamax, Betclic, PMU, FDJ &amp; skins iPoker</p>
     </footer>
 
-    <!-- LEAD CAPTURE POPUP -->
+    <!-- LEAD CAPTURE POPUP (fonction conservée à l'identique) -->
     <div id="leadPopup"
         style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); backdrop-filter:blur(6px); z-index:9999; justify-content:center; align-items:center;">
         <div
-            style="background:rgba(19,19,22,0.95); border:1px solid rgba(255,255,255,0.1); border-radius:20px; padding:2.5rem; max-width:440px; width:90%; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+            style="background:#0b0e1c; border:1px solid rgba(56,214,245,0.25); border-radius:20px; padding:2.5rem; max-width:440px; width:90%; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.5);">
             <div style="text-align:center; margin-bottom:1.5rem;">
-                <div style="font-size:2.5rem; margin-bottom:0.5rem;">📥</div>
-                <h2 style="font-size:1.4rem; margin-bottom:0.5rem;">Avant de télécharger...</h2>
-                <p style="color:#9ca3af; font-size:0.9rem;">Laisse-nous un moyen de te contacter pour recevoir des
+                <div style="font-size:2.5rem; margin-bottom:0.5rem;"></div>
+                <h2 style="font-size:1.2rem; margin-bottom:0.5rem;">Avant de télécharger...</h2>
+                <p style="color:#9aa3b8; font-size:0.9rem;">Laisse-nous un moyen de te contacter pour recevoir des
                     astuces et des mises à jour !</p>
             </div>
 
             <div style="margin-bottom:1rem;">
-                <label
-                    style="display:block; font-size:0.85rem; color:#06b6d4; font-weight:600; margin-bottom:0.4rem;">🎮
-                    Pseudo Discord</label>
+                <label style="display:block; font-size:0.85rem; color:#38d6f5; font-weight:600; margin-bottom:0.4rem;">Pseudo Discord</label>
                 <input type="text" id="leadDiscord" placeholder="ex: MonPseudo#1234"
-                    style="width:100%; padding:0.8rem 1rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; color:white; font-family:'Outfit',sans-serif; font-size:0.95rem; outline:none; transition:border-color 0.3s;"
-                    onfocus="this.style.borderColor='#06b6d4'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+                    style="width:100%; padding:0.8rem 1rem; background:rgba(255,255,255,0.05); border:1px solid #1c2136; border-radius:10px; color:#eef2fb; font-family:'Sora',sans-serif; font-size:0.95rem; outline:none;">
             </div>
 
-            <div style="text-align:center; color:#9ca3af; font-size:0.8rem; margin-bottom:1rem;">— ou —</div>
+            <div style="text-align:center; color:#9aa3b8; font-size:0.8rem; margin-bottom:1rem;">— ou —</div>
 
             <div style="margin-bottom:1.5rem;">
-                <label
-                    style="display:block; font-size:0.85rem; color:#6d28d9; font-weight:600; margin-bottom:0.4rem;">✉️
-                    Adresse Email</label>
+                <label style="display:block; font-size:0.85rem; color:#b48cf2; font-weight:600; margin-bottom:0.4rem;">Adresse Email</label>
                 <input type="email" id="leadEmail" placeholder="ex: mail@gmail.com"
-                    style="width:100%; padding:0.8rem 1rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; color:white; font-family:'Outfit',sans-serif; font-size:0.95rem; outline:none; transition:border-color 0.3s;"
-                    onfocus="this.style.borderColor='#6d28d9'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+                    style="width:100%; padding:0.8rem 1rem; background:rgba(255,255,255,0.05); border:1px solid #1c2136; border-radius:10px; color:#eef2fb; font-family:'Sora',sans-serif; font-size:0.95rem; outline:none;">
             </div>
 
             <p id="leadError"
@@ -353,47 +141,32 @@
                 au moins un champ pour continuer</p>
 
             <button id="leadSubmitBtn" onclick="submitLead()"
-                style="width:100%; padding:1rem; background:linear-gradient(90deg,#6d28d9,#06b6d4); color:white; border:none; border-radius:12px; font-size:1.1rem; font-weight:700; cursor:pointer; font-family:'Outfit',sans-serif; transition:transform 0.2s, box-shadow 0.2s;"
-                onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 30px rgba(109,40,217,0.4)'"
-                onmouseout="this.style.transform='none';this.style.boxShadow='none'">
-                📥 Télécharger SpinNova
+                style="width:100%; padding:1rem; background:linear-gradient(120deg,#21c9ec,#7c4dff); color:#04121c; border:none; border-radius:12px; font-size:1.05rem; font-weight:800; cursor:pointer; font-family:'Sora',sans-serif;">Télécharger SpinNovaPokerPro
             </button>
 
             <div style="text-align:center; margin-top:1rem;">
                 <a href="#" onclick="skipLead(); return false;"
-                    style="color:#9ca3af; font-size:0.8rem; text-decoration:underline; opacity:0.7;">Non merci,
+                    style="color:#9aa3b8; font-size:0.8rem; text-decoration:underline; opacity:0.7;">Non merci,
                     télécharger directement</a>
             </div>
         </div>
     </div>
 
-    <!-- LIGHTBOX Overlay -->
-    <div class="lightbox-overlay" id="lightboxOverlay">
-        <button class="lightbox-close" id="lightboxClose">&times;</button>
-        <img src="" alt="Zoom" id="lightboxImg">
-        <span class="lightbox-hint">Cliquez n'importe où pour fermer</span>
-    </div>
-
     <script>
         // =====================================================================
-        // LEAD CAPTURE POPUP LOGIC
+        // LEAD CAPTURE POPUP LOGIC (fonction conservée à l'identique)
         // =====================================================================
-        var DOWNLOAD_URL = 'https://github.com/spinnovav3/spinnova-web/releases/latest/download/Spinova_Release.zip';
+        var DOWNLOAD_URL = 'https://github.com/SpinNovav3/spinnovapokerpro-releases/releases/latest/download/SpinNovaPokerPro_Setup.zip';
 
-        // Intercept download button click
         document.getElementById('downloadBtn').addEventListener('click', function (e) {
             // Always prevent default so the download tracker (in visit_tracker.js)
             // has time to send the record via keepalive fetch before navigation
             e.preventDefault();
 
-            // If already gave contact, start download immediately
-            // The document-level download tracker will handle tracking with keepalive
             if (window.SpinNovaTracker && window.SpinNovaTracker.hasAlreadyGivenContact()) {
                 window.location.href = DOWNLOAD_URL;
                 return;
             }
-
-            // Otherwise show the lead capture popup
             document.getElementById('leadPopup').style.display = 'flex';
         });
 
@@ -406,31 +179,26 @@
             var discord = document.getElementById('leadDiscord').value.trim();
             var email = document.getElementById('leadEmail').value.trim();
 
-            // Validate: at least one field
             if (!discord && !email) {
                 document.getElementById('leadError').style.display = 'block';
                 return;
             }
             document.getElementById('leadError').style.display = 'none';
 
-            // Determine contact method
             var method = 'skipped';
             if (discord && email) method = 'both';
             else if (discord) method = 'discord';
             else if (email) method = 'email';
 
-            // Feedback visuel
             var btn = document.getElementById('leadSubmitBtn');
             btn.textContent = '⏳ Envoi en cours...';
             btn.disabled = true;
 
-            // Timeout failsafe: download même si JSONBin est lent
             var downloaded = false;
             var safetyTimer = setTimeout(function () {
                 if (!downloaded) { downloaded = true; startDownload(); }
             }, 5000);
 
-            // Track the lead puis télécharger
             if (window.SpinNovaTracker) {
                 window.SpinNovaTracker.trackLead({
                     discord: discord,
@@ -447,53 +215,23 @@
         }
 
         function skipLead() {
-            // Télécharger directement sans attendre
             if (window.SpinNovaTracker) {
                 window.SpinNovaTracker.trackLead({
                     discord: '',
                     email: '',
                     contactMethod: 'skipped'
                 });
-                // Pour skip on n'attend pas — c'est pas important
             }
             startDownload();
         }
 
-        // Close popup on Escape
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && document.getElementById('leadPopup').style.display === 'flex') {
                 skipLead();
             }
         });
-
-        // =====================================================================
-        // LIGHTBOX
-        // =====================================================================
-        (function () {
-            const overlay = document.getElementById('lightboxOverlay');
-            const lightboxImg = document.getElementById('lightboxImg');
-            const closeBtn = document.getElementById('lightboxClose');
-            document.querySelectorAll('.screen-img, .hud-screenshot, .lightbox-trigger, img[alt]').forEach(function (img) {
-                if (img.closest('.lightbox-overlay')) return;
-                if (img.naturalWidth < 50) return;
-                img.style.cursor = 'zoom-in';
-                img.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    lightboxImg.src = this.src;
-                    lightboxImg.alt = this.alt;
-                    overlay.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
-            });
-            overlay.addEventListener('click', function (e) {
-                if (e.target !== lightboxImg) { overlay.classList.remove('active'); document.body.style.overflow = ''; }
-            });
-            closeBtn.addEventListener('click', function () { overlay.classList.remove('active'); document.body.style.overflow = ''; });
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && overlay.classList.contains('active')) { overlay.classList.remove('active'); document.body.style.overflow = ''; }
-            });
-        })();
     </script>
+    <script src="fx.js" defer></script>
 </body>
 
 </html>

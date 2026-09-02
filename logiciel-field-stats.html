@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Stats | SpinNovaPokerPro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="fx.css">
+    <link rel="stylesheet" href="pages.css">
+    <script src="cookie-banner.js" defer></script>
+    <script src="visit_tracker.js" defer></script>
+</head>
+
+<body>
+    <div class="felt-glow"></div>
+
+    <header class="topbar">
+        <a href="index.html" class="brand"><img src="sn_logo_transparent.png" alt="">SpinNova<span class="pro">PokerPro</span><span class="beta">BÊTA</span></a>
+        <button class="burger" onclick="document.querySelector('.menu').classList.toggle('open')" aria-label="Menu">☰</button>
+        <nav class="menu">
+            <a href="index.html">Accueil</a>
+            <div class="menu-drop" onclick="this.classList.toggle('open')">
+                <button>Le Logiciel <span class="car">▼</span></button>
+                <div class="drop-list">
+                    <a href="logiciel-in-game.html">À la Table (HUD)</a>
+                    <a href="logiciel-hud-notes.html">HUD de prise de notes</a>
+                    <a href="logiciel-hud-stats.html">HUD de stats</a>
+                    <a href="logiciel-tools.html">Tools de Grind</a>
+                    <a href="logiciel-dashboard.html">Dashboard</a>
+                    <a href="logiciel-field-stats.html" style="color: var(--accent);">Field Stats</a>
+                    <a href="logiciel-mon-profil.html">Mon Profil</a>
+                    <a href="logiciel-ranges-gto.html">Ranges &amp; GTO</a>
+                    <a href="logiciel-hu-edge.html">HU Edge</a>
+                    <a href="logiciel-hud-editor.html">HUD Editor</a>
+                    <a href="logiciel-replayer.html">Replayer</a>
+                    <a href="logiciel-jackpot.html">Jackpot</a>
+                    <a href="logiciel-entrainement.html">Entraînement</a>
+                </div>
+            </div>
+            <a href="boutique.html">Boutique</a>
+            <a href="telechargement.html">Télécharger</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <p class="crumb">Le Logiciel</p>
+        <h1> <span class="em">Field Stats</span> — connais ton field</h1>
+        <p class="page-intro">Tout ton field, passé au crible : qui sont les fish, qui sont les regs, quand jouer, et comment tu t'en sors contre chacun. Filtrable par type de joueur, période, buy-in, format et room.</p>
+
+        <div class="feat-grid">
+            <div class="feat-card">
+                <span class="tag">Qualité du field</span>
+                <h2>Fish vs regs — juste les chiffres</h2>
+                <ul>
+                    <li>La répartition Fish / Reg / Inconnu de tout ton field filtré</li>
+                    <li>Par tranche de 3 heures et par jour de la semaine : trouve les créneaux les plus soft</li>
+                </ul>
+            </div>
+            <div class="feat-card">
+                <span class="tag">Fiches joueurs</span>
+                <h2>Une fiche complète par adversaire</h2>
+                <ul>
+                    <li>Recherche par pseudo, épinglage de tes cibles favorites</li>
+                    <li>cEV total et par tournoi contre lui, winrate, courbe d'évolution</li>
+                    <li>Sa heatmap 7j×24h : quand le rencontres-tu ?</li>
+                    <li>Ses stats HUD par position, comparées à la médiane des regs et des fish</li>
+                    <li>Reclasse-le à la main (Fish / Reg / Inconnu) — accès direct à ses mains, notes et badges</li>
+                </ul>
+            </div>
+            <div class="feat-card">
+                <span class="tag">cEV vs Joueur</span>
+                <h2>Ton bilan contre chaque adversaire</h2>
+                <ul>
+                    <li>Tous tes adversaires croisés : tournois ensemble, cEV total, cEV/tournoi, winrate</li>
+                    <li>Un clic ouvre la fiche complète ; compare plusieurs joueurs côte à côte</li>
+                </ul>
+            </div>
+            <div class="feat-card">
+                <span class="tag">Stats HUD &amp; Études</span>
+                <h2>Le field dans ton HUD, hors table</h2>
+                <ul>
+                    <li>Les stats du field (ou d'un joueur précis) affichées exactement comme dans ton HUD en jeu</li>
+                    <li>Survole une stat : valeur, échantillon — clique : comment elle est construite</li>
+                    <li>Vue macro « Hero vs Field » : tes écarts aux médianes, position par position</li>
+                    <li>Crée tes <strong>études</strong> : des vues de stats sur mesure, sans jamais toucher ton HUD en jeu</li>
+                </ul>
+            </div>
+            <div class="feat-card">
+                <span class="tag">Replayer intégré</span>
+                <h2>Les mains du field, en un clic</h2>
+                <ul>
+                    <li>Rejoue les mains de n'importe quel adversaire sans quitter Field Stats</li>
+                    <li>Filtres room, pseudo, buy-in, dates, stack, résultat, showdown — et ouverture directe dans le grand Replayer</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="final">
+            <div class="final-box">
+                <h2>Essaie-le sur tes propres tables</h2>
+                <p>3 jours d'essai dès l'installation — automatique, sans carte bancaire, renouvelable une fois.</p>
+                <div class="row">
+                    <a class="cta-dl" href="https://github.com/SpinNovav3/spinnovapokerpro-releases/releases/latest/download/SpinNovaPokerPro_Setup.zip">⬇ Télécharger SpinNovaPokerPro</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="links">
+            <a href="mentions-legales.html">Mentions Légales</a>
+            <a href="cgu-cgv.html">CGU / CGV</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>© 2026 SpinNovaPokerPro — Bêta ouverte · Unibet, Winamax, Betclic, PMU, FDJ &amp; skins iPoker</p>
+    </footer>
+    <script src="fx.js" defer></script>
+</body>
+
+</html>

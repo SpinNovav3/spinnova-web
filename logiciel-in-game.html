@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À la Table | SpinNovaPokerPro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="fx.css">
+    <link rel="stylesheet" href="pages.css">
+    <script src="cookie-banner.js" defer></script>
+    <script src="visit_tracker.js" defer></script>
+</head>
+
+<body>
+    <div class="felt-glow"></div>
+
+    <header class="topbar">
+        <a href="index.html" class="brand"><img src="sn_logo_transparent.png" alt="">SpinNova<span class="pro">PokerPro</span><span class="beta">BÊTA</span></a>
+        <button class="burger" onclick="document.querySelector('.menu').classList.toggle('open')" aria-label="Menu">☰</button>
+        <nav class="menu">
+            <a href="index.html">Accueil</a>
+            <div class="menu-drop" onclick="this.classList.toggle('open')">
+                <button>Le Logiciel <span class="car">▼</span></button>
+                <div class="drop-list">
+                    <a href="logiciel-in-game.html" style="color: var(--accent);">À la Table (HUD)</a>
+                    <a href="logiciel-hud-notes.html">HUD de prise de notes</a>
+                    <a href="logiciel-hud-stats.html">HUD de stats</a>
+                    <a href="logiciel-tools.html">Tools de Grind</a>
+                    <a href="logiciel-dashboard.html">Dashboard</a>
+                    <a href="logiciel-field-stats.html">Field Stats</a>
+                    <a href="logiciel-mon-profil.html">Mon Profil</a>
+                    <a href="logiciel-ranges-gto.html">Ranges &amp; GTO</a>
+                    <a href="logiciel-hu-edge.html">HU Edge</a>
+                    <a href="logiciel-hud-editor.html">HUD Editor</a>
+                    <a href="logiciel-replayer.html">Replayer</a>
+                    <a href="logiciel-jackpot.html">Jackpot</a>
+                    <a href="logiciel-entrainement.html">Entraînement</a>
+                </div>
+            </div>
+            <a href="boutique.html">Boutique</a>
+            <a href="telechargement.html">Télécharger</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <p class="crumb">Le Logiciel</p>
+        <h1> <span class="em">À la table</span> — tes notes et tes stats sur les tables</h1>
+        <p class="page-intro">Tout ce que SpinNovaPokerPro pose sur tes tables : le HUD de prise de notes, le HUD de stats, le badge fish/requin, et le confort de grind autour. Déplaçable, verrouillable, mémorisé d'une session à l'autre.</p>
+
+        <div class="feat-grid">
+            <div class="feat-card">
+                <span class="tag">HUD de prise de notes</span>
+                <h2>Tes notes et badges, sur chaque adversaire</h2>
+                <ul>
+                    <li>Une étiquette par joueur — Mini, Compact, Large ou tes HUD personnalisés</li>
+                    <li>Notes par position et par type de pot (limp, open, ISO, 3-bet — pré et post)</li>
+                    <li>Badges posés en un clic, réordonnés par glisser directement en jeu</li>
+                    <li>Notes rapides : tes templates, une note en un clic</li>
+                    <li>Notes vocales : tu dictes, c'est transcrit — en local, hors ligne</li>
+                    <li>Halo : entoure un joueur d'une couleur (8 teintes + palette libre)</li>
+                    <li>Survole un compteur : le contenu réel de tes notes en infobulle</li>
+                </ul>
+                <p style="margin-top: 14px;"><a href="logiciel-hud-notes.html" style="color: var(--cyan); font-weight: 700;">→ Le HUD de prise de notes en détail (l'exemple du Mini)</a></p>
+            </div>
+            <div class="feat-card">
+                <span class="tag">HUD de stats</span>
+                <h2>Tes stats, par position, sur la table</h2>
+                <ul>
+                    <li>Des panneaux de stats par position et par street, posés où tu veux</li>
+                    <li>Replie / déplie d'un clic, zoome à la molette, redimensionne au bord</li>
+                    <li>Survole une stat : comment elle est construite, et l'échantillon réel du joueur</li>
+                    <li>Clique une stat : la fenêtre « Range vilain » — matrice, catégories, sizing</li>
+                    <li>Bascule notes ↔ stats d'un clic sur le bouton SN</li>
+                </ul>
+                <p style="margin-top: 14px;"><a href="logiciel-hud-stats.html" style="color: var(--cyan); font-weight: 700;">→ Le HUD de stats en détail (l'exemple du panneau BU · préflop)</a></p>
+            </div>
+            <div class="feat-card">
+                <span class="tag">Badge Fish/Reg</span>
+                <h2>Qui est qui, en un coup d'œil</h2>
+                <ul>
+                    <li>Une pastille poisson / requin au-dessus de chaque adversaire</li>
+                    <li>Classement automatique selon tes seuils — et un clic pour reclasser à la main</li>
+                    <li>Propagé immédiatement à toutes tes tables</li>
+                </ul>
+            </div>
+            <div class="feat-card">
+                <span class="tag">Confort de grind</span>
+                <h2>La session qui se gère toute seule</h2>
+                <ul>
+                    <li><strong>Auto-relance</strong> (Unibet) : réinscription automatique en fin de Spin, limite en tournois ou en minutes, arrêt d'urgence au raccourci, anti sit-out</li>
+                    <li><strong>Placement automatique des tables</strong> (Unibet, PMU) : mosaïque ou disposition dynamique avec zone ACTION qui agrandit la table quand c'est à toi — jusqu'à 2 écrans</li>
+                    <li><strong>Boutons de mise</strong> (Unibet) : miser X BB, une part du stack effectif, tapis, suivre, se coucher — au clic ou au raccourci</li>
+                    <li><strong>Bouton SN</strong> sur chaque table : clic gauche = changer de vue de HUD, clic droit = marquer la main en favori pour le Replayer</li>
+                    <li><strong>Verrou HUD</strong> : fige toutes les positions pour ne rien déplacer par erreur</li>
+                </ul>
+                <p style="margin-top: 14px;"><a href="logiciel-tools.html" style="color: var(--cyan); font-weight: 700;">→ Tous les tools de grind en détail</a></p>
+            </div>
+            <div class="feat-card">
+                <span class="tag">Réglages</span>
+                <h2>Tout se règle, rien ne s'impose</h2>
+                <ul>
+                    <li>Quelles vues de HUD défilent au clic, et dans quel ordre (Magic Switch)</li>
+                    <li>Seuils de classification Fish/Reg, tailles, couleurs</li>
+                    <li>Transparence et échelle du HUD, séparées 3-way / heads-up</li>
+                    <li>« Ma journée de stats commence à X h » et la pause qui sépare deux sessions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="final">
+            <div class="final-box">
+                <h2>Essaie-le sur tes propres tables</h2>
+                <p>3 jours d'essai dès l'installation — automatique, sans carte bancaire, renouvelable une fois.</p>
+                <div class="row">
+                    <a class="cta-dl" href="https://github.com/SpinNovav3/spinnovapokerpro-releases/releases/latest/download/SpinNovaPokerPro_Setup.zip">⬇ Télécharger SpinNovaPokerPro</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="links">
+            <a href="mentions-legales.html">Mentions Légales</a>
+            <a href="cgu-cgv.html">CGU / CGV</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>© 2026 SpinNovaPokerPro — Bêta ouverte · Unibet, Winamax, Betclic, PMU, FDJ &amp; skins iPoker</p>
+    </footer>
+    <script src="fx.js" defer></script>
+</body>
+
+</html>

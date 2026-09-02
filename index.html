@@ -4,1010 +4,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpinNova | HUD Pro Spin &amp; Go iPoker &amp; Winamax - Profilage Rapide</title>
+    <title>SpinNovaPokerPro | La Suite du Grinder de Spin &amp; Go</title>
     <meta name="description"
-        content="Optimisez vos Spin &amp; Go sur iPoker et Winamax avec SpinNova. HUD dynamique, profilage en 2 clics, courbe cEV, notes vocales IA, badges personnalisés et assistant Nova. Essai gratuit 3 jours. Compatible PMU, FDJ, Expresso.">
-    <meta property="og:title" content="SpinNova - Le HUD Ultime pour Spin &amp; Go">
-    <meta property="og:description" content="Profilez vos adversaires instantanément sans perdre de Timebank.">
-    <meta property="og:image" content="https://spinnovav3.github.io/spinnova-web/screen_accueil.png">
-
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Cookie Consent + Clarity (RGPD) -->
-    <script src="cookie-banner.js" defer></script>
-
-    <!-- SpinNova Visit Tracker -->
-    <script src="visit_tracker.js" defer></script>
+        content="SpinNovaPokerPro : HUD de prise de notes, HUD de stats, cEV, ranges, replayer et entraînement — un seul logiciel pour les grinders de Spin & Go. Télécharge : 3 jours d'essai automatiques, sans carte bancaire. Unibet, Winamax, Betclic, PMU, FDJ.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
-
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "SpinNova",
-      "description": "HUD de profilage poker pour iPoker et Winamax. Profilez vos adversaires en 2 clics, notes vocales, courbe cEV, badges personnalisés, assistant Nova. Compatible PMU, FDJ, Winamax, Bwin, Unibet.",
-      "applicationCategory": "GameApplication",
-      "operatingSystem": "Windows 10, Windows 11",
-      "url": "https://spinnovav3.github.io/spinnova-web/",
-      "screenshot": "https://spinnovav3.github.io/spinnova-web/screen_accueil.png",
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "Essai gratuit",
-          "price": "0",
-          "priceCurrency": "EUR",
-          "description": "3 jours d'essai complet gratuit"
-        },
-        {
-          "@type": "Offer",
-          "name": "Mensuel",
-          "price": "20",
-          "priceCurrency": "EUR",
-          "description": "Licence mensuelle sans engagement"
-        },
-        {
-          "@type": "Offer",
-          "name": "6 mois",
-          "price": "108",
-          "priceCurrency": "EUR",
-          "description": "Licence 6 mois — 18€/mois"
-        }
-      ],
-      "author": {
-        "@type": "Organization",
-        "name": "SpinNova"
-      }
-    }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="fx.css">
+    <!-- Cookie Consent + Clarity (RGPD) -->
+    <script src="cookie-banner.js" defer></script>
+    <!-- SpinNova Visit Tracker -->
+    <script src="visit_tracker.js" defer></script>
 </head>
 
 <body>
-    <div class="background-glow"></div>
+    <div class="felt-glow"></div>
 
-    <!-- TRIAL BANNER -->
-    <div class="trial-banner">
-        🆓 ESSAI GRATUIT 3 JOURS — Dès 18€/mois · Sans engagement · Carte ou Virement
-    </div>
-
-    <nav class="navbar">
-        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Spin<span
-                class="highlight">Nova</span></a>
-        <button class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <div class="nav-links">
-            <a href="index.html" class="nav-active">Accueil</a>
-            <div class="nav-dropdown" onclick="this.classList.toggle('open')">
-                <button class="nav-dropdown-toggle">Mode d'Emploi <span class="dropdown-arrow">▼</span></button>
-                <div class="nav-dropdown-menu">
-                    <a href="guide-demarrage.html"><span class="dropdown-icon">🚀</span> Guide de Démarrage</a>
-                    <a href="guide-huds.html"><span class="dropdown-icon">🖥️</span> Les HUDs</a>
-                    <a href="guide-face-b.html"><span class="dropdown-icon">📊</span> Face B Stats</a>
-                    <a href="guide-editeur-hud.html"><span class="dropdown-icon">🎨</span> Éditeur HUD</a>
-                    <a href="guide-notes.html"><span class="dropdown-icon">🎤</span> Notes & Voix</a>
-                    <a href="badges.html"><span class="dropdown-icon">🏷️</span> Badges</a>
-                    <a href="guide-captures.html"><span class="dropdown-icon">📸</span> Captures & Galerie</a>
-                    <a href="guide-cev.html"><span class="dropdown-icon">📈</span> Héros cEV</a>
-                    <a href="guide-hero-stats.html"><span class="dropdown-icon">🦸</span> Hero Stats</a>
-                    <a href="guide-field-stats.html"><span class="dropdown-icon">🌐</span> Stats Field</a>
-                    <a href="guide-range-editor.html"><span class="dropdown-icon">🎲</span> Range Editor</a>
-                    <a href="guide-range-training.html"><span class="dropdown-icon">🏋️</span> Range Training</a>
-                    <a href="guide-equity-calculator.html"><span class="dropdown-icon">⚖️</span> Equity Calculator</a>
-                    <a href="guide-gto-trainer.html"><span class="dropdown-icon">🎓</span> GTO Trainer</a>
-                    <a href="guide-replayer.html"><span class="dropdown-icon">🎬</span> Replayer</a>
+    <header class="topbar">
+        <a href="index.html" class="brand"><img src="sn_logo_transparent.png" alt="">SpinNova<span class="pro">PokerPro</span><span class="beta">BÊTA</span></a>
+        <button class="burger" onclick="document.querySelector('.menu').classList.toggle('open')" aria-label="Menu">☰</button>
+        <nav class="menu">
+            <a href="index.html" class="on">Accueil</a>
+            <div class="menu-drop" onclick="this.classList.toggle('open')">
+                <button>Le Logiciel <span class="car">▼</span></button>
+                <div class="drop-list">
+                    <a href="logiciel-in-game.html">À la Table (HUD)</a>
+                    <a href="logiciel-hud-notes.html">HUD de prise de notes</a>
+                    <a href="logiciel-hud-stats.html">HUD de stats</a>
+                    <a href="logiciel-tools.html">Tools de Grind</a>
+                    <a href="logiciel-dashboard.html">Dashboard</a>
+                    <a href="logiciel-field-stats.html">Field Stats</a>
+                    <a href="logiciel-mon-profil.html">Mon Profil</a>
+                    <a href="logiciel-ranges-gto.html">Ranges &amp; GTO</a>
+                    <a href="logiciel-hu-edge.html">HU Edge</a>
+                    <a href="logiciel-hud-editor.html">HUD Editor</a>
+                    <a href="logiciel-replayer.html">Replayer</a>
+                    <a href="logiciel-jackpot.html">Jackpot</a>
+                    <a href="logiciel-entrainement.html">Entraînement</a>
                 </div>
             </div>
             <a href="boutique.html">Boutique</a>
-            <a href="essai-gratuit.html">Essai Gratuit</a>
             <a href="telechargement.html">Télécharger</a>
             <a href="faq.html">FAQ</a>
             <a href="contact.html">Contact</a>
-            <a href="beta.html" class="nav-beta-link">BETA v2</a>
             <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
-        </div>
-    </nav>
-    <div class="nav-overlay" onclick="toggleMenu()"></div>
-    <script>
-        function toggleMenu() {
-            document.querySelector('.hamburger').classList.toggle('active');
-            document.querySelector('.nav-links').classList.toggle('active');
-            document.querySelector('.nav-overlay').classList.toggle('active');
-        }
-    </script>
-
-    <!-- ============================== -->
-    <!-- ÉCRAN 1 — HERO                  -->
-    <!-- ============================== -->
-    <header class="hero hero-split">
-        <div class="hero-text">
-            <div
-                style="display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, rgba(109,40,217,0.2), rgba(6,182,212,0.2)); border: 2px solid rgba(6,182,212,0.4); padding: 10px 28px; border-radius: 50px; margin-bottom: 1.2rem; font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; animation: pulse-border 2s infinite;">
-                <span style="color: #06b6d4;">🎯 HUD</span>
-                <span style="color: rgba(255,255,255,0.3);">·</span>
-                <span style="color: #10b981;">📊 Stats</span>
-                <span style="color: rgba(255,255,255,0.3);">·</span>
-                <span style="color: #f59e0b;">🎲 Ranges</span>
-                <span style="color: rgba(255,255,255,0.3);">·</span>
-                <span style="color: #8b5cf6;">🎬 Replayer</span>
-                <span style="color: rgba(255,255,255,0.3);">·</span>
-                <span style="color: #ef4444;">🎓 GTO</span>
-            </div>
-            <h1>Votre Suite Complète Poker.<br><span class="gradient-text">Du HUD à l'Entraînement.</span></h1>
-            <p class="hero-tagline">HUD · Stats · Replayer · Ranges · GTO Trainer</p>
-            <p class="hero-desc"><strong>SpinNova</strong> — la suite complète pour les joueurs de
-                <strong>Spin & Go</strong>, <strong>Expresso</strong>, <strong>Cash Game</strong> et <strong>MTT</strong>.
-                Compatible avec toutes les rooms françaises.
-            </p>
-
-            <div class="hero-features">
-                <a href="guide-huds.html" class="hero-feat" style="text-decoration: none; color: inherit; cursor: pointer;">
-                    <span class="hero-feat-icon">🎯</span>
-                    <div>
-                        <strong>HUD In-Game</strong>
-                        <span>Face A (notes, badges, profilage) + Face B (stats Deepitude in-game) <em style="font-size: 0.75rem; opacity: 0.7;">(sauf Betclic)</em></span>
-                    </div>
-                </a>
-                <a href="guide-hero-stats.html" class="hero-feat" style="text-decoration: none; color: inherit; cursor: pointer;">
-                    <span class="hero-feat-icon">📊</span>
-                    <div>
-                        <strong>Stats & Analyse</strong>
-                        <span>Hero Stats, Field Stats, cEV, variance vs field</span>
-                    </div>
-                </a>
-                <a href="guide-replayer.html" class="hero-feat hero-feat-new" style="text-decoration: none; color: inherit; cursor: pointer;">
-                    <span class="voice-badge-inline">NOUVEAU</span>
-                    <span class="hero-feat-icon">🎬</span>
-                    <div>
-                        <strong>Replayer & GTO Check</strong>
-                        <span>Revivez vos mains, vérifiez le GTO preflop</span>
-                    </div>
-                </a>
-                <a href="guide-gto-trainer.html" class="hero-feat hero-feat-new" style="text-decoration: none; color: inherit; cursor: pointer;">
-                    <span class="voice-badge-inline">NOUVEAU</span>
-                    <span class="hero-feat-icon">🎓</span>
-                    <div>
-                        <strong>GTO Trainer</strong>
-                        <span>Quiz preflop interactif, scoring par spot</span>
-                    </div>
-                </a>
-                <a href="guide-range-editor.html" class="hero-feat" style="text-decoration: none; color: inherit; cursor: pointer;">
-                    <span class="hero-feat-icon">🎲</span>
-                    <div>
-                        <strong>Range Editor & Training</strong>
-                        <span>Créez vos ranges, comparez vs vos stats réelles</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="cta-group">
-                <a href="telechargement.html" class="btn-primary large">
-                    📥 Télécharger &amp; Essai Gratuit
-                </a>
-            </div>
-            <p class="sub-cta" style="font-size: 1rem; font-weight: 500;"><strong style="color: #2ecc71;">🆓 3 jours d'essai gratuit sans carte bancaire</strong> · Puis dès 18€/mois · Sans engagement · Windows
-                10/11 · Compatible toutes rooms françaises
-            </p>
-        </div>
-        <div class="hero-visual">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                <a href="guide-huds.html" style="text-align: center;">
-                    <span style="display: inline-block; background: rgba(6,182,212,0.15); color: #06b6d4; padding: 3px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; margin-bottom: 6px;">HUD In-Game</span>
-                    <img src="hud_large.png" alt="HUD SpinNova" class="hero-img lightbox-trigger" style="width: 100%; border-radius: 10px;">
-                </a>
-                <a href="guide-face-b.html" style="text-align: center;">
-                    <span style="display: inline-block; background: rgba(16,185,129,0.15); color: #10b981; padding: 3px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; margin-bottom: 6px;">Face B Stats</span>
-                    <img src="Face B in-game.png" alt="Face B — Stats Deepitude In-Game" class="hero-img lightbox-trigger" style="width: 100%; border-radius: 10px;">
-                </a>
-                <a href="guide-range-editor.html" style="text-align: center;">
-                    <span style="display: inline-block; background: rgba(245,158,11,0.15); color: #f59e0b; padding: 3px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; margin-bottom: 6px;">Range Editor</span>
-                    <img src="screen_range_editor.png" alt="Range Editor SpinNova" class="hero-img lightbox-trigger" style="width: 100%; border-radius: 10px;">
-                </a>
-                <a href="guide-hero-stats.html" style="text-align: center;">
-                    <span style="display: inline-block; background: rgba(236,72,153,0.15); color: #ec4899; padding: 3px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; margin-bottom: 6px;">Hero Stats</span>
-                    <img src="screen_hero_stats_3way.png" alt="Hero Stats SpinNova" class="hero-img lightbox-trigger" style="width: 100%; border-radius: 10px;">
-                </a>
-            </div>
-        </div>
+        </nav>
     </header>
 
-    </section>
-
-    <!-- ============================== -->
-    <!-- SECTION cEV — Courbe & Positions -->
-    <!-- ============================== -->
-    <section class="cev-showcase">
-        <div class="cev-showcase-inner">
-            <div class="cev-image-side">
-                <div class="cev-image-wrapper">
-                    <img src="screen_cev.png" alt="Courbe cEV SpinNova — Chip Expected Value par position"
-                        class="lightbox-trigger" loading="lazy">
+    <!-- ============ HERO ============ -->
+    <main>
+        <section class="hero">
+            <div>
+                <span class="eyebrow">BÊTA OUVERTE</span>
+                <h1>Assieds-toi.<br>Le HUD est déjà <span class="em">sur eux</span>.</h1>
+                <p class="lede">La suite complète du grinder de Spin &amp; Go : notes, stats, cEV, ranges, replayer,
+                    auto-relance — un seul logiciel, sur toutes tes tables.</p>
+                <a class="cta-dl"
+                    href="https://github.com/SpinNovav3/spinnovapokerpro-releases/releases/latest/download/SpinNovaPokerPro_Setup.zip"
+                    id="downloadBtn">⬇ TÉLÉCHARGER · 3 JOURS OFFERTS</a>
+                <p class="free-line"><strong>Essai automatique dès l'installation</strong> — sans carte bancaire,
+                    renouvelable une fois. Windows 10/11.</p>
+                <div class="hero-rooms">
+                    <span class="lab">COMPATIBLE</span><span>UNIBET</span><span>WINAMAX</span><span>BETCLIC</span><span>PMU</span><span>FDJ</span>
                 </div>
             </div>
-            <div class="cev-text-side">
-                <div class="cev-badge-row">
-                    <span class="cev-new-badge">NOUVEAU</span>
-                    <span class="cev-section-tag">📈 Courbe cEV</span>
-                </div>
-                <h2>Votre <span class="gradient-text">cEV par Position</span></h2>
-                <p class="cev-subtitle">Mesurez votre edge réel, indépendamment de la variance.
-                    La courbe cEV (Chip Expected Value) vous montre vos performances réelles sur le long terme.</p>
 
-                <div class="cev-positions-block">
-                    <div class="cev-mode-group">
-                        <div class="cev-mode-title">🎯 3-WAY</div>
-                        <div class="cev-pos-row">
-                            <span class="cev-pos-label">BTN</span>
-                            <span class="cev-pos-value positive">+23.3</span>
-                        </div>
-                        <div class="cev-pos-row">
-                            <span class="cev-pos-label">SB</span>
-                            <span class="cev-pos-value positive">+11.6</span>
-                        </div>
-                        <div class="cev-pos-row">
-                            <span class="cev-pos-label">BB</span>
-                            <span class="cev-pos-value negative">−0.4</span>
-                        </div>
+            <div>
+                <div class="spin-scene" role="img" aria-label="Une table de Spin & Go : toi en bas, deux adversaires à gauche et à droite avec le HUD SpinNovaPokerPro posé sur eux, le stack effectif au-dessus du board">
+                    <div class="table"></div>
+                    <div class="ring"></div>
+
+                    <span class="eff">EFF. 18,7 BB</span>
+                    <div class="board">
+                        <span class="pcard"><b class="blk">A</b><i class="blk"></i></span>
+                        <span class="pcard"><b class="red">K</b><i class="red"></i></span>
+                        <span class="pcard"><b class="blk">7</b><i class="blk"></i></span>
+                        <span class="pcard"><b class="red">9</b><i class="red"></i></span>
+                        <span class="pcard back"></span>
                     </div>
-                    <div class="cev-mode-group">
-                        <div class="cev-mode-title">⚔️ HEADS-UP</div>
-                        <div class="cev-pos-row">
-                            <span class="cev-pos-label">SB</span>
-                            <span class="cev-pos-value positive">+12.5</span>
-                        </div>
-                        <div class="cev-pos-row">
-                            <span class="cev-pos-label">BB</span>
-                            <span class="cev-pos-value positive">+9.1</span>
-                        </div>
+                    <div class="pot">
+                        <div class="chip"><span style="background:#38d6f5;"></span><span style="background:#38d6f5;"></span><span style="background:#38d6f5;"></span></div>
+                        <div class="chip"><span style="background:#7c4dff;"></span><span style="background:#7c4dff;"></span></div>
+                        <div class="chip"><span style="background:#e8b86b;"></span><span style="background:#e8b86b;"></span></div>
                     </div>
+
+                    <div class="seat left">
+                        <span class="tag fish">FISH</span>
+                        <span class="mini-tag"><span class="dot"></span><span class="n">📖 3</span><span class="n">🔖 2</span><span class="n">⚡ 1</span></span>
+                    </div>
+                    <div class="player left"><span class="avatar"></span><span class="cards"><span class="mini"></span><span class="mini"></span></span></div>
+
+                    <div class="seat right">
+                        <span class="tag reg">REG</span>
+                        <span class="mini-tag halo"><span class="dot"></span><span class="n">📖 5</span><span class="n">🔖 1</span></span>
+                    </div>
+                    <div class="player right"><span class="cards"><span class="mini"></span><span class="mini"></span></span><span class="avatar"></span></div>
+
+                    <div class="hero-cards">
+                        <span class="pcard"><b class="red">A</b><i class="red"></i></span>
+                        <span class="pcard"><b class="blk">K</b><i class="blk"></i></span>
+                    </div>
+                    <div class="hero-seat"><span class="avatar"></span><span class="you">TOI · 25,0 BB</span></div>
+
+                    <span class="sn-dot">SN</span>
                 </div>
-
-                <p class="cev-filter-hint">Filtrez par buy-in, par site, par date. Identifiez vos spots les plus
-                    rentables.</p>
-
-                <a href="telechargement.html" class="btn-primary cev-cta">📥 Essayer Gratuitement</a>
-            </div>
-        </div>
-    </section>
-    <!-- ============================== -->
-    <!-- SECTION RANGE EDITOR SHOWCASE   -->
-    <!-- ============================== -->
-    <section class="cev-showcase">
-        <div class="cev-showcase-inner" style="flex-direction: row-reverse;">
-            <div class="cev-image-side">
-                <div class="cev-image-wrapper">
-                    <img src="screen_range_editor.png" alt="Range Editor SpinNova — comparaison stats vs range"
-                        class="lightbox-trigger" loading="lazy">
+                <div class="scene-legend">
+                    <span><span style="color:#38d6f5;">■</span> HUD DE NOTES</span><span><span style="color:#7c4dff;">■</span> HALO REG</span><span><span style="color:#ff7ab8;">■</span> FISH / REG</span><span><span style="color:#38d6f5;">■</span> STACK EFFECTIF</span>
                 </div>
             </div>
-            <div class="cev-text-side">
-                <div class="cev-badge-row">
-                    <span class="cev-new-badge" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">EXCLUSIF</span>
-                    <span class="cev-section-tag">🎲 Range Editor</span>
-                </div>
-                <h2>Le Seul Range Editor qui <span class="gradient-text">Compare Théorie et Pratique</span></h2>
-                <p class="cev-subtitle">Construisez vos ranges preflop, puis visualisez combo par combo comment vous jouez réellement.
-                    Aucun autre outil au monde ne fait ça.</p>
+        </section>
 
-                <div class="cev-positions-block">
-                    <div class="cev-mode-group" style="flex: 1;">
-                        <div class="cev-mode-title">🎯 Fonctionnalités</div>
-                        <div class="cev-pos-row">
-                            <span class="cev-pos-label" style="min-width: auto;">✓</span>
-                            <span style="color: var(--text-muted); font-size: 0.9rem;">Comparaison range vs stats réelles</span>
-                        </div>
-                        <div class="cev-pos-row">
-                            <span class="cev-pos-label" style="min-width: auto;">✓</span>
-                            <span style="color: var(--text-muted); font-size: 0.9rem;">Filtrage Fish / Reg automatique</span>
-                        </div>
-                        <div class="cev-pos-row">
-                            <span class="cev-pos-label" style="min-width: auto;">✓</span>
-                            <span style="color: var(--text-muted); font-size: 0.9rem;">Import IA — collez une image</span>
-                        </div>
-                        <div class="cev-pos-row">
-                            <span class="cev-pos-label" style="min-width: auto;">✓</span>
-                            <span style="color: var(--text-muted); font-size: 0.9rem;">Entraînement sur vos ranges</span>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="telechargement.html" class="btn-primary cev-cta">📥 Essayer Gratuitement</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================== -->
-    <!-- SECTION FACE B — STATS IN-GAME  -->
-    <!-- ============================== -->
-    <section class="cev-showcase">
-        <div class="cev-showcase-inner">
-            <div class="cev-image-side">
-                <div class="cev-image-wrapper">
-                    <img src="Face B in-game.png" alt="Face B — Stats Deepitude affichées in-game sur table PMU Poker"
-                        class="lightbox-trigger" loading="lazy">
-                </div>
-            </div>
-            <div class="cev-text-side">
-                <div class="cev-badge-row">
-                    <span class="cev-new-badge" style="background: linear-gradient(135deg, #10b981, #06b6d4);">IN-GAME</span>
-                    <span class="cev-section-tag">📊 Face B — Stats In-Game</span>
-                </div>
-                <h2>Vos <span class="gradient-text">Stats Deepitude</span> sur la Table</h2>
-                <p class="cev-subtitle">Basculez entre vos notes (Face A) et vos stats chiffrées (Face B) en 1 clic.
-                    Les grilles Deepitude s'affichent directement sur la table de poker, par position.</p>
-
-                <div class="cev-positions-block">
-                    <div class="cev-mode-group" style="flex: 1;">
-                        <div class="cev-mode-title">🎯 Fonctionnalités</div>
-                        <div class="cev-pos-row">
-                            <span class="cev-pos-label" style="min-width: auto;">✓</span>
-                            <span style="color: var(--text-muted); font-size: 0.9rem;">Grilles par position (BTN, SB, BB, BvB…)</span>
-                        </div>
-                        <div class="cev-pos-row">
-                            <span class="cev-pos-label" style="min-width: auto;">✓</span>
-                            <span style="color: var(--text-muted); font-size: 0.9rem;">Couleurs conditionnelles & tooltips détaillés</span>
-                        </div>
-                        <div class="cev-pos-row">
-                            <span class="cev-pos-label" style="min-width: auto;">✓</span>
-                            <span style="color: var(--text-muted); font-size: 0.9rem;">Zoom molette & drag indépendant</span>
-                        </div>
-                        <div class="cev-pos-row">
-                            <span class="cev-pos-label" style="min-width: auto;">✓</span>
-                            <span style="color: var(--text-muted); font-size: 0.9rem;">Popups Deepitude — sous-grilles de détail</span>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="guide-face-b.html" class="btn-primary cev-cta">📖 Voir le Guide Face B</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================== -->
-    <!-- SECTION HORS TABLE              -->
-    <!-- ============================== -->
-    <section class="features-section" style="padding-top: 4rem; padding-bottom: 2rem;">
-        <div style="text-align: center; max-width: 1200px; margin: 0 auto;">
-            <h2>Travaillez <span class="gradient-text">hors table</span></h2>
-            <p class="section-subtitle" style="margin-bottom: 2.5rem;">Votre progression ne s'arrête pas quand vous
-                fermez les tables. Analysez, comparez, exploitez.</p>
-
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
-
-                <a href="guide-cev.html" class="glass-panel"
-                    style="padding: 2rem 1.5rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;"
-                    onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 32px rgba(6,182,212,0.15)'"
-                    onmouseout="this.style.transform=''; this.style.boxShadow=''">
-                    <img src="screen_cev_updated.png" alt="Courbe cEV SpinNova"
-                        style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
-                    <h3 style="color: var(--accent); margin-bottom: 0.5rem; font-size: 1.1rem;">Héros cEV</h3>
-                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Suivez votre edge réel
-                        sur le long terme. Filtrez par buy-in, position, site.</p>
-                </a>
-
-                <a href="guide-hero-stats.html" class="glass-panel"
-                    style="padding: 2rem 1.5rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;"
-                    onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 32px rgba(236,72,153,0.15)'"
-                    onmouseout="this.style.transform=''; this.style.boxShadow=''">
-                    <img src="screen_hero_stats_3way.png" alt="Hero Stats SpinNova"
-                        style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
-                    <h3 style="color: #ec4899; margin-bottom: 0.5rem; font-size: 1.1rem;">Hero Stats</h3>
-                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">2588 stats par spot.
-                        Diagnostic GTO pour trouver vos leaks.</p>
-                </a>
-
-                <a href="guide-field-stats.html" class="glass-panel"
-                    style="padding: 2rem 1.5rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;"
-                    onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 32px rgba(16,185,129,0.15)'"
-                    onmouseout="this.style.transform=''; this.style.boxShadow=''">
-                    <img src="screen_field_stats_field.png" alt="Stats Field SpinNova"
-                        style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
-                    <h3 style="color: #10b981; margin-bottom: 0.5rem; font-size: 1.1rem;">Stats Field</h3>
-                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Analysez le field ou un
-                        joueur précis. Faiblesses GTO, exploits suggérés.</p>
-                </a>
-
-                <a href="guide-range-editor.html" class="glass-panel"
-                    style="padding: 2rem 1.5rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;"
-                    onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 32px rgba(245,158,11,0.15)'"
-                    onmouseout="this.style.transform=''; this.style.boxShadow=''">
-                    <img src="screen_range_editor.png" alt="Range Editor SpinNova"
-                        style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
-                    <h3 style="color: #f59e0b; margin-bottom: 0.5rem; font-size: 1.1rem;">Range Editor
-                        <span style="background: linear-gradient(135deg, #f59e0b, #ef4444); color: #fff; font-size: 0.6rem; padding: 2px 8px; border-radius: 10px; margin-left: 6px; vertical-align: middle;">EXCLUSIF</span>
-                    </h3>
-                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Créez vos ranges, comparez vs vos stats réelles combo par combo. Filtrage Fish/Reg.</p>
-                </a>
-
-                <a href="guide-range-training.html" class="glass-panel"
-                    style="padding: 2rem 1.5rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;"
-                    onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 32px rgba(139,92,246,0.15)'"
-                    onmouseout="this.style.transform=''; this.style.boxShadow=''">
-                    <img src="screen_range_training.png" alt="Range Training SpinNova"
-                        style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
-                    <h3 style="color: #8b5cf6; margin-bottom: 0.5rem; font-size: 1.1rem;">Range Training</h3>
-                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Entraînez-vous sur vos ranges. Quiz combo par combo, score en temps réel.</p>
-                </a>
-
-                <a href="guide-equity-calculator.html" class="glass-panel"
-                    style="padding: 2rem 1.5rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;"
-                    onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 32px rgba(6,182,212,0.15)'"
-                    onmouseout="this.style.transform=''; this.style.boxShadow=''">
-                    <img src="screen_equity_calculator.png" alt="Equity Calculator SpinNova"
-                        style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
-                    <h3 style="color: #06b6d4; margin-bottom: 0.5rem; font-size: 1.1rem;">Equity Calculator</h3>
-                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Calcul d'équité intégré. Card picker visuel, support multi-joueurs, presets.</p>
-                </a>
-
-                <a href="guide-hero-stats.html" class="glass-panel"
-                    style="padding: 2rem 1.5rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;"
-                    onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 32px rgba(239,68,68,0.15)'"
-                    onmouseout="this.style.transform=''; this.style.boxShadow=''">
-                    <img src="heros%20stats%20variance%20versus%20field.png" alt="Hero Variance vs Field"
-                        style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
-                    <h3 style="color: #ef4444; margin-bottom: 0.5rem; font-size: 1.1rem;">Variance vs Field</h3>
-                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Visualisez vos écarts vs le field. Identifiez vos leaks en un coup d'œil.</p>
-                </a>
-
-                <a href="guide-field-stats.html" class="glass-panel"
-                    style="padding: 2rem 1.5rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;"
-                    onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 32px rgba(16,185,129,0.15)'"
-                    onmouseout="this.style.transform=''; this.style.boxShadow=''">
-                    <img src="Tendance%20macro%20stats%20field%20.png" alt="Tendances Macro Field"
-                        style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
-                    <h3 style="color: #10b981; margin-bottom: 0.5rem; font-size: 1.1rem;">Tendances Macro</h3>
-                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Évolution des stats du field par buy-in. Détectez les méta-tendances.</p>
-                </a>
-                <a href="guide-gto-trainer.html" class="glass-panel"
-                    style="padding: 2rem 1.5rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;"
-                    onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 32px rgba(16,185,129,0.15)'"
-                    onmouseout="this.style.transform=''; this.style.boxShadow=''">
-                    <img src="screen_gto_trainer.png" alt="GTO Trainer SpinNova"
-                        style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
-                    <h3 style="color: #10b981; margin-bottom: 0.5rem; font-size: 1.1rem;">GTO Trainer
-                        <span style="background: linear-gradient(135deg, #10b981, #06b6d4); color: #fff; font-size: 0.6rem; padding: 2px 8px; border-radius: 10px; margin-left: 6px; vertical-align: middle;">NOUVEAU</span>
-                    </h3>
-                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Quiz preflop sur table simulée. Feedback GTO immédiat, scoring par spot.</p>
-                </a>
-
-                <a href="guide-replayer.html" class="glass-panel"
-                    style="padding: 2rem 1.5rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;"
-                    onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 32px rgba(139,92,246,0.15)'"
-                    onmouseout="this.style.transform=''; this.style.boxShadow=''">
-                    <img src="screen_replayer_table.png" alt="Replayer SpinNova"
-                        style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
-                    <h3 style="color: #8b5cf6; margin-bottom: 0.5rem; font-size: 1.1rem;">Replayer
-                        <span style="background: linear-gradient(135deg, #8b5cf6, #06b6d4); color: #fff; font-size: 0.6rem; padding: 2px 8px; border-radius: 10px; margin-left: 6px; vertical-align: middle;">NOUVEAU</span>
-                    </h3>
-                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Revivez vos mains action par action. Table simulée + vérification GTO preflop.</p>
-                </a>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================== -->
-    <!-- ÉCRAN 2 — CARROUSEL PRODUIT     -->
-    <!-- ============================== -->
-    <section id="showcase" class="carousel-section">
-        <h2>Découvrez <span class="highlight">SpinNova</span> en images</h2>
-        <p class="section-subtitle">Cliquez sur les images pour zoomer · Naviguez avec les flèches</p>
-
-        <div class="carousel-container">
-            <button class="carousel-arrow carousel-prev" id="carouselPrev" aria-label="Slide précédente">‹</button>
-
-            <div class="carousel-track" id="carouselTrack">
-
-                <!-- Slide 1: HUD Large 3-Way vs HU -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag large">🔹 Mode Large</span>
-                        <span class="slide-title">3 Lignes — Le Standard</span>
-                    </div>
-                    <div class="slide-images dual">
-                        <div class="slide-img-wrapper">
-                            <span class="img-label">3-Way</span>
-                            <img src="hud_large.png" alt="HUD Large en 3-Way" class="lightbox-trigger">
-                        </div>
-                        <div class="slide-img-wrapper">
-                            <span class="img-label">Heads-Up</span>
-                            <img src="hud_large_hu.png" alt="HUD Large en Heads-Up" class="lightbox-trigger">
-                        </div>
-                    </div>
-                    <p class="slide-desc">En 3-Way, les badges du joueur de gauche (BvB SB) sont différents de ceux à
-                        droite (BTN) car les dynamiques changent selon la position.</p>
-                </div>
-
-                <!-- Slide 2: HUD Large Full -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag large">🔹 Mode Large</span>
-                        <span class="slide-title">Vue Complète</span>
-                    </div>
-                    <div class="slide-images single">
-                        <img src="hud_large_full.png" alt="HUD Large vue complète avec badges" class="lightbox-trigger"
-                            loading="lazy">
-                    </div>
-                    <p class="slide-desc">Tous les badges déployés : Limp Pot (Pre &amp; Post) et Open Pot (Pre &amp;
-                        Post).
-                        Le maximum d'informations pour les spots importants. 📸 Capture de zone intégrée.</p>
-                </div>
-
-                <!-- Slide: Face B Stats In-Game -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag" style="color: #10b981;">📊 Face B</span>
-                        <span class="slide-title">Stats Deepitude In-Game</span>
-                    </div>
-                    <div class="slide-images single">
-                        <img src="Face B in-game.png" alt="Face B — Stats Deepitude sur table PMU Poker" class="lightbox-trigger"
-                            loading="lazy">
-                    </div>
-                    <p class="slide-desc">Basculez entre vos notes (Face A) et vos stats chiffrées (Face B) en 1 clic.
-                        Grilles par position, couleurs conditionnelles, zoom molette, tooltips détaillés.</p>
-                </div>
-
-                <!-- Slide 3: HUD Compact 3-Way vs HU -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag compact">🔹 Mode Compact</span>
-                        <span class="slide-title">2 Lignes — Le Focus</span>
-                    </div>
-                    <div class="slide-images dual">
-                        <div class="slide-img-wrapper">
-                            <span class="img-label">3-Way</span>
-                            <img src="hud_compact.png" alt="HUD Compact en 3-Way" class="lightbox-trigger"
-                                loading="lazy">
-                        </div>
-                        <div class="slide-img-wrapper">
-                            <span class="img-label">Heads-Up</span>
-                            <img src="hud_compact_hu.png" alt="HUD Compact en Heads-Up" class="lightbox-trigger"
-                                loading="lazy">
-                        </div>
-                    </div>
-                    <p class="slide-desc">Tous les badges mélangés sur une ligne, triés par importance. Idéal pour le
-                        Heads-Up intensif ou les tables encombrées. 📸 Capture de zone en 1 clic.</p>
-                </div>
-
-                <!-- Slide 4: HUD Mini 3-Way vs HU -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag mini">🔹 Mode Mini</span>
-                        <span class="slide-title">1 Ligne — Le Minimaliste</span>
-                    </div>
-                    <div class="slide-images dual">
-                        <div class="slide-img-wrapper">
-                            <span class="img-label">3-Way</span>
-                            <img src="hud_mini.png" alt="HUD Mini en 3-Way" class="lightbox-trigger" loading="lazy">
-                        </div>
-                        <div class="slide-img-wrapper">
-                            <span class="img-label">Heads-Up</span>
-                            <img src="hud_mini_hu.png" alt="HUD Mini en Heads-Up" class="lightbox-trigger"
-                                loading="lazy">
-                        </div>
-                    </div>
-                    <p class="slide-desc">Le strict minimum pour le mass-grind (12+ tables). Halo coloré = profil du
-                        joueur (Fish 🐟 / Reg 🤖). 📸 Capture de zone intégrée.</p>
-                </div>
-
-                <!-- Slide 5: Dashboard -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag" style="color: var(--accent);">📊 Dashboard</span>
-                        <span class="slide-title">Votre Activité en Un Coup d'Œil</span>
-                    </div>
-                    <div class="slide-images single">
-                        <img src="screen_accueil.png" alt="Dashboard analytique SpinNova" class="lightbox-trigger"
-                            loading="lazy">
-                    </div>
-                    <p class="slide-desc">Graphiques, KPIs, heatmaps et top adversaires. Filtrez par buy-in pour
-                        analyser chaque limite séparément.</p>
-                </div>
-
-                <!-- Slide: Courbe cEV -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag" style="color: #10b981;">📈 Courbe cEV</span>
-                        <span class="slide-title">Mesurez Votre Edge</span>
-                    </div>
-                    <div class="slide-images single">
-                        <img src="screen_cev.png" alt="Courbe cEV SpinNova - Chip Expected Value"
-                            class="lightbox-trigger" loading="lazy">
-                    </div>
-                    <p class="slide-desc">Courbe d'évolution de votre cEV (Chip Expected Value). Visualisez vos
-                        performances par adversaire, en HU et en Global. L'outil ultime pour mesurer
-                        votre edge réel.</p>
-                </div>
-
-                <!-- Slide: GTO Trainer -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag" style="color: #10b981;">🎓 GTO Trainer</span>
-                        <span class="slide-title">Quiz Preflop Interactif</span>
-                    </div>
-                    <div class="slide-images single">
-                        <img src="screen_gto_trainer.png" alt="GTO Trainer SpinNova" class="lightbox-trigger"
-                            loading="lazy">
-                    </div>
-                    <p class="slide-desc">Table simulée avec quiz GTO preflop. Feedback immédiat avec fréquences exactes,
-                        scoring par spot, range popup 13×13. De 2bb à 12bb.</p>
-                </div>
-
-                <!-- Slide: Replayer -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag" style="color: #8b5cf6;">🎬 Replayer</span>
-                        <span class="slide-title">Revivez Vos Mains</span>
-                    </div>
-                    <div class="slide-images single">
-                        <img src="screen_replayer_table.png" alt="Replayer SpinNova" class="lightbox-trigger"
-                            loading="lazy">
-                    </div>
-                    <p class="slide-desc">Table simulée sans images. Stepping action par action, board progressif,
-                        HUD intégré, et vérification GTO preflop en temps réel.</p>
-                </div>
-
-                <!-- Slide 6: Heatmap Field -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag" style="color: #10b981;">🐟 Heatmap Qualité du Field</span>
-                        <span class="slide-title">Découvrez QUAND le Field est le Plus Soft</span>
-                    </div>
-                    <div class="slide-images single">
-                        <img src="screen_heatmap_field.png" alt="Heatmap qualité du field SpinNova"
-                            class="lightbox-trigger" loading="lazy">
-                    </div>
-                    <p class="slide-desc">Le ratio Fish / Reg par créneau horaire, 7 jours × 24 heures. Jouez quand le
-                        field est le plus faible pour maximiser votre edge.</p>
-                </div>
-
-                <!-- Slide 7: Heatmap Rencontres -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag" style="color: #f59e0b;">🔥 Heatmap Rencontres</span>
-                        <span class="slide-title">Visualisez Vos Sessions</span>
-                    </div>
-                    <div class="slide-images single">
-                        <img src="screen_heatmap_rencontres.png" alt="Heatmap rencontres SpinNova"
-                            class="lightbox-trigger" loading="lazy">
-                    </div>
-                    <p class="slide-desc">Identifiez vos créneaux habituels. Optimisez votre planning de sessions en
-                        un coup d'œil.</p>
-                </div>
-
-                <!-- Slide 8: Joueurs -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag" style="color: var(--accent);">👥 Onglet Joueurs</span>
-                        <span class="slide-title">Analysez Chaque Adversaire</span>
-                    </div>
-                    <div class="slide-images triple">
-                        <img src="screen_joueurs.png" alt="Onglet Joueurs - Liste" class="lightbox-trigger"
-                            loading="lazy">
-                        <img src="screen_joueurs_2.png" alt="Onglet Joueurs - Profil" class="lightbox-trigger"
-                            loading="lazy">
-                        <img src="screen_joueurs_3.png" alt="Onglet Joueurs - Détails" class="lightbox-trigger"
-                            loading="lazy">
-                    </div>
-                    <p class="slide-desc">Heatmap individuelle, badges par position, historique complet. Tout est là
-                        pour préparer vos sessions.</p>
-                </div>
-
-                <!-- Slide 9: Quick Notes -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag" style="color: #e67e22;">⚡ Notes Rapides</span>
-                        <span class="slide-title">1 Clic = 1 Note</span>
-                    </div>
-                    <div class="slide-images single">
-                        <img src="screen_quick_notes.png" alt="Quick Notes SpinNova" class="lightbox-trigger"
-                            loading="lazy">
-                    </div>
-                    <p class="slide-desc">Créez vos templates tactiques personnalisés (Preflop, Postflop, Général).
-                        Couleurs custom, application instantanée pendant le jeu.</p>
-                </div>
-
-                <!-- Slide 10: HUD Editor -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag" style="color: #ec4899;">🎨 Éditeur HUD</span>
-                        <span class="slide-title">Personnalisez Tout</span>
-                    </div>
-                    <div class="slide-images dual">
-                        <div class="slide-img-wrapper">
-                            <img src="screen_hud_editor.png" alt="HUD Editor SpinNova" class="lightbox-trigger"
-                                loading="lazy">
-                        </div>
-                        <div class="slide-img-wrapper">
-                            <img src="screen_hud_editor_2.png" alt="HUD Editor SpinNova 2" class="lightbox-trigger"
-                                loading="lazy">
-                        </div>
-                    </div>
-                    <p class="slide-desc">Couleurs de fond, bordures, textes — personnalisez chaque élément. Preview
-                        en temps réel sur table de poker.</p>
-                </div>
-
-                <!-- Slide 11: Réglages HUD -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag" style="color: var(--text-muted);">📐 Réglages HUD</span>
-                        <span class="slide-title">Échelle &amp; Opacité</span>
-                    </div>
-                    <div class="slide-images single">
-                        <img src="hud_scale_opacity.png" alt="Réglages échelle et opacité HUD" class="lightbox-trigger"
-                            loading="lazy">
-                    </div>
-                    <p class="slide-desc">Ajustez la taille du HUD (0.5x → 2.0x) et l'opacité au repos. S'adapte à
-                        tous les écrans et configurations multi-HUD.</p>
-                </div>
-
-                <!-- Slide 12: Import/Export -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag" style="color: var(--accent);">📦 Import / Export</span>
-                        <span class="slide-title">Migrez &amp; Partagez</span>
-                    </div>
-                    <div class="slide-images dual">
-                        <div class="slide-img-wrapper">
-                            <img src="screen_import_export.png" alt="Import Export SpinNova" class="lightbox-trigger"
-                                loading="lazy">
-                        </div>
-                        <div class="slide-img-wrapper">
-                            <img src="screen_import_export_2.png" alt="Import Export SpinNova 2"
-                                class="lightbox-trigger" loading="lazy">
-                        </div>
-                    </div>
-                    <p class="slide-desc">Migrez depuis SiQnotes en 1 clic. Partagez vos données et importez des packs
-                        de badges premium.</p>
-                </div>
-
-                <!-- Slide 13: Personnalisation -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag" style="color: #8b5cf6;">🎨 Personnalisation</span>
-                        <span class="slide-title">Votre Interface, Votre Style</span>
-                    </div>
-                    <div class="slide-images single">
-                        <img src="screen_personnalisation.png" alt="Personnalisation interface SpinNova"
-                            class="lightbox-trigger" loading="lazy">
-                    </div>
-                    <p class="slide-desc">Interface entièrement personnalisable. Couleurs, thèmes, disposition —
-                        faites-en votre outil.</p>
-                </div>
-
-                <!-- Slide 14: Paramètres -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag" style="color: var(--text-muted);">⚙️ Paramètres</span>
-                        <span class="slide-title">Configurez SpinNova</span>
-                    </div>
-                    <div class="slide-images single">
-                        <img src="screen_parametres.png" alt="Paramètres SpinNova" class="lightbox-trigger"
-                            loading="lazy">
-                    </div>
-                    <p class="slide-desc">Gérez vos rooms, répertoires, et préférences. SpinNova s'adapte à votre
-                        setup.</p>
-                </div>
-
-                <!-- Slide: Nova IA -->
-                <div class="carousel-slide">
-                    <div class="slide-header">
-                        <span class="mode-tag" style="color: #8b5cf6;">🤖 Nova</span>
-                        <span class="slide-title">Votre Assistant Intégré</span>
-                    </div>
-                    <div class="slide-images single">
-                        <img src="screen_nova.png" alt="Nova assistant IA SpinNova" class="lightbox-trigger"
-                            loading="lazy">
-                    </div>
-                    <p class="slide-desc">Nova vous aide à naviguer dans SpinNova : questions sur les fonctionnalités,
-                        conseils d'utilisation, aide à la configuration. Inclus dans votre abonnement.
-                        Aucune fonction in-game.</p>
-                </div>
-
-            </div>
-
-            <button class="carousel-arrow carousel-next" id="carouselNext" aria-label="Slide suivante">›</button>
+        <!-- ============ ROOMS ============ -->
+        <div class="rooms-band">
+            <span class="lab">Compatible</span>
+            <span>WINAMAX</span>
+            <span>UNIBET</span>
+            <span>BETCLIC</span>
+            <span>PMU&nbsp;POKER</span>
+            <span>FDJ</span>
+            <span>&amp; SKINS iPOKER</span>
         </div>
 
-        <!-- Dots Navigation -->
-        <div class="carousel-dots" id="carouselDots"></div>
-    </section>
+        <!-- ============ 1-2-3 ============ -->
+        <section class="block">
+            <h2>Installé en 3 minutes, <span class="em">essai compris</span></h2>
+            <p class="sub">Pas de formulaire, pas de demande de licence, pas de carte bancaire. L'essai fait partie du
+                logiciel.</p>
+            <div class="steps">
+                <div class="step">
+                    <span class="n">1</span>
+                    <strong>Télécharge et installe</strong>
+                    <p>Le bouton pointe toujours sur la dernière version de la bêta.</p>
+                </div>
+                <div class="step">
+                    <span class="n">2</span>
+                    <strong>Tes 3 jours démarrent tout seuls</strong>
+                    <p>Un clic sur « Essai gratuit » à l'ouverture — toutes les fonctions débloquées, renouvelable une
+                        fois.</p>
+                </div>
+                <div class="step">
+                    <span class="n">3</span>
+                    <strong>Ouvre tes tables</strong>
+                    <p>Tes rooms sont détectées, le HUD s'affiche, tes mains s'importent.</p>
+                </div>
+            </div>
+        </section>
 
-    <!-- ============================== -->
-    <!-- ÉCRAN 3 — CTA FINAL            -->
-    <!-- ============================== -->
-    <section class="cta-section cta-final">
-        <div class="cta-box glass-panel">
-            <h2>Essayez SpinNova <span class="gradient-text">Gratuitement</span></h2>
-            <p>3 jours complets, toutes fonctionnalités, sans engagement.</p>
-            <ul class="reassurance-list">
-                <li>✅ Pas de carte bancaire</li>
-                <li>✅ Pas d'engagement</li>
-                <li>✅ Support Discord inclus</li>
-                <li>💎 Dès 18€/mois</li>
-            </ul>
-            <div class="cta-buttons">
-                <a href="telechargement.html" class="btn-primary large">
-                    📥 Télécharger SpinNova
+        <!-- ============ PILIERS ============ -->
+        <section class="block">
+            <h2>Tout ce qu'il te faut, <span class="em">au même endroit</span></h2>
+            <p class="sub">Fini les quatre logiciels ouverts en même temps. SpinNovaPokerPro couvre la table, les stats
+                et le travail hors session.</p>
+            <div class="pillars">
+                <a class="pillar" href="logiciel-in-game.html">
+                    <strong>À la table</strong>
+                    <p>Le HUD de prise de notes — le Mini : une pastille par adversaire avec tes notes, badges, halo et
+                        voix. Le HUD de stats : tes chiffres par position, posés sur la table. Badge fish/requin cliquable.</p>
                 </a>
-                <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord cta-discord" target="_blank">
-                    💬 Rejoindre Discord
+                <a class="pillar" href="logiciel-tools.html">
+                    <strong>Tools de grind</strong>
+                    <p>Auto-relance en fin de Spin, placement automatique des tables, stack effectif en direct,
+                        boutons de mise (Unibet, PMU).</p>
+                </a>
+                <a class="pillar" href="logiciel-mon-profil.html">
+                    <strong>Ton edge, mesuré</strong>
+                    <p>Dashboard, courbe cEV, sessions, taux horaire — ton vrai niveau, indépendamment de la
+                        variance.</p>
+                </a>
+                <a class="pillar" href="logiciel-field-stats.html">
+                    <strong>Ton field, décodé</strong>
+                    <p>Qui sont les fish, quand jouer, la fiche complète de chaque adversaire — et leurs écarts GTO en
+                        heads-up.</p>
+                </a>
+                <a class="pillar" href="logiciel-ranges-gto.html">
+                    <strong>Ranges &amp; GTO</strong>
+                    <p>Construis tes ranges, compare-les à ton vrai jeu combo par combo, entraîne-toi sur une vraie
+                        table.</p>
+                </a>
+                <a class="pillar" href="logiciel-replayer.html">
+                    <strong>Revoir et progresser</strong>
+                    <p>Replayer action par action avec équité par street, partage de mains sur Discord, fiches de
+                        stratégie personnelles.</p>
                 </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- PRICING REASSURANCE BAR -->
-    <section class="pricing-reassurance-bar">
-        <h2 class="prb-title">💎 Tarifs Transparents — <span class="gradient-text">Essayez Gratuitement</span></h2>
-        <p class="prb-subtitle">Pas besoin de payer pour tester. Pas d'arnaque, pas de piège.</p>
-        <div class="prb-cards">
-            <div class="prb-card free">
-                <div class="prb-icon">🆓</div>
-                <div class="prb-label">Essai</div>
-                <div class="prb-price">GRATUIT</div>
-                <div class="prb-detail">3 jours complets</div>
+        <!-- ============ TOOLS ============ -->
+        <section class="block">
+            <style>
+                .tools-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+                .tool-card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s; }
+                .tool-card:hover { transform: translateY(-3px); border-color: rgba(56, 214, 245, 0.45); box-shadow: 0 0 24px rgba(56, 214, 245, 0.12); }
+                .tool-card strong { font-size: 0.98rem; }
+                .tool-card p { color: var(--muted); font-size: 0.88rem; }
+                .tool-visu { height: 74px; width: 100%; display: flex; align-items: center; justify-content: center; }
+                .tv-dyn { width: 120px; height: 66px; background: #0a0c18; border: 1.5px solid #1c2136; border-radius: 6px; padding: 4px; position: relative; }
+                .tv-dyn .a { position: absolute; left: 4px; top: 4px; bottom: 4px; width: 58%; background: radial-gradient(ellipse at 50% 40%, #34266b, #1c1436); border: 1.5px solid var(--cyan); border-radius: 4px; box-shadow: 0 0 10px rgba(56, 214, 245, 0.4); }
+                .tv-dyn .q { position: absolute; right: 4px; width: 30%; height: 26%; background: #221a44; border: 1px solid rgba(124, 77, 255, 0.35); border-radius: 3px; }
+                .tv-dyn .q1 { top: 4px; } .tv-dyn .q2 { top: 36%; } .tv-dyn .q3 { bottom: 4px; }
+                .tv-switch { display: flex; align-items: center; gap: 10px; font-family: 'Chakra Petch', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: var(--muted); }
+                .tv-switch .sw { width: 40px; height: 21px; border-radius: 12px; background: linear-gradient(120deg, #21c9ec, #7c4dff); position: relative; box-shadow: 0 0 14px rgba(56, 214, 245, 0.35); }
+                .tv-switch .sw::after { content: ""; position: absolute; right: 2px; top: 2px; width: 17px; height: 17px; border-radius: 50%; background: #eef2fb; }
+                .tv-eff { font-family: 'Chakra Petch', sans-serif; font-weight: 800; font-size: 16px; color: var(--cyan); background: rgba(8, 10, 20, 0.95); border: 1px solid rgba(56, 214, 245, 0.5); border-radius: 8px; padding: 9px 15px; box-shadow: 0 0 18px rgba(56, 214, 245, 0.3); }
+                .tv-bets { display: flex; gap: 7px; }
+                .tv-bets span { font-family: 'Chakra Petch', sans-serif; font-weight: 800; font-size: 10px; padding: 8px 10px; border-radius: 6px; background: #0a0c18; border: 1px solid rgba(124, 77, 255, 0.5); color: var(--violet-soft); }
+                .tv-bets span.c { border-color: rgba(56, 214, 245, 0.55); color: var(--cyan); }
+                @media (max-width: 980px) { .tools-grid { grid-template-columns: 1fr; } }
+            </style>
+            <h2>Les tools qui font <span class="em">tourner la session</span></h2>
+            <p class="sub">Le grind, c'est de la logistique. SpinNovaPokerPro s'en charge — toi, tu joues.</p>
+            <div class="tools-grid">
+                <a class="tool-card" href="logiciel-tools.html">
+                    <span class="tool-visu"><span class="tv-dyn"><span class="a"></span><span class="q q1"></span><span class="q q2"></span><span class="q q3"></span></span></span>
+                    <strong>Placement des tables</strong>
+                    <p>Mosaïque ou dynamique avec zone ACTION qui agrandit la table où c'est à toi. Unibet &amp; PMU.</p>
+                </a>
+                <a class="tool-card" href="logiciel-tools.html">
+                    <span class="tool-visu"><span class="tv-switch"><span class="sw"></span> AUTO-RELANCE</span></span>
+                    <strong>Auto-relance des games</strong>
+                    <p>Réinscription auto en fin de Spin, limite en tournois ou minutes, arrêt d'urgence. Unibet.</p>
+                </a>
+                <a class="tool-card" href="logiciel-tools.html">
+                    <span class="tool-visu"><span class="tv-eff">EFF. 18,7 BB</span></span>
+                    <strong>Stack effectif en direct</strong>
+                    <p>Le chiffre qui décide de ta range, affiché sur la table. Fini le calcul de tête à 8 tables.</p>
+                </a>
+                <a class="tool-card" href="logiciel-tools.html">
+                    <span class="tool-visu"><span class="tv-bets"><span class="c">2,5 BB</span><span>60% EFF</span><span class="c">TAPIS</span></span></span>
+                    <strong>Boutons de mise</strong>
+                    <p>Tes sizings au clic ou au raccourci clavier. Couleur, taille, position : tout se règle.</p>
+                </a>
             </div>
-            <div class="prb-card">
-                <div class="prb-icon">💳</div>
-                <div class="prb-label">1 Mois</div>
-                <div class="prb-price">20€</div>
-                <div class="prb-detail">Sans engagement</div>
-            </div>
-            <div class="prb-card featured">
-                <div class="prb-icon">⭐</div>
-                <div class="prb-label">6 Mois</div>
-                <div class="prb-price">108€</div>
-                <div class="prb-detail">-10% · 12€ économisés</div>
-            </div>
-        </div>
-        <div class="prb-guarantees">
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Sans engagement</span>
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Aucun débit automatique</span>
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Carte OU Virement bancaire</span>
-            <span class="prb-guarantee"><span class="prb-check">✅</span> Essai 100% gratuit</span>
-        </div>
-        <div class="prb-cta-row">
-            <a href="essai-gratuit.html" class="btn-primary">🆓 Essai Gratuit</a>
-            <a href="boutique.html" class="btn-primary" style="background: var(--primary);">🛒 Voir la Boutique</a>
-        </div>
-    </section>
+        </section>
 
-    <!-- SEO KEYWORDS -->
-    <section class="seo-text"
-        style="padding: 2rem; background: rgba(0,0,0,0.2); font-size: 0.9rem; color: var(--color-text-dim);">
-        <div class="container" style="max-width: 1000px; margin: 0 auto; text-align: center;">
-        <p>SpinNova est la suite complète pour les joueurs de poker en ligne : HUD intelligent avec badges tactiques,
-                stats avancées (Hero Stats, Field Stats, cEV), Range Editor avec comparaison stats réelles,
-                GTO Trainer interactif, Replayer visuel avec vérification preflop, Equity Calculator,
-                et bien plus. Compatible avec toutes les rooms françaises — Spin & Go, Expresso, Cash Game et MTT.</p>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">SpinNova</div>
-            <div style="margin: 1rem 0; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-                <a href="mentions-legales.html"
-                    style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Mentions Légales</a>
-                <a href="cgu-cgv.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">CGU /
-                    CGV</a>
-                <a href="faq.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">FAQ</a>
-                <a href="contact.html"
-                    style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Contact</a>
+        <!-- ============ PRIX ============ -->
+        <section class="block">
+            <h2>Des prix <span class="em">sans piège</span></h2>
+            <p class="sub">Tu testes d'abord, tu paies si tu accroches. Aucun débit automatique.</p>
+            <div class="prices">
+                <div class="price free">
+                    <span class="name">Essai</span>
+                    <span class="amount">0<span class="u">€</span></span>
+                    <p class="det">3 jours dès l'installation, renouvelable une fois. Toutes les fonctions.</p>
+                </div>
+                <div class="price">
+                    <span class="name">1 mois</span>
+                    <span class="amount">20<span class="u">€</span></span>
+                    <p class="det">Sans engagement.</p>
+                </div>
+                <div class="price star">
+                    <span class="name">6 mois</span>
+                    <span class="amount">108<span class="u">€</span></span>
+                    <p class="det">Soit 18 €/mois — 12 € économisés.</p>
+                </div>
             </div>
-            <p class="copyright">© 2026 SpinNova. Compatible toutes rooms françaises.</p>
+            <p class="pay-note">Paiement par carte bancaire via Stripe · Licence liée à ta machine</p>
+        </section>
+
+        <!-- ============ CTA FINAL ============ -->
+        <div class="final">
+            <div class="final-box">
+                <h2>Prêt à voir tes adversaires autrement ?</h2>
+                <p>Télécharge la bêta — dans 3 minutes, ton HUD est sur tes tables.</p>
+                <div class="row">
+                    <a class="cta-dl"
+                        href="https://github.com/SpinNovav3/spinnovapokerpro-releases/releases/latest/download/SpinNovaPokerPro_Setup.zip">⬇
+                        Télécharger SpinNovaPokerPro</a>
+                    <a class="btn-discord" href="https://discord.gg/VGPWqpbvrT" target="_blank">Rejoindre le
+                        Discord</a>
+                </div>
+            </div>
         </div>
+    </main>
+
+    <footer>
+        <div class="links">
+            <a href="mentions-legales.html">Mentions Légales</a>
+            <a href="cgu-cgv.html">CGU / CGV</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>© 2026 SpinNovaPokerPro — Bêta ouverte · Unibet, Winamax, Betclic, PMU, FDJ &amp; skins iPoker</p>
     </footer>
-
-    <!-- LIGHTBOX Overlay -->
-    <div class="lightbox-overlay" id="lightboxOverlay">
-        <button class="lightbox-close" id="lightboxClose">&times;</button>
-        <img src="" alt="Zoom" id="lightboxImg" loading="lazy">
-        <span class="lightbox-hint">Cliquez n'importe où pour fermer</span>
-    </div>
-
-    <script>
-        // ===== LIGHTBOX =====
-        (function () {
-            const overlay = document.getElementById('lightboxOverlay');
-            const lightboxImg = document.getElementById('lightboxImg');
-            const closeBtn = document.getElementById('lightboxClose');
-
-            document.querySelectorAll('.lightbox-trigger').forEach(function (img) {
-                img.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    lightboxImg.src = this.src;
-                    lightboxImg.alt = this.alt;
-                    overlay.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
-            });
-
-            overlay.addEventListener('click', function (e) {
-                if (e.target !== lightboxImg) {
-                    overlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
-
-            closeBtn.addEventListener('click', function () {
-                overlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && overlay.classList.contains('active')) {
-                    overlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
-        })();
-
-        // ===== CAROUSEL =====
-        (function () {
-            const track = document.getElementById('carouselTrack');
-            const slides = track.querySelectorAll('.carousel-slide');
-            const prevBtn = document.getElementById('carouselPrev');
-            const nextBtn = document.getElementById('carouselNext');
-            const dotsContainer = document.getElementById('carouselDots');
-            let currentIndex = 0;
-
-            // Create dots
-            slides.forEach((_, i) => {
-                const dot = document.createElement('button');
-                dot.classList.add('carousel-dot');
-                if (i === 0) dot.classList.add('active');
-                dot.setAttribute('aria-label', 'Slide ' + (i + 1));
-                dot.addEventListener('click', () => goToSlide(i));
-                dotsContainer.appendChild(dot);
-            });
-
-            function goToSlide(index) {
-                if (index < 0) index = slides.length - 1;
-                if (index >= slides.length) index = 0;
-                currentIndex = index;
-                track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-                // Update dots
-                dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => {
-                    dot.classList.toggle('active', i === currentIndex);
-                });
-            }
-
-            prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
-            nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
-
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (document.getElementById('lightboxOverlay').classList.contains('active')) return;
-                if (e.key === 'ArrowLeft') goToSlide(currentIndex - 1);
-                if (e.key === 'ArrowRight') goToSlide(currentIndex + 1);
-            });
-
-            // Touch/swipe support
-            let touchStartX = 0;
-            let touchEndX = 0;
-
-            track.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
-
-            track.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                const diff = touchStartX - touchEndX;
-                if (Math.abs(diff) > 50) {
-                    if (diff > 0) goToSlide(currentIndex + 1);
-                    else goToSlide(currentIndex - 1);
-                }
-            }, { passive: true });
-        })();
-    </script>
+    <script src="fx.js" defer></script>
 </body>
 
 </html>

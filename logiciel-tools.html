@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools de Grind | SpinNovaPokerPro</title>
+    <meta name="description"
+        content="Les tools de grind SpinNovaPokerPro : placement automatique des tables en mosaïque ou dynamique, auto-relance des games, stack effectif affiché en direct, boutons de mise personnalisés.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="fx.css">
+    <link rel="stylesheet" href="pages.css">
+    <script src="cookie-banner.js" defer></script>
+    <script src="visit_tracker.js" defer></script>
+    <style>
+        .tool-block { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; margin-bottom: 18px; }
+        .tool-block > .t-text { flex: 1.1; min-width: 300px; }
+        .tool-block > .t-visu { flex: 0.9; min-width: 280px; display: flex; align-items: center; justify-content: center; }
+        .tool-block ul { list-style: none; display: grid; gap: 8px; margin-top: 12px; }
+        .tool-block li { color: var(--muted); font-size: 0.95rem; padding-left: 22px; position: relative; }
+        .tool-block li::before { content: "\2713"; position: absolute; left: 0; color: var(--cyan); font-weight: 800; }
+        .tool-block li strong { color: var(--ink); }
+        .tool-block h2 { font-size: 1.2rem; margin-bottom: 4px; }
+        .t-rooms { display: inline-block; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; color: var(--violet-soft); border: 1px solid rgba(180, 140, 242, 0.4); border-radius: 20px; padding: 2px 10px; margin-bottom: 12px; }
+
+        /* --- illustration placement --- */
+        .screen { width: 260px; height: 160px; background: #0a0c18; border: 2px solid #1c2136; border-radius: 8px; padding: 8px; position: relative; }
+        .mosaic { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); gap: 5px; height: 100%; }
+        .mini-table { background: radial-gradient(ellipse at 50% 40%, #34266b, #1c1436); border-radius: 5px; border: 1px solid rgba(124, 77, 255, 0.35); }
+        .dyn { position: relative; height: 100%; }
+        .dyn .action { position: absolute; left: 0; top: 0; width: 62%; height: 100%; background: radial-gradient(ellipse at 50% 40%, #34266b, #1c1436); border: 2px solid var(--cyan); border-radius: 6px; box-shadow: 0 0 18px rgba(56, 214, 245, 0.4); }
+        .dyn .action::after { content: "ACTION"; position: absolute; top: 6px; left: 8px; font-family: 'Chakra Petch', sans-serif; font-size: 8px; font-weight: 800; letter-spacing: 0.14em; color: var(--cyan); }
+        .dyn .queue { position: absolute; right: 0; width: 33%; height: 30%; background: radial-gradient(ellipse at 50% 40%, #2a1f54, #171029); border: 1px solid rgba(124, 77, 255, 0.3); border-radius: 5px; }
+        .dyn .q1 { top: 0; } .dyn .q2 { top: 35%; } .dyn .q3 { top: 70%; }
+        .visu-pair { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+        .visu-cap { text-align: center; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; color: var(--muted); margin-top: 8px; text-transform: uppercase; }
+
+        /* --- illustration auto-relance --- */
+        .relance-pop { width: 210px; background: #0a0c18; border: 1px solid rgba(56, 214, 245, 0.4); border-radius: 10px; padding: 14px; box-shadow: 0 0 24px rgba(56, 214, 245, 0.18); }
+        .relance-pop .rp-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .relance-pop .rp-title { font-family: 'Chakra Petch', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 0.12em; color: var(--muted); }
+        .rp-switch { width: 34px; height: 18px; border-radius: 10px; background: linear-gradient(120deg, #21c9ec, #7c4dff); position: relative; }
+        .rp-switch::after { content: ""; position: absolute; right: 2px; top: 2px; width: 14px; height: 14px; border-radius: 50%; background: #eef2fb; }
+        .rp-row { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); padding: 5px 0; border-top: 1px solid #161a2c; }
+        .rp-row b { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+        /* --- illustration stack effectif --- */
+        .eff-tag { font-family: 'Chakra Petch', sans-serif; font-weight: 800; font-size: 20px; color: var(--cyan); background: rgba(8, 10, 20, 0.95); border: 1px solid rgba(56, 214, 245, 0.5); border-radius: 8px; padding: 12px 20px; box-shadow: 0 0 24px rgba(56, 214, 245, 0.35); letter-spacing: 0.04em; }
+
+        /* --- illustration boutons de mise --- */
+        .bet-row { display: flex; gap: 10px; }
+        .bet-btn { font-family: 'Chakra Petch', sans-serif; font-weight: 800; font-size: 12px; padding: 12px 16px; border-radius: 8px; background: #0a0c18; border: 1px solid rgba(124, 77, 255, 0.5); color: var(--violet-soft); box-shadow: 0 0 14px rgba(124, 77, 255, 0.2); }
+        .bet-btn.c { border-color: rgba(56, 214, 245, 0.55); color: var(--cyan); box-shadow: 0 0 14px rgba(56, 214, 245, 0.25); }
+    </style>
+</head>
+
+<body>
+    <div class="felt-glow"></div>
+
+    <header class="topbar">
+        <a href="index.html" class="brand"><img src="sn_logo_transparent.png" alt="">SpinNova<span class="pro">PokerPro</span><span class="beta">BÊTA</span></a>
+        <button class="burger" onclick="document.querySelector('.menu').classList.toggle('open')" aria-label="Menu">☰</button>
+        <nav class="menu">
+            <a href="index.html">Accueil</a>
+            <div class="menu-drop" onclick="this.classList.toggle('open')">
+                <button>Le Logiciel <span class="car">▼</span></button>
+                <div class="drop-list">
+                    <a href="logiciel-in-game.html">À la Table (HUD)</a>
+                    <a href="logiciel-hud-notes.html">HUD de prise de notes</a>
+                    <a href="logiciel-hud-stats.html">HUD de stats</a>
+                    <a href="logiciel-tools.html" class="nav-active" style="color: var(--accent);">Tools de Grind</a>
+                    <a href="logiciel-dashboard.html">Dashboard</a>
+                    <a href="logiciel-field-stats.html">Field Stats</a>
+                    <a href="logiciel-mon-profil.html">Mon Profil</a>
+                    <a href="logiciel-ranges-gto.html">Ranges &amp; GTO</a>
+                    <a href="logiciel-hu-edge.html">HU Edge</a>
+                    <a href="logiciel-hud-editor.html">HUD Editor</a>
+                    <a href="logiciel-replayer.html">Replayer</a>
+                    <a href="logiciel-jackpot.html">Jackpot</a>
+                    <a href="logiciel-entrainement.html">Entraînement</a>
+                </div>
+            </div>
+            <a href="boutique.html">Boutique</a>
+            <a href="telechargement.html">Télécharger</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://discord.gg/VGPWqpbvrT" class="btn-discord" target="_blank">Discord</a>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <p class="crumb">Le Logiciel</p>
+        <h1> <span class="em">Tools de grind</span> — la session qui se gère toute seule</h1>
+        <p class="page-intro">Le multi-tabling, c'est de la logistique : replacer les tables, se réinscrire, calculer
+            le stack effectif, cliquer les bonnes mises. SpinNovaPokerPro fait tout ça pour toi — toi, tu joues.</p>
+
+        <div class="tool-block">
+            <div class="t-text">
+                <span class="t-rooms">UNIBET · PMU</span>
+                <h2>Placement automatique des tables</h2>
+                <ul>
+                    <li><strong>Mode mosaïque</strong> : tes tables rangées en grille, dessinée par toi, directement sur ton écran — jusqu'à 2 écrans</li>
+                    <li><strong>Mode dynamique</strong> : une <strong>zone ACTION</strong> qui agrandit automatiquement la table où c'est à toi de parler, les autres en pile derrière</li>
+                    <li>Tu dessines tes emplacements une fois, chaque nouvelle table se range toute seule</li>
+                </ul>
+            </div>
+            <div class="t-visu">
+                <div class="visu-pair">
+                    <div>
+                        <div class="screen"><div class="mosaic"><div class="mini-table"></div><div class="mini-table"></div><div class="mini-table"></div><div class="mini-table"></div><div class="mini-table"></div><div class="mini-table"></div></div></div>
+                        <div class="visu-cap">Mosaïque</div>
+                    </div>
+                    <div>
+                        <div class="screen"><div class="dyn"><div class="action"></div><div class="queue q1"></div><div class="queue q2"></div><div class="queue q3"></div></div></div>
+                        <div class="visu-cap">Dynamique — zone action</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tool-block">
+            <div class="t-text">
+                <span class="t-rooms">UNIBET</span>
+                <h2>Auto-relance des games</h2>
+                <ul>
+                    <li>Fin de Spin → <strong>réinscription automatique</strong>, ta session ne s'arrête jamais toute seule</li>
+                    <li>Limite ta session <strong>en tournois ou en minutes</strong> — l'auto-relance s'arrête pour toi</li>
+                    <li><strong>Arrêt d'urgence</strong> au raccourci clavier, à tout moment</li>
+                    <li>Anti sit-out : tu ne rates plus une main au redémarrage</li>
+                    <li>Un popup de contrôle flottant sur l'écran : compteur, ON/OFF, remise à zéro</li>
+                </ul>
+            </div>
+            <div class="t-visu">
+                <div class="relance-pop">
+                    <div class="rp-head"><span class="rp-title">AUTO-RELANCE</span><span class="rp-switch"></span></div>
+                    <div class="rp-row"><span>Tournois</span><b>12 / 50</b></div>
+                    <div class="rp-row"><span>Tables en jeu</span><b>4</b></div>
+                    <div class="rp-row"><span>cEV / tournoi</span><b>+9,4</b></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tool-block">
+            <div class="t-text">
+                <span class="t-rooms">UNIBET · EN CALIBRATION</span>
+                <h2>Stack effectif en direct</h2>
+                <ul>
+                    <li>Le <strong>stack effectif affiché en temps réel</strong> sur la table, en grosses lettres</li>
+                    <li>Fini le calcul de tête à 8 tables : le chiffre qui décide de ta range est déjà sous tes yeux</li>
+                    <li>Étiquette déplaçable — tu la poses une fois, toutes tes tables suivent</li>
+                </ul>
+            </div>
+            <div class="t-visu">
+                <span class="eff-tag">EFF. 18,7 BB</span>
+            </div>
+        </div>
+
+        <div class="tool-block">
+            <div class="t-text">
+                <span class="t-rooms">UNIBET</span>
+                <h2>Boutons de mise personnalisés</h2>
+                <ul>
+                    <li>Crée tes boutons : <strong>miser X BB</strong>, <strong>une part du stack effectif</strong>, tapis, suivre, se coucher</li>
+                    <li>Au clic sur la table, ou au <strong>raccourci clavier</strong> — avec détection de conflits</li>
+                    <li>Couleur, taille, opacité, position : tout se règle, tout se mémorise</li>
+                </ul>
+            </div>
+            <div class="t-visu">
+                <div class="bet-row">
+                    <span class="bet-btn c">2,5 BB</span>
+                    <span class="bet-btn">60% EFF</span>
+                    <span class="bet-btn c">TAPIS</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="tool-block">
+            <div class="t-text">
+                <span class="t-rooms">TOUTES LES ROOMS</span>
+                <h2>Bouton SN &amp; Verrou HUD</h2>
+                <ul>
+                    <li>La pastille <strong>SN</strong> sur chaque table : clic gauche = changer de vue de HUD (l'ordre du cycle, c'est toi qui le choisis), clic droit = <strong>marquer la main en favori</strong> pour la retrouver dans le Replayer</li>
+                    <li><strong>Verrou HUD</strong> : fige la position de tous tes HUD et boutons — plus rien ne bouge par erreur en pleine session</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="final" style="padding-left: 0; padding-right: 0;">
+            <div class="final-box">
+                <h2>Teste-les sur ta prochaine session</h2>
+                <p>3 jours d'essai dès l'installation — automatique, sans carte bancaire.</p>
+                <div class="row">
+                    <a class="cta-dl" href="telechargement.html">⬇ Télécharger SpinNovaPokerPro</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="links">
+            <a href="mentions-legales.html">Mentions Légales</a>
+            <a href="cgu-cgv.html">CGU / CGV</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>© 2026 SpinNovaPokerPro — Bêta ouverte · Unibet, Winamax, Betclic, PMU, FDJ &amp; skins iPoker</p>
+    </footer>
+    <script src="fx.js" defer></script>
+</body>
+
+</html>

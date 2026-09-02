@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentions Légales | SpinNova</title>
+    <title>Mentions Légales | SpinNovaPokerPro</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="maquette.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="neon-bridge.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -55,31 +58,32 @@
     <div class="background-glow"></div>
 
     <nav class="navbar">
-        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Spin<span
-                class="highlight">Nova</span></a>
+        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">SpinNova<span
+                class="highlight">PokerPro</span><span class="beta-badge">BÊTA</span></a>
         <button class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </button>
         <div class="nav-links">
             <a href="index.html">Accueil</a>
             <div class="nav-dropdown" onclick="this.classList.toggle('open')">
-                <button class="nav-dropdown-toggle">Mode d'Emploi <span class="dropdown-arrow">▼</span></button>
+                <button class="nav-dropdown-toggle">Le Logiciel <span class="dropdown-arrow">▼</span></button>
                 <div class="nav-dropdown-menu">
-                    <a href="guide-demarrage.html"><span class="dropdown-icon">🚀</span> Guide de Démarrage</a>
-                    <a href="guide-huds.html"><span class="dropdown-icon">🖥️</span> Les HUDs</a>
-                    <a href="guide-editeur-hud.html"><span class="dropdown-icon">🎨</span> Éditeur HUD</a>
-                    <a href="guide-notes.html"><span class="dropdown-icon">🎤</span> Notes & Voix</a>
-                    <a href="badges.html"><span class="dropdown-icon">🏷️</span> Badges</a>
-                    <a href="guide-captures.html"><span class="dropdown-icon">📸</span> Captures & Galerie</a>
-                    <a href="guide-cev.html"><span class="dropdown-icon">📈</span> Héros cEV</a>
-                    <a href="guide-hero-stats.html"><span class="dropdown-icon">🦸</span> Hero Stats</a>
-                    <a href="guide-field-stats.html"><span class="dropdown-icon">🌐</span> Stats Field</a>
+                    <a href="logiciel-in-game.html">À la Table (HUD)</a>
+                    <a href="logiciel-hud-notes.html">HUD de prise de notes</a>
+                    <a href="logiciel-hud-stats.html">HUD de stats</a>
+                    <a href="logiciel-tools.html">Tools de Grind</a>
+                    <a href="logiciel-dashboard.html">Dashboard</a>
+                    <a href="logiciel-field-stats.html">Field Stats</a>
+                    <a href="logiciel-mon-profil.html">Mon Profil</a>
+                    <a href="logiciel-ranges-gto.html">Ranges &amp; GTO</a>
+                    <a href="logiciel-hu-edge.html">HU Edge</a>
+                    <a href="logiciel-hud-editor.html">HUD Editor</a>
+                    <a href="logiciel-replayer.html">Replayer</a>
+                    <a href="logiciel-jackpot.html">Jackpot</a>
+                    <a href="logiciel-entrainement.html">Entraînement</a>
                 </div>
             </div>
             <a href="boutique.html">Boutique</a>
-            <a href="essai-gratuit.html">Essai Gratuit</a>
             <a href="telechargement.html">Télécharger</a>
             <a href="faq.html">FAQ</a>
             <a href="contact.html">Contact</a>
@@ -115,7 +119,7 @@
 
         <section class="legal-section glass-panel">
             <h2>3. Propriété Intellectuelle</h2>
-            <p>L'ensemble de ce site, ainsi que le logiciel SpinNova et les packs de badges associés, relèvent de la
+            <p>L'ensemble de ce site, ainsi que le logiciel SpinNovaPokerPro et les packs de badges associés, relèvent de la
                 législation internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de
                 reproduction sont réservés, y compris pour les documents téléchargeables et les représentations
                 iconographiques et photographiques.</p>
@@ -124,7 +128,9 @@
         <section class="legal-section glass-panel">
             <h2>4. Protection des Données (RGPD)</h2>
             <p>Les informations collectées via les formulaires du site (Email, HWID) sont nécessaires pour la gestion
-                technique des licences et du support client.</p>
+                technique des licences et du support client. Le site enregistre également des statistiques de
+                fréquentation (page consultée, navigateur, provenance, temps de lecture) et, uniquement si vous les
+                saisissez, votre pseudo Discord ou votre adresse email afin de vous recontacter.</p>
             <ul>
                 <li><strong>Finalités :</strong> Activation du logiciel, support technique, notifications de mise à
                     jour.</li>
@@ -138,15 +144,25 @@
         <section class="legal-section glass-panel">
             <h2>5. Cookies et Analytics</h2>
             <p>Ce site utilise Microsoft Clarity pour analyser le comportement des utilisateurs et améliorer
-                l'expérience. En naviguant sur ce site, vous acceptez l'utilisation de ces outils. Aucune donnée
-                personnelle nominative n'est transmise à des tiers à des fins publicitaires.</p>
+                l'expérience. Cet outil n'est chargé qu'après votre accord dans le bandeau de consentement ; vous pouvez
+                le refuser sans conséquence sur votre navigation. Aucune donnée personnelle nominative n'est transmise à
+                des tiers à des fins publicitaires.</p>
         </section>
 
         <section class="legal-section glass-panel">
             <h2>6. Composants Open Source</h2>
-            <p>SpinNova intègre les composants open source suivants, utilisés conformément à leurs licences
+            <p>SpinNovaPokerPro intègre les composants open source suivants, utilisés conformément à leurs licences
                 respectives :</p>
             <ul>
+                <li><strong>Tauri</strong> — Cadre applicatif de bureau. Licences MIT / Apache-2.0.<br>
+                    <em>© Tauri Programme within The Commons Conservancy — <a href="https://github.com/tauri-apps/tauri"
+                            style="color: var(--accent);" target="_blank">github.com/tauri-apps/tauri</a></em></li>
+                <li><strong>Svelte / SvelteKit</strong> — Cadre d'interface. Licence MIT.<br>
+                    <em>© Svelte contributors — <a href="https://github.com/sveltejs/svelte" style="color: var(--accent);"
+                            target="_blank">github.com/sveltejs/svelte</a></em></li>
+                <li><strong>FastAPI</strong> — Cadre serveur Python. Licence MIT.<br>
+                    <em>© Sebastián Ramírez — <a href="https://github.com/fastapi/fastapi" style="color: var(--accent);"
+                            target="_blank">github.com/fastapi/fastapi</a></em></li>
                 <li><strong>Whisper</strong> — Modèle de reconnaissance vocale par OpenAI. Licence MIT.<br>
                     <em>© OpenAI — <a href="https://github.com/openai/whisper" style="color: var(--accent);"
                             target="_blank">github.com/openai/whisper</a></em></li>
@@ -182,7 +198,7 @@
                 <a href="contact.html"
                     style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Contact</a>
             </div>
-            <p class="copyright">© 2026 SpinNova. Compatible iPoker &amp; Winamax.</p>
+            <p class="copyright">© 2026 SpinNovaPokerPro — Bêta ouverte · Unibet, Winamax, Betclic, PMU, FDJ &amp; skins iPoker</p>
         </div>
     </footer>
 </body>

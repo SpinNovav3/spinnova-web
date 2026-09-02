@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CGU / CGV | SpinNova</title>
+    <title>CGU / CGV | SpinNovaPokerPro</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="maquette.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="neon-bridge.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -60,31 +63,32 @@
     <div class="background-glow"></div>
 
     <nav class="navbar">
-        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Spin<span
-                class="highlight">Nova</span></a>
+        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">SpinNova<span
+                class="highlight">PokerPro</span><span class="beta-badge">BÊTA</span></a>
         <button class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </button>
         <div class="nav-links">
             <a href="index.html">Accueil</a>
             <div class="nav-dropdown" onclick="this.classList.toggle('open')">
-                <button class="nav-dropdown-toggle">Mode d'Emploi <span class="dropdown-arrow">▼</span></button>
+                <button class="nav-dropdown-toggle">Le Logiciel <span class="dropdown-arrow">▼</span></button>
                 <div class="nav-dropdown-menu">
-                    <a href="guide-demarrage.html"><span class="dropdown-icon">🚀</span> Guide de Démarrage</a>
-                    <a href="guide-huds.html"><span class="dropdown-icon">🖥️</span> Les HUDs</a>
-                    <a href="guide-editeur-hud.html"><span class="dropdown-icon">🎨</span> Éditeur HUD</a>
-                    <a href="guide-notes.html"><span class="dropdown-icon">🎤</span> Notes & Voix</a>
-                    <a href="badges.html"><span class="dropdown-icon">🏷️</span> Badges</a>
-                    <a href="guide-captures.html"><span class="dropdown-icon">📸</span> Captures & Galerie</a>
-                    <a href="guide-cev.html"><span class="dropdown-icon">📈</span> Héros cEV</a>
-                    <a href="guide-hero-stats.html"><span class="dropdown-icon">🦸</span> Hero Stats</a>
-                    <a href="guide-field-stats.html"><span class="dropdown-icon">🌐</span> Stats Field</a>
+                    <a href="logiciel-in-game.html">À la Table (HUD)</a>
+                    <a href="logiciel-hud-notes.html">HUD de prise de notes</a>
+                    <a href="logiciel-hud-stats.html">HUD de stats</a>
+                    <a href="logiciel-tools.html">Tools de Grind</a>
+                    <a href="logiciel-dashboard.html">Dashboard</a>
+                    <a href="logiciel-field-stats.html">Field Stats</a>
+                    <a href="logiciel-mon-profil.html">Mon Profil</a>
+                    <a href="logiciel-ranges-gto.html">Ranges &amp; GTO</a>
+                    <a href="logiciel-hu-edge.html">HU Edge</a>
+                    <a href="logiciel-hud-editor.html">HUD Editor</a>
+                    <a href="logiciel-replayer.html">Replayer</a>
+                    <a href="logiciel-jackpot.html">Jackpot</a>
+                    <a href="logiciel-entrainement.html">Entraînement</a>
                 </div>
             </div>
             <a href="boutique.html">Boutique</a>
-            <a href="essai-gratuit.html">Essai Gratuit</a>
             <a href="telechargement.html">Télécharger</a>
             <a href="faq.html">FAQ</a>
             <a href="contact.html">Contact</a>
@@ -105,19 +109,19 @@
 
         <section class="legal-section glass-panel">
             <h2>1. Objet</h2>
-            <p>Les présentes conditions régissent l'utilisation du logiciel SpinNova (ci-après "le Logiciel") et l'achat
+            <p>Les présentes conditions régissent l'utilisation du logiciel SpinNovaPokerPro (ci-après "le Logiciel") et l'achat
                 de licences ou de packs de badges numériques sur le site https://spinnovav3.github.io/spinnova-web/.</p>
         </section>
 
         <section class="legal-section glass-panel">
             <h2>2. Logiciel en phase Bêta</h2>
-            <p>SpinNova est actuellement en phase de développement "Bêta". Bien que testé de manière exhaustive,
+            <p>SpinNovaPokerPro est actuellement en phase de développement "Bêta" ouverte. Bien que testé de manière exhaustive,
                 l'utilisateur accepte les risques inhérents à l'utilisation d'un logiciel en développement.</p>
             <ul>
                 <li>L'éditeur ne peut être tenu responsable des pertes financières, bugs techniques ou interruptions de
                     service.</li>
                 <li>L'utilisation du Logiciel doit se faire dans le respect des conditions d'utilisation des sites de
-                    poker (PMU, FDJ, etc.).</li>
+                    poker (Unibet, Winamax, Betclic, PMU, FDJ, etc.).</li>
             </ul>
         </section>
 
@@ -128,9 +132,9 @@
             <ul>
                 <li><strong>Prix :</strong> Les prix sont indiqués en Euros et sont nets (TVA non applicable, art. 293 B
                     du CGI).</li>
-                <li><strong>Paiement :</strong> Le paiement s'effectue via Revolut.me ou Cryptomonnaies.</li>
-                <li><strong>Activation :</strong> La licence est activée manuellement par l'administrateur sous 24h
-                    après réception du paiement et du HWID.</li>
+                <li><strong>Paiement :</strong> Le paiement s'effectue par carte bancaire via Stripe (paiement sécurisé). Le HWID de la machine est demandé lors du règlement.</li>
+                <li><strong>Essai :</strong> Un essai gratuit de 3 jours, renouvelable une fois, est inclus dans le Logiciel et s'active depuis celui-ci, sans paiement ni formulaire.</li>
+                <li><strong>Activation :</strong> La licence payante est activée par l'administrateur après réception du paiement et du HWID.</li>
             </ul>
         </section>
 
@@ -240,7 +244,7 @@
                 <a href="contact.html"
                     style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Contact</a>
             </div>
-            <p class="copyright">© 2026 SpinNova. Compatible iPoker &amp; Winamax.</p>
+            <p class="copyright">© 2026 SpinNovaPokerPro — Bêta ouverte · Unibet, Winamax, Betclic, PMU, FDJ &amp; skins iPoker</p>
         </div>
     </footer>
 </body>
